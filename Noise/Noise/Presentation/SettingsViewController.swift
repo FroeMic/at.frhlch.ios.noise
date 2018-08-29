@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import fluid_slider
 
 class SettingsViewController: UIViewController {
     

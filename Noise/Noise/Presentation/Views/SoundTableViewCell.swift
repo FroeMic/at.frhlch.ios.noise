@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import fluid_slider
 
 class SoundTableViewCell: UITableViewCell {
     
@@ -19,9 +18,7 @@ class SoundTableViewCell: UITableViewCell {
     
     @IBOutlet var albumImageView: RoundedImageView!
     @IBOutlet var soundTitleLabel: UILabel!
-    @IBOutlet var sliderView: Slider!
-    
-    private var slider: Slider?
+    @IBOutlet var slider: UISlider!
     
     func applyTheme() {
         let theme = Injection.theme
@@ -29,30 +26,18 @@ class SoundTableViewCell: UITableViewCell {
         layer.cornerRadius = theme.cornerRadius
         layer.masksToBounds = true
         
-        sliderView?.contentViewColor = theme.tintColor
-        sliderView.contentViewCornerRadius = theme.cornerRadius
      }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let labelTextAttributes: [NSAttributedStringKey : Any] = [.font: UIFont.systemFont(ofSize: 10, weight: .bold), .foregroundColor: UIColor.white]
-
-        sliderView.attributedTextForFraction = { fraction in
-            let formatter = NumberFormatter()
-            formatter.maximumIntegerDigits = 3
-            formatter.maximumFractionDigits = 0
-            let string = formatter.string(from: (fraction * 100) as NSNumber) ?? ""
-            return NSAttributedString(string: string, attributes: [.font: UIFont.systemFont(ofSize: 10, weight: .bold), .foregroundColor: UIColor.black])
+        if let sliderThumbImage = UIImage(named: "slider_thumb"){
+            slider?.setThumbImage(sliderThumbImage, for: .normal)
+            slider?.minimumValue = 0.0
+            slider?.maximumValue = 1.0
+            
+            slider.addTarget(self, action: #selector(SoundTableViewCell.sliderValueDidChange), for: .valueChanged)
         }
-        sliderView.setMinimumImage(UIImage(named: "ic_sound_mute"))
-        sliderView.setMaximumImage(UIImage(named: "ic_sound_full"))
-        sliderView.imagesColor = UIColor.white.withAlphaComponent(0.8)
-        sliderView.setMinimumLabelAttributedText(NSAttributedString(string: "", attributes: labelTextAttributes))
-        sliderView.setMaximumLabelAttributedText(NSAttributedString(string: "", attributes: labelTextAttributes))
-        sliderView.fraction = 1.0
-        sliderView.shadowColor = UIColor(white: 0, alpha: 0.1)
-        sliderView.valueViewColor = .white
         
         
         applyTheme()
@@ -66,6 +51,10 @@ class SoundTableViewCell: UITableViewCell {
         albumImageView?.image = sound.image
         soundTitleLabel?.text = sound.title
         
+    }
+    
+    @objc func sliderValueDidChange() {
+        print(slider?.value)
     }
     
 }
