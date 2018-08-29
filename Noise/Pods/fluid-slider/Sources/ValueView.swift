@@ -11,7 +11,7 @@ import pop
 
 class ValueView : UIView {
 
-    static let kLayoutMarginInset: CGFloat = 4
+    static let kLayoutMarginInset: CGFloat = 2.5
     
     // MARK: - Initialization
     

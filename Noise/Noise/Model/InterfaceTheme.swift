@@ -10,6 +10,8 @@ import UIKit
 
 protocol InterfaceTheme {
     
+    var tintColor: UIColor { get }
     var cornerRadius: CGFloat { get }
+    
     
 }

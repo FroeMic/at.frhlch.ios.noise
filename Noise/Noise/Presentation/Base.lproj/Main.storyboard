@@ -82,16 +82,18 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wU9-1o-Zu1">
-                                                            <rect key="frame" x="0.0" y="23" width="265" height="57"/>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wU9-1o-Zu1" customClass="Slider" customModule="fluid_slider">
+                                                            <rect key="frame" x="0.0" y="45" width="265" height="25"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="25" id="J16-am-B18"/>
+                                                            </constraints>
                                                         </view>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="wU9-1o-Zu1" secondAttribute="trailing" id="6id-FR-rWB"/>
                                                         <constraint firstItem="333-zw-OeG" firstAttribute="top" secondItem="dkc-Pn-UvN" secondAttribute="top" id="D3s-K0-iox"/>
-                                                        <constraint firstAttribute="bottom" secondItem="wU9-1o-Zu1" secondAttribute="bottom" id="Fzh-Jl-MEQ"/>
-                                                        <constraint firstItem="wU9-1o-Zu1" firstAttribute="top" secondItem="333-zw-OeG" secondAttribute="bottom" id="JuU-F8-xCM"/>
+                                                        <constraint firstAttribute="bottom" secondItem="wU9-1o-Zu1" secondAttribute="bottom" constant="10" id="Fzh-Jl-MEQ"/>
                                                         <constraint firstAttribute="trailing" secondItem="333-zw-OeG" secondAttribute="trailing" id="PAA-rU-uhe"/>
                                                         <constraint firstItem="wU9-1o-Zu1" firstAttribute="leading" secondItem="dkc-Pn-UvN" secondAttribute="leading" id="UCt-OX-p0Y"/>
                                                         <constraint firstItem="333-zw-OeG" firstAttribute="leading" secondItem="dkc-Pn-UvN" secondAttribute="leading" id="oxf-GL-9m6"/>
@@ -109,7 +111,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="albumImageView" destination="B1t-aw-fDN" id="q0j-lq-r8V"/>
-                                            <outlet property="sliderContainerView" destination="wU9-1o-Zu1" id="A19-Kp-Fcl"/>
+                                            <outlet property="sliderView" destination="wU9-1o-Zu1" id="eWc-Y6-Gww"/>
                                             <outlet property="soundTitleLabel" destination="333-zw-OeG" id="Kq4-q1-etj"/>
                                         </connections>
                                     </tableViewCell>
