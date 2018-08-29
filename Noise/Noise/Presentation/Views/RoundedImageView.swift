@@ -10,7 +10,6 @@ import UIKit
 
 class RoundedImageView: UIImageView {
     
-    
     func applyTheme() {
         let theme = Injection.theme
         

@@ -14,12 +14,12 @@
         <!--Settings-->
         <scene sceneID="D8R-rL-vpa">
             <objects>
-                <viewController id="jJD-no-8pL" sceneMemberID="viewController">
+                <viewController id="jJD-no-8pL" customClass="SettingsViewController" customModule="Noise" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jya-L2-tJq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rain-raindrops-rainy-110874" translatesAutoresizingMaskIntoConstraints="NO" id="P1Z-X5-Ahj" customClass="RoundedImageView" customModule="Noise" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sound_heavy_rain" translatesAutoresizingMaskIntoConstraints="NO" id="P1Z-X5-Ahj" customClass="RoundedImageView" customModule="Noise" customModuleProvider="target">
                                 <rect key="frame" x="148" y="294" width="79.5" height="79.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="P1Z-X5-Ahj" secondAttribute="height" multiplier="1:1" id="30L-f9-rh3"/>
@@ -45,13 +45,13 @@
         <!--Mixes-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Noise" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="NoiseViewController" customModule="Noise" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ePM-VX-fPx">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ePM-VX-fPx">
+                                <rect key="frame" x="0.0" y="73" width="375" height="545"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="QcX-af-7hf">
                                     <rect key="frame" x="0.0" y="128" width="375" height="98"/>
@@ -59,48 +59,98 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="1yD-AR-Au3">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SoundTableViewCell" rowHeight="100" id="1yD-AR-Au3" customClass="SoundTableViewCell" customModule="Noise" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1yD-AR-Au3" id="m8v-FI-ic6">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1yD-AR-Au3" id="m8v-FI-ic6" customClass="Sounds">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rain-raindrops-rainy-110874" translatesAutoresizingMaskIntoConstraints="NO" id="B1t-aw-fDN" customClass="RoundedImageView" customModule="Noise" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="10" width="79.5" height="79.5"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sound_heavy_rain" translatesAutoresizingMaskIntoConstraints="NO" id="B1t-aw-fDN" customClass="RoundedImageView" customModule="Noise" customModuleProvider="target">
+                                                    <rect key="frame" x="10" y="10" width="80" height="80"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="B1t-aw-fDN" secondAttribute="height" multiplier="1:1" id="Cng-ol-2b8"/>
+                                                        <constraint firstAttribute="width" constant="80" id="Hjp-sN-ZV9"/>
+                                                        <constraint firstAttribute="height" constant="80" id="mlO-II-Mbf"/>
                                                     </constraints>
                                                 </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dkc-Pn-UvN">
+                                                    <rect key="frame" x="100" y="10" width="265" height="80"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="333-zw-OeG">
+                                                            <rect key="frame" x="0.0" y="0.0" width="265" height="23"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wU9-1o-Zu1">
+                                                            <rect key="frame" x="0.0" y="23" width="265" height="57"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </view>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="wU9-1o-Zu1" secondAttribute="trailing" id="6id-FR-rWB"/>
+                                                        <constraint firstItem="333-zw-OeG" firstAttribute="top" secondItem="dkc-Pn-UvN" secondAttribute="top" id="D3s-K0-iox"/>
+                                                        <constraint firstAttribute="bottom" secondItem="wU9-1o-Zu1" secondAttribute="bottom" id="Fzh-Jl-MEQ"/>
+                                                        <constraint firstItem="wU9-1o-Zu1" firstAttribute="top" secondItem="333-zw-OeG" secondAttribute="bottom" id="JuU-F8-xCM"/>
+                                                        <constraint firstAttribute="trailing" secondItem="333-zw-OeG" secondAttribute="trailing" id="PAA-rU-uhe"/>
+                                                        <constraint firstItem="wU9-1o-Zu1" firstAttribute="leading" secondItem="dkc-Pn-UvN" secondAttribute="leading" id="UCt-OX-p0Y"/>
+                                                        <constraint firstItem="333-zw-OeG" firstAttribute="leading" secondItem="dkc-Pn-UvN" secondAttribute="leading" id="oxf-GL-9m6"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="B1t-aw-fDN" firstAttribute="top" secondItem="m8v-FI-ic6" secondAttribute="top" constant="10" id="0Xk-ka-oa1"/>
-                                                <constraint firstAttribute="bottom" secondItem="B1t-aw-fDN" secondAttribute="bottom" constant="10" id="emi-lz-c0C"/>
-                                                <constraint firstItem="B1t-aw-fDN" firstAttribute="leading" secondItem="m8v-FI-ic6" secondAttribute="leading" constant="10" id="tml-fB-In4"/>
+                                                <constraint firstAttribute="trailing" secondItem="dkc-Pn-UvN" secondAttribute="trailing" constant="10" id="BCl-AS-aYz"/>
+                                                <constraint firstItem="B1t-aw-fDN" firstAttribute="centerY" secondItem="m8v-FI-ic6" secondAttribute="centerY" id="Cet-wA-0qn"/>
+                                                <constraint firstItem="dkc-Pn-UvN" firstAttribute="centerY" secondItem="B1t-aw-fDN" secondAttribute="centerY" id="ED1-X2-mBc"/>
+                                                <constraint firstItem="B1t-aw-fDN" firstAttribute="leading" secondItem="m8v-FI-ic6" secondAttribute="leading" constant="10" id="RUu-KR-imz"/>
+                                                <constraint firstItem="dkc-Pn-UvN" firstAttribute="height" secondItem="B1t-aw-fDN" secondAttribute="height" id="hUy-Zv-Lyp"/>
+                                                <constraint firstItem="dkc-Pn-UvN" firstAttribute="leading" secondItem="B1t-aw-fDN" secondAttribute="trailing" constant="10" id="vey-mT-zyc"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="albumImageView" destination="B1t-aw-fDN" id="q0j-lq-r8V"/>
+                                            <outlet property="sliderContainerView" destination="wU9-1o-Zu1" id="A19-Kp-Fcl"/>
+                                            <outlet property="soundTitleLabel" destination="333-zw-OeG" id="Kq4-q1-etj"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Noise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J6f-aA-Uac">
+                                <rect key="frame" x="16" y="30" width="292" height="33.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_noise" translatesAutoresizingMaskIntoConstraints="NO" id="OxZ-HI-F5K">
+                                <rect key="frame" x="324" y="30" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="Ykf-sY-YOs"/>
+                                    <constraint firstAttribute="height" constant="35" id="eiZ-yq-0Tu"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ePM-VX-fPx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="1JT-pi-XXf"/>
-                            <constraint firstItem="ePM-VX-fPx" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="PHE-yh-F32"/>
-                            <constraint firstItem="ePM-VX-fPx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Xuk-w7-sAl"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ePM-VX-fPx" secondAttribute="bottom" id="Zml-ha-1U5"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ePM-VX-fPx" secondAttribute="trailing" id="eLp-Wr-Tpm"/>
-                            <constraint firstItem="ePM-VX-fPx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rnD-Vq-Tgx"/>
-                            <constraint firstItem="ePM-VX-fPx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tXk-Le-Mhl"/>
-                            <constraint firstItem="ePM-VX-fPx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vrW-n1-xZs"/>
+                            <constraint firstItem="OxZ-HI-F5K" firstAttribute="leading" secondItem="J6f-aA-Uac" secondAttribute="trailing" constant="16" id="4m7-wr-I8i"/>
+                            <constraint firstItem="ePM-VX-fPx" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="HBv-BO-0AD"/>
+                            <constraint firstItem="ePM-VX-fPx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Pmu-nx-MEO"/>
+                            <constraint firstItem="ePM-VX-fPx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PwT-tX-Rio"/>
+                            <constraint firstItem="J6f-aA-Uac" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="Qew-bz-4CQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OxZ-HI-F5K" secondAttribute="trailing" constant="16" id="ZCs-I6-VKP"/>
+                            <constraint firstItem="OxZ-HI-F5K" firstAttribute="centerY" secondItem="J6f-aA-Uac" secondAttribute="centerY" id="avI-ak-A3x"/>
+                            <constraint firstItem="ePM-VX-fPx" firstAttribute="top" secondItem="J6f-aA-Uac" secondAttribute="bottom" constant="10" id="bnN-Zh-j6N"/>
+                            <constraint firstItem="J6f-aA-Uac" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="sFe-Ou-xO5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Mixes" image="ic_mixtape" id="xhh-L4-yMz"/>
+                    <connections>
+                        <outlet property="tableView" destination="ePM-VX-fPx" id="Cag-KZ-ueo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1068" y="-601"/>
+            <point key="canvasLocation" x="1068" y="-601.34932533733138"/>
         </scene>
         <!--Noise-->
         <scene sceneID="Vzk-Do-uMW">
@@ -144,6 +194,6 @@
         <image name="ic_mixtape" width="33" height="33"/>
         <image name="ic_noise" width="33" height="33"/>
         <image name="ic_settings" width="33" height="33"/>
-        <image name="rain-raindrops-rainy-110874" width="1920" height="1280"/>
+        <image name="sound_heavy_rain" width="1920" height="1280"/>
     </resources>
 </document>

@@ -12,4 +12,6 @@ class Injection {
     
     static let theme: InterfaceTheme = DefaultTheme()
     
+    
+    static let soundRepository: SoundProvider = StaticSoundProvider()
 }

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		271F9EB82135D51800115C8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F9EB72135D51800115C8C /* AppDelegate.swift */; };
-		271F9EBA2135D51800115C8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F9EB92135D51800115C8C /* ViewController.swift */; };
+		271F9EBA2135D51800115C8C /* NoiseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F9EB92135D51800115C8C /* NoiseViewController.swift */; };
 		271F9EBD2135D51800115C8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271F9EBB2135D51800115C8C /* Main.storyboard */; };
 		271F9EBF2135D51A00115C8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 271F9EBE2135D51A00115C8C /* Assets.xcassets */; };
 		271F9EC22135D51A00115C8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271F9EC02135D51A00115C8C /* LaunchScreen.storyboard */; };
@@ -17,6 +17,11 @@
 		27B106022135D8570070A109 /* InterfaceTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B106012135D8570070A109 /* InterfaceTheme.swift */; };
 		27B106052135D8BC0070A109 /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B106042135D8BC0070A109 /* Injection.swift */; };
 		27B106082135D8EA0070A109 /* DefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B106072135D8EA0070A109 /* DefaultTheme.swift */; };
+		27B1060A2135DC5B0070A109 /* SoundTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B106092135DC5B0070A109 /* SoundTableViewCell.swift */; };
+		27B1060C2135DCA40070A109 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B1060B2135DCA40070A109 /* Sound.swift */; };
+		27B1060E2135DCF60070A109 /* SoundProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B1060D2135DCF60070A109 /* SoundProvider.swift */; };
+		27B106102135DD200070A109 /* StaticSoundProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B1060F2135DD200070A109 /* StaticSoundProvider.swift */; };
+		27B106122135E76D0070A109 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B106112135E76D0070A109 /* SettingsViewController.swift */; };
 		583AE971DA043231F16388F5 /* Pods_Noise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C1E638CE87361824E6D3060 /* Pods_Noise.framework */; };
 		B7002B48FD111E15949DEB80 /* Pods_NoiseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE8DD348B3534DA3F8A12B4 /* Pods_NoiseTests.framework */; };
 /* End PBXBuildFile section */
@@ -34,7 +39,7 @@
 /* Begin PBXFileReference section */
 		271F9EB42135D51800115C8C /* Noise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Noise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		271F9EB72135D51800115C8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		271F9EB92135D51800115C8C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		271F9EB92135D51800115C8C /* NoiseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoiseViewController.swift; sourceTree = "<group>"; };
 		271F9EBC2135D51800115C8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		271F9EBE2135D51A00115C8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		271F9EC12135D51A00115C8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -46,6 +51,11 @@
 		27B106012135D8570070A109 /* InterfaceTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceTheme.swift; sourceTree = "<group>"; };
 		27B106042135D8BC0070A109 /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
 		27B106072135D8EA0070A109 /* DefaultTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTheme.swift; sourceTree = "<group>"; };
+		27B106092135DC5B0070A109 /* SoundTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundTableViewCell.swift; sourceTree = "<group>"; };
+		27B1060B2135DCA40070A109 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
+		27B1060D2135DCF60070A109 /* SoundProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundProvider.swift; sourceTree = "<group>"; };
+		27B1060F2135DD200070A109 /* StaticSoundProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticSoundProvider.swift; sourceTree = "<group>"; };
+		27B106112135E76D0070A109 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		3C1E638CE87361824E6D3060 /* Pods_Noise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Noise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CE8DD348B3534DA3F8A12B4 /* Pods_NoiseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoiseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D1D76CE48FCFA85FC4EAC04 /* Pods-Noise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Noise.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Noise/Pods-Noise.debug.xcconfig"; sourceTree = "<group>"; };
@@ -118,11 +128,12 @@
 		27B105FC2135D7940070A109 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				271F9EB92135D51800115C8C /* ViewController.swift */,
+				271F9EB92135D51800115C8C /* NoiseViewController.swift */,
 				271F9EBB2135D51800115C8C /* Main.storyboard */,
 				271F9EC02135D51A00115C8C /* LaunchScreen.storyboard */,
 				271F9EBE2135D51A00115C8C /* Assets.xcassets */,
 				27B105FD2135D79B0070A109 /* Views */,
+				27B106112135E76D0070A109 /* SettingsViewController.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -131,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				27B105FE2135D8150070A109 /* RoundedImageView.swift */,
+				27B106092135DC5B0070A109 /* SoundTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -139,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				27B106012135D8570070A109 /* InterfaceTheme.swift */,
+				27B1060B2135DCA40070A109 /* Sound.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -156,6 +169,8 @@
 			isa = PBXGroup;
 			children = (
 				27B106072135D8EA0070A109 /* DefaultTheme.swift */,
+				27B1060D2135DCF60070A109 /* SoundProvider.swift */,
+				27B1060F2135DD200070A109 /* StaticSoundProvider.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -344,11 +359,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				27B106052135D8BC0070A109 /* Injection.swift in Sources */,
+				27B1060A2135DC5B0070A109 /* SoundTableViewCell.swift in Sources */,
+				27B106122135E76D0070A109 /* SettingsViewController.swift in Sources */,
 				27B105FF2135D8150070A109 /* RoundedImageView.swift in Sources */,
+				27B1060E2135DCF60070A109 /* SoundProvider.swift in Sources */,
 				27B106022135D8570070A109 /* InterfaceTheme.swift in Sources */,
 				27B106082135D8EA0070A109 /* DefaultTheme.swift in Sources */,
-				271F9EBA2135D51800115C8C /* ViewController.swift in Sources */,
+				27B106102135DD200070A109 /* StaticSoundProvider.swift in Sources */,
+				271F9EBA2135D51800115C8C /* NoiseViewController.swift in Sources */,
 				271F9EB82135D51800115C8C /* AppDelegate.swift in Sources */,
+				27B1060C2135DCA40070A109 /* Sound.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
