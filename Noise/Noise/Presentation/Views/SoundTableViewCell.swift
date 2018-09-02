@@ -18,6 +18,7 @@ class SoundTableViewCell: UITableViewCell {
     
     @IBOutlet var albumImageView: RoundedImageView!
     @IBOutlet var soundTitleLabel: UILabel!
+    @IBOutlet var soundSubtitleLabel: UILabel!
     @IBOutlet var slider: UISlider!
     
     func applyTheme() {
@@ -50,6 +51,7 @@ class SoundTableViewCell: UITableViewCell {
         
         albumImageView?.image = sound.image
         soundTitleLabel?.text = sound.title
+        soundSubtitleLabel?.text = sound.subtitle
         
     }
     

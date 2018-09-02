@@ -28,6 +28,7 @@
 		27BD8D61213C153B003DF079 /* audio_rain_60s.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 27BD8D60213C153B003DF079 /* audio_rain_60s.mp3 */; };
 		27BD8D63213C17D4003DF079 /* AudioManagerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD8D62213C17D4003DF079 /* AudioManagerState.swift */; };
 		27BD8D65213C1ADA003DF079 /* MixTape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD8D64213C1ADA003DF079 /* MixTape.swift */; };
+		27BD8D6A213C2674003DF079 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD8D69213C2674003DF079 /* BaseTabBarController.swift */; };
 		583AE971DA043231F16388F5 /* Pods_Noise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C1E638CE87361824E6D3060 /* Pods_Noise.framework */; };
 		B7002B48FD111E15949DEB80 /* Pods_NoiseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE8DD348B3534DA3F8A12B4 /* Pods_NoiseTests.framework */; };
 /* End PBXBuildFile section */
@@ -68,6 +69,7 @@
 		27BD8D60213C153B003DF079 /* audio_rain_60s.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = audio_rain_60s.mp3; sourceTree = "<group>"; };
 		27BD8D62213C17D4003DF079 /* AudioManagerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManagerState.swift; sourceTree = "<group>"; };
 		27BD8D64213C1ADA003DF079 /* MixTape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixTape.swift; sourceTree = "<group>"; };
+		27BD8D69213C2674003DF079 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		3C1E638CE87361824E6D3060 /* Pods_Noise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Noise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CE8DD348B3534DA3F8A12B4 /* Pods_NoiseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoiseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D1D76CE48FCFA85FC4EAC04 /* Pods-Noise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Noise.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Noise/Pods-Noise.debug.xcconfig"; sourceTree = "<group>"; };
@@ -141,12 +143,14 @@
 		27B105FC2135D7940070A109 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				271F9EB92135D51800115C8C /* NoiseViewController.swift */,
-				27B106112135E76D0070A109 /* SettingsViewController.swift */,
+				27BD8D69213C2674003DF079 /* BaseTabBarController.swift */,
+				27BD8D66213C23C4003DF079 /* Mixes Scene */,
+				27BD8D67213C23D4003DF079 /* Noises Scene */,
+				27BD8D68213C23DD003DF079 /* Settings Scene */,
+				27B105FD2135D79B0070A109 /* Views */,
 				271F9EBB2135D51800115C8C /* Main.storyboard */,
 				271F9EC02135D51A00115C8C /* LaunchScreen.storyboard */,
 				271F9EBE2135D51A00115C8C /* Assets.xcassets */,
-				27B105FD2135D79B0070A109 /* Views */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -199,6 +203,29 @@
 				27BD8D5E213C1059003DF079 /* audio_cafe_60s.mp3 */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		27BD8D66213C23C4003DF079 /* Mixes Scene */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Mixes Scene";
+			sourceTree = "<group>";
+		};
+		27BD8D67213C23D4003DF079 /* Noises Scene */ = {
+			isa = PBXGroup;
+			children = (
+				271F9EB92135D51800115C8C /* NoiseViewController.swift */,
+			);
+			path = "Noises Scene";
+			sourceTree = "<group>";
+		};
+		27BD8D68213C23DD003DF079 /* Settings Scene */ = {
+			isa = PBXGroup;
+			children = (
+				27B106112135E76D0070A109 /* SettingsViewController.swift */,
+			);
+			path = "Settings Scene";
 			sourceTree = "<group>";
 		};
 		6B3BF3CE7C409B551A06BB05 /* Pods */ = {
@@ -373,6 +400,7 @@
 			files = (
 				27B106052135D8BC0070A109 /* Injection.swift in Sources */,
 				27B1060A2135DC5B0070A109 /* SoundTableViewCell.swift in Sources */,
+				27BD8D6A213C2674003DF079 /* BaseTabBarController.swift in Sources */,
 				27B106122135E76D0070A109 /* SettingsViewController.swift in Sources */,
 				27B105FF2135D8150070A109 /* RoundedImageView.swift in Sources */,
 				27BD8D63213C17D4003DF079 /* AudioManagerState.swift in Sources */,

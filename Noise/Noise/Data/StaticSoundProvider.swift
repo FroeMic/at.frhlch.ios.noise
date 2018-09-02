@@ -11,8 +11,16 @@ import UIKit
 class StaticSoundProvider: SoundProvider {
    
     let sounds: [Sound] = [
-        Sound(id: "1", title: "Heavy Rain", image: UIImage(named: "sound_heavy_rain")!, soundFile: "audio_rain_60s"),
-        Sound(id: "2", title: "Coffee Shop", image: UIImage(named: "sound_coffee_shop")!, soundFile: "audio_cafe_60s")
+        Sound(id: "1",
+              title: "Heavy Rain",
+              subtitle: "Heavy rainfall in a land far away.",
+              image: UIImage(named: "sound_heavy_rain")!,
+              soundFile: "audio_rain_60s"),
+        Sound(id: "2",
+              title: "Coffee Shop",
+              subtitle: "Busy coffee shop chatter.",
+              image: UIImage(named: "sound_coffee_shop")!,
+              soundFile: "audio_cafe_60s")
     ]
     
     var defaultMixTap: MixTape {
