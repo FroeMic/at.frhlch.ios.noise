@@ -10,18 +10,11 @@ import UIKit
 
 class StaticSoundProvider: SoundProvider {
    
-    let sounds: [Sound] = [
-        Sound(id: "1",
-              title: "Heavy Rain",
-              subtitle: "Heavy rainfall in a land far away.",
-              image: UIImage(named: "sound_heavy_rain")!,
-              soundFile: "audio_rain_60s"),
-        Sound(id: "2",
-              title: "Coffee Shop",
-              subtitle: "Busy coffee shop chatter.",
-              image: UIImage(named: "sound_coffee_shop")!,
-              soundFile: "audio_cafe_60s")
-    ]
+    let soundRepository = UDSoundRepository()
+    
+    var sounds: [Sound] {
+        return soundRepository.getAll().map { $0.1 }
+    }
     
     var defaultMixTap: MixTape {
         return MixTape(id: "", title: "Noise Ambient Sounds", sounds: sounds)
