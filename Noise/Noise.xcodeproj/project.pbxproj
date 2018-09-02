@@ -22,6 +22,12 @@
 		27B1060E2135DCF60070A109 /* SoundProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B1060D2135DCF60070A109 /* SoundProvider.swift */; };
 		27B106102135DD200070A109 /* StaticSoundProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B1060F2135DD200070A109 /* StaticSoundProvider.swift */; };
 		27B106122135E76D0070A109 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B106112135E76D0070A109 /* SettingsViewController.swift */; };
+		27BD8D5B213C0443003DF079 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BD8D5A213C0443003DF079 /* AVFoundation.framework */; };
+		27BD8D5D213C05F2003DF079 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD8D5C213C05F2003DF079 /* AudioManager.swift */; };
+		27BD8D5F213C1059003DF079 /* audio_cafe_60s.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 27BD8D5E213C1059003DF079 /* audio_cafe_60s.mp3 */; };
+		27BD8D61213C153B003DF079 /* audio_rain_60s.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 27BD8D60213C153B003DF079 /* audio_rain_60s.mp3 */; };
+		27BD8D63213C17D4003DF079 /* AudioManagerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD8D62213C17D4003DF079 /* AudioManagerState.swift */; };
+		27BD8D65213C1ADA003DF079 /* MixTape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD8D64213C1ADA003DF079 /* MixTape.swift */; };
 		583AE971DA043231F16388F5 /* Pods_Noise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C1E638CE87361824E6D3060 /* Pods_Noise.framework */; };
 		B7002B48FD111E15949DEB80 /* Pods_NoiseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE8DD348B3534DA3F8A12B4 /* Pods_NoiseTests.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +62,12 @@
 		27B1060D2135DCF60070A109 /* SoundProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundProvider.swift; sourceTree = "<group>"; };
 		27B1060F2135DD200070A109 /* StaticSoundProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticSoundProvider.swift; sourceTree = "<group>"; };
 		27B106112135E76D0070A109 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		27BD8D5A213C0443003DF079 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		27BD8D5C213C05F2003DF079 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		27BD8D5E213C1059003DF079 /* audio_cafe_60s.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = audio_cafe_60s.mp3; sourceTree = "<group>"; };
+		27BD8D60213C153B003DF079 /* audio_rain_60s.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = audio_rain_60s.mp3; sourceTree = "<group>"; };
+		27BD8D62213C17D4003DF079 /* AudioManagerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManagerState.swift; sourceTree = "<group>"; };
+		27BD8D64213C1ADA003DF079 /* MixTape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixTape.swift; sourceTree = "<group>"; };
 		3C1E638CE87361824E6D3060 /* Pods_Noise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Noise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CE8DD348B3534DA3F8A12B4 /* Pods_NoiseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoiseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D1D76CE48FCFA85FC4EAC04 /* Pods-Noise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Noise.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Noise/Pods-Noise.debug.xcconfig"; sourceTree = "<group>"; };
@@ -69,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27BD8D5B213C0443003DF079 /* AVFoundation.framework in Frameworks */,
 				583AE971DA043231F16388F5 /* Pods_Noise.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -129,11 +142,11 @@
 			isa = PBXGroup;
 			children = (
 				271F9EB92135D51800115C8C /* NoiseViewController.swift */,
+				27B106112135E76D0070A109 /* SettingsViewController.swift */,
 				271F9EBB2135D51800115C8C /* Main.storyboard */,
 				271F9EC02135D51A00115C8C /* LaunchScreen.storyboard */,
 				271F9EBE2135D51A00115C8C /* Assets.xcassets */,
 				27B105FD2135D79B0070A109 /* Views */,
-				27B106112135E76D0070A109 /* SettingsViewController.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -152,6 +165,7 @@
 			children = (
 				27B106012135D8570070A109 /* InterfaceTheme.swift */,
 				27B1060B2135DCA40070A109 /* Sound.swift */,
+				27BD8D64213C1ADA003DF079 /* MixTape.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -161,6 +175,8 @@
 			children = (
 				271F9EB72135D51800115C8C /* AppDelegate.swift */,
 				27B106042135D8BC0070A109 /* Injection.swift */,
+				27BD8D5C213C05F2003DF079 /* AudioManager.swift */,
+				27BD8D62213C17D4003DF079 /* AudioManagerState.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -168,11 +184,21 @@
 		27B106062135D8C40070A109 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				27BD8D57213BF4E6003DF079 /* Sounds */,
 				27B106072135D8EA0070A109 /* DefaultTheme.swift */,
 				27B1060D2135DCF60070A109 /* SoundProvider.swift */,
 				27B1060F2135DD200070A109 /* StaticSoundProvider.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		27BD8D57213BF4E6003DF079 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				27BD8D60213C153B003DF079 /* audio_rain_60s.mp3 */,
+				27BD8D5E213C1059003DF079 /* audio_cafe_60s.mp3 */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		6B3BF3CE7C409B551A06BB05 /* Pods */ = {
@@ -189,6 +215,7 @@
 		AC17B522FC20D1D97467BCBF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				27BD8D5A213C0443003DF079 /* AVFoundation.framework */,
 				3C1E638CE87361824E6D3060 /* Pods_Noise.framework */,
 				6CE8DD348B3534DA3F8A12B4 /* Pods_NoiseTests.framework */,
 			);
@@ -247,6 +274,11 @@
 				TargetAttributes = {
 					271F9EB32135D51800115C8C = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					271F9EC72135D51B00115C8C = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -280,6 +312,8 @@
 			files = (
 				271F9EC22135D51A00115C8C /* LaunchScreen.storyboard in Resources */,
 				271F9EBF2135D51A00115C8C /* Assets.xcassets in Resources */,
+				27BD8D5F213C1059003DF079 /* audio_cafe_60s.mp3 in Resources */,
+				27BD8D61213C153B003DF079 /* audio_rain_60s.mp3 in Resources */,
 				271F9EBD2135D51800115C8C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,8 +375,11 @@
 				27B1060A2135DC5B0070A109 /* SoundTableViewCell.swift in Sources */,
 				27B106122135E76D0070A109 /* SettingsViewController.swift in Sources */,
 				27B105FF2135D8150070A109 /* RoundedImageView.swift in Sources */,
+				27BD8D63213C17D4003DF079 /* AudioManagerState.swift in Sources */,
 				27B1060E2135DCF60070A109 /* SoundProvider.swift in Sources */,
+				27BD8D65213C1ADA003DF079 /* MixTape.swift in Sources */,
 				27B106022135D8570070A109 /* InterfaceTheme.swift in Sources */,
+				27BD8D5D213C05F2003DF079 /* AudioManager.swift in Sources */,
 				27B106082135D8EA0070A109 /* DefaultTheme.swift in Sources */,
 				27B106102135DD200070A109 /* StaticSoundProvider.swift in Sources */,
 				271F9EBA2135D51800115C8C /* NoiseViewController.swift in Sources */,

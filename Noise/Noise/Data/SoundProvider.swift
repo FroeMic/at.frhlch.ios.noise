@@ -12,4 +12,6 @@ protocol SoundProvider {
     
     var sounds: [Sound] { get }
     
+    var defaultMixTap: MixTape { get }
+    var mixTapes: [MixTape] { get }
 }

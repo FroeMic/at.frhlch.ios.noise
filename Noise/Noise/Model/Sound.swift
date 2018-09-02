@@ -13,11 +13,21 @@ struct Sound {
     let id: String
     let title: String
     let image: UIImage
+    let soundFile: String
+    let volume: Float
     
+    var soundUrl: URL? {
+        guard let path = Bundle.main.path(forResource: soundFile, ofType:"mp3") else {
+            return nil
+        }
+        return URL(fileURLWithPath: path)
+    }
     
-    init(id: String, title: String, image: UIImage) {
+    init(id: String, title: String, image: UIImage, soundFile: String, volume: Float = 0.5) {
         self.id = id
         self.title = title
         self.image = image
+        self.soundFile = soundFile
+        self.volume = volume
     }
 }

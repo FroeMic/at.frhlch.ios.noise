@@ -20,6 +20,8 @@ class NoiseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        AudioManager.shared.activate(mixTape: Injection.soundRepository.defaultMixTap)
 
         tableView.delegate = self
         tableView.dataSource = self
