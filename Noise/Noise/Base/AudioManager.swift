@@ -80,6 +80,8 @@ class AudioManager {
             stop()
         }
         
+        self.sounds = sounds
+        
         for sound in sounds {
             if let player = setupPlayerFor(sound: sound) {
                 players[sound.id] = player
@@ -111,9 +113,21 @@ class AudioManager {
         state = .stopped
     }
     
-    func pause() {
+    public func pause() {
         players.values.forEach { $0.pause() }
         state = .paused
+    }
+    
+    public func updateVolume(for sound: Sound) {
+        guard let player = players[sound.id] else {
+            return
+        }
+        
+        guard let index = sounds.index(of: sound) else {
+            return
+        }
+        sounds[index] = sound
+        player.volume = sound.volume
     }
     
 }

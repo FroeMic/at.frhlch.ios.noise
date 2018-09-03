@@ -10,11 +10,19 @@ import UIKit
 
 class SoundTableViewCell: UITableViewCell {
     
+
+    var delegate: SoundDelegate?
     var sound: Sound? {
-        didSet {
+        set(sound) {
+            self._sound = sound
             updateCellContent()
         }
+        get {
+            return self._sound
+        }
     }
+    private var _sound: Sound?
+    
     
     @IBOutlet var albumImageView: RoundedImageView!
     @IBOutlet var soundTitleLabel: UILabel!
@@ -53,11 +61,19 @@ class SoundTableViewCell: UITableViewCell {
         soundTitleLabel?.text = sound.title
         soundSubtitleLabel?.text = sound.subtitle
         slider?.value = sound.volume
-        
     }
     
     @objc func sliderValueDidChange() {
+        guard let volume = slider?.value else {
+            return
+        }
+        guard let oldSound = sound else {
+            return
+        }
 
+        let newSound = oldSound.with(volume: volume)
+        _sound = newSound // set only private sound member to not trigger UI update
+        delegate?.soundDidChange(newSound, oldSound: oldSound)
     }
     
 }

@@ -20,11 +20,19 @@ class NoiseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        AudioManager.shared.activate(sounds: sounds, title: "Noise Ambient Sounds")
 
+        playAudio()
+        
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    func playAudio() {
+        AudioManager.shared.activate(sounds: sounds, title: "Noise Ambient Sounds")
+    }
+    
+    func updateSound(sound: Sound) {
+        AudioManager.shared.updateVolume(for: sound)
     }
 }
 
@@ -46,11 +54,23 @@ extension NoiseViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: NoiseViewController.soundReuseIdentifier, for: indexPath)
         
         if let soundCell = cell as? SoundTableViewCell {
+            soundCell.delegate = self
             soundCell.sound =  sounds[indexPath.row]
         }
         
         return cell
         
+    }
+    
+}
+
+extension NoiseViewController: SoundDelegate {
+    
+    func soundDidChange(_ sound: Sound, oldSound: Sound) {
+        let soundRepository = Injection.soundRepository
+        
+        soundRepository.store(sound)
+        updateSound(sound: sound)
     }
     
 }

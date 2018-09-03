@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		271D158B213DD1F800F5B2DC /* UDMixtapeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271D158A213DD1F800F5B2DC /* UDMixtapeRepository.swift */; };
+		271D158D213DD45A00F5B2DC /* SoundDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271D158C213DD45A00F5B2DC /* SoundDelegate.swift */; };
 		271F9EB82135D51800115C8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F9EB72135D51800115C8C /* AppDelegate.swift */; };
 		271F9EBA2135D51800115C8C /* NoiseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F9EB92135D51800115C8C /* NoiseViewController.swift */; };
 		271F9EBD2135D51800115C8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271F9EBB2135D51800115C8C /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		271D158A213DD1F800F5B2DC /* UDMixtapeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDMixtapeRepository.swift; sourceTree = "<group>"; };
+		271D158C213DD45A00F5B2DC /* SoundDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundDelegate.swift; sourceTree = "<group>"; };
 		271F9EB42135D51800115C8C /* Noise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Noise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		271F9EB72135D51800115C8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		271F9EB92135D51800115C8C /* NoiseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoiseViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				27BD8D6B213C2725003DF079 /* Observer */,
 				27B106012135D8570070A109 /* InterfaceTheme.swift */,
 				27B1060B2135DCA40070A109 /* Sound.swift */,
+				271D158C213DD45A00F5B2DC /* SoundDelegate.swift */,
 				27BD8D64213C1ADA003DF079 /* Mixtape.swift */,
 			);
 			path = Model;
@@ -450,6 +453,7 @@
 				271D158B213DD1F800F5B2DC /* UDMixtapeRepository.swift in Sources */,
 				27B106022135D8570070A109 /* InterfaceTheme.swift in Sources */,
 				27BD8D5D213C05F2003DF079 /* AudioManager.swift in Sources */,
+				271D158D213DD45A00F5B2DC /* SoundDelegate.swift in Sources */,
 				27BD8D6F213C2962003DF079 /* Subscriber.swift in Sources */,
 				27B106082135D8EA0070A109 /* DefaultTheme.swift in Sources */,
 				271F9EBA2135D51800115C8C /* NoiseViewController.swift in Sources */,

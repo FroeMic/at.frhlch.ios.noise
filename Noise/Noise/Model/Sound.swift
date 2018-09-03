@@ -47,6 +47,14 @@ struct Sound {
     }
 }
 
+extension Sound: Equatable {
+
+    static func ==(lhs: Sound, rhs: Sound) -> Bool {
+        return lhs.id == rhs.id && lhs.id == rhs.id
+    }
+    
+}
+
 extension Sound: Identifiable {
     
 }
