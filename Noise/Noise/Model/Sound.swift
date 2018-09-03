@@ -36,6 +36,15 @@ struct Sound {
         self.soundFile = soundFile
         self.volume = volume
     }
+    
+    func with(volume: Float) -> Sound {
+        return Sound(id: id,
+             title: self.title,
+             subtitle: self.subtitle,
+             imageName: self.imageName,
+             soundFile: self.soundFile,
+             volume: volume)
+    }
 }
 
 extension Sound: Identifiable {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		271D158B213DD1F800F5B2DC /* UDMixtapeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271D158A213DD1F800F5B2DC /* UDMixtapeRepository.swift */; };
 		271F9EB82135D51800115C8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F9EB72135D51800115C8C /* AppDelegate.swift */; };
 		271F9EBA2135D51800115C8C /* NoiseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F9EB92135D51800115C8C /* NoiseViewController.swift */; };
 		271F9EBD2135D51800115C8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271F9EBB2135D51800115C8C /* Main.storyboard */; };
@@ -19,15 +20,13 @@
 		27B106082135D8EA0070A109 /* DefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B106072135D8EA0070A109 /* DefaultTheme.swift */; };
 		27B1060A2135DC5B0070A109 /* SoundTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B106092135DC5B0070A109 /* SoundTableViewCell.swift */; };
 		27B1060C2135DCA40070A109 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B1060B2135DCA40070A109 /* Sound.swift */; };
-		27B1060E2135DCF60070A109 /* SoundProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B1060D2135DCF60070A109 /* SoundProvider.swift */; };
-		27B106102135DD200070A109 /* StaticSoundProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B1060F2135DD200070A109 /* StaticSoundProvider.swift */; };
 		27B106122135E76D0070A109 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B106112135E76D0070A109 /* SettingsViewController.swift */; };
 		27BD8D5B213C0443003DF079 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BD8D5A213C0443003DF079 /* AVFoundation.framework */; };
 		27BD8D5D213C05F2003DF079 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD8D5C213C05F2003DF079 /* AudioManager.swift */; };
 		27BD8D5F213C1059003DF079 /* audio_cafe_60s.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 27BD8D5E213C1059003DF079 /* audio_cafe_60s.mp3 */; };
 		27BD8D61213C153B003DF079 /* audio_rain_60s.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 27BD8D60213C153B003DF079 /* audio_rain_60s.mp3 */; };
 		27BD8D63213C17D4003DF079 /* AudioManagerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD8D62213C17D4003DF079 /* AudioManagerState.swift */; };
-		27BD8D65213C1ADA003DF079 /* MixTape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD8D64213C1ADA003DF079 /* MixTape.swift */; };
+		27BD8D65213C1ADA003DF079 /* Mixtape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD8D64213C1ADA003DF079 /* Mixtape.swift */; };
 		27BD8D6A213C2674003DF079 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD8D69213C2674003DF079 /* BaseTabBarController.swift */; };
 		27BD8D6D213C2851003DF079 /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD8D6C213C2851003DF079 /* Publisher.swift */; };
 		27BD8D6F213C2962003DF079 /* Subscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD8D6E213C2962003DF079 /* Subscriber.swift */; };
@@ -35,6 +34,8 @@
 		27BD8D76213C2F81003DF079 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD8D75213C2F81003DF079 /* Identifiable.swift */; };
 		27BD8D78213C32EB003DF079 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD8D77213C32EB003DF079 /* Serializable.swift */; };
 		27BD8D7A213C417C003DF079 /* UDSoundRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD8D79213C417C003DF079 /* UDSoundRepository.swift */; };
+		27BD8D7C213C476A003DF079 /* MixtapeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD8D7B213C476A003DF079 /* MixtapeRepository.swift */; };
+		27BD8D7E213C481C003DF079 /* SoundRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD8D7D213C481C003DF079 /* SoundRepository.swift */; };
 		583AE971DA043231F16388F5 /* Pods_Noise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C1E638CE87361824E6D3060 /* Pods_Noise.framework */; };
 		B7002B48FD111E15949DEB80 /* Pods_NoiseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE8DD348B3534DA3F8A12B4 /* Pods_NoiseTests.framework */; };
 /* End PBXBuildFile section */
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		271D158A213DD1F800F5B2DC /* UDMixtapeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDMixtapeRepository.swift; sourceTree = "<group>"; };
 		271F9EB42135D51800115C8C /* Noise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Noise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		271F9EB72135D51800115C8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		271F9EB92135D51800115C8C /* NoiseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoiseViewController.swift; sourceTree = "<group>"; };
@@ -66,15 +68,13 @@
 		27B106072135D8EA0070A109 /* DefaultTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTheme.swift; sourceTree = "<group>"; };
 		27B106092135DC5B0070A109 /* SoundTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundTableViewCell.swift; sourceTree = "<group>"; };
 		27B1060B2135DCA40070A109 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
-		27B1060D2135DCF60070A109 /* SoundProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundProvider.swift; sourceTree = "<group>"; };
-		27B1060F2135DD200070A109 /* StaticSoundProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticSoundProvider.swift; sourceTree = "<group>"; };
 		27B106112135E76D0070A109 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		27BD8D5A213C0443003DF079 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		27BD8D5C213C05F2003DF079 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		27BD8D5E213C1059003DF079 /* audio_cafe_60s.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = audio_cafe_60s.mp3; sourceTree = "<group>"; };
 		27BD8D60213C153B003DF079 /* audio_rain_60s.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = audio_rain_60s.mp3; sourceTree = "<group>"; };
 		27BD8D62213C17D4003DF079 /* AudioManagerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManagerState.swift; sourceTree = "<group>"; };
-		27BD8D64213C1ADA003DF079 /* MixTape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixTape.swift; sourceTree = "<group>"; };
+		27BD8D64213C1ADA003DF079 /* Mixtape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mixtape.swift; sourceTree = "<group>"; };
 		27BD8D69213C2674003DF079 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		27BD8D6C213C2851003DF079 /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
 		27BD8D6E213C2962003DF079 /* Subscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscriber.swift; sourceTree = "<group>"; };
@@ -82,6 +82,8 @@
 		27BD8D75213C2F81003DF079 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		27BD8D77213C32EB003DF079 /* Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serializable.swift; sourceTree = "<group>"; };
 		27BD8D79213C417C003DF079 /* UDSoundRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDSoundRepository.swift; sourceTree = "<group>"; };
+		27BD8D7B213C476A003DF079 /* MixtapeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixtapeRepository.swift; sourceTree = "<group>"; };
+		27BD8D7D213C481C003DF079 /* SoundRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundRepository.swift; sourceTree = "<group>"; };
 		3C1E638CE87361824E6D3060 /* Pods_Noise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Noise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CE8DD348B3534DA3F8A12B4 /* Pods_NoiseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoiseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D1D76CE48FCFA85FC4EAC04 /* Pods-Noise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Noise.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Noise/Pods-Noise.debug.xcconfig"; sourceTree = "<group>"; };
@@ -183,7 +185,7 @@
 				27BD8D6B213C2725003DF079 /* Observer */,
 				27B106012135D8570070A109 /* InterfaceTheme.swift */,
 				27B1060B2135DCA40070A109 /* Sound.swift */,
-				27BD8D64213C1ADA003DF079 /* MixTape.swift */,
+				27BD8D64213C1ADA003DF079 /* Mixtape.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -204,9 +206,10 @@
 			children = (
 				27BD8D57213BF4E6003DF079 /* Sounds */,
 				27B106072135D8EA0070A109 /* DefaultTheme.swift */,
-				27B1060D2135DCF60070A109 /* SoundProvider.swift */,
-				27B1060F2135DD200070A109 /* StaticSoundProvider.swift */,
+				27BD8D7B213C476A003DF079 /* MixtapeRepository.swift */,
+				27BD8D7D213C481C003DF079 /* SoundRepository.swift */,
 				27BD8D79213C417C003DF079 /* UDSoundRepository.swift */,
+				271D158A213DD1F800F5B2DC /* UDMixtapeRepository.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -440,19 +443,20 @@
 				27B106122135E76D0070A109 /* SettingsViewController.swift in Sources */,
 				27B105FF2135D8150070A109 /* RoundedImageView.swift in Sources */,
 				27BD8D72213C2F15003DF079 /* UserDefaultRepository.swift in Sources */,
+				27BD8D7E213C481C003DF079 /* SoundRepository.swift in Sources */,
 				27BD8D7A213C417C003DF079 /* UDSoundRepository.swift in Sources */,
 				27BD8D63213C17D4003DF079 /* AudioManagerState.swift in Sources */,
-				27B1060E2135DCF60070A109 /* SoundProvider.swift in Sources */,
-				27BD8D65213C1ADA003DF079 /* MixTape.swift in Sources */,
+				27BD8D65213C1ADA003DF079 /* Mixtape.swift in Sources */,
+				271D158B213DD1F800F5B2DC /* UDMixtapeRepository.swift in Sources */,
 				27B106022135D8570070A109 /* InterfaceTheme.swift in Sources */,
 				27BD8D5D213C05F2003DF079 /* AudioManager.swift in Sources */,
 				27BD8D6F213C2962003DF079 /* Subscriber.swift in Sources */,
 				27B106082135D8EA0070A109 /* DefaultTheme.swift in Sources */,
-				27B106102135DD200070A109 /* StaticSoundProvider.swift in Sources */,
 				271F9EBA2135D51800115C8C /* NoiseViewController.swift in Sources */,
 				271F9EB82135D51800115C8C /* AppDelegate.swift in Sources */,
 				27BD8D76213C2F81003DF079 /* Identifiable.swift in Sources */,
 				27B1060C2135DCA40070A109 /* Sound.swift in Sources */,
+				27BD8D7C213C476A003DF079 /* MixtapeRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

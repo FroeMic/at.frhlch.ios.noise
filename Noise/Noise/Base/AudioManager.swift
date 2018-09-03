@@ -20,7 +20,8 @@ class AudioManager {
         return AVAudioSession.sharedInstance()
     }
     private var players: [String: AVAudioPlayer] = [:]
-    private var mixTape: MixTape?
+    private var sounds: [Sound] = []
+    private var title: String = ""
     
     
     private init() {
@@ -56,8 +57,7 @@ class AudioManager {
     }
     
     private func setupCommandCenter() {
-        let mixTapeTitle = mixTape?.title ?? "Noise Ambient Sounds"
-        MPNowPlayingInfoCenter.default().nowPlayingInfo = [MPMediaItemPropertyTitle: mixTapeTitle]
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = [MPMediaItemPropertyTitle: title]
         
         let commandCenter = MPRemoteCommandCenter.shared()
         commandCenter.playCommand.isEnabled = true
@@ -74,14 +74,13 @@ class AudioManager {
     
     
     // MARK: Exposed functions
-    func activate(mixTape: MixTape) {
-        self.mixTape = mixTape
+    func activate(sounds: [Sound], title: String) {
 
         if state == .playing {
             stop()
         }
         
-        for sound in mixTape.sounds {
+        for sound in sounds {
             if let player = setupPlayerFor(sound: sound) {
                 players[sound.id] = player
             }

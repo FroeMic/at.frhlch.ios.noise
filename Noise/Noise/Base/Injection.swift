@@ -12,6 +12,7 @@ class Injection {
     
     static let theme: InterfaceTheme = DefaultTheme()
     
+    static let soundRepository: SoundRepository = UDSoundRepository()
+    static let mixtapeRepository: MixtapeRepository = UDMixtapeRepository()
     
-    static let soundRepository: SoundProvider = StaticSoundProvider()
 }

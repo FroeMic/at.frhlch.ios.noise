@@ -15,13 +15,13 @@ class NoiseViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
     var sounds: [Sound] {
-        return Injection.soundRepository.sounds
+        return Injection.soundRepository.getAll().map { $0.1 }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        AudioManager.shared.activate(mixTape: Injection.soundRepository.defaultMixTap)
+        AudioManager.shared.activate(sounds: sounds, title: "Noise Ambient Sounds")
 
         tableView.delegate = self
         tableView.dataSource = self

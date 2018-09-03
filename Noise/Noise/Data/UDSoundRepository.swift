@@ -8,8 +8,8 @@
 
 import Foundation
 
-class UDSoundRepository: UserDefaultsRepository<Sound> {
-    
+class UDSoundRepository: UserDefaultsRepository<Sound>, SoundRepository {
+      
     private var defaultSounds: [Sound] = [
         Sound(id: "1",
               title: "Heavy Rain",

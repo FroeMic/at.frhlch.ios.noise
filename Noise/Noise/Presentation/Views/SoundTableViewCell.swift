@@ -52,11 +52,12 @@ class SoundTableViewCell: UITableViewCell {
         albumImageView?.image = sound.image
         soundTitleLabel?.text = sound.title
         soundSubtitleLabel?.text = sound.subtitle
+        slider?.value = sound.volume
         
     }
     
     @objc func sliderValueDidChange() {
-        print(slider?.value)
+
     }
     
 }
