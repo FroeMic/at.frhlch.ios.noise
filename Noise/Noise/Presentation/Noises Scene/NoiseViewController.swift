@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import JustPeek
 
 class NoiseViewController: UIViewController {
     
     static let soundReuseIdentifier = "SoundTableViewCell"
 
     @IBOutlet var tableView: UITableView!
+    
+    var peekController: PeekController?
     
     var sounds: [Sound] {
         return Injection.soundRepository.getAll().map { $0.1 }
@@ -25,6 +28,9 @@ class NoiseViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        peekController = PeekController()
+        peekController?.register(viewController: self, forPeekingWithDelegate: self, sourceView: tableView)
     }
     
     func playAudio() {
@@ -63,7 +69,7 @@ extension NoiseViewController: UITableViewDataSource {
     }
     
 }
-
+// MARK: PeekingDelegate
 extension NoiseViewController: SoundDelegate {
     
     func soundDidChange(_ sound: Sound, oldSound: Sound) {
@@ -73,4 +79,30 @@ extension NoiseViewController: SoundDelegate {
         updateSound(sound: sound)
     }
     
+}
+
+// MARK: PeekingDelegate
+extension NoiseViewController: PeekingDelegate {
+    
+    func peekContext(_ context: PeekContext, viewControllerForPeekingAt location: CGPoint) -> UIViewController? {
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "NoisePreviewViewController")
+        if let viewController = viewController, let indexPath = tableView.indexPathForRow(at: location) {
+            
+            if let noisePreviewViewController = viewController as? NoisePreviewViewController {
+                noisePreviewViewController.sound = sounds[indexPath.row]
+            }
+            
+            if let cell = tableView.cellForRow(at: indexPath) {
+                context.sourceRect = cell.frame
+            }
+            Injection.feedback.feedbackForPeek()
+            return viewController
+        }
+        return nil
+    }
+    
+    func peekContext(_ context: PeekContext, commit viewController: UIViewController) {
+        Injection.feedback.feedbackForPeek()
+//        show(viewController, sender: self)
+    }
 }

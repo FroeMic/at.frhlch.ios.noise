@@ -10,10 +10,15 @@ import UIKit
 
 class RoundedImageView: UIImageView {
     
-    func applyTheme() {
-        let theme = Injection.theme
-        
-        layer.cornerRadius = theme.cornerRadius
+    @IBInspectable
+    var cornerRadius: CGFloat = Injection.theme.cornerRadius {
+        didSet {
+            layoutSubviews()
+        }
+    }
+    
+    func applyTheme() {        
+        layer.cornerRadius = cornerRadius
         layer.masksToBounds = true
     }
     

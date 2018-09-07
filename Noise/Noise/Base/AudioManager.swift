@@ -13,6 +13,8 @@ import MediaPlayer
 class AudioManager {
     
     static let shared = AudioManager()
+    
+    private var previewPlayer: AudioManager?
     private(set) var state: AudioManagerState = .stopped
 
     
@@ -22,7 +24,6 @@ class AudioManager {
     private var players: [String: AVAudioPlayer] = [:]
     private var sounds: [Sound] = []
     private var title: String = ""
-    
     
     private init() {
         setupAudioSession()
@@ -57,7 +58,7 @@ class AudioManager {
     }
     
     private func setupCommandCenter() {
-        MPNowPlayingInfoCenter.default().nowPlayingInfo = [MPMediaItemPropertyTitle: title]
+        setTitle(title: title)
         
         let commandCenter = MPRemoteCommandCenter.shared()
         commandCenter.playCommand.isEnabled = true
@@ -70,6 +71,10 @@ class AudioManager {
             self?.pause()
             return .success
         }
+    }
+    
+    private func setTitle(title: String) {
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = [MPMediaItemPropertyTitle: title]
     }
     
     
@@ -102,6 +107,7 @@ class AudioManager {
     }
     
     public func play() {
+        setTitle(title: title)
         players.values.forEach { $0.play() }
         state = .playing
     }
@@ -128,6 +134,27 @@ class AudioManager {
         }
         sounds[index] = sound
         player.volume = sound.volume
+    }
+    
+    public func preview(sounds: [Sound], title: String = "Preview") {
+        pause()
+        if let previewPlayer = previewPlayer {
+            previewPlayer.stop()
+        }
+        previewPlayer = AudioManager()
+        previewPlayer?.activate(sounds: sounds, title: title)
+        previewPlayer?.play()
+    }
+    
+    public func stopPreview() {
+        if let previewPlayer = previewPlayer {
+            previewPlayer.stop()
+        }
+        previewPlayer = nil
+        
+        if state == .paused {
+            play()
+        }
     }
     
 }

@@ -12,13 +12,15 @@ class UDSoundRepository: UserDefaultsRepository<Sound>, SoundRepository {
       
     private var defaultSounds: [Sound] = [
         Sound(id: "1",
-              title: "Heavy Rain",
-              subtitle: "Heavy rainfall in a land far away.",
+              title: "Autumn Rain",
+              subtitle: "Thick drops of rain dumming to the ground",
+              description: "Calm your mood with the sound of autumn rainfall. Hundreds of thick and heavy drops drum to the ground creating a soothing sound atmosphere.",
               imageName: "sound_heavy_rain",
               soundFile: "audio_rain_60s"),
         Sound(id: "2",
-              title: "Coffee Shop",
-              subtitle: "Busy coffee shop chatter.",
+              title: "Berlin Coffee  Shop",
+              subtitle: "Find yourself in a Berlin coffee shop buzzing with life",
+              description: "Dive into the scenery of a Berlin coffee shop buzzing with energy. The pleasant smell of freshly brewed coffee hangs in the air while the busy chatter of all people around you blends in with the venue. Time to get to work.",
               imageName: "sound_coffee_shop",
               soundFile: "audio_cafe_60s")
     ]

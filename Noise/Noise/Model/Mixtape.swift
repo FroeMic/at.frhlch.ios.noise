@@ -7,19 +7,29 @@
 //
 
 import Foundation
+import AFDateHelper
 
 struct Mixtape {
     
     let id: String
     let title: String
     let sounds: [Sound]
+    let creationDate: Date
+    let lastChangedDate: Date
     
-    init(id: String, title: String, sounds: [Sound]) {
+    
+    init(id: String,
+         title: String,
+         sounds: [Sound],
+         creationDate: Date = Date(),
+         lastChangedDate: Date = Date()) {
+        
         self.id = id
         self.title = title
         self.sounds = sounds
+        self.creationDate = creationDate
+        self.lastChangedDate = lastChangedDate
     }
-    
 }
 
 extension Mixtape: Identifiable {
@@ -40,6 +50,14 @@ extension Mixtape: Serializable {
                 return nil
         }
         guard let soundVolumeStrings = dict["soundVolumes"]?.components(separatedBy: "|") else {
+                return nil
+        }
+        guard let dateCreatedString = dict["time"],
+            let creationDate = Date(fromString: dateCreatedString, format: .isoDateTimeMilliSec) else {
+                return nil
+        }
+        guard let dateChangedString = dict["time"],
+            let lastChangedDate = Date(fromString: dateChangedString, format: .isoDateTimeMilliSec) else {
                 return nil
         }
         
@@ -63,7 +81,7 @@ extension Mixtape: Serializable {
             sounds.append(originalSound.with(volume: volumes[index]))
         }
         
-        self.init(id: id, title: title, sounds: sounds)
+        self.init(id: id, title: title, sounds: sounds, creationDate: creationDate, lastChangedDate: lastChangedDate)
     }
     
     func toDictionary() -> Dictionary<String, String> {
@@ -71,6 +89,8 @@ extension Mixtape: Serializable {
         
         dict["id"] = id
         dict["title"] = title
+        dict["creationDate"] = creationDate.toString(format: .isoDateTimeMilliSec)
+        dict["lastChangedDate"] = creationDate.toString(format: .isoDateTimeMilliSec)
         dict["soundIDs"] = sounds.map { $0.id }.joined(separator: "|")
         dict["soundVolumes"] = sounds.map { String(format:"%f", $0.volume) }.joined(separator: "|")
         

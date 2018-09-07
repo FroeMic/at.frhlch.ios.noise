@@ -1,3 +1,36 @@
-PODFILE CHECKSUM: c14e326c890ece282d6b5af28e3843897393671c
+PODS:
+  - AFDateHelper (4.2.7)
+  - JustPeek (1.0.0)
+  - lottie-ios (2.5.0)
+
+DEPENDENCIES:
+  - AFDateHelper (from `https://github.com/FroeMic/DateHelper.git`)
+  - JustPeek (from `https://github.com/FroeMic/JustPeek.git`)
+  - lottie-ios
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - lottie-ios
+
+EXTERNAL SOURCES:
+  AFDateHelper:
+    :git: https://github.com/FroeMic/DateHelper.git
+  JustPeek:
+    :git: https://github.com/FroeMic/JustPeek.git
+
+CHECKOUT OPTIONS:
+  AFDateHelper:
+    :commit: 8d70e584757e78e687917044e06d353dddc907a1
+    :git: https://github.com/FroeMic/DateHelper.git
+  JustPeek:
+    :commit: de96e8572661de199fdd1ec248e0a31bf106d4fb
+    :git: https://github.com/FroeMic/JustPeek.git
+
+SPEC CHECKSUMS:
+  AFDateHelper: 9dcce64b7200d8cc559ac4e89db99722c00c89de
+  JustPeek: e4156168852a86b7ab00403e8e785ef225c88a3c
+  lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
+
+PODFILE CHECKSUM: faa49e8eab26809a2661c9857c3d192a6f75f4b2
 
 COCOAPODS: 1.5.3

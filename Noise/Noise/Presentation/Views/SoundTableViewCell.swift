@@ -35,6 +35,8 @@ class SoundTableViewCell: UITableViewCell {
         layer.cornerRadius = theme.cornerRadius
         layer.masksToBounds = true
         
+        soundTitleLabel.textColor = theme.textColor
+        soundSubtitleLabel.textColor = theme.descriptionTextColor
      }
     
     override func layoutSubviews() {

@@ -13,9 +13,11 @@ struct Sound {
     let id: String
     let title: String
     let subtitle: String
+    let description: String
     let imageName: String
     let soundFile: String
     let volume: Float
+   
     
     var soundUrl: URL? {
         guard let path = Bundle.main.path(forResource: soundFile, ofType:"mp3") else {
@@ -28,10 +30,11 @@ struct Sound {
         return UIImage(named: imageName) ?? UIImage()
     }
     
-    init(id: String, title: String, subtitle: String,  imageName: String, soundFile: String, volume: Float = 0.5) {
+    init(id: String, title: String, subtitle: String, description: String, imageName: String, soundFile: String, volume: Float = 0.5) {
         self.id = id
         self.title = title
         self.subtitle = subtitle
+        self.description = description
         self.imageName = imageName
         self.soundFile = soundFile
         self.volume = volume
@@ -41,6 +44,7 @@ struct Sound {
         return Sound(id: id,
              title: self.title,
              subtitle: self.subtitle,
+             description: self.description,
              imageName: self.imageName,
              soundFile: self.soundFile,
              volume: volume)
@@ -72,6 +76,9 @@ extension Sound: Serializable {
         guard let subtitle = dict["subtitle"] else {
             return nil
         }
+        guard let description = dict["description"] else {
+            return nil
+        }
         guard let imageName = dict["imageName"] else {
             return nil
         }
@@ -85,6 +92,7 @@ extension Sound: Serializable {
         self.init(id: id,
               title: title,
               subtitle: subtitle,
+              description: description,
               imageName: imageName,
               soundFile: soundFile,
               volume: volume)
@@ -96,6 +104,7 @@ extension Sound: Serializable {
         dict["id"] = id
         dict["title"] = title
         dict["subtitle"] = subtitle
+        dict["description"] = description
         dict["imageName"] = imageName
         dict["soundFile"] = soundFile
         dict["volume"] =  String(format: "%f", volume)

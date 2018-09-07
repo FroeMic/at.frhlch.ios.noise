@@ -12,6 +12,8 @@ protocol InterfaceTheme {
     
     var tintColor: UIColor { get }
     var cornerRadius: CGFloat { get }
+    var textColor: UIColor { get }
+    var descriptionTextColor: UIColor { get }
     
     
 }

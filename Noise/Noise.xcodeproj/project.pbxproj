@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		271D158B213DD1F800F5B2DC /* UDMixtapeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271D158A213DD1F800F5B2DC /* UDMixtapeRepository.swift */; };
 		271D158D213DD45A00F5B2DC /* SoundDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271D158C213DD45A00F5B2DC /* SoundDelegate.swift */; };
+		271D158F21406FBB00F5B2DC /* MixesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271D158E21406FBB00F5B2DC /* MixesViewController.swift */; };
 		271F9EB82135D51800115C8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F9EB72135D51800115C8C /* AppDelegate.swift */; };
 		271F9EBA2135D51800115C8C /* NoiseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F9EB92135D51800115C8C /* NoiseViewController.swift */; };
 		271F9EBD2135D51800115C8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271F9EBB2135D51800115C8C /* Main.storyboard */; };
@@ -37,6 +38,11 @@
 		27BD8D7A213C417C003DF079 /* UDSoundRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD8D79213C417C003DF079 /* UDSoundRepository.swift */; };
 		27BD8D7C213C476A003DF079 /* MixtapeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD8D7B213C476A003DF079 /* MixtapeRepository.swift */; };
 		27BD8D7E213C481C003DF079 /* SoundRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD8D7D213C481C003DF079 /* SoundRepository.swift */; };
+		27F52EF8214264350030102C /* NoisePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F52EF7214264350030102C /* NoisePreviewViewController.swift */; };
+		27F52EFA214266090030102C /* HapticFeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F52EF9214266090030102C /* HapticFeedbackManager.swift */; };
+		27F52EFC21427E740030102C /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F52EFB21427E740030102C /* PrimaryButton.swift */; };
+		27F52F0121428F9D0030102C /* PlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F52F0021428F9D0030102C /* PlayingView.swift */; };
+		27F52F03214291F10030102C /* playing.json in Resources */ = {isa = PBXBuildFile; fileRef = 27F52F02214291F10030102C /* playing.json */; };
 		583AE971DA043231F16388F5 /* Pods_Noise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C1E638CE87361824E6D3060 /* Pods_Noise.framework */; };
 		B7002B48FD111E15949DEB80 /* Pods_NoiseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE8DD348B3534DA3F8A12B4 /* Pods_NoiseTests.framework */; };
 /* End PBXBuildFile section */
@@ -54,6 +60,7 @@
 /* Begin PBXFileReference section */
 		271D158A213DD1F800F5B2DC /* UDMixtapeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDMixtapeRepository.swift; sourceTree = "<group>"; };
 		271D158C213DD45A00F5B2DC /* SoundDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundDelegate.swift; sourceTree = "<group>"; };
+		271D158E21406FBB00F5B2DC /* MixesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixesViewController.swift; sourceTree = "<group>"; };
 		271F9EB42135D51800115C8C /* Noise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Noise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		271F9EB72135D51800115C8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		271F9EB92135D51800115C8C /* NoiseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoiseViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +93,11 @@
 		27BD8D79213C417C003DF079 /* UDSoundRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDSoundRepository.swift; sourceTree = "<group>"; };
 		27BD8D7B213C476A003DF079 /* MixtapeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixtapeRepository.swift; sourceTree = "<group>"; };
 		27BD8D7D213C481C003DF079 /* SoundRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundRepository.swift; sourceTree = "<group>"; };
+		27F52EF7214264350030102C /* NoisePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoisePreviewViewController.swift; sourceTree = "<group>"; };
+		27F52EF9214266090030102C /* HapticFeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackManager.swift; sourceTree = "<group>"; };
+		27F52EFB21427E740030102C /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		27F52F0021428F9D0030102C /* PlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingView.swift; sourceTree = "<group>"; };
+		27F52F02214291F10030102C /* playing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = playing.json; sourceTree = "<group>"; };
 		3C1E638CE87361824E6D3060 /* Pods_Noise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Noise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CE8DD348B3534DA3F8A12B4 /* Pods_NoiseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoiseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D1D76CE48FCFA85FC4EAC04 /* Pods-Noise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Noise.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Noise/Pods-Noise.debug.xcconfig"; sourceTree = "<group>"; };
@@ -176,6 +188,8 @@
 			children = (
 				27B105FE2135D8150070A109 /* RoundedImageView.swift */,
 				27B106092135DC5B0070A109 /* SoundTableViewCell.swift */,
+				27F52EFB21427E740030102C /* PrimaryButton.swift */,
+				27F52F0021428F9D0030102C /* PlayingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -200,6 +214,7 @@
 				27B106042135D8BC0070A109 /* Injection.swift */,
 				27BD8D5C213C05F2003DF079 /* AudioManager.swift */,
 				27BD8D62213C17D4003DF079 /* AudioManagerState.swift */,
+				27F52EF9214266090030102C /* HapticFeedbackManager.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -207,6 +222,7 @@
 		27B106062135D8C40070A109 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				27F52EFF21428E470030102C /* Animations */,
 				27BD8D57213BF4E6003DF079 /* Sounds */,
 				27B106072135D8EA0070A109 /* DefaultTheme.swift */,
 				27BD8D7B213C476A003DF079 /* MixtapeRepository.swift */,
@@ -229,6 +245,7 @@
 		27BD8D66213C23C4003DF079 /* Mixes Scene */ = {
 			isa = PBXGroup;
 			children = (
+				271D158E21406FBB00F5B2DC /* MixesViewController.swift */,
 			);
 			path = "Mixes Scene";
 			sourceTree = "<group>";
@@ -237,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				271F9EB92135D51800115C8C /* NoiseViewController.swift */,
+				27F52EF7214264350030102C /* NoisePreviewViewController.swift */,
 			);
 			path = "Noises Scene";
 			sourceTree = "<group>";
@@ -266,6 +284,14 @@
 				27BD8D77213C32EB003DF079 /* Serializable.swift */,
 			);
 			path = UserDefaultsRepository;
+			sourceTree = "<group>";
+		};
+		27F52EFF21428E470030102C /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				27F52F02214291F10030102C /* playing.json */,
+			);
+			path = Animations;
 			sourceTree = "<group>";
 		};
 		6B3BF3CE7C409B551A06BB05 /* Pods */ = {
@@ -300,6 +326,7 @@
 				271F9EB02135D51800115C8C /* Sources */,
 				271F9EB12135D51800115C8C /* Frameworks */,
 				271F9EB22135D51800115C8C /* Resources */,
+				4B46C26FBAD86A32FA66F760 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -377,6 +404,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27F52F03214291F10030102C /* playing.json in Resources */,
 				271F9EC22135D51A00115C8C /* LaunchScreen.storyboard in Resources */,
 				271F9EBF2135D51A00115C8C /* Assets.xcassets in Resources */,
 				27BD8D5F213C1059003DF079 /* audio_cafe_60s.mp3 in Resources */,
@@ -413,6 +441,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		4B46C26FBAD86A32FA66F760 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Noise/Pods-Noise-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFDateHelper/AFDateHelper.framework",
+				"${BUILT_PRODUCTS_DIR}/JustPeek/JustPeek.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFDateHelper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JustPeek.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Noise/Pods-Noise-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		641A35FAC70467F6C1D03AD7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -439,7 +489,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				27BD8D78213C32EB003DF079 /* Serializable.swift in Sources */,
+				271D158F21406FBB00F5B2DC /* MixesViewController.swift in Sources */,
 				27BD8D6D213C2851003DF079 /* Publisher.swift in Sources */,
+				27F52F0121428F9D0030102C /* PlayingView.swift in Sources */,
+				27F52EFA214266090030102C /* HapticFeedbackManager.swift in Sources */,
 				27B106052135D8BC0070A109 /* Injection.swift in Sources */,
 				27B1060A2135DC5B0070A109 /* SoundTableViewCell.swift in Sources */,
 				27BD8D6A213C2674003DF079 /* BaseTabBarController.swift in Sources */,
@@ -452,7 +505,9 @@
 				27BD8D65213C1ADA003DF079 /* Mixtape.swift in Sources */,
 				271D158B213DD1F800F5B2DC /* UDMixtapeRepository.swift in Sources */,
 				27B106022135D8570070A109 /* InterfaceTheme.swift in Sources */,
+				27F52EF8214264350030102C /* NoisePreviewViewController.swift in Sources */,
 				27BD8D5D213C05F2003DF079 /* AudioManager.swift in Sources */,
+				27F52EFC21427E740030102C /* PrimaryButton.swift in Sources */,
 				271D158D213DD45A00F5B2DC /* SoundDelegate.swift in Sources */,
 				27BD8D6F213C2962003DF079 /* Subscriber.swift in Sources */,
 				27B106082135D8EA0070A109 /* DefaultTheme.swift in Sources */,

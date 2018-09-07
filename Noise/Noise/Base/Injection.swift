@@ -11,8 +11,11 @@ import Foundation
 class Injection {
     
     static let theme: InterfaceTheme = DefaultTheme()
+    static let feedback: HapticFeedbackManager = HapticFeedbackManager()
+    
     
     static let soundRepository: SoundRepository = UDSoundRepository()
     static let mixtapeRepository: MixtapeRepository = UDMixtapeRepository()
+    
     
 }
