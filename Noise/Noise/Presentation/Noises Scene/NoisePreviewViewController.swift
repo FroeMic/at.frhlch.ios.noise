@@ -12,6 +12,8 @@ class NoisePreviewViewController: UIViewController {
     
     var sound: Sound?
     
+    @IBOutlet var containerView: UIView!
+    @IBOutlet var imageContainer: UIView!
     @IBOutlet var imageView: RoundedImageView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
@@ -26,7 +28,16 @@ class NoisePreviewViewController: UIViewController {
         descriptionLabel.textColor = theme.descriptionTextColor
         playingView.tintColor = theme.tintColor
         playingView.playAnimation()
-
+        
+        containerView.layer.shadowColor = UIColor.black.cgColor
+        containerView.layer.shadowOpacity = 0.1
+        containerView.layer.shadowRadius = 3.0
+        containerView.layer.shadowOffset = CGSize(width: 1.0, height: 3.0)
+        
+        let cornerRadius = min(containerView.frame.height, containerView.frame.width) * 0.05
+        containerView.layer.cornerRadius = cornerRadius
+        imageContainer.layer.cornerRadius = cornerRadius
+        imageContainer.clipsToBounds = true
     }
     
     override func viewDidAppear(_ animated: Bool) {

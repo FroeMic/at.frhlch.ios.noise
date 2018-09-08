@@ -43,6 +43,11 @@
 		27F52EFC21427E740030102C /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F52EFB21427E740030102C /* PrimaryButton.swift */; };
 		27F52F0121428F9D0030102C /* PlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F52F0021428F9D0030102C /* PlayingView.swift */; };
 		27F52F03214291F10030102C /* playing.json in Resources */ = {isa = PBXBuildFile; fileRef = 27F52F02214291F10030102C /* playing.json */; };
+		27F52F062142CEFD0030102C /* AudioManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F52F052142CEFD0030102C /* AudioManagerDelegate.swift */; };
+		27F52F082143C7BC0030102C /* SoundToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F52F072143C7BC0030102C /* SoundToolbar.swift */; };
+		27F52F0A2143C9250030102C /* SoundToolbarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F52F092143C9250030102C /* SoundToolbarDelegate.swift */; };
+		27F52F0E2144495F0030102C /* cassette.json in Resources */ = {isa = PBXBuildFile; fileRef = 27F52F0D2144495F0030102C /* cassette.json */; };
+		27F52F102144497B0030102C /* CassetteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F52F0F2144497A0030102C /* CassetteView.swift */; };
 		583AE971DA043231F16388F5 /* Pods_Noise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C1E638CE87361824E6D3060 /* Pods_Noise.framework */; };
 		B7002B48FD111E15949DEB80 /* Pods_NoiseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE8DD348B3534DA3F8A12B4 /* Pods_NoiseTests.framework */; };
 /* End PBXBuildFile section */
@@ -98,6 +103,11 @@
 		27F52EFB21427E740030102C /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		27F52F0021428F9D0030102C /* PlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingView.swift; sourceTree = "<group>"; };
 		27F52F02214291F10030102C /* playing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = playing.json; sourceTree = "<group>"; };
+		27F52F052142CEFD0030102C /* AudioManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManagerDelegate.swift; sourceTree = "<group>"; };
+		27F52F072143C7BC0030102C /* SoundToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundToolbar.swift; sourceTree = "<group>"; };
+		27F52F092143C9250030102C /* SoundToolbarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundToolbarDelegate.swift; sourceTree = "<group>"; };
+		27F52F0D2144495F0030102C /* cassette.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cassette.json; sourceTree = "<group>"; };
+		27F52F0F2144497A0030102C /* CassetteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CassetteView.swift; sourceTree = "<group>"; };
 		3C1E638CE87361824E6D3060 /* Pods_Noise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Noise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CE8DD348B3534DA3F8A12B4 /* Pods_NoiseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoiseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D1D76CE48FCFA85FC4EAC04 /* Pods-Noise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Noise.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Noise/Pods-Noise.debug.xcconfig"; sourceTree = "<group>"; };
@@ -190,6 +200,9 @@
 				27B106092135DC5B0070A109 /* SoundTableViewCell.swift */,
 				27F52EFB21427E740030102C /* PrimaryButton.swift */,
 				27F52F0021428F9D0030102C /* PlayingView.swift */,
+				27F52F0F2144497A0030102C /* CassetteView.swift */,
+				27F52F092143C9250030102C /* SoundToolbarDelegate.swift */,
+				27F52F072143C7BC0030102C /* SoundToolbar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -200,8 +213,8 @@
 				27BD8D70213C2EF4003DF079 /* UserDefaultsRepository */,
 				27BD8D6B213C2725003DF079 /* Observer */,
 				27B106012135D8570070A109 /* InterfaceTheme.swift */,
-				27B1060B2135DCA40070A109 /* Sound.swift */,
 				271D158C213DD45A00F5B2DC /* SoundDelegate.swift */,
+				27B1060B2135DCA40070A109 /* Sound.swift */,
 				27BD8D64213C1ADA003DF079 /* Mixtape.swift */,
 			);
 			path = Model;
@@ -210,10 +223,9 @@
 		27B106032135D8B10070A109 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				27F52F042142CEE90030102C /* AudioManager */,
 				271F9EB72135D51800115C8C /* AppDelegate.swift */,
 				27B106042135D8BC0070A109 /* Injection.swift */,
-				27BD8D5C213C05F2003DF079 /* AudioManager.swift */,
-				27BD8D62213C17D4003DF079 /* AudioManagerState.swift */,
 				27F52EF9214266090030102C /* HapticFeedbackManager.swift */,
 			);
 			path = Base;
@@ -289,9 +301,20 @@
 		27F52EFF21428E470030102C /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				27F52F0D2144495F0030102C /* cassette.json */,
 				27F52F02214291F10030102C /* playing.json */,
 			);
 			path = Animations;
+			sourceTree = "<group>";
+		};
+		27F52F042142CEE90030102C /* AudioManager */ = {
+			isa = PBXGroup;
+			children = (
+				27BD8D5C213C05F2003DF079 /* AudioManager.swift */,
+				27BD8D62213C17D4003DF079 /* AudioManagerState.swift */,
+				27F52F052142CEFD0030102C /* AudioManagerDelegate.swift */,
+			);
+			path = AudioManager;
 			sourceTree = "<group>";
 		};
 		6B3BF3CE7C409B551A06BB05 /* Pods */ = {
@@ -410,6 +433,7 @@
 				27BD8D5F213C1059003DF079 /* audio_cafe_60s.mp3 in Resources */,
 				27BD8D61213C153B003DF079 /* audio_rain_60s.mp3 in Resources */,
 				271F9EBD2135D51800115C8C /* Main.storyboard in Resources */,
+				27F52F0E2144495F0030102C /* cassette.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +518,7 @@
 				27F52F0121428F9D0030102C /* PlayingView.swift in Sources */,
 				27F52EFA214266090030102C /* HapticFeedbackManager.swift in Sources */,
 				27B106052135D8BC0070A109 /* Injection.swift in Sources */,
+				27F52F062142CEFD0030102C /* AudioManagerDelegate.swift in Sources */,
 				27B1060A2135DC5B0070A109 /* SoundTableViewCell.swift in Sources */,
 				27BD8D6A213C2674003DF079 /* BaseTabBarController.swift in Sources */,
 				27B106122135E76D0070A109 /* SettingsViewController.swift in Sources */,
@@ -504,6 +529,7 @@
 				27BD8D63213C17D4003DF079 /* AudioManagerState.swift in Sources */,
 				27BD8D65213C1ADA003DF079 /* Mixtape.swift in Sources */,
 				271D158B213DD1F800F5B2DC /* UDMixtapeRepository.swift in Sources */,
+				27F52F082143C7BC0030102C /* SoundToolbar.swift in Sources */,
 				27B106022135D8570070A109 /* InterfaceTheme.swift in Sources */,
 				27F52EF8214264350030102C /* NoisePreviewViewController.swift in Sources */,
 				27BD8D5D213C05F2003DF079 /* AudioManager.swift in Sources */,
@@ -513,6 +539,8 @@
 				27B106082135D8EA0070A109 /* DefaultTheme.swift in Sources */,
 				271F9EBA2135D51800115C8C /* NoiseViewController.swift in Sources */,
 				271F9EB82135D51800115C8C /* AppDelegate.swift in Sources */,
+				27F52F102144497B0030102C /* CassetteView.swift in Sources */,
+				27F52F0A2143C9250030102C /* SoundToolbarDelegate.swift in Sources */,
 				27BD8D76213C2F81003DF079 /* Identifiable.swift in Sources */,
 				27B1060C2135DCA40070A109 /* Sound.swift in Sources */,
 				27BD8D7C213C476A003DF079 /* MixtapeRepository.swift in Sources */,

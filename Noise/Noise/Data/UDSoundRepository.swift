@@ -20,7 +20,7 @@ class UDSoundRepository: UserDefaultsRepository<Sound>, SoundRepository {
         Sound(id: "2",
               title: "Berlin Coffee  Shop",
               subtitle: "Find yourself in a Berlin coffee shop buzzing with life",
-              description: "Dive into the scenery of a Berlin coffee shop buzzing with energy. The pleasant smell of freshly brewed coffee hangs in the air while the busy chatter of all people around you blends in with the venue. Time to get to work.",
+              description: "Dive into the scenery of a Berlin coffee shop buzzing with energy. The pleasant smell of freshly brewed coffee hangs in the air while the busy chatter of people all around you blends in with the venue. Time to get to work.",
               imageName: "sound_coffee_shop",
               soundFile: "audio_cafe_60s")
     ]

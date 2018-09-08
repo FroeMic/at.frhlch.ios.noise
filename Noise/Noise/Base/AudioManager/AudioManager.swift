@@ -14,16 +14,21 @@ class AudioManager {
     
     static let shared = AudioManager()
     
+    var delegate: AudioManagerDelegate?
+    
     private var previewPlayer: AudioManager?
-    private(set) var state: AudioManagerState = .stopped
-
+    private(set) var state: AudioManagerState = .stopped {
+        didSet {
+            delegate?.audioManager(self, didChange: state)
+        }
+    }
     
     private var session: AVAudioSession {
         return AVAudioSession.sharedInstance()
     }
     private var players: [String: AVAudioPlayer] = [:]
     private var sounds: [Sound] = []
-    private var title: String = ""
+    private (set) var title: String = ""
     
     private init() {
         setupAudioSession()
@@ -81,6 +86,8 @@ class AudioManager {
     // MARK: Exposed functions
     func activate(sounds: [Sound], title: String) {
 
+        self.title = title
+        
         if state == .playing {
             stop()
         }

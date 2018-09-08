@@ -34,7 +34,7 @@ class NoiseViewController: UIViewController {
     }
     
     func playAudio() {
-        AudioManager.shared.activate(sounds: sounds, title: "Noise Ambient Sounds")
+        AudioManager.shared.activate(sounds: sounds, title: "Noise – Ambient Sounds")
     }
     
     func updateSound(sound: Sound) {
