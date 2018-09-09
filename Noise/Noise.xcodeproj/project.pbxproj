@@ -48,6 +48,7 @@
 		27F52F0A2143C9250030102C /* SoundToolbarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F52F092143C9250030102C /* SoundToolbarDelegate.swift */; };
 		27F52F0E2144495F0030102C /* cassette.json in Resources */ = {isa = PBXBuildFile; fileRef = 27F52F0D2144495F0030102C /* cassette.json */; };
 		27F52F102144497B0030102C /* CassetteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F52F0F2144497A0030102C /* CassetteView.swift */; };
+		27F52F1221457C110030102C /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F52F1121457C110030102C /* ButtonTableViewCell.swift */; };
 		583AE971DA043231F16388F5 /* Pods_Noise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C1E638CE87361824E6D3060 /* Pods_Noise.framework */; };
 		B7002B48FD111E15949DEB80 /* Pods_NoiseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE8DD348B3534DA3F8A12B4 /* Pods_NoiseTests.framework */; };
 /* End PBXBuildFile section */
@@ -108,6 +109,7 @@
 		27F52F092143C9250030102C /* SoundToolbarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundToolbarDelegate.swift; sourceTree = "<group>"; };
 		27F52F0D2144495F0030102C /* cassette.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cassette.json; sourceTree = "<group>"; };
 		27F52F0F2144497A0030102C /* CassetteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CassetteView.swift; sourceTree = "<group>"; };
+		27F52F1121457C110030102C /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
 		3C1E638CE87361824E6D3060 /* Pods_Noise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Noise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CE8DD348B3534DA3F8A12B4 /* Pods_NoiseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoiseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D1D76CE48FCFA85FC4EAC04 /* Pods-Noise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Noise.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Noise/Pods-Noise.debug.xcconfig"; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				27F52F0F2144497A0030102C /* CassetteView.swift */,
 				27F52F092143C9250030102C /* SoundToolbarDelegate.swift */,
 				27F52F072143C7BC0030102C /* SoundToolbar.swift */,
+				27F52F1121457C110030102C /* ButtonTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				27B106122135E76D0070A109 /* SettingsViewController.swift in Sources */,
 				27B105FF2135D8150070A109 /* RoundedImageView.swift in Sources */,
 				27BD8D72213C2F15003DF079 /* UserDefaultRepository.swift in Sources */,
+				27F52F1221457C110030102C /* ButtonTableViewCell.swift in Sources */,
 				27BD8D7E213C481C003DF079 /* SoundRepository.swift in Sources */,
 				27BD8D7A213C417C003DF079 /* UDSoundRepository.swift in Sources */,
 				27BD8D63213C17D4003DF079 /* AudioManagerState.swift in Sources */,
