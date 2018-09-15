@@ -16,6 +16,8 @@ class MixesViewController: UIViewController {
     static let buttonReuseIdentifier = "ButtonTableViewCell"
     static let placeholderReuseIdentifier = "PlaceholderTableViewCell"
     
+    static let newMixtapeSegueIdentifier = "presentCreateNewMixtapeController"
+    
     @IBOutlet var tableView: UITableView!
     
     var mixtapes: [Mixtape] {
@@ -30,6 +32,7 @@ class MixesViewController: UIViewController {
     }
     @objc func createNewMixtapeButtonPressed() {
         debugPrint("createNewMixtapeButtonPressed")
+        performSegue(withIdentifier: MixesViewController.newMixtapeSegueIdentifier, sender: self)
     }
 
 }

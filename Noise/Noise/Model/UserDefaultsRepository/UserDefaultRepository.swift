@@ -67,7 +67,7 @@ class UserDefaultsRepository<T: Serializable & Identifiable>  {
      */
     func getAll() -> [String: T] {
         let keys = defaults.dictionaryRepresentation().keys
-        
+                
         var unarchivedObjects: [String: T] = [:]
         for key in keys {
             guard let unarchivedObject = get(id: key) else {

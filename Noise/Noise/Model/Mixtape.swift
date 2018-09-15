@@ -46,17 +46,25 @@ extension Mixtape: Serializable {
         guard let title = dict["title"] else {
             return nil
         }
-        guard let soundIDStrings = dict["soundIDs"]?.components(separatedBy: "|") else {
-                return nil
+        guard var soundIDStrings = dict["soundIDs"]?.components(separatedBy: "|") else {
+            return nil
         }
-        guard let soundVolumeStrings = dict["soundVolumes"]?.components(separatedBy: "|") else {
-                return nil
+        if soundIDStrings.count == 1 && soundIDStrings[0] == "" {
+            soundIDStrings = []
         }
-        guard let dateCreatedString = dict["time"],
+        
+        guard var soundVolumeStrings = dict["soundVolumes"]?.components(separatedBy: "|") else {
+            return nil
+        }
+        if soundVolumeStrings.count == 1 && soundVolumeStrings[0] == "" {
+            soundVolumeStrings = []
+        }
+        
+        guard let dateCreatedString = dict["creationDate"],
             let creationDate = Date(fromString: dateCreatedString, format: .isoDateTimeMilliSec) else {
                 return nil
         }
-        guard let dateChangedString = dict["time"],
+        guard let dateChangedString = dict["lastChangedDate"],
             let lastChangedDate = Date(fromString: dateChangedString, format: .isoDateTimeMilliSec) else {
                 return nil
         }

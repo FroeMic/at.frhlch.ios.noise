@@ -10,6 +10,7 @@ import Foundation
 
 protocol MixtapeRepository {
     
+    func create(title: String) -> Mixtape? 
     func store(_ object: Mixtape)
     func get(id: String) -> Mixtape?
     func getAll() -> [String: Mixtape]

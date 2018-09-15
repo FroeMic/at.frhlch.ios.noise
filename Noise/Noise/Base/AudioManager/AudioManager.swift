@@ -16,6 +16,7 @@ class AudioManager {
     
     var delegate: AudioManagerDelegate?
     
+    private let playsInBackground: Bool
     private var previewPlayer: AudioManager?
     private(set) var state: AudioManagerState = .stopped {
         didSet {
@@ -30,7 +31,8 @@ class AudioManager {
     private var sounds: [Sound] = []
     private (set) var title: String = ""
     
-    private init() {
+    private init(playsInBackground: Bool = true) {
+        self.playsInBackground = playsInBackground
         setupAudioSession()
     }
     
@@ -63,6 +65,10 @@ class AudioManager {
     }
     
     private func setupCommandCenter() {
+        if !playsInBackground {
+            return
+        }
+        
         setTitle(title: title)
         
         let commandCenter = MPRemoteCommandCenter.shared()
@@ -79,7 +85,9 @@ class AudioManager {
     }
     
     private func setTitle(title: String) {
-        MPNowPlayingInfoCenter.default().nowPlayingInfo = [MPMediaItemPropertyTitle: title]
+        if playsInBackground {
+            MPNowPlayingInfoCenter.default().nowPlayingInfo = [MPMediaItemPropertyTitle: title]
+        }
     }
     
     
@@ -148,7 +156,7 @@ class AudioManager {
         if let previewPlayer = previewPlayer {
             previewPlayer.stop()
         }
-        previewPlayer = AudioManager()
+        previewPlayer = AudioManager(playsInBackground: true)
         previewPlayer?.activate(sounds: sounds, title: title)
         previewPlayer?.play()
     }
