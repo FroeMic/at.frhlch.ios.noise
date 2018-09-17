@@ -30,7 +30,6 @@ class UDMixtapeRepository: UserDefaultsRepository<Mixtape>, MixtapeRepository {
     
     func create(title: String) -> Mixtape? {
         
-        debugPrint(getAll())
         guard let id = getNextId() else {
             return nil
         }
@@ -42,4 +41,5 @@ class UDMixtapeRepository: UserDefaultsRepository<Mixtape>, MixtapeRepository {
         
         return mixtape
     }
+    
 }

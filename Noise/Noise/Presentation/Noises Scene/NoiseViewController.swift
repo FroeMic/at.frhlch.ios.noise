@@ -69,6 +69,7 @@ extension NoiseViewController: UITableViewDataSource {
     }
     
 }
+
 // MARK: PeekingDelegate
 extension NoiseViewController: SoundDelegate {
     

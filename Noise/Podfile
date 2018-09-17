@@ -7,6 +7,7 @@ target 'Noise' do
     pod 'AFDateHelper', :git => 'https://github.com/FroeMic/DateHelper.git'
     pod 'JustPeek', :git => 'https://github.com/FroeMic/JustPeek.git'
     pod 'lottie-ios'
+    pod 'YPImagePicker'
 
 
   # Pods for Noise

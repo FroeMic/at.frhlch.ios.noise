@@ -2,15 +2,24 @@ PODS:
   - AFDateHelper (4.2.7)
   - JustPeek (1.0.0)
   - lottie-ios (2.5.0)
+  - PryntTrimmerView (2.0.1)
+  - SteviaLayout (4.2.0)
+  - YPImagePicker (3.1.1):
+    - PryntTrimmerView (~> 2.0)
+    - SteviaLayout (~> 4.2.0)
 
 DEPENDENCIES:
   - AFDateHelper (from `https://github.com/FroeMic/DateHelper.git`)
   - JustPeek (from `https://github.com/FroeMic/JustPeek.git`)
   - lottie-ios
+  - YPImagePicker
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - lottie-ios
+    - PryntTrimmerView
+    - SteviaLayout
+    - YPImagePicker
 
 EXTERNAL SOURCES:
   AFDateHelper:
@@ -30,7 +39,10 @@ SPEC CHECKSUMS:
   AFDateHelper: 9dcce64b7200d8cc559ac4e89db99722c00c89de
   JustPeek: e4156168852a86b7ab00403e8e785ef225c88a3c
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
+  PryntTrimmerView: 4260ae497a2f3e1bbfc0b71247eb74ab92bf0490
+  SteviaLayout: 0d2112caea45707695e8c718262c8ea3dd37ef17
+  YPImagePicker: dd0a901a293f99e982f75554738574c735734a76
 
-PODFILE CHECKSUM: faa49e8eab26809a2661c9857c3d192a6f75f4b2
+PODFILE CHECKSUM: 6776946fb88a1a658542380561a806f04d0b0840
 
 COCOAPODS: 1.5.3

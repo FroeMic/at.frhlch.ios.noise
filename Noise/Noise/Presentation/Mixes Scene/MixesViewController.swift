@@ -6,22 +6,23 @@
 //  Copyright © 2018 Michael Fröhlich. All rights reserved.
 //
 
-import Foundation
-
 import UIKit
 
 class MixesViewController: UIViewController {
     
-    static let soundReuseIdentifier = "SoundTableViewCell"
-    static let buttonReuseIdentifier = "ButtonTableViewCell"
-    static let placeholderReuseIdentifier = "PlaceholderTableViewCell"
+    static let mixesReuseIdentifier = "MixtapeTableViewCell"
+    static let createMixtapeReuseIdentifier = "CreateMixtapeTableViewCell"
     
-    static let newMixtapeSegueIdentifier = "presentCreateNewMixtapeController"
+    static let editMixtapeSegueIdentifier = "showMixtapeDetail"
     
     @IBOutlet var tableView: UITableView!
     
     var mixtapes: [Mixtape] {
         return Injection.mixtapeRepository.getAll().map { $0.1 }
+    }
+    
+    private var mixtapeRepository: MixtapeRepository {
+        return Injection.mixtapeRepository
     }
     
     override func viewDidLoad() {
@@ -30,9 +31,20 @@ class MixesViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
-    @objc func createNewMixtapeButtonPressed() {
-        debugPrint("createNewMixtapeButtonPressed")
-        performSegue(withIdentifier: MixesViewController.newMixtapeSegueIdentifier, sender: self)
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Show the Navigation Bar
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+        tableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let editMixtapeVC = segue.destination as? EditMixtapeViewController {
+            editMixtapeVC.mixtape = sender as? Mixtape
+        }
     }
 
 }
@@ -42,17 +54,37 @@ extension MixesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return 100.0
+            return 120.0
         }
         if indexPath.section == 1 {
-            return tableView.frame.height - 90.0
-        }
-        if indexPath.section == 2 {
-            return 69.0
+             return 120.0
         }
         return 0
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            performSegue(withIdentifier: MixesViewController.editMixtapeSegueIdentifier, sender: nil)
+        }
+        if indexPath.section == 1 {
+            performSegue(withIdentifier: MixesViewController.editMixtapeSegueIdentifier, sender: mixtapes[indexPath.row])
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+            let mixtape = mixtapes[indexPath.row]
+            
+            // use async to avoid showing white background.
+            DispatchQueue.main.async {
+                self.tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+            
+            mixtapeRepository.remove(id: mixtape.id)
+            
+        }
+    }
     
 }
 
@@ -60,19 +92,16 @@ extension MixesViewController: UITableViewDelegate {
 extension MixesViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if section == 0 {
-            return mixtapes.count
+            return 1
         }
         if section == 1 {
-            return mixtapes.count == 0 ? 1 : 0
-        }
-        if section == 2 {
-            return 1
+            return mixtapes.count
         }
         
         return 0
@@ -81,27 +110,22 @@ extension MixesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: MixesViewController.soundReuseIdentifier, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: MixesViewController.createMixtapeReuseIdentifier, for: indexPath)
             
             return cell
         }
+        
         if indexPath.section == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: MixesViewController.placeholderReuseIdentifier, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: MixesViewController.mixesReuseIdentifier, for: indexPath)
             
-            return cell
-        }
-        if indexPath.section == 2 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: MixesViewController.buttonReuseIdentifier, for: indexPath)
-            
-            if let cell = cell as? ButtonTableViewCell {
-                cell.addTarget(title: "Create Mixtape", target: self, action: #selector(MixesViewController.createNewMixtapeButtonPressed), for: .touchUpInside)
+            if let cell = cell as? MixtapeTableViewCell {
+                cell.mixtape = mixtapes[indexPath.row]
             }
-                    
+            
             return cell
         }
         
         return UITableViewCell()
-        
     }
     
 }

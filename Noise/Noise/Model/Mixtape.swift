@@ -8,27 +8,58 @@
 
 import Foundation
 import AFDateHelper
+import UIKit
 
 struct Mixtape {
     
     let id: String
-    let title: String
-    let sounds: [Sound]
+    var title: String
+    var sounds: [Sound]
+    var description: String
     let creationDate: Date
-    let lastChangedDate: Date
+    var lastChangedDate: Date
+    
+    var creationDateString: String {
+        return creationDate.toString(format: .custom("dd MMM hh:mm"))
+    }
+    var lastChangedDateString: String {
+        return lastChangedDate.toString(format: .custom("dd MMM hh:mm"))
+    }
+    var image: UIImage?
+    private var imageData: String? {
+        guard let image = image else {
+            return nil
+        }
+        return Mixtape.encodeImage(image)
+    }
     
     
     init(id: String,
          title: String,
          sounds: [Sound],
+         description: String = "",
+         image: UIImage? = nil,
          creationDate: Date = Date(),
          lastChangedDate: Date = Date()) {
         
         self.id = id
         self.title = title
         self.sounds = sounds
+        self.description = description
         self.creationDate = creationDate
         self.lastChangedDate = lastChangedDate
+        self.image = image
+    }
+    
+    private static func encodeImage(_ image: UIImage) -> String? {
+        let pngRepresentation = UIImagePNGRepresentation(image)
+        return pngRepresentation?.base64EncodedString(options: .lineLength64Characters)
+    }
+    
+    private static func decodeImageString(_ string: String) -> UIImage? {
+        let dataDecoded: Data = Data(base64Encoded: string, options: .ignoreUnknownCharacters)!
+        let decodedimage = UIImage(data: dataDecoded)
+        return decodedimage
     }
 }
 
@@ -68,6 +99,11 @@ extension Mixtape: Serializable {
             let lastChangedDate = Date(fromString: dateChangedString, format: .isoDateTimeMilliSec) else {
                 return nil
         }
+        let description = dict["description"] ?? ""
+        var image: UIImage? = nil
+        if let imageData = dict["imageData"], imageData.count > 0 {
+            image = Mixtape.decodeImageString(imageData)
+        }
         
         var volumes: [Float] = []
         for volumeString in soundVolumeStrings {
@@ -89,7 +125,7 @@ extension Mixtape: Serializable {
             sounds.append(originalSound.with(volume: volumes[index]))
         }
         
-        self.init(id: id, title: title, sounds: sounds, creationDate: creationDate, lastChangedDate: lastChangedDate)
+        self.init(id: id, title: title, sounds: sounds, description: description, image: image, creationDate: creationDate, lastChangedDate: lastChangedDate)
     }
     
     func toDictionary() -> Dictionary<String, String> {
@@ -98,9 +134,11 @@ extension Mixtape: Serializable {
         dict["id"] = id
         dict["title"] = title
         dict["creationDate"] = creationDate.toString(format: .isoDateTimeMilliSec)
-        dict["lastChangedDate"] = creationDate.toString(format: .isoDateTimeMilliSec)
+        dict["lastChangedDate"] = Date().toString(format: .isoDateTimeMilliSec)
         dict["soundIDs"] = sounds.map { $0.id }.joined(separator: "|")
         dict["soundVolumes"] = sounds.map { String(format:"%f", $0.volume) }.joined(separator: "|")
+        dict["imageData"] = imageData
+        dict["description"] = description
         
         return dict
     }

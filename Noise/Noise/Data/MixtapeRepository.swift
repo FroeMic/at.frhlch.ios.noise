@@ -14,6 +14,7 @@ protocol MixtapeRepository {
     func store(_ object: Mixtape)
     func get(id: String) -> Mixtape?
     func getAll() -> [String: Mixtape]
+    func remove(id: String)
     func reset()
     
 }

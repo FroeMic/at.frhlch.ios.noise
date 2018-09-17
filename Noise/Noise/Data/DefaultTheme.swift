@@ -11,7 +11,7 @@ import UIKit
 class DefaultTheme: InterfaceTheme {
     
     let tintColor: UIColor =  UIColor(displayP3Red: 255/255, green: 45/255, blue: 85/255, alpha: 1.0)
-    let cornerRadius: CGFloat = 6.0
+    let cornerRadius: CGFloat = 4.0
     let textColor: UIColor = .black
     let descriptionTextColor: UIColor = .gray
     
