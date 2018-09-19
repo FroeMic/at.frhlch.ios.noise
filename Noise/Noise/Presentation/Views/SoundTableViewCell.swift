@@ -37,6 +37,7 @@ class SoundTableViewCell: UITableViewCell {
         
         soundTitleLabel.textColor = theme.textColor
         soundSubtitleLabel.textColor = theme.descriptionTextColor
+        slider.minimumTrackTintColor =  theme.tintColor
      }
     
     override func layoutSubviews() {

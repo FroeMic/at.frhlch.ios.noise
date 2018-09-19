@@ -41,7 +41,14 @@ class BaseTabBarController: UITabBarController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        applyTheme()
         updateSoundBar(with: audioManager)
+    }
+    
+    private func applyTheme() {
+        let theme = Injection.theme
+        
+        tabBar.tintColor = theme.tintColor
     }
     
     func updateSoundBar(with audioManager: AudioManager) {

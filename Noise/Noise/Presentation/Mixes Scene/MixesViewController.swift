@@ -71,7 +71,19 @@ extension MixesViewController: UITableViewDelegate {
         }
     }
     
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        if indexPath.section == 1 {
+            return .delete
+        }
+        
+        return .none
+    }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if indexPath.section != 1 {
+            return
+        }
+        
         if editingStyle == .delete {
             
             let mixtape = mixtapes[indexPath.row]

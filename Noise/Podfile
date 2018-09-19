@@ -8,6 +8,7 @@ target 'Noise' do
     pod 'JustPeek', :git => 'https://github.com/FroeMic/JustPeek.git'
     pod 'lottie-ios'
     pod 'YPImagePicker'
+    pod 'SwiftyJSON', '~> 4.0'
 
 
   # Pods for Noise

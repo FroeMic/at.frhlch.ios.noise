@@ -18,6 +18,7 @@ class NoisePreviewViewController: UIViewController {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var playingView: PlayingView!
+    @IBOutlet var closeButton: PrimaryButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,12 @@ class NoisePreviewViewController: UIViewController {
         containerView.layer.cornerRadius = cornerRadius
         imageContainer.layer.cornerRadius = cornerRadius
         imageContainer.clipsToBounds = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        applyTheme()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -80,6 +87,12 @@ class NoisePreviewViewController: UIViewController {
         super.viewWillDisappear(animated)
         
         AudioManager.shared.stopPreview()
+    }
+    
+    private func applyTheme() {
+        let theme = Injection.theme
+        
+        closeButton.backgroundColor = theme.tintColor
     }
 
     @IBAction func closeButtonPressed(_ sender: Any) {
