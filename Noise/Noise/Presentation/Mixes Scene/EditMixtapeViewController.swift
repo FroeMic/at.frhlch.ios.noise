@@ -17,6 +17,9 @@ class EditMixtapeViewController: UIViewController {
     static let presentSelectSoundsVCSegueIdentifier = "presentSelectSoundVC"
     
     var mixtape: Mixtape?
+    private var sounds: [Sound]  {
+        return mixtape?.sounds ?? []
+    }
     
     private var pickerConfig: YPImagePickerConfiguration?
     private var picker: YPImagePicker?
@@ -51,14 +54,15 @@ class EditMixtapeViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        playAudio()
+        updateNowPlayingInformation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // reload mixtape
         if let mixtape = mixtape {
-            self.mixtape = mixtapeRepository.get(id: mixtape.id)
+            self.mixtape = Injection.mixtapeRepository.get(id: mixtape.id)
         }
         
         tableView.reloadData()
@@ -102,7 +106,7 @@ class EditMixtapeViewController: UIViewController {
         }
         
         titleTextfield.text = mixtape.title
-        descriptionTextView.text = mixtape.description.count == 0 ? "..." : mixtape.description
+        descriptionTextView.text = mixtape.detailDescription == nil ? "..." : mixtape.detailDescription
         imageView.image = mixtape.image
     }
     
@@ -119,7 +123,11 @@ class EditMixtapeViewController: UIViewController {
                 //                print(photo.originalImage) // original image selected by the user, unfiltered
                 //                print(photo.modifiedImage) // Transformed image, can be nil
                 //                print(photo.exifMeta) // Print exif meta data of original image.
+                
                 self.mixtape?.image = photo.image
+                if let mixtape = self.mixtape {
+                    Injection.mixtapeRepository.save(mixtape)
+                }
             }
             picker.dismiss(animated: true, completion: nil)
         }
@@ -154,9 +162,7 @@ class EditMixtapeViewController: UIViewController {
             self.pickerConfig = config
         }
         
-        if self.picker == nil {
-            self.picker = YPImagePicker(configuration: self.pickerConfig!)
-        }
+        self.picker = YPImagePicker(configuration: self.pickerConfig!)
     }
     
     private func initAlertController() {
@@ -174,6 +180,7 @@ class EditMixtapeViewController: UIViewController {
         let removeImage = UIAlertAction(title: "Remove picture", style: .default, handler: { (action) -> Void in
             self.mixtape?.image = nil
             self.updateView()
+            self.updateNowPlayingInformation()
         })
         
         let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) -> Void in })
@@ -192,24 +199,43 @@ class EditMixtapeViewController: UIViewController {
         }
         
         if let description = descriptionTextView.text {
-            mixtape?.description = description
+             mixtape?.detailDescription = description
         }
         
         if let image = imageView.image {
-            mixtape?.image = image
+             mixtape?.image = image
         }
-        
-        // ToDo: save sounds
         
         guard let mixtape = mixtape else {
             return 
         }
         
-        Injection.mixtapeRepository.store(mixtape)
+        Injection.mixtapeRepository.save(mixtape)
+        updateNowPlayingInformation()
     }
     
     func updateSound(sound: Sound) {
         AudioManager.shared.updateVolume(for: sound)
+    }
+    
+    func playAudio() {
+        guard let mixtape = mixtape else {
+            return
+        }
+        if AudioManager.shared.title == mixtape.title {
+            for sound in sounds {
+                AudioManager.shared.updateVolume(for: sound)
+            }
+        } else {
+            AudioManager.shared.activate(sounds: sounds, title: mixtape.title, image: mixtape.image)
+        }
+    }
+    
+    func updateNowPlayingInformation() {
+        guard let mixtape = mixtape else {
+            return
+        }
+       AudioManager.shared.updateNowPlayingInformation(title: mixtape.title, image: mixtape.image)
     }
     
 }
@@ -250,8 +276,10 @@ extension EditMixtapeViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let _ = mixtape?.sounds.remove(at: indexPath.row)
             
+            let sound = sounds[indexPath.row]
+            mixtape?.remove(sound: sound)
+
             // use async to avoid showing white background.
             DispatchQueue.main.async {
                 self.tableView.deleteRows(at: [indexPath], with: .fade)
@@ -274,7 +302,7 @@ extension EditMixtapeViewController: UITableViewDataSource {
             return 1
         }
         if section == 1 {
-            return mixtape?.sounds.count ?? 0
+            return sounds.count
         }
         
         return 0
@@ -290,32 +318,30 @@ extension EditMixtapeViewController: UITableViewDataSource {
         
         if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: EditMixtapeViewController.soundReuseIdentifier, for: indexPath)
-            
+
             if let cell = cell as? SoundTableViewCell {
-                cell.sound = mixtape?.sounds[indexPath.row]
+                cell.sound = sounds[indexPath.row]
                 cell.delegate = self
             }
-            
+
             return cell
         }
-        
         return UITableViewCell()
     }
     
 }
 
 
-// MARK: PeekingDelegate
+// MARK: SoundDelegate
 extension EditMixtapeViewController: SoundDelegate {
     
     func soundDidChange(_ sound: Sound, oldSound: Sound) {
         
-        guard let index = mixtape?.sounds.index(of: sound) else {
+        guard let _ = sounds.index(of: sound) else {
             return
         }
-        
-        mixtape?.sounds[index] = sound
-        
+
+        mixtape?.update(sound: sound)
         updateSound(sound: sound)
     }
     

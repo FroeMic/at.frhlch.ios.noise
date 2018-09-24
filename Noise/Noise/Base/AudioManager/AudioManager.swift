@@ -6,7 +6,7 @@
 //  Copyright © 2018 Michael Fröhlich. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import AVKit
 import MediaPlayer
 
@@ -30,6 +30,7 @@ class AudioManager {
     private var players: [String: AVAudioPlayer] = [:]
     private var sounds: [Sound] = []
     private (set) var title: String = ""
+    private (set) var image: UIImage = UIImage(named: "placeholder_artwork")!
     
     private init(playsInBackground: Bool = true) {
         self.playsInBackground = playsInBackground
@@ -69,7 +70,7 @@ class AudioManager {
             return
         }
         
-        setTitle(title: title)
+        updateNowPlayingInfo(title: title, image: image)
         
         let commandCenter = MPRemoteCommandCenter.shared()
         commandCenter.playCommand.isEnabled = true
@@ -84,17 +85,19 @@ class AudioManager {
         }
     }
     
-    private func setTitle(title: String) {
+    private func updateNowPlayingInfo(title: String, image: UIImage) {
         if playsInBackground {
-            MPNowPlayingInfoCenter.default().nowPlayingInfo = [MPMediaItemPropertyTitle: title]
+            let artwork = MPMediaItemArtwork.init(boundsSize: image.size, requestHandler: { (size) -> UIImage in
+                return image
+            })
+            MPNowPlayingInfoCenter.default().nowPlayingInfo = [MPMediaItemPropertyTitle: title, MPMediaItemPropertyArtwork: artwork]
         }
     }
     
-    
     // MARK: Exposed functions
-    func activate(sounds: [Sound], title: String) {
+    func activate(sounds: [Sound], title: String, image: UIImage? = nil) {
 
-        self.title = title
+        updateNowPlayingInformation(title: title, image: image)
         
         if state == .playing {
             stop()
@@ -122,7 +125,7 @@ class AudioManager {
     }
     
     public func play() {
-        setTitle(title: title)
+        updateNowPlayingInfo(title: title, image: image)
         players.values.forEach { $0.play() }
         state = .playing
     }
@@ -143,21 +146,27 @@ class AudioManager {
         guard let player = players[sound.id] else {
             return
         }
-        
         guard let index = sounds.index(of: sound) else {
             return
         }
+        
         sounds[index] = sound
         player.volume = sound.volume
     }
     
-    public func preview(sounds: [Sound], title: String = "Preview") {
+    public func updateNowPlayingInformation(title: String, image: UIImage? = nil) {
+        self.title = title
+        self.image = image ?? UIImage(named: "placeholder_artwork")!
+        updateNowPlayingInfo(title: title, image: self.image)
+    }
+    
+    public func preview(sounds: [Sound], title: String = "Preview", image: UIImage? = nil) {
         pause()
         if let previewPlayer = previewPlayer {
             previewPlayer.stop()
         }
         previewPlayer = AudioManager(playsInBackground: true)
-        previewPlayer?.activate(sounds: sounds, title: title)
+        previewPlayer?.activate(sounds: sounds, title: title, image: image)
         previewPlayer?.play()
     }
     

@@ -24,7 +24,8 @@ class MixtapeTableViewCell: UITableViewCell {
     @IBOutlet var mixtapeTitleLabel: UILabel!
     @IBOutlet var mixtapeNrOfSongsLabel: UILabel!
     @IBOutlet var mixtapeSubtitleLabel: UILabel!
-
+    @IBOutlet var coverImageView: RoundedImageView!
+    
     func applyTheme() {
         let theme = Injection.theme
 
@@ -44,10 +45,11 @@ class MixtapeTableViewCell: UITableViewCell {
             return
         }
         
+        
         mixtapeTitleLabel?.text = mixtape.title
         mixtapeNrOfSongsLabel?.text = String(format: "%d  sounds", mixtape.sounds.count)
-        mixtapeSubtitleLabel?.text = mixtape.description
-    
+        mixtapeSubtitleLabel?.text = mixtape.detailDescription
+        coverImageView.image = mixtape.image
     }
     
  

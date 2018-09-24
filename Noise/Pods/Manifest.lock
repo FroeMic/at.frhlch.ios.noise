@@ -3,7 +3,10 @@ PODS:
   - JustPeek (1.0.0)
   - lottie-ios (2.5.0)
   - PryntTrimmerView (2.0.1)
+  - Result (3.2.4)
   - SteviaLayout (4.2.0)
+  - SugarRecord/CoreData (3.1.2):
+    - Result (~> 3.0)
   - SwiftyJSON (4.1.0)
   - YPImagePicker (3.1.1):
     - PryntTrimmerView (~> 2.0)
@@ -13,6 +16,7 @@ DEPENDENCIES:
   - AFDateHelper (from `https://github.com/FroeMic/DateHelper.git`)
   - JustPeek (from `https://github.com/FroeMic/JustPeek.git`)
   - lottie-ios
+  - SugarRecord/CoreData
   - SwiftyJSON (~> 4.0)
   - YPImagePicker
 
@@ -20,7 +24,9 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - lottie-ios
     - PryntTrimmerView
+    - Result
     - SteviaLayout
+    - SugarRecord
     - SwiftyJSON
     - YPImagePicker
 
@@ -43,10 +49,12 @@ SPEC CHECKSUMS:
   JustPeek: e4156168852a86b7ab00403e8e785ef225c88a3c
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   PryntTrimmerView: 4260ae497a2f3e1bbfc0b71247eb74ab92bf0490
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   SteviaLayout: 0d2112caea45707695e8c718262c8ea3dd37ef17
+  SugarRecord: be6aa5c18b4a4dec0de4c1f49fc61c85eabb5328
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
   YPImagePicker: dd0a901a293f99e982f75554738574c735734a76
 
-PODFILE CHECKSUM: ba28e67aeefcb815722041926a3c9d461583fd0c
+PODFILE CHECKSUM: ab15263422b53daf794ae8a8a54949adaf676d8a
 
 COCOAPODS: 1.5.3

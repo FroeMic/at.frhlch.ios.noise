@@ -10,11 +10,12 @@ import Foundation
 
 protocol SoundRepository {
     
-    func store(_: Sound)
+    func create(id: String) -> Sound?
+    func save(_: Sound)
     func get(id: String) -> Sound?
-    func getAll() -> [String: Sound]
+    func getAll() -> [Sound]
+    func remove(id: String)
     func reset()
     
 }
-
 

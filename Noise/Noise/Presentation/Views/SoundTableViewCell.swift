@@ -74,9 +74,9 @@ class SoundTableViewCell: UITableViewCell {
             return
         }
 
-        let newSound = oldSound.with(volume: volume)
-        _sound = newSound // set only private sound member to not trigger UI update
-        delegate?.soundDidChange(newSound, oldSound: oldSound)
+        _sound = oldSound
+        _sound?.volume = volume // set only private sound member to not trigger UI update
+        delegate?.soundDidChange(_sound!, oldSound: oldSound)
     }
     
 }

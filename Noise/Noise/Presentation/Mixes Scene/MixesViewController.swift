@@ -18,7 +18,7 @@ class MixesViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
     var mixtapes: [Mixtape] {
-        return Injection.mixtapeRepository.getAll().map { $0.1 }
+        return Injection.mixtapeRepository.getAll()
     }
     
     private var mixtapeRepository: MixtapeRepository {

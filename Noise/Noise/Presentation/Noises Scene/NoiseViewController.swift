@@ -18,7 +18,7 @@ class NoiseViewController: UIViewController {
     var peekController: PeekController?
     
     var sounds: [Sound] {
-        return Injection.soundRepository.getAll().map { $0.1 }
+        return Injection.soundRepository.getAll()
     }
     
     override func viewDidLoad() {
@@ -74,9 +74,7 @@ extension NoiseViewController: UITableViewDataSource {
 extension NoiseViewController: SoundDelegate {
     
     func soundDidChange(_ sound: Sound, oldSound: Sound) {
-        let soundRepository = Injection.soundRepository
-        
-        soundRepository.store(sound)
+        Injection.soundRepository.save(sound)
         updateSound(sound: sound)
     }
     
@@ -104,6 +102,5 @@ extension NoiseViewController: PeekingDelegate {
     
     func peekContext(_ context: PeekContext, commit viewController: UIViewController) {
         Injection.feedback.feedbackForPeek()
-//        show(viewController, sender: self)
     }
 }

@@ -11,9 +11,9 @@ import Foundation
 protocol MixtapeRepository {
     
     func create(title: String) -> Mixtape? 
-    func store(_ object: Mixtape)
+    func save(_ mixtape: Mixtape)
     func get(id: String) -> Mixtape?
-    func getAll() -> [String: Mixtape]
+    func getAll() -> [Mixtape]
     func remove(id: String)
     func reset()
     

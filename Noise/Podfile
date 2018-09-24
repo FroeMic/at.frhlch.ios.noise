@@ -9,6 +9,8 @@ target 'Noise' do
     pod 'lottie-ios'
     pod 'YPImagePicker'
     pod 'SwiftyJSON', '~> 4.0'
+    pod 'SugarRecord/CoreData'
+
 
 
   # Pods for Noise

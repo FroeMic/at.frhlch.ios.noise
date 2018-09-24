@@ -13,105 +13,71 @@ struct Sound {
     let id: String
     let title: String
     let subtitle: String
-    let description: String
-    let imageName: String
-    let soundFile: String
-    let volume: Float
-   
+    let detailDescription: String
+    let imageFilePath: String?
+    let soundFilePath: String?
+    let inAppPurchaseId: String?
+    let remoteUrl: String?
+    var volume: Float = 0
     
-    var soundUrl: URL? {
-        guard let path = Bundle.main.path(forResource: soundFile, ofType:"mp3") else {
+    let image: UIImage?
+
+    init?(managedSound: ManagedSound, withVolume: Float? = nil) {
+        guard let id = managedSound.id else {
             return nil
         }
-        return URL(fileURLWithPath: path)
-    }
-    
-    var image: UIImage {
-        return UIImage(named: imageName) ?? UIImage()
-    }
-    
-    init(id: String, title: String, subtitle: String, description: String, imageName: String, soundFile: String, volume: Float = 0.5) {
+        guard let title = managedSound.title else {
+            return nil
+        }
+        guard let subtitle = managedSound.subtitle else {
+            return nil
+        }
+        guard let detailDescription = managedSound.detailedDescription else {
+            return nil
+        }
+        
         self.id = id
         self.title = title
         self.subtitle = subtitle
-        self.description = description
-        self.imageName = imageName
-        self.soundFile = soundFile
-        self.volume = volume
+        self.detailDescription = detailDescription
+        self.imageFilePath = managedSound.imageFilePath
+        self.soundFilePath = managedSound.soundFilePath
+        self.inAppPurchaseId = managedSound.inAppPurchaseId
+        self.remoteUrl = managedSound.remoteUrl
+        self.volume = withVolume ?? managedSound.volume
+        if let imageFilePath = self.imageFilePath {
+            self.image = UIImage(fromFile: imageFilePath)
+        } else {
+            self.image = nil
+        }
     }
     
-    func with(volume: Float) -> Sound {
-        return Sound(id: id,
-             title: self.title,
-             subtitle: self.subtitle,
-             description: self.description,
-             imageName: self.imageName,
-             soundFile: self.soundFile,
-             volume: volume)
+    init?(managedMixtapeSound: ManagedMixtapeSound) {
+        guard let sound = managedMixtapeSound.sound else {
+            return nil
+        }
+        self.init(managedSound: sound, withVolume: managedMixtapeSound.volume)
     }
+    
+    var soundUrl: URL? {
+        guard let path = soundFilePath else {
+            return nil
+        }
+        guard let filepath = FileManager.default.filepathFromDocumentsDirectoryOrBundle(filename: path) else {
+            return nil
+        }
+        
+        return URL(fileURLWithPath: filepath)
+    }
+    
+}
+
+extension Sound: Hashable {
+    
 }
 
 extension Sound: Equatable {
-
     static func ==(lhs: Sound, rhs: Sound) -> Bool {
-        return lhs.id == rhs.id && lhs.id == rhs.id
+        return lhs.id == rhs.id
     }
-    
-}
-
-extension Sound: Identifiable {
-    
-}
-
-extension Sound: Serializable {
-    
-    init?(from dict: Dictionary<String, String>) {
-        
-        guard let id = dict["id"] else {
-            return nil
-        }
-        guard let title = dict["title"] else {
-            return nil
-        }
-        guard let subtitle = dict["subtitle"] else {
-            return nil
-        }
-        guard let description = dict["description"] else {
-            return nil
-        }
-        guard let imageName = dict["imageName"] else {
-            return nil
-        }
-        guard let soundFile = dict["soundFile"] else {
-            return nil
-        }
-        guard let volumeString = dict["volume"], let volume = Float(volumeString) else {
-            return nil
-        }
-        
-        self.init(id: id,
-              title: title,
-              subtitle: subtitle,
-              description: description,
-              imageName: imageName,
-              soundFile: soundFile,
-              volume: volume)
-    }
-    
-    func toDictionary() -> Dictionary<String, String> {
-        var dict: Dictionary<String, String> = [:]
-        
-        dict["id"] = id
-        dict["title"] = title
-        dict["subtitle"] = subtitle
-        dict["description"] = description
-        dict["imageName"] = imageName
-        dict["soundFile"] = soundFile
-        dict["volume"] =  String(format: "%f", volume)
-     
-        return dict
-    }
-    
-
-    
 }

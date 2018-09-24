@@ -14,16 +14,16 @@ class SoundSelectionViewController: UIViewController {
     
     var mixtape: Mixtape? {
         didSet {
-            selectedSounds = mixtape?.sounds ?? []
+            guard let mixtape = mixtape  else {
+                selectedSounds = []
+                return
+            }
+            selectedSounds = Array(mixtape.sounds)
         }
     }
     
     @IBOutlet var tableView: UITableView!
-    
-    private var sounds: [Sound] {
-        return Injection.soundRepository.getAll().map { $0.1 }
-    }
-    
+    private var sounds: [Sound] = []
     private var selectedSounds: [Sound] = []
     
     
@@ -32,6 +32,8 @@ class SoundSelectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        sounds = Injection.soundRepository.getAll()
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -63,13 +65,12 @@ class SoundSelectionViewController: UIViewController {
 
     
     private func saveMixtape() {
-        mixtape?.sounds = selectedSounds
-        
-        guard let mixtape = mixtape else {
+        guard var mixtape = mixtape else {
             return
         }
         
-        Injection.mixtapeRepository.store(mixtape)
+        mixtape.set(sounds: selectedSounds)
+        Injection.mixtapeRepository.save(mixtape)
     }
 
 }

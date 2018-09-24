@@ -20,7 +20,7 @@ class BaseTabBarController: UITabBarController {
         
         selectedIndex = 1
     
-        soundToolbar = SoundBar(frame: CGRect(x: 0, y: view.bounds.height - tabBar.frame.height - 45.0 , width: view.bounds.width, height: 44.0))
+        soundToolbar = SoundBar(frame: CGRect(x: 0, y: view.bounds.height - tabBar.frame.height - 44.0 , width: view.bounds.width, height: 44.0))
         soundToolbar.soundBarDelegate = self 
         view.addSubview(soundToolbar)
         
@@ -28,7 +28,7 @@ class BaseTabBarController: UITabBarController {
             NSLayoutConstraint(item: soundToolbar, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 44.0),
             NSLayoutConstraint(item: soundToolbar, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1.0, constant: 0),
             NSLayoutConstraint(item: soundToolbar, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1.0, constant: 0),
-            NSLayoutConstraint(item: soundToolbar, attribute: .bottom, relatedBy: .equal, toItem: tabBar, attribute: .top, multiplier: 1.0, constant: -1),
+            NSLayoutConstraint(item: soundToolbar, attribute: .bottom, relatedBy: .equal, toItem: tabBar, attribute: .top, multiplier: 1.0, constant: -0.34),
         ]
         
         soundToolbar.translatesAutoresizingMaskIntoConstraints = false

@@ -59,7 +59,7 @@ class NoisePreviewViewController: UIViewController {
             var volume: Float = 0
             var count: Float = 0
             let sounds = Injection.soundRepository.getAll()
-            for (_, sound) in  sounds{
+            for (sound) in  sounds{
                 if sound.volume > 0 {
                     volume += sound.volume
                     count += 1
@@ -72,14 +72,15 @@ class NoisePreviewViewController: UIViewController {
                 volume = volume / count
             }
             
-            sound = sound.with(volume: volume)
+            sound.volume = volume
         }
         
         imageView?.image = sound.image
         titleLabel?.text = sound.title
-        descriptionLabel?.text = sound.description
+        descriptionLabel?.text = sound.detailDescription
         
         AudioManager.shared.preview(sounds: [sound], title: "Preview: " + sound.title)
+
         
     }
     
