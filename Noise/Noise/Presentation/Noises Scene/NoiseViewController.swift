@@ -17,20 +17,24 @@ class NoiseViewController: UIViewController {
     
     var peekController: PeekController?
     
-    var sounds: [Sound] {
-        return Injection.soundRepository.getAll()
-    }
+    var sounds: [Sound] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        playAudio()
         
         tableView.delegate = self
         tableView.dataSource = self
         
         peekController = PeekController()
         peekController?.register(viewController: self, forPeekingWithDelegate: self, sourceView: tableView)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        playAudio()
+        sounds = Injection.soundRepository.getAll()
+        tableView.reloadData()
     }
     
     func playAudio() {

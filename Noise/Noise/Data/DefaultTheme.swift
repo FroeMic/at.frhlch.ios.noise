@@ -16,4 +16,8 @@ class DefaultTheme: InterfaceTheme {
     let textColor: UIColor = .black
     let descriptionTextColor: UIColor = .gray
     
+    var tableViewCellDefaultBackgroundColor: UIColor = .white
+    var tableViewCellDefaultTextColor: UIColor = .black
+    var tableViewCellHighlightBackgroundColor: UIColor = UIColor(red:0.26, green:0.80, blue:0.79, alpha:1.00)
+    var tableViewCellHighlightTextColor: UIColor = .white
 }

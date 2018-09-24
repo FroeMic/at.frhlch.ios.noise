@@ -11,13 +11,17 @@ import UIKit
 struct Sound {
     
     let id: String
-    let title: String
-    let subtitle: String
-    let detailDescription: String
-    let imageFilePath: String?
-    let soundFilePath: String?
-    let inAppPurchaseId: String?
-    let remoteUrl: String?
+    var title: String
+    var subtitle: String
+    var detailDescription: String
+    var imageFilePath: String?
+    var soundFilePath: String?
+    var inAppPurchaseId: String?
+    
+    var contentDownloaded: Bool
+    var filesDownloaded: Bool
+    var needsUpdate: Bool
+    
     var volume: Float = 0
     
     let image: UIImage?
@@ -43,7 +47,9 @@ struct Sound {
         self.imageFilePath = managedSound.imageFilePath
         self.soundFilePath = managedSound.soundFilePath
         self.inAppPurchaseId = managedSound.inAppPurchaseId
-        self.remoteUrl = managedSound.remoteUrl
+        self.contentDownloaded = managedSound.contentDownloaded
+        self.filesDownloaded = managedSound.filesDownloaded
+        self.needsUpdate = managedSound.needsUpdate
         self.volume = withVolume ?? managedSound.volume
         if let imageFilePath = self.imageFilePath {
             self.image = UIImage(fromFile: imageFilePath)

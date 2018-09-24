@@ -28,17 +28,8 @@ class SoundTableViewCell: UITableViewCell {
     @IBOutlet var soundTitleLabel: UILabel!
     @IBOutlet var soundSubtitleLabel: UILabel!
     @IBOutlet var slider: UISlider!
-    
-    func applyTheme() {
-        let theme = Injection.theme
-        
-        layer.cornerRadius = theme.cornerRadius
-        layer.masksToBounds = true
-        
-        soundTitleLabel.textColor = theme.textColor
-        soundSubtitleLabel.textColor = theme.descriptionTextColor
-        slider.minimumTrackTintColor =  theme.tintColor
-     }
+    @IBOutlet var maxSliderImageView: UIImageView!
+    @IBOutlet var minSliderImageView: UIImageView!
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -51,9 +42,44 @@ class SoundTableViewCell: UITableViewCell {
             slider.addTarget(self, action: #selector(SoundTableViewCell.sliderValueDidChange), for: .valueChanged)
         }
         
+        maxSliderImageView?.image = maxSliderImageView?.image?.withRenderingMode(.alwaysTemplate)
+        minSliderImageView?.image = minSliderImageView?.image?.withRenderingMode(.alwaysTemplate)
         
         applyTheme()
     }
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: animated)
+        let theme = Injection.theme
+        
+        if highlighted {
+            contentView.backgroundColor = theme.tableViewCellHighlightBackgroundColor
+            soundTitleLabel?.textColor = theme.tableViewCellHighlightTextColor
+            soundSubtitleLabel?.textColor = theme.tableViewCellHighlightTextColor
+            slider?.minimumTrackTintColor = theme.tableViewCellHighlightTextColor
+            slider?.maximumTrackTintColor = theme.tableViewCellHighlightTextColor
+            minSliderImageView?.tintColor = theme.tableViewCellHighlightTextColor
+            maxSliderImageView?.tintColor = theme.tableViewCellHighlightTextColor
+        } else {
+            applyTheme()
+        }
+    }
+    
+    func applyTheme() {
+        let theme = Injection.theme
+        
+        layer.cornerRadius = theme.cornerRadius
+        layer.masksToBounds = true
+        
+        contentView.backgroundColor = theme.tableViewCellDefaultBackgroundColor
+        soundTitleLabel?.textColor = theme.textColor
+        soundSubtitleLabel?.textColor = theme.descriptionTextColor
+        slider?.minimumTrackTintColor = theme.tintColor
+        slider?.maximumTrackTintColor = UIColor.gray.withAlphaComponent(0.3)
+        minSliderImageView?.tintColor = .gray
+        maxSliderImageView?.tintColor = .gray
+    }
+    
     
     func updateCellContent() {
         guard let sound = sound else {

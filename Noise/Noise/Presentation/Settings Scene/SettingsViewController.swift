@@ -38,7 +38,7 @@ class SettingsViewController: UITableViewController {
         })
         
         applyTheme()
-        tableView.reloadData()
+//        tableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -136,7 +136,6 @@ extension SettingsViewController {
         let selectedTheme = Injection.theme
         if let headerView = view as? UITableViewHeaderFooterView {
             headerView.textLabel?.textColor =  selectedTheme.textColor.withAlphaComponent(0.8)
-            headerView.backgroundColor = .white
             headerView.tintColor = .white
         }
     }
@@ -145,7 +144,6 @@ extension SettingsViewController {
         let selectedTheme = Injection.theme
         if let footerView = view as? UITableViewHeaderFooterView {
             footerView.textLabel?.textColor = selectedTheme.textColor.withAlphaComponent(0.8)
-            footerView.backgroundColor = .white
             footerView.tintColor = .white
         }
     }

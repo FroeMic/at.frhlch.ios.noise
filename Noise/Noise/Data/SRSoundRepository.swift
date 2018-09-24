@@ -63,6 +63,7 @@ class SRSoundRepository {
 
 
 extension SRSoundRepository: SoundRepository {
+    
     func create(id: String) -> Sound? {
         guard let managedSound = new(id: id) else {
             return nil
@@ -98,7 +99,18 @@ extension SRSoundRepository: SoundRepository {
     }
     
     func getAll() -> [Sound] {
-        guard let managedSounds = try? db.fetch(FetchRequest<ManagedSound>()) else {
+        return getAll(skipIncomplete: true)
+    }
+    
+    func getAll(skipIncomplete: Bool) -> [Sound] {
+        let fetchRequest: FetchRequest<ManagedSound>
+        if skipIncomplete {
+            fetchRequest = FetchRequest<ManagedSound>().filtered(with: NSPredicate(format: "filesDownloaded == %@", NSNumber(value: true)))
+        } else {
+            fetchRequest = FetchRequest<ManagedSound>()
+        }
+        
+        guard let managedSounds = try? db.fetch(fetchRequest) else {
             return []
         }
         
@@ -145,9 +157,13 @@ extension SRSoundRepository: SoundRepository {
             managedSound.detailedDescription = dict["detailDescription"]
             managedSound.imageFilePath = dict["imageFilePath"]
             managedSound.soundFilePath = dict["soundFilePath"]
-            managedSound.remoteUrl = dict["remoteUrl"]
+            managedSound.contentDownloaded = dict["contentDownloaded"] == "true"
+            managedSound.filesDownloaded = dict["filesDownloaded"] == "true"
+            managedSound.needsUpdate = dict["needsUpdate"] == "true"
             managedSound.inAppPurchaseId = dict["inAppPurchaseId"]
 
+            debugPrint(managedSound.filesDownloaded)
+            
             if let sound = Sound(managedSound: managedSound) {
                 save(sound)
             }
@@ -178,7 +194,9 @@ extension ManagedSound {
 
         self.imageFilePath = sound.imageFilePath
         self.soundFilePath = sound.soundFilePath
-        self.remoteUrl = sound.remoteUrl
+        self.contentDownloaded = sound.contentDownloaded
+        self.filesDownloaded = sound.filesDownloaded
+        self.needsUpdate = sound.needsUpdate
     }
     
 }
@@ -194,14 +212,20 @@ extension SRSoundRepository {
                 "detailDescription": "Calm your mood with the sound of autumn rainfall. Hundreds of thick and heavy drops drum to the ground creating a soothing sound atmosphere.",
                 "imageFilePath": "sound_heavy_rain.jpg",
                 "soundFilePath": "audio_rain_60s.mp3",
+                "contentDownloaded": "true",
+                "filesDownloaded": "true",
+                "needsUpdate": "false"
             ],
             [
                 "id": "002-berlin-coffee-shop",
-                "title": "Berlin Coffee  Shop",
+                "title": "Berlin Coffee Shop",
                 "subtitle": "Find yourself in a Berlin coffee shop buzzing with life",
                 "detailDescription": "Dive into the scenery of a Berlin coffee shop buzzing with energy. The pleasant smell of freshly brewed coffee hangs in the air while the busy chatter of people all around you blends in with the venue. Time to get to work",
                 "imageFilePath": "sound_coffee_shop.jpg",
                 "soundFilePath": "audio_cafe_60s.mp3",
+                "contentDownloaded": "true",
+                "filesDownloaded": "true",
+                "needsUpdate": "false"
             ]
         ]
     }

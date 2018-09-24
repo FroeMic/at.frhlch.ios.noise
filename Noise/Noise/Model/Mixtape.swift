@@ -17,7 +17,7 @@ struct Mixtape {
     var detailDescription: String?
     private (set) var imageFilePath: String?
     var sounds: [Sound] {
-        return _sounds.keys.flatMap { _sounds[$0] }
+        return _sounds.keys.compactMap { _sounds[$0] }
     }
     
     private var _sounds: [String: Sound]

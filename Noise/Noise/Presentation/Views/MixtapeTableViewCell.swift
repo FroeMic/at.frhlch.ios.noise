@@ -25,19 +25,35 @@ class MixtapeTableViewCell: UITableViewCell {
     @IBOutlet var mixtapeNrOfSongsLabel: UILabel!
     @IBOutlet var mixtapeSubtitleLabel: UILabel!
     @IBOutlet var coverImageView: RoundedImageView!
-    
-    func applyTheme() {
-        let theme = Injection.theme
 
-        mixtapeTitleLabel.textColor = theme.textColor
-        mixtapeNrOfSongsLabel.textColor = theme.descriptionTextColor
-        mixtapeSubtitleLabel.textColor = theme.descriptionTextColor
-    }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
         applyTheme()
+    }
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: animated)
+        let theme = Injection.theme
+        
+        if highlighted {
+            contentView.backgroundColor = theme.tableViewCellHighlightBackgroundColor
+            mixtapeTitleLabel?.textColor = theme.tableViewCellHighlightTextColor
+            mixtapeNrOfSongsLabel?.textColor = theme.tableViewCellHighlightTextColor
+            mixtapeSubtitleLabel?.textColor = theme.tableViewCellHighlightTextColor
+        } else {
+            applyTheme()
+        }
+    }
+    
+    func applyTheme() {
+        let theme = Injection.theme
+        
+        contentView.backgroundColor = theme.tableViewCellDefaultBackgroundColor
+        mixtapeTitleLabel?.textColor = theme.textColor
+        mixtapeNrOfSongsLabel?.textColor = theme.descriptionTextColor
+        mixtapeSubtitleLabel?.textColor = theme.descriptionTextColor
     }
     
     func updateCellContent() {

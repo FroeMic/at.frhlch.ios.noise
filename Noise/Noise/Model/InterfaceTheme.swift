@@ -15,5 +15,10 @@ protocol InterfaceTheme {
     var textColor: UIColor { get }
     var descriptionTextColor: UIColor { get }
     
+    var tableViewCellDefaultBackgroundColor: UIColor { get }
+    var tableViewCellDefaultTextColor: UIColor { get }
+    var tableViewCellHighlightBackgroundColor: UIColor { get }
+    var tableViewCellHighlightTextColor: UIColor { get }
+    
     
 }

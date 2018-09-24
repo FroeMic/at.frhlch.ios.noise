@@ -13,19 +13,21 @@
         <relationship name="sound" maxCount="1" deletionRule="No Action" destinationEntity="ManagedSound" syncable="YES"/>
     </entity>
     <entity name="ManagedSound" representedClassName="ManagedSound" syncable="YES" codeGenerationType="class">
+        <attribute name="contentDownloaded" optional="YES" attributeType="Boolean" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="detailedDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="filesDownloaded" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="id" attributeType="String" syncable="YES"/>
         <attribute name="imageFilePath" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="inAppPurchaseId" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="remoteUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="needsUpdate" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="soundFilePath" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="subtitle" attributeType="String" syncable="YES"/>
+        <attribute name="subtitle" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="volume" attributeType="Float" minValueString="0" maxValueString="1" defaultValueString="0.3" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
         <element name="ManagedMixtape" positionX="402.3671875" positionY="-53.96484375" width="128" height="120"/>
         <element name="ManagedMixtapeSound" positionX="196.09375" positionY="-47.828125" width="128" height="90"/>
-        <element name="ManagedSound" positionX="-63" positionY="-18" width="128" height="180"/>
+        <element name="ManagedSound" positionX="-63" positionY="-18" width="128" height="210"/>
     </elements>
 </model>

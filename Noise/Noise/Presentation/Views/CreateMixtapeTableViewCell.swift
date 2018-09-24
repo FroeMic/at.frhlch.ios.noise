@@ -13,13 +13,30 @@ class CreateMixtapeTableViewCell: UITableViewCell {
     @IBOutlet var customImageView: RoundedImageView!
     @IBOutlet var customLabel: UILabel!
     
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        // Todo: Add proper image
-        //customImageView.image = UIImage(named: "")
-        customLabel.textColor = Injection.theme.tintColor
+        applyTheme()
     }
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: animated)
+        let theme = Injection.theme
+        
+        if highlighted {
+            contentView.backgroundColor = theme.tableViewCellHighlightBackgroundColor
+            customLabel?.textColor = theme.tableViewCellHighlightTextColor
+        } else {
+            applyTheme()
+        }
+    }
+    
+    func applyTheme() {
+        let theme = Injection.theme
+        
+        contentView.backgroundColor = theme.tableViewCellDefaultBackgroundColor
+        customLabel?.textColor = theme.tintColor
+    }
+    
     
 }

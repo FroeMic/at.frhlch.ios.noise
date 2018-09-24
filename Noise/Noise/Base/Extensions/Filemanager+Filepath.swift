@@ -32,4 +32,13 @@ extension FileManager {
         return nil
     }
     
+    func moveToDocumentsDirectory(sourceLocation: URL, filename: String) -> String? {
+        do {
+            let destinationLocation = getDocumentsURL().appendingPathComponent(filename)
+            try moveItem(at: sourceLocation, to: destinationLocation)
+            return destinationLocation.lastPathComponent
+        } catch {
+            return nil
+        }
+    }
 }

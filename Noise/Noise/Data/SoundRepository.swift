@@ -14,6 +14,7 @@ protocol SoundRepository {
     func save(_: Sound)
     func get(id: String) -> Sound?
     func getAll() -> [Sound]
+    func getAll(skipIncomplete: Bool) -> [Sound]
     func remove(id: String)
     func reset()
     

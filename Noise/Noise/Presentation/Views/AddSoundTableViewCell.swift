@@ -13,15 +13,27 @@ class AddSoundTableViewCell: UITableViewCell {
     @IBOutlet var iconImageView: UIImageView!
     @IBOutlet var customLabel: UILabel!
     
-    func applyTheme() {
-        let theme = Injection.theme
-        
-        customLabel?.textColor = theme.tintColor
-    }
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         applyTheme()
     }
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: animated)
+        let theme = Injection.theme
+        
+        if highlighted {
+            contentView.backgroundColor = theme.tableViewCellHighlightBackgroundColor
+            customLabel?.textColor = theme.tableViewCellHighlightTextColor
+        } else {
+            applyTheme()
+        }
+    }
 
+    func applyTheme() {
+        let theme = Injection.theme
+        
+        contentView.backgroundColor = theme.tableViewCellDefaultBackgroundColor
+        customLabel?.textColor = theme.tableViewCellDefaultTextColor
+    }
 }
