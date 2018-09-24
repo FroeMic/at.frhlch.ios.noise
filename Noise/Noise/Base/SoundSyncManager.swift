@@ -17,7 +17,12 @@ class SoundSyncManager {
     }
     private let revisionKey = "soundDataRevision"
     private var revision: Int {
-        return UserDefaults.standard.integer(forKey: revisionKey)
+        get {
+            return UserDefaults.standard.integer(forKey: revisionKey)
+        }
+        set (revision) {
+            UserDefaults.standard.set(revision, forKey: revisionKey)
+        }
     }
 
     static let shared = SoundSyncManager()
@@ -33,7 +38,6 @@ class SoundSyncManager {
         
         let task = URLSession.shared.dataTask(with: targetURL) { (data, response, error) in
             if let error = error {
-                debugPrint(error)
                 completion?(false)
             }
             guard let data = data, let jsonData = try? JSON(data: data) else {
@@ -61,6 +65,8 @@ class SoundSyncManager {
                     let _ = soundRepository.create(id: soundID)
                 }
             }
+            self.revision = serverRevision
+
             
             completion?(true)
         }
@@ -86,7 +92,6 @@ class SoundSyncManager {
         
         let task = URLSession.shared.dataTask(with: targetURL) { (data, response, error) in
             if let error = error {
-                debugPrint(error)
                 return
             }
             guard let data = data, let jsonData = try? JSON(data: data) else {
@@ -135,6 +140,7 @@ class SoundSyncManager {
         updatedSound.title = title
         updatedSound.subtitle = subtitle
         updatedSound.detailDescription = detailDescription
+        updatedSound.volume = 0
         updatedSound.contentDownloaded = true
         
         return updatedSound
@@ -154,7 +160,7 @@ class SoundSyncManager {
         }
         sound.filesDownloaded = sound.soundFilePath != nil && sound.imageFilePath != nil
         sound.needsUpdate = !sound.filesDownloaded
-        
+                
         soundRepository.save(sound)
     }
     

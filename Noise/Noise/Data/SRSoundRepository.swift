@@ -87,6 +87,22 @@ extension SRSoundRepository: SoundRepository {
         }
     }
     
+    func updateVolume(_ sound: Sound) {
+        do {
+            try db.operation { (context, save) throws in
+                
+                guard let managedSound = self.get(sound: sound, context: context) else {
+                    return
+                }
+                
+                managedSound.volume = sound.volume
+                save()
+            }
+        } catch {
+            // There was an error in the operation
+        }
+    }
+    
     func get(id: String) -> Sound? {
         let fetchResult: ManagedSound?? = try? db.fetch(FetchRequest<ManagedSound>().filtered(with: "id", equalTo: id)).first
         guard let noErrorResult = fetchResult else {
@@ -161,8 +177,6 @@ extension SRSoundRepository: SoundRepository {
             managedSound.filesDownloaded = dict["filesDownloaded"] == "true"
             managedSound.needsUpdate = dict["needsUpdate"] == "true"
             managedSound.inAppPurchaseId = dict["inAppPurchaseId"]
-
-            debugPrint(managedSound.filesDownloaded)
             
             if let sound = Sound(managedSound: managedSound) {
                 save(sound)

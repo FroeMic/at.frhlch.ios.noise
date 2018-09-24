@@ -24,6 +24,9 @@
 		2774C52521596F4A009972F3 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774C52421596F4A009972F3 /* SplashScreenViewController.swift */; };
 		2774C52721597690009972F3 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774C52621597690009972F3 /* AboutViewController.swift */; };
 		2774C52921598097009972F3 /* RatingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774C52821598097009972F3 /* RatingManager.swift */; };
+		2774C52B21598304009972F3 /* UpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774C52A21598304009972F3 /* UpdateManager.swift */; };
+		2774C53021598465009972F3 /* TransactionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774C52D21598461009972F3 /* TransactionState.swift */; };
+		2774C53121598467009972F3 /* StoreKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774C52E21598461009972F3 /* StoreKitManager.swift */; };
 		27A5B4AA21590F22005B0F2F /* UIApplication+StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A5B4A921590F22005B0F2F /* UIApplication+StatusBar.swift */; };
 		27B105FF2135D8150070A109 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B105FE2135D8150070A109 /* RoundedImageView.swift */; };
 		27B106022135D8570070A109 /* InterfaceTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B106012135D8570070A109 /* InterfaceTheme.swift */; };
@@ -106,6 +109,9 @@
 		2774C52421596F4A009972F3 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		2774C52621597690009972F3 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		2774C52821598097009972F3 /* RatingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingManager.swift; sourceTree = "<group>"; };
+		2774C52A21598304009972F3 /* UpdateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateManager.swift; sourceTree = "<group>"; };
+		2774C52D21598461009972F3 /* TransactionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionState.swift; sourceTree = "<group>"; };
+		2774C52E21598461009972F3 /* StoreKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitManager.swift; sourceTree = "<group>"; };
 		27A5B4A921590F22005B0F2F /* UIApplication+StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+StatusBar.swift"; sourceTree = "<group>"; };
 		27B105FE2135D8150070A109 /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		27B106012135D8570070A109 /* InterfaceTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceTheme.swift; sourceTree = "<group>"; };
@@ -229,6 +235,15 @@
 			path = OnboardingScene;
 			sourceTree = "<group>";
 		};
+		2774C52C21598461009972F3 /* StoreKitHandler */ = {
+			isa = PBXGroup;
+			children = (
+				2774C52D21598461009972F3 /* TransactionState.swift */,
+				2774C52E21598461009972F3 /* StoreKitManager.swift */,
+			);
+			path = StoreKitHandler;
+			sourceTree = "<group>";
+		};
 		27A5B4AB21590F2E005B0F2F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,13 +313,15 @@
 			isa = PBXGroup;
 			children = (
 				27A5B4AB21590F2E005B0F2F /* Extensions */,
+				2774C52C21598461009972F3 /* StoreKitHandler */,
 				27F52F042142CEE90030102C /* AudioManager */,
 				271F9EB72135D51800115C8C /* AppDelegate.swift */,
 				27B106042135D8BC0070A109 /* Injection.swift */,
 				27F52EF9214266090030102C /* HapticFeedbackManager.swift */,
+				2774C52821598097009972F3 /* RatingManager.swift */,
+				2774C52A21598304009972F3 /* UpdateManager.swift */,
 				2774C51921592482009972F3 /* DownloadManager.swift */,
 				2774C51D21592A22009972F3 /* SoundSyncManager.swift */,
-				2774C52821598097009972F3 /* RatingManager.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -555,6 +572,7 @@
 				"${BUILT_PRODUCTS_DIR}/Kvitto/Kvitto.framework",
 				"${BUILT_PRODUCTS_DIR}/PryntTrimmerView/PryntTrimmerView.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/Siren/Siren.framework",
 				"${BUILT_PRODUCTS_DIR}/SteviaLayout/Stevia.framework",
 				"${BUILT_PRODUCTS_DIR}/SugarRecord/SugarRecord.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -572,6 +590,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kvitto.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PryntTrimmerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Siren.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stevia.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SugarRecord.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -639,14 +658,17 @@
 				27F52F1221457C110030102C /* CreateMixtapeTableViewCell.swift in Sources */,
 				27BD8D7E213C481C003DF079 /* SoundRepository.swift in Sources */,
 				27BD8D63213C17D4003DF079 /* AudioManagerState.swift in Sources */,
+				2774C53121598467009972F3 /* StoreKitManager.swift in Sources */,
 				2774C52521596F4A009972F3 /* SplashScreenViewController.swift in Sources */,
 				27BD8D65213C1ADA003DF079 /* Mixtape.swift in Sources */,
 				2774C51C21592633009972F3 /* SoundDownloadTask.swift in Sources */,
+				2774C52B21598304009972F3 /* UpdateManager.swift in Sources */,
 				27F52F082143C7BC0030102C /* SoundToolbar.swift in Sources */,
 				27B106022135D8570070A109 /* InterfaceTheme.swift in Sources */,
 				27F52EF8214264350030102C /* NoisePreviewViewController.swift in Sources */,
 				27A5B4AA21590F22005B0F2F /* UIApplication+StatusBar.swift in Sources */,
 				27BD8D5D213C05F2003DF079 /* AudioManager.swift in Sources */,
+				2774C53021598465009972F3 /* TransactionState.swift in Sources */,
 				27F52EFC21427E740030102C /* PrimaryButton.swift in Sources */,
 				27F52F16214D4D790030102C /* RoundedView.swift in Sources */,
 				27C753832158E57000905EFD /* LicenseProvider.swift in Sources */,

@@ -78,7 +78,7 @@ extension NoiseViewController: UITableViewDataSource {
 extension NoiseViewController: SoundDelegate {
     
     func soundDidChange(_ sound: Sound, oldSound: Sound) {
-        Injection.soundRepository.save(sound)
+        Injection.soundRepository.updateVolume(sound)
         updateSound(sound: sound)
     }
     

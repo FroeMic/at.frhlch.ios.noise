@@ -206,8 +206,7 @@ extension SettingsViewController {
         if indexPath.section == 2 {
             switch indexPath.row {
             case 0:
-            // Todo: Open App Store rating page
-                ()
+                RatingManager.triggerRatingView()
             case 1:
                 performSegue(withIdentifier: SettingsViewController.showAboutSegueIdentifier, sender: nil)
             case 2:

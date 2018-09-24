@@ -13,6 +13,7 @@ PODS:
   - lottie-ios (2.5.0)
   - PryntTrimmerView (2.0.1)
   - Result (3.2.4)
+  - Siren (3.4.1)
   - SteviaLayout (4.2.0)
   - SugarRecord/CoreData (3.1.2):
     - Result (~> 3.0)
@@ -29,6 +30,7 @@ DEPENDENCIES:
   - JustPeek (from `https://github.com/FroeMic/JustPeek.git`)
   - Kvitto
   - lottie-ios
+  - Siren
   - SugarRecord/CoreData
   - SwiftyJSON (~> 4.0)
   - SwiftyStoreKit
@@ -43,6 +45,7 @@ SPEC REPOS:
     - lottie-ios
     - PryntTrimmerView
     - Result
+    - Siren
     - SteviaLayout
     - SugarRecord
     - SwiftyJSON
@@ -73,6 +76,7 @@ SPEC CHECKSUMS:
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   PryntTrimmerView: 4260ae497a2f3e1bbfc0b71247eb74ab92bf0490
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  Siren: 94e13d40b48d8c0ddac053140d607c36bb487767
   SteviaLayout: 0d2112caea45707695e8c718262c8ea3dd37ef17
   SugarRecord: be6aa5c18b4a4dec0de4c1f49fc61c85eabb5328
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
@@ -80,6 +84,6 @@ SPEC CHECKSUMS:
   WhatsNewKit: 6a5532c41489dc8d19266b75de8ece7666250df4
   YPImagePicker: dd0a901a293f99e982f75554738574c735734a76
 
-PODFILE CHECKSUM: eca8f681f10495bc545979ba76c64f3b675172af
+PODFILE CHECKSUM: 716554f6b841230a6a8211643a8a15025e05efeb
 
 COCOAPODS: 1.5.3

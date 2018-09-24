@@ -46,9 +46,7 @@ extension DownloadManager: URLSessionDownloadDelegate {
         guard let task = soundDownloadTasks.removeValue(forKey: downloadTask.taskIdentifier) else {
             return
         }
-        
-        debugPrint(task.filename)
-        
+                
         var _filename: String? = nil
         if task.type == .mp3 {
             _filename = FileManager.default.moveToDocumentsDirectory(sourceLocation: location, filename: task.filename)
