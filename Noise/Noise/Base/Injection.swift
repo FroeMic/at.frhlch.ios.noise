@@ -13,6 +13,7 @@ class Injection {
     static let theme: InterfaceTheme = DefaultTheme()
     static let feedback: HapticFeedbackManager = HapticFeedbackManager()
     
+    static let settingsRepository: SettingsRepository = UDSettingsRepository()
     static let licenseProvider: LicenseProvider = HardCodedLicenseProvider()
     static let soundRepository: SoundRepository = SRSoundRepository()
     static let mixtapeRepository: MixtapeRepository = SRMixtapeRepository()

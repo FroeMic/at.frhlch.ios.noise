@@ -8,6 +8,7 @@ PODS:
   - SugarRecord/CoreData (3.1.2):
     - Result (~> 3.0)
   - SwiftyJSON (4.1.0)
+  - WhatsNewKit (1.0.2)
   - YPImagePicker (3.1.1):
     - PryntTrimmerView (~> 2.0)
     - SteviaLayout (~> 4.2.0)
@@ -18,6 +19,7 @@ DEPENDENCIES:
   - lottie-ios
   - SugarRecord/CoreData
   - SwiftyJSON (~> 4.0)
+  - WhatsNewKit (~> 1.0.0)
   - YPImagePicker
 
 SPEC REPOS:
@@ -28,6 +30,7 @@ SPEC REPOS:
     - SteviaLayout
     - SugarRecord
     - SwiftyJSON
+    - WhatsNewKit
     - YPImagePicker
 
 EXTERNAL SOURCES:
@@ -53,8 +56,9 @@ SPEC CHECKSUMS:
   SteviaLayout: 0d2112caea45707695e8c718262c8ea3dd37ef17
   SugarRecord: be6aa5c18b4a4dec0de4c1f49fc61c85eabb5328
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+  WhatsNewKit: 6a5532c41489dc8d19266b75de8ece7666250df4
   YPImagePicker: dd0a901a293f99e982f75554738574c735734a76
 
-PODFILE CHECKSUM: ab15263422b53daf794ae8a8a54949adaf676d8a
+PODFILE CHECKSUM: ed73e92605c32bce901675a0c9f51be454c72147
 
 COCOAPODS: 1.5.3

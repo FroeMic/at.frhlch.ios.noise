@@ -19,6 +19,9 @@
 		2774C51A21592482009972F3 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774C51921592482009972F3 /* DownloadManager.swift */; };
 		2774C51C21592633009972F3 /* SoundDownloadTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774C51B21592633009972F3 /* SoundDownloadTask.swift */; };
 		2774C51E21592A22009972F3 /* SoundSyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774C51D21592A22009972F3 /* SoundSyncManager.swift */; };
+		2774C52021596A99009972F3 /* SettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774C51F21596A99009972F3 /* SettingsRepository.swift */; };
+		2774C52221596B9C009972F3 /* UDSettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774C52121596B9C009972F3 /* UDSettingsRepository.swift */; };
+		2774C52521596F4A009972F3 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774C52421596F4A009972F3 /* SplashScreenViewController.swift */; };
 		27A5B4AA21590F22005B0F2F /* UIApplication+StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A5B4A921590F22005B0F2F /* UIApplication+StatusBar.swift */; };
 		27B105FF2135D8150070A109 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B105FE2135D8150070A109 /* RoundedImageView.swift */; };
 		27B106022135D8570070A109 /* InterfaceTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B106012135D8570070A109 /* InterfaceTheme.swift */; };
@@ -96,6 +99,9 @@
 		2774C51921592482009972F3 /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
 		2774C51B21592633009972F3 /* SoundDownloadTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundDownloadTask.swift; sourceTree = "<group>"; };
 		2774C51D21592A22009972F3 /* SoundSyncManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSyncManager.swift; sourceTree = "<group>"; };
+		2774C51F21596A99009972F3 /* SettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRepository.swift; sourceTree = "<group>"; };
+		2774C52121596B9C009972F3 /* UDSettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDSettingsRepository.swift; sourceTree = "<group>"; };
+		2774C52421596F4A009972F3 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		27A5B4A921590F22005B0F2F /* UIApplication+StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+StatusBar.swift"; sourceTree = "<group>"; };
 		27B105FE2135D8150070A109 /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		27B106012135D8570070A109 /* InterfaceTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceTheme.swift; sourceTree = "<group>"; };
@@ -212,6 +218,13 @@
 			path = NoiseTests;
 			sourceTree = "<group>";
 		};
+		2774C52321596F29009972F3 /* OnboardingScene */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = OnboardingScene;
+			sourceTree = "<group>";
+		};
 		27A5B4AB21590F2E005B0F2F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +239,8 @@
 			isa = PBXGroup;
 			children = (
 				27BD8D69213C2674003DF079 /* BaseTabBarController.swift */,
+				2774C52421596F4A009972F3 /* SplashScreenViewController.swift */,
+				2774C52321596F29009972F3 /* OnboardingScene */,
 				27BD8D66213C23C4003DF079 /* Mixes Scene */,
 				27BD8D67213C23D4003DF079 /* Noises Scene */,
 				27BD8D68213C23DD003DF079 /* Settings Scene */,
@@ -261,9 +276,13 @@
 			isa = PBXGroup;
 			children = (
 				27D188FD2153712D00F5968F /* CoreDataModel.xcdatamodeld */,
-				2774C51B21592633009972F3 /* SoundDownloadTask.swift */,
 				27B106012135D8570070A109 /* InterfaceTheme.swift */,
+				2774C51F21596A99009972F3 /* SettingsRepository.swift */,
+				27C753822158E56F00905EFD /* LicenseProvider.swift */,
+				27BD8D7B213C476A003DF079 /* MixtapeRepository.swift */,
+				27BD8D7D213C481C003DF079 /* SoundRepository.swift */,
 				271D158C213DD45A00F5B2DC /* SoundDelegate.swift */,
+				2774C51B21592633009972F3 /* SoundDownloadTask.swift */,
 				27B1060B2135DCA40070A109 /* Sound.swift */,
 				27C753862158E59E00905EFD /* License.swift */,
 				27BD8D64213C1ADA003DF079 /* Mixtape.swift */,
@@ -292,12 +311,10 @@
 				27F52EFF21428E470030102C /* Animations */,
 				27BD8D57213BF4E6003DF079 /* Sounds */,
 				27B106072135D8EA0070A109 /* DefaultTheme.swift */,
-				27C753822158E56F00905EFD /* LicenseProvider.swift */,
-				27BD8D7B213C476A003DF079 /* MixtapeRepository.swift */,
-				27BD8D7D213C481C003DF079 /* SoundRepository.swift */,
 				27D18900215374D700F5968F /* SRSoundRepository.swift */,
 				27D1890421537C0A00F5968F /* SRMixtapeRepository.swift */,
 				27C753842158E58500905EFD /* HardCodedLicenseProvider.swift */,
+				2774C52121596B9C009972F3 /* UDSettingsRepository.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -532,6 +549,7 @@
 				"${BUILT_PRODUCTS_DIR}/SteviaLayout/Stevia.framework",
 				"${BUILT_PRODUCTS_DIR}/SugarRecord/SugarRecord.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/WhatsNewKit/WhatsNewKit.framework",
 				"${BUILT_PRODUCTS_DIR}/YPImagePicker/YPImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
@@ -544,6 +562,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stevia.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SugarRecord.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WhatsNewKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YPImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
@@ -584,6 +603,7 @@
 				27F52F0121428F9D0030102C /* PlayingView.swift in Sources */,
 				27F52EFA214266090030102C /* HapticFeedbackManager.swift in Sources */,
 				27B106052135D8BC0070A109 /* Injection.swift in Sources */,
+				2774C52221596B9C009972F3 /* UDSettingsRepository.swift in Sources */,
 				27D189122155338F00F5968F /* Filemanager+Filepath.swift in Sources */,
 				27D189102155329400F5968F /* UIImage+FromFile.swift in Sources */,
 				27C753892158EBEC00905EFD /* LicenseTableViewCell.swift in Sources */,
@@ -597,12 +617,14 @@
 				2774C51E21592A22009972F3 /* SoundSyncManager.swift in Sources */,
 				27D188FF2153712E00F5968F /* CoreDataModel.xcdatamodeld in Sources */,
 				27B105FF2135D8150070A109 /* RoundedImageView.swift in Sources */,
+				2774C52021596A99009972F3 /* SettingsRepository.swift in Sources */,
 				27D1890521537C0A00F5968F /* SRMixtapeRepository.swift in Sources */,
 				27BC36E5214FCC4E000AD98B /* EditMixtapeViewController.swift in Sources */,
 				27D0BFA721501AE200B27FF0 /* SoundSelectionViewController.swift in Sources */,
 				27F52F1221457C110030102C /* CreateMixtapeTableViewCell.swift in Sources */,
 				27BD8D7E213C481C003DF079 /* SoundRepository.swift in Sources */,
 				27BD8D63213C17D4003DF079 /* AudioManagerState.swift in Sources */,
+				2774C52521596F4A009972F3 /* SplashScreenViewController.swift in Sources */,
 				27BD8D65213C1ADA003DF079 /* Mixtape.swift in Sources */,
 				2774C51C21592633009972F3 /* SoundDownloadTask.swift in Sources */,
 				27F52F082143C7BC0030102C /* SoundToolbar.swift in Sources */,

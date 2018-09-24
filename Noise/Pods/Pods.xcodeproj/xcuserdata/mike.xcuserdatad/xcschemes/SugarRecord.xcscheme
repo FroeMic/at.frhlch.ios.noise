@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FA49CDC3F96DE262FFF5CCE890397809"
+               BlueprintIdentifier = "55232CE7CEFC9002AC8635BEFB328E18"
                BlueprintName = "SugarRecord"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "SugarRecord.framework">

@@ -10,6 +10,7 @@ target 'Noise' do
     pod 'YPImagePicker'
     pod 'SwiftyJSON', '~> 4.0'
     pod 'SugarRecord/CoreData'
+    pod 'WhatsNewKit', '~> 1.0.0'
 
 
 
