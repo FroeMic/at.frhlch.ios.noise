@@ -592,12 +592,20 @@ class HardCodedLicenseProvider: LicenseProvider {
                 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
                 SOFTWARE.
                 """),
+        License(title: "Appirater",
+                url: "https://github.com/arashpayan/appirater/",
+                license:
+                """
+                Copyright 2017. [Arash Payan] arash. This library is distributed under the terms of the MIT/X11.
+
+                While not required, I greatly encourage and appreciate any improvements that you make to this library be contributed back for the benefit of all who use Appirater.
+                """),
         License(title: "Icons8",
                 url: "https://icons8.com/",
                 license:
                 """
                 The icons, sounds, and photos are free for personal use and also free for commercial use, but we require linking to our web site. We distribute them under the license called Creative Commons Attribution-NoDerivs 3.0 Unported. Alternatively, you could buy a license that doesn't require any linking.
                 """),
-    ]
+    ].sort(by: { $0.title < $1.title })
     
 }

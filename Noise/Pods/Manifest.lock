@@ -1,6 +1,15 @@
 PODS:
   - AFDateHelper (4.2.7)
+  - Appirater (2.3.1)
+  - DTFoundation/Core (1.7.13)
+  - DTFoundation/DTASN1 (1.7.13):
+    - DTFoundation/Core
   - JustPeek (1.0.0)
+  - Kvitto (1.0.3):
+    - DTFoundation/DTASN1 (~> 1.7.13)
+    - Kvitto/Core (= 1.0.3)
+  - Kvitto/Core (1.0.3):
+    - DTFoundation/DTASN1 (~> 1.7.13)
   - lottie-ios (2.5.0)
   - PryntTrimmerView (2.0.1)
   - Result (3.2.4)
@@ -8,6 +17,7 @@ PODS:
   - SugarRecord/CoreData (3.1.2):
     - Result (~> 3.0)
   - SwiftyJSON (4.1.0)
+  - SwiftyStoreKit (0.13.2)
   - WhatsNewKit (1.0.2)
   - YPImagePicker (3.1.1):
     - PryntTrimmerView (~> 2.0)
@@ -15,21 +25,28 @@ PODS:
 
 DEPENDENCIES:
   - AFDateHelper (from `https://github.com/FroeMic/DateHelper.git`)
+  - Appirater
   - JustPeek (from `https://github.com/FroeMic/JustPeek.git`)
+  - Kvitto
   - lottie-ios
   - SugarRecord/CoreData
   - SwiftyJSON (~> 4.0)
+  - SwiftyStoreKit
   - WhatsNewKit (~> 1.0.0)
   - YPImagePicker
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Appirater
+    - DTFoundation
+    - Kvitto
     - lottie-ios
     - PryntTrimmerView
     - Result
     - SteviaLayout
     - SugarRecord
     - SwiftyJSON
+    - SwiftyStoreKit
     - WhatsNewKit
     - YPImagePicker
 
@@ -49,16 +66,20 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   AFDateHelper: 9dcce64b7200d8cc559ac4e89db99722c00c89de
+  Appirater: 44a4651f7912a17dc906b655f0c215d5bb768b84
+  DTFoundation: f03be9fd786f11e505bb8fc44e2a3732bf0917df
   JustPeek: e4156168852a86b7ab00403e8e785ef225c88a3c
+  Kvitto: d451f893f84ad669850b7cb7d3f8781363e14232
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   PryntTrimmerView: 4260ae497a2f3e1bbfc0b71247eb74ab92bf0490
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   SteviaLayout: 0d2112caea45707695e8c718262c8ea3dd37ef17
   SugarRecord: be6aa5c18b4a4dec0de4c1f49fc61c85eabb5328
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+  SwiftyStoreKit: b7563505440a68c9d9fa70bc43d8a97015519409
   WhatsNewKit: 6a5532c41489dc8d19266b75de8ece7666250df4
   YPImagePicker: dd0a901a293f99e982f75554738574c735734a76
 
-PODFILE CHECKSUM: ed73e92605c32bce901675a0c9f51be454c72147
+PODFILE CHECKSUM: eca8f681f10495bc545979ba76c64f3b675172af
 
 COCOAPODS: 1.5.3

@@ -11,8 +11,9 @@ target 'Noise' do
     pod 'SwiftyJSON', '~> 4.0'
     pod 'SugarRecord/CoreData'
     pod 'WhatsNewKit', '~> 1.0.0'
-
-
+    pod 'Appirater'
+    pod 'SwiftyStoreKit'
+    pod 'Kvitto'
 
   # Pods for Noise
 

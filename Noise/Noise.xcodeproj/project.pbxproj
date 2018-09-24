@@ -23,6 +23,7 @@
 		2774C52221596B9C009972F3 /* UDSettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774C52121596B9C009972F3 /* UDSettingsRepository.swift */; };
 		2774C52521596F4A009972F3 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774C52421596F4A009972F3 /* SplashScreenViewController.swift */; };
 		2774C52721597690009972F3 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774C52621597690009972F3 /* AboutViewController.swift */; };
+		2774C52921598097009972F3 /* RatingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774C52821598097009972F3 /* RatingManager.swift */; };
 		27A5B4AA21590F22005B0F2F /* UIApplication+StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A5B4A921590F22005B0F2F /* UIApplication+StatusBar.swift */; };
 		27B105FF2135D8150070A109 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B105FE2135D8150070A109 /* RoundedImageView.swift */; };
 		27B106022135D8570070A109 /* InterfaceTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B106012135D8570070A109 /* InterfaceTheme.swift */; };
@@ -104,6 +105,7 @@
 		2774C52121596B9C009972F3 /* UDSettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDSettingsRepository.swift; sourceTree = "<group>"; };
 		2774C52421596F4A009972F3 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		2774C52621597690009972F3 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		2774C52821598097009972F3 /* RatingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingManager.swift; sourceTree = "<group>"; };
 		27A5B4A921590F22005B0F2F /* UIApplication+StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+StatusBar.swift"; sourceTree = "<group>"; };
 		27B105FE2135D8150070A109 /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		27B106012135D8570070A109 /* InterfaceTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceTheme.swift; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 				27F52EF9214266090030102C /* HapticFeedbackManager.swift */,
 				2774C51921592482009972F3 /* DownloadManager.swift */,
 				2774C51D21592A22009972F3 /* SoundSyncManager.swift */,
+				2774C52821598097009972F3 /* RatingManager.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -546,12 +549,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Noise/Pods-Noise-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFDateHelper/AFDateHelper.framework",
+				"${BUILT_PRODUCTS_DIR}/Appirater/Appirater.framework",
+				"${BUILT_PRODUCTS_DIR}/DTFoundation/DTFoundation.framework",
 				"${BUILT_PRODUCTS_DIR}/JustPeek/JustPeek.framework",
+				"${BUILT_PRODUCTS_DIR}/Kvitto/Kvitto.framework",
 				"${BUILT_PRODUCTS_DIR}/PryntTrimmerView/PryntTrimmerView.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SteviaLayout/Stevia.framework",
 				"${BUILT_PRODUCTS_DIR}/SugarRecord/SugarRecord.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyStoreKit/SwiftyStoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/WhatsNewKit/WhatsNewKit.framework",
 				"${BUILT_PRODUCTS_DIR}/YPImagePicker/YPImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
@@ -559,12 +566,16 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFDateHelper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Appirater.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DTFoundation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JustPeek.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kvitto.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PryntTrimmerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stevia.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SugarRecord.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyStoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WhatsNewKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YPImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
@@ -645,6 +656,7 @@
 				2774C51A21592482009972F3 /* DownloadManager.swift in Sources */,
 				271F9EB82135D51800115C8C /* AppDelegate.swift in Sources */,
 				27F52F102144497B0030102C /* CassetteView.swift in Sources */,
+				2774C52921598097009972F3 /* RatingManager.swift in Sources */,
 				27C753852158E58500905EFD /* HardCodedLicenseProvider.swift in Sources */,
 				27F52F0A2143C9250030102C /* SoundToolbarDelegate.swift in Sources */,
 				27D18901215374D700F5968F /* SRSoundRepository.swift in Sources */,
