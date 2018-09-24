@@ -577,7 +577,7 @@
                                         <rect key="frame" x="130" y="0.0" width="225" height="120"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Titel" placeholder="New Mixtape" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oyE-8o-q6X">
-                                                <rect key="frame" x="0.0" y="0.0" width="225" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="190" height="34"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -588,15 +588,31 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zb4-xx-hab">
+                                                <rect key="frame" x="190" y="-0.5" width="35" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="35" id="daf-OG-oDU"/>
+                                                    <constraint firstAttribute="height" constant="35" id="q2W-c2-YCi"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.1843137255" green="0.76470588240000004" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" image="ic_play">
+                                                    <color key="titleColor" red="0.1843137255" green="0.76470588240000004" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="playPauseButtonPressed:" destination="gLJ-OC-Juf" eventType="touchUpInside" id="m6i-HO-j7Q"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="b08-7g-Ypu" secondAttribute="trailing" id="1n7-4U-BFb"/>
-                                            <constraint firstAttribute="trailing" secondItem="oyE-8o-q6X" secondAttribute="trailing" id="PRr-k9-IPZ"/>
                                             <constraint firstAttribute="bottom" secondItem="b08-7g-Ypu" secondAttribute="bottom" id="Ppd-MG-mb7"/>
                                             <constraint firstItem="b08-7g-Ypu" firstAttribute="top" secondItem="oyE-8o-q6X" secondAttribute="bottom" id="SEo-Ed-REH"/>
                                             <constraint firstItem="oyE-8o-q6X" firstAttribute="leading" secondItem="BNZ-RD-d9b" secondAttribute="leading" id="emw-ga-RAF"/>
+                                            <constraint firstItem="zb4-xx-hab" firstAttribute="leading" secondItem="oyE-8o-q6X" secondAttribute="trailing" id="hrh-E6-gxH"/>
+                                            <constraint firstAttribute="trailing" secondItem="zb4-xx-hab" secondAttribute="trailing" id="q2r-kR-3Vr"/>
                                             <constraint firstItem="oyE-8o-q6X" firstAttribute="top" secondItem="BNZ-RD-d9b" secondAttribute="top" id="s50-J5-mJX"/>
+                                            <constraint firstItem="zb4-xx-hab" firstAttribute="centerY" secondItem="oyE-8o-q6X" secondAttribute="centerY" id="xZx-zd-UQw"/>
                                             <constraint firstItem="b08-7g-Ypu" firstAttribute="leading" secondItem="BNZ-RD-d9b" secondAttribute="leading" id="yUI-iD-PDZ"/>
                                         </constraints>
                                     </view>
@@ -636,7 +652,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Sound" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UW3-uY-9Hw">
                                                     <rect key="frame" x="45" y="19.5" width="305" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -778,6 +794,7 @@
                     <connections>
                         <outlet property="descriptionTextView" destination="b08-7g-Ypu" id="YlN-eJ-vsW"/>
                         <outlet property="imageView" destination="kGh-nb-758" id="nBE-VR-PqC"/>
+                        <outlet property="playPauseButton" destination="zb4-xx-hab" id="aHk-LL-zbH"/>
                         <outlet property="tableView" destination="m9f-eB-c0X" id="54J-qI-rtz"/>
                         <outlet property="titleTextfield" destination="oyE-8o-q6X" id="Yeh-9p-YcL"/>
                         <outlet property="triggerPickerView" destination="JD5-01-S63" id="8UB-Gq-p4O"/>
@@ -1646,6 +1663,7 @@ Below you can find the licenses to all third-party resources used in this app. C
         <image name="ic_chevron_right" width="33" height="33"/>
         <image name="ic_mixtape" width="33" height="33"/>
         <image name="ic_noise" width="33" height="33"/>
+        <image name="ic_play" width="24" height="24"/>
         <image name="ic_settings" width="33" height="33"/>
         <image name="ic_sound_full" width="33" height="33"/>
         <image name="ic_sound_mute" width="33" height="33"/>

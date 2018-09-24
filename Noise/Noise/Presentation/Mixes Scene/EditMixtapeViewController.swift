@@ -17,6 +17,17 @@ class EditMixtapeViewController: UIViewController {
     static let presentSelectSoundsVCSegueIdentifier = "presentSelectSoundVC"
     
     var mixtape: Mixtape?
+    
+    var audioManager: AudioManager {
+        return AudioManager.shared
+    }
+    var isCurrentMixtapeActive: Bool {
+        return audioManager.title == mixtape?.title
+    }
+    var isPlayingCurrentMixtape: Bool {
+        return audioManager.state == .playing && isCurrentMixtapeActive
+    }
+    
     private var sounds: [Sound]  {
         return mixtape?.sounds ?? []
     }
@@ -34,6 +45,7 @@ class EditMixtapeViewController: UIViewController {
     @IBOutlet var imageView: RoundedImageView!
     @IBOutlet var triggerPickerView: UIView!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var playPauseButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +66,11 @@ class EditMixtapeViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        playAudio()
+        audioManager.delegates.append(self)
+        
+        if Injection.settingsRepository.getAutoPlay() {
+            playAudio()
+        }
         updateNowPlayingInformation()
     }
     
@@ -89,6 +105,24 @@ class EditMixtapeViewController: UIViewController {
         if let navigationVC = segue.destination as? UINavigationController,
             let soundSelectionVC = navigationVC.topViewController as? SoundSelectionViewController {
             soundSelectionVC.mixtape = mixtape
+        }
+    }
+    
+    @IBAction func playPauseButtonPressed(_ sender: UIButton) {
+        
+        if isPlayingCurrentMixtape {
+            AudioManager.shared.pause()
+        } else {
+            playAudio()
+        }
+        updatePlayPauseButton()
+    }
+    
+    func updatePlayPauseButton() {
+        if isPlayingCurrentMixtape {
+            playPauseButton.setImage(UIImage(named: "ic_pause"), for: .normal)
+        } else {
+            playPauseButton.setImage(UIImage(named: "ic_play"), for: .normal)
         }
     }
     
@@ -222,7 +256,7 @@ class EditMixtapeViewController: UIViewController {
         guard let mixtape = mixtape else {
             return
         }
-        if AudioManager.shared.title == mixtape.title {
+        if isCurrentMixtapeActive {
             for sound in sounds {
                 AudioManager.shared.updateVolume(for: sound)
             }
@@ -347,3 +381,13 @@ extension EditMixtapeViewController: SoundDelegate {
     
 }
 
+extension EditMixtapeViewController: AudioManagerDelegate {
+    func audioManager(_ audioManager: AudioManager, didChange state: AudioManagerState) {
+        
+        DispatchQueue.main.async {
+            self.updatePlayPauseButton()
+        }
+        
+    }
+
+}

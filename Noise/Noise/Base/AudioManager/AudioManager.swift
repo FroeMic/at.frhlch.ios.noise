@@ -14,13 +14,15 @@ class AudioManager {
     
     static let shared = AudioManager()
     
-    var delegate: AudioManagerDelegate?
+    var delegates: [AudioManagerDelegate?] = []
     
     private let playsInBackground: Bool
     private var previewPlayer: AudioManager?
     private(set) var state: AudioManagerState = .stopped {
         didSet {
-            delegate?.audioManager(self, didChange: state)
+            for delegate in delegates {
+                delegate?.audioManager(self, didChange: state)
+            }
         }
     }
     

@@ -34,6 +34,6 @@ class AddSoundTableViewCell: UITableViewCell {
         let theme = Injection.theme
         
         contentView.backgroundColor = theme.tableViewCellDefaultBackgroundColor
-        customLabel?.textColor = theme.tableViewCellDefaultTextColor
+        customLabel?.textColor = theme.tintColor
     }
 }

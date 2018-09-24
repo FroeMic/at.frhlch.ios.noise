@@ -35,7 +35,7 @@ class BaseTabBarController: UITabBarController {
         
         view.addConstraints(constraints)
         
-        audioManager.delegate = self
+        audioManager.delegates.append(self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
