@@ -11,6 +11,23 @@ import UIKit
 class SettingsViewController: UITableViewController {
 
     static let showAcknowledgementSegueIdentifier = "showAcknowledgementScene"
+    static let showAboutSegueIdentifier = "showAboutScene"
+    
+    @IBOutlet var playAutomticallyTableViewCell: UITableViewCell!
+    @IBOutlet var playAutomaticallyLabel: UILabel!
+    @IBOutlet var playAutomaticallySwitch: UISwitch!
+    
+    @IBOutlet var playInBackgroundLabel: UILabel!
+    @IBOutlet var playInBackgroundTableViewCell: UITableViewCell!
+    @IBOutlet var playInBackgroundSwitch: UISwitch!
+    
+    @IBOutlet var inAppPurchasesTableViewCell: UITableViewCell!
+    @IBOutlet var inAppPurchasesLabel: UILabel!
+    @IBOutlet var inAppPurchasesChevronImageView: UIImageView!
+    
+    @IBOutlet var aboutTableViewCell: UITableViewCell!
+    @IBOutlet var aboutLabel: UIView!
+    @IBOutlet var aboutChevronImageView: UIImageView!
     
     @IBOutlet var acknowledgmentsTableViewCell: UITableViewCell!
     @IBOutlet var acknowledgmentsLabel: UILabel!
@@ -31,6 +48,9 @@ class SettingsViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        playAutomaticallySwitch.isOn = Injection.settingsRepository.getAutoPlay()
+        playInBackgroundSwitch.isOn = Injection.settingsRepository.getBackgroundPlay()
+        
         UIApplication.shared.statusBarView?.backgroundColor = .white
         
         UIView.animate(withDuration: 0.2, animations: {
@@ -38,7 +58,6 @@ class SettingsViewController: UITableViewController {
         })
         
         applyTheme()
-//        tableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -116,6 +135,34 @@ class SettingsViewController: UITableViewController {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigationController?.navigationBar.shadowImage = UIImage()
         
+        playAutomticallyTableViewCell.selectionStyle = .none
+        playAutomticallyTableViewCell.backgroundColor = .white
+        playAutomaticallyLabel.textColor = theme.textColor
+
+        playInBackgroundTableViewCell.selectionStyle = .none
+        playInBackgroundTableViewCell.backgroundColor = .white
+        playInBackgroundLabel.textColor = theme.textColor
+        
+        inAppPurchasesTableViewCell.selectionStyle = .none
+        inAppPurchasesTableViewCell.backgroundColor = .white
+        inAppPurchasesLabel.textColor = theme.textColor
+        
+        if let image = inAppPurchasesChevronImageView.image {
+            let coloredImage = image.withRenderingMode(.alwaysTemplate)
+            inAppPurchasesChevronImageView.image = coloredImage
+            inAppPurchasesChevronImageView.tintColor = theme.textColor
+        }
+        
+        aboutTableViewCell.selectionStyle = .none
+        aboutTableViewCell.backgroundColor = .white
+        acknowledgmentsLabel.textColor = theme.textColor
+        
+        if let image = aboutChevronImageView.image {
+            let coloredImage = image.withRenderingMode(.alwaysTemplate)
+            aboutChevronImageView.image = coloredImage
+            aboutChevronImageView.tintColor = theme.textColor
+        }
+        
         acknowledgmentsTableViewCell.selectionStyle = .none
         acknowledgmentsTableViewCell.backgroundColor = .white
         acknowledgmentsLabel.textColor = theme.textColor
@@ -125,9 +172,15 @@ class SettingsViewController: UITableViewController {
             acknowledgmentsChevronImageView.image = coloredImage
             acknowledgmentsChevronImageView.tintColor = theme.textColor
         }
-        
     }
     
+    @IBAction func playAutomaticallySwitchValueChanged(_ sender: Any) {
+        Injection.settingsRepository.setAutoPlay(enabled: playAutomaticallySwitch.isOn)
+    }
+    
+    @IBAction func playInBackgroundSwitchValueChanged(_ sender: Any) {
+        Injection.settingsRepository.setBackgroundPlay(enabled: playInBackgroundSwitch.isOn)
+    }
 }
 
 extension SettingsViewController {
@@ -156,8 +209,7 @@ extension SettingsViewController {
             // Todo: Open App Store rating page
                 ()
             case 1:
-            // Todo: Show about About ViewController
-                ()
+                performSegue(withIdentifier: SettingsViewController.showAboutSegueIdentifier, sender: nil)
             case 2:
                 performSegue(withIdentifier: SettingsViewController.showAcknowledgementSegueIdentifier, sender: nil)
             default:

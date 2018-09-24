@@ -22,6 +22,7 @@
 		2774C52021596A99009972F3 /* SettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774C51F21596A99009972F3 /* SettingsRepository.swift */; };
 		2774C52221596B9C009972F3 /* UDSettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774C52121596B9C009972F3 /* UDSettingsRepository.swift */; };
 		2774C52521596F4A009972F3 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774C52421596F4A009972F3 /* SplashScreenViewController.swift */; };
+		2774C52721597690009972F3 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774C52621597690009972F3 /* AboutViewController.swift */; };
 		27A5B4AA21590F22005B0F2F /* UIApplication+StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A5B4A921590F22005B0F2F /* UIApplication+StatusBar.swift */; };
 		27B105FF2135D8150070A109 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B105FE2135D8150070A109 /* RoundedImageView.swift */; };
 		27B106022135D8570070A109 /* InterfaceTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B106012135D8570070A109 /* InterfaceTheme.swift */; };
@@ -102,6 +103,7 @@
 		2774C51F21596A99009972F3 /* SettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRepository.swift; sourceTree = "<group>"; };
 		2774C52121596B9C009972F3 /* UDSettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDSettingsRepository.swift; sourceTree = "<group>"; };
 		2774C52421596F4A009972F3 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		2774C52621597690009972F3 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		27A5B4A921590F22005B0F2F /* UIApplication+StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+StatusBar.swift"; sourceTree = "<group>"; };
 		27B105FE2135D8150070A109 /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		27B106012135D8570070A109 /* InterfaceTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceTheme.swift; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 				27C753802158E55A00905EFD /* SettingsViewController.swift */,
 				27C7537C2158E4BC00905EFD /* LicenseDetailViewController.swift */,
 				27C7537E2158E4C800905EFD /* AcknowledgmentsViewController.swift */,
+				2774C52621597690009972F3 /* AboutViewController.swift */,
 			);
 			path = "Settings Scene";
 			sourceTree = "<group>";
@@ -605,6 +608,7 @@
 				27B106052135D8BC0070A109 /* Injection.swift in Sources */,
 				2774C52221596B9C009972F3 /* UDSettingsRepository.swift in Sources */,
 				27D189122155338F00F5968F /* Filemanager+Filepath.swift in Sources */,
+				2774C52721597690009972F3 /* AboutViewController.swift in Sources */,
 				27D189102155329400F5968F /* UIImage+FromFile.swift in Sources */,
 				27C753892158EBEC00905EFD /* LicenseTableViewCell.swift in Sources */,
 				27C753872158E59E00905EFD /* License.swift in Sources */,

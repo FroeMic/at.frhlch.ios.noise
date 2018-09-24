@@ -14,11 +14,11 @@ class BaseTabBarController: UITabBarController {
     var audioManager: AudioManager {
         return AudioManager.shared
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        selectedIndex = 1
+        selectedIndex = Injection.settingsRepository.getSelectedTab()
     
         soundToolbar = SoundBar(frame: CGRect(x: 0, y: view.bounds.height - tabBar.frame.height - 44.0 , width: view.bounds.width, height: 44.0))
         soundToolbar.soundBarDelegate = self 
@@ -43,6 +43,12 @@ class BaseTabBarController: UITabBarController {
         
         applyTheme()
         updateSoundBar(with: audioManager)
+    }
+    
+   override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        if let index = tabBar.items?.firstIndex(of: item) {
+            Injection.settingsRepository.setSelectedTab(index: index)
+        }
     }
     
     private func applyTheme() {
