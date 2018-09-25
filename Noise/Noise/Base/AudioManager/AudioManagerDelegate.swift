@@ -8,8 +8,18 @@
 
 import Foundation
 
-protocol AudioManagerDelegate {
+protocol AudioManagerDelegate: class {
     
     func audioManager(_ audioManager: AudioManager, didChange state: AudioManagerState)
-    
+    func audioManager(_ audioManager: AudioManager, didPressNextTrack: Bool)
+    func audioManager(_ audioManager: AudioManager, didPressPrevTrack: Bool)
+}
+
+extension AudioManagerDelegate {
+    func audioManager(_ audioManager: AudioManager, didPressNextTrack: Bool) {
+        
+    }
+    func audioManager(_ audioManager: AudioManager, didPressPrevTrack: Bool){
+        
+    }
 }

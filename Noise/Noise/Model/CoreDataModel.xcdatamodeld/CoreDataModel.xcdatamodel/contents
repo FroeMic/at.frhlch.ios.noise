@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14315.18" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14315.18" systemVersion="18A391" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="ManagedMixtape" representedClassName="ManagedMixtape" syncable="YES" codeGenerationType="class">
         <attribute name="detailDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="imageFilePath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastSaved" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="title" attributeType="String" syncable="YES"/>
         <attribute name="uuid" attributeType="String" syncable="YES"/>
         <relationship name="sounds" toMany="YES" deletionRule="Cascade" destinationEntity="ManagedMixtapeSound" syncable="YES"/>
@@ -26,7 +27,7 @@
         <attribute name="volume" attributeType="Float" minValueString="0" maxValueString="1" defaultValueString="0.3" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ManagedMixtape" positionX="402.3671875" positionY="-53.96484375" width="128" height="120"/>
+        <element name="ManagedMixtape" positionX="402.3671875" positionY="-53.96484375" width="128" height="135"/>
         <element name="ManagedMixtapeSound" positionX="196.09375" positionY="-47.828125" width="128" height="90"/>
         <element name="ManagedSound" positionX="-63" positionY="-18" width="128" height="210"/>
     </elements>

@@ -19,6 +19,7 @@ class AudioManager {
     private var previewPlayer: AudioManager?
     private var continueAfterPreview: Bool = false
     private var fallbackImage: UIImage = UIImage(named: "placeholder_artwork")!
+    private var enableNextPrevTracks: Bool = false
     
     private var session: AVAudioSession {
         return AVAudioSession.sharedInstance()
@@ -28,7 +29,7 @@ class AudioManager {
         return Injection.settingsRepository.getBackgroundPlay()
     }
     
-    var delegates: [AudioManagerDelegate?] = []
+    private var delegates: [AudioManagerDelegate?] = []
     
     private(set) var state: AudioManagerState = .stopped {
         didSet {
@@ -42,7 +43,7 @@ class AudioManager {
         return currentAudio?.sounds ?? []
     }
     var displayTitle: String {
-        return currentAudio?.displayTitle ?? ""
+        return currentAudio?.displayTitle ?? "Not Playing"
     }
     var displayArtist: String {
         return currentAudio?.artist ?? "Noise"
@@ -101,6 +102,27 @@ class AudioManager {
             self?.pause()
             return .success
         }
+        commandCenter.nextTrackCommand.isEnabled = enableNextPrevTracks
+        commandCenter.previousTrackCommand.isEnabled = enableNextPrevTracks
+        commandCenter.nextTrackCommand.addTarget { [weak self] (event) -> MPRemoteCommandHandlerStatus in
+            guard let self = self else {
+                return .commandFailed
+            }
+            
+            for delegate in self.delegates {
+                delegate?.audioManager(self, didPressNextTrack: true)
+            }
+            return .success
+        }
+        commandCenter.previousTrackCommand.addTarget { [weak self] (event) -> MPRemoteCommandHandlerStatus in
+            guard let self = self else {
+                return .commandFailed
+            }
+            for delegate in self.delegates{
+                delegate?.audioManager(self, didPressPrevTrack: true)
+            }
+            return .success
+        }
     }
     
     private func updateNowPlayingInfo() {
@@ -121,15 +143,24 @@ class AudioManager {
         return AudioBundle(id: "xxx-preview-sound", title: "Preview Sounds", sounds: sounds)
     }
     
-    
     // MARK: Exposed functions
+    
+    func register(delegate: AudioManagerDelegate) {
+        if delegates.contains(where: { $0 === delegate } ) {
+            return
+        }
+        delegates.append(delegate)
+    }
+    
+    func deregister(delegate: AudioManagerDelegate)  {
+        delegates.removeAll(where: { $0 === delegate })
+    }
+    
     func activate(audio: AudioBundle, hard: Bool = true) {
         
         if hard {
             // 1. stop all players
-            if state == .playing {
-                stop()
-            }
+            stop()
             
             // 2. (re)start with new audioBundle
             currentAudio = audio

@@ -44,6 +44,7 @@ class SoundBar: UIToolbar {
     private var playButton: UIBarButtonItem?
     private var nextButton: UIBarButtonItem?
     private var prevButton: UIBarButtonItem?
+    private var albumImageView: RoundedImageView?
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -85,7 +86,17 @@ class SoundBar: UIToolbar {
 //        let fixedSpacer = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
 //        fixedSpacer.width = 5
         
-        setItems([title, spacer, prevButton, playButton,nextButton], animated: false)
+//        let imageView = RoundedImageView(frame: CGRect(x: 0, y: 0, width: 25.0, height: 25.0))
+//        imageView.cornerRadius = 5.0
+//        imageView.contentMode = .scaleAspectFit
+//        imageView.image = UIImage(named: "placeholder_mixtape")
+//        let albumImageViewBarButton = UIBarButtonItem(customView: imageView)
+//        self.albumImageView = imageView
+//
+//        let fixedSpacer = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+//        fixedSpacer.width = 5
+//
+        setItems([title, spacer, prevButton, playButton, nextButton], animated: false)
         
     }
     

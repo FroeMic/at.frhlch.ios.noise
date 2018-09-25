@@ -35,6 +35,8 @@ class EditMixtapeViewController: UIViewController {
     private var pickerConfig: YPImagePickerConfiguration?
     private var picker: YPImagePicker?
     private var alertController: UIAlertController?
+    private let pauseButtonImage = UIImage(named: "ic_pause_round")?.withRenderingMode(.alwaysTemplate)
+    private let playButtonImage = UIImage(named: "ic_play_round")?.withRenderingMode(.alwaysTemplate)
     
     private var mixtapeRepository: MixtapeRepository {
         return Injection.mixtapeRepository
@@ -65,8 +67,6 @@ class EditMixtapeViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        
-        audioManager.delegates.append(self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -86,18 +86,25 @@ class EditMixtapeViewController: UIViewController {
         navigationController?.navigationBar.tintColor = theme.tintColor
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigationController?.navigationBar.shadowImage = UIImage()
+        playPauseButton.tintColor = theme.tintColor
         
         updateView()
+        
+        audioManager.register(delegate: self)
         
         if Injection.settingsRepository.getAutoPlay() {
             playAudio()
         }
-
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         saveMixtape()
         super.viewWillDisappear(animated)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        audioManager.deregister(delegate: self)
+        super.viewDidDisappear(animated)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -115,13 +122,14 @@ class EditMixtapeViewController: UIViewController {
             playAudio()
         }
         updatePlayPauseButton()
+        Injection.feedback.subtleFeedback()
     }
     
     private func updatePlayPauseButton() {
         if isPlayingCurrentMixtape {
-            playPauseButton.setImage(UIImage(named: "ic_pause"), for: .normal)
+            playPauseButton.setImage(pauseButtonImage, for: .normal)
         } else {
-            playPauseButton.setImage(UIImage(named: "ic_play"), for: .normal)
+            playPauseButton.setImage(playButtonImage, for: .normal)
         }
     }
     
@@ -141,6 +149,8 @@ class EditMixtapeViewController: UIViewController {
         titleTextfield.text = mixtape.title
         descriptionTextView.text = mixtape.detailDescription == nil ? "..." : mixtape.detailDescription
         imageView.image = mixtape.image
+        playPauseButton?.isEnabled = sounds.count > 0
+        updatePlayPauseButton()
     }
     
     private func presentPicker() {
@@ -211,7 +221,7 @@ class EditMixtapeViewController: UIViewController {
         let removeImage = UIAlertAction(title: "Remove picture", style: .default, handler: { (action) -> Void in
             self.mixtape?.image = nil
             self.updateView()
-            self.updateNowPlayingInformation()
+            self.saveMixtape()
         })
         
         let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) -> Void in })
@@ -272,6 +282,9 @@ class EditMixtapeViewController: UIViewController {
     
     private func makeAudioBundle() -> AudioBundle? {
         guard let mixtape = mixtape else {
+            return nil
+        }
+        if sounds.count == 0 {
             return nil
         }
         var audioBundle = AudioBundle(mixtape: mixtape)
@@ -377,7 +390,7 @@ extension EditMixtapeViewController: UITableViewDataSource {
 extension EditMixtapeViewController: SoundDelegate {
     
     func soundDidChange(_ sound: Sound, oldSound: Sound) {
-        
+                
         guard let _ = sounds.index(of: sound) else {
             return
         }

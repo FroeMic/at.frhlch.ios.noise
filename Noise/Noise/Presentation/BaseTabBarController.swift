@@ -35,7 +35,7 @@ class BaseTabBarController: UITabBarController {
         
         view.addConstraints(constraints)
         
-        audioManager.delegates.append(self)
+        audioManager.register(delegate: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,12 +59,8 @@ class BaseTabBarController: UITabBarController {
     
     private func getMixtape(offset: Int) -> Mixtape? {
         let mixtapes: [Mixtape] = Injection.mixtapeRepository.getAll()
-        if mixtapes.count < 1 {
-            soundToolbar?.hasNextTrack = true
-            soundToolbar?.hasPrevTrack = true
-        }
         guard let index = mixtapes.firstIndex(where: { AudioManager.shared.isMixtapeActive(mixtape: $0) }) else {
-            return nil
+            return mixtapes.first
         }
         let nextIndex = (index + offset) % mixtapes.count
         
@@ -74,6 +70,10 @@ class BaseTabBarController: UITabBarController {
     func updateSoundBar(with audioManager: AudioManager) {
         soundToolbar.title = audioManager.displayTitle
         soundToolbar.state = audioManager.state
+        
+        let mixtapes: [Mixtape] = Injection.mixtapeRepository.getAll()
+        soundToolbar?.hasNextTrack = mixtapes.count > 1
+        soundToolbar?.hasPrevTrack = mixtapes.count > 1
     }
     
 }
@@ -82,6 +82,14 @@ extension BaseTabBarController: AudioManagerDelegate {
     
     func audioManager(_ audioManager: AudioManager, didChange state: AudioManagerState) {
         updateSoundBar(with: audioManager)
+    }
+    
+    func audioManager(_ audioManager: AudioManager, didPressNextTrack: Bool) {
+        self.didPressNextTrack()
+    }
+    
+    func audioManager(_ audioManager: AudioManager, didPressPrevTrack: Bool){
+        self.didPressPreviousTrack()
     }
     
 }
@@ -97,7 +105,10 @@ extension BaseTabBarController: SoundBarDelegate {
     }
     
     func didPressPlay() {
-        audioManager.play()
+        guard let mixtape = getMixtape(offset: 0) else {
+            return
+        }
+        AudioManager.shared.activate(audio: AudioBundle(mixtape: mixtape), hard: false)
     }
     
     func didPressNextTrack() {

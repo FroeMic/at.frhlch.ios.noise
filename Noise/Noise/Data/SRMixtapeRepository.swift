@@ -43,6 +43,7 @@ private func new(title: String, context: Context) -> ManagedMixtape? {
             let managedMixtape: ManagedMixtape = try context.new()
             managedMixtape.uuid = UUID().uuidString
             managedMixtape.title = title
+            managedMixtape.lastSaved = Date()
             return managedMixtape
         } catch {
             return nil
@@ -78,6 +79,7 @@ extension SRMixtapeRepository: MixtapeRepository {
                 }
                 
                 managedMixtape.update(mixtape: mixtape, context: context)
+                managedMixtape.lastSaved = Date()
                 save()
             }
         } catch {
@@ -97,7 +99,7 @@ extension SRMixtapeRepository: MixtapeRepository {
     }
     
     func getAll() -> [Mixtape] {
-        guard let managedMixtapes = try? db.fetch(FetchRequest<ManagedMixtape>()) else {
+        guard let managedMixtapes = try? db.fetch(FetchRequest<ManagedMixtape>().sorted(with: "lastSaved", ascending: false)) else {
             return []
         }
         
@@ -149,7 +151,6 @@ extension ManagedMixtape {
             if let managedMixtapeSound = obj as? ManagedMixtapeSound {
                 removeMixtapeSound(mixtapeSound: managedMixtapeSound, context: context)
             }
-            
         }
         
         var mixtapeSounds: [ManagedMixtapeSound] = []

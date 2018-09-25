@@ -24,7 +24,6 @@ class RatingManager {
         Appirater.setDebug(false)
         Appirater.appLaunched(true)
         // Todo: Figure out why this does not work
-        
         Appirater.setCustomAlertMessage("We put a lot of effort into creating Noise. If you like it too, consider rating it on the App Store. Tap a star to rate.")
 
     }

@@ -10,22 +10,31 @@ import UIKit
 
 class HapticFeedbackManager: NSObject  {
     
-    private let notification = UINotificationFeedbackGenerator()
+    private let notificationGenerator = UINotificationFeedbackGenerator()
+    private let selectionGenerator = UISelectionFeedbackGenerator()
     
     override init() {
         
     }
     
     func feedbackForPeek(success: Bool = true) {
-        hapticFeedback(success: success)
+        if success {
+            successFeedback()
+        } else {
+            failureFeedback()
+        }
     }
     
-    private func hapticFeedback(success: Bool) {
-        if success {
-            notification.notificationOccurred(.success)
-        } else {
-            notification.notificationOccurred(.error)
-        }
+    func subtleFeedback() {
+        selectionGenerator.selectionChanged()
+    }
+    
+    func successFeedback() {
+        notificationGenerator.notificationOccurred(.success)
+    }
+    
+    func failureFeedback() {
+        notificationGenerator.notificationOccurred(.error)
     }
     
 }
