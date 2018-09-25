@@ -36,6 +36,7 @@ class BaseTabBarController: UITabBarController {
         view.addConstraints(constraints)
         
         audioManager.register(delegate: self)
+        updateSoundBar(with: audioManager)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,6 +75,7 @@ class BaseTabBarController: UITabBarController {
         let mixtapes: [Mixtape] = Injection.mixtapeRepository.getAll()
         soundToolbar?.hasNextTrack = mixtapes.count > 1
         soundToolbar?.hasPrevTrack = mixtapes.count > 1
+        audioManager.enableNextPrevTracks = mixtapes.count > 1
     }
     
 }

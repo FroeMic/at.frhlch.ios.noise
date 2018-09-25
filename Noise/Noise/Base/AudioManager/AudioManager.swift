@@ -19,7 +19,7 @@ class AudioManager {
     private var previewPlayer: AudioManager?
     private var continueAfterPreview: Bool = false
     private var fallbackImage: UIImage = UIImage(named: "placeholder_artwork")!
-    private var enableNextPrevTracks: Bool = false
+    private var commandCenterHasTargets: Bool = false
     
     private var session: AVAudioSession {
         return AVAudioSession.sharedInstance()
@@ -39,6 +39,8 @@ class AudioManager {
         }
     }
     
+    var enableNextPrevTracks: Bool = false
+
     var sounds: [Sound]  {
         return currentAudio?.sounds ?? []
     }
@@ -94,6 +96,15 @@ class AudioManager {
         let commandCenter = MPRemoteCommandCenter.shared()
         commandCenter.playCommand.isEnabled = true
         commandCenter.pauseCommand.isEnabled = true
+        commandCenter.nextTrackCommand.isEnabled = enableNextPrevTracks
+        commandCenter.previousTrackCommand.isEnabled = enableNextPrevTracks
+        
+        // make sure targets are added only once
+        if commandCenterHasTargets {
+            return
+        }
+        commandCenterHasTargets = true
+        
         commandCenter.playCommand.addTarget { [weak self] (event) -> MPRemoteCommandHandlerStatus in
             self?.play()
             return .success
@@ -102,8 +113,6 @@ class AudioManager {
             self?.pause()
             return .success
         }
-        commandCenter.nextTrackCommand.isEnabled = enableNextPrevTracks
-        commandCenter.previousTrackCommand.isEnabled = enableNextPrevTracks
         commandCenter.nextTrackCommand.addTarget { [weak self] (event) -> MPRemoteCommandHandlerStatus in
             guard let self = self else {
                 return .commandFailed
@@ -123,6 +132,7 @@ class AudioManager {
             }
             return .success
         }
+        
     }
     
     private func updateNowPlayingInfo() {
