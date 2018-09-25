@@ -188,7 +188,7 @@ class AudioManager {
                     // do nothing
                 } else {
                     players[playerId]?.stop()
-                    players.removeValue(forKey: "playerId")
+                    players.removeValue(forKey: playerId)
                 }
             }
             
@@ -288,6 +288,10 @@ extension AudioManager {
     
     func isMixtapeActive(mixtape: Mixtape) -> Bool {
         return currentAudio?.id == mixtape.id
+    }
+    
+    func isMixtapeActive(id: String) -> Bool {
+        return currentAudio?.id == id
     }
     
 }

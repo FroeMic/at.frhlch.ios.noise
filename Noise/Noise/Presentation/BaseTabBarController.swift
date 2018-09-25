@@ -104,13 +104,19 @@ extension BaseTabBarController: SoundBarDelegate {
     
     func didPressPause() {
         audioManager.pause()
+        Injection.feedback.subtleFeedback()
     }
     
     func didPressPlay() {
-        guard let mixtape = getMixtape(offset: 0) else {
-            return
+        if audioManager.state == .stopped {
+            guard let mixtape = getMixtape(offset: 0) else {
+                return
+            }
+            audioManager.activate(audio: AudioBundle(mixtape: mixtape), hard: false)
+        } else {
+            audioManager.play()
         }
-        AudioManager.shared.activate(audio: AudioBundle(mixtape: mixtape), hard: false)
+        Injection.feedback.subtleFeedback()
     }
     
     func didPressNextTrack() {
@@ -118,6 +124,7 @@ extension BaseTabBarController: SoundBarDelegate {
             return
         }
         AudioManager.shared.activate(audio: AudioBundle(mixtape: mixtape))
+        Injection.feedback.subtleFeedback()
     }
     
     func didPressPreviousTrack() {
@@ -125,6 +132,7 @@ extension BaseTabBarController: SoundBarDelegate {
             return
         }
         AudioManager.shared.activate(audio: AudioBundle(mixtape: mixtape))
+        Injection.feedback.subtleFeedback()
     }
     
 }

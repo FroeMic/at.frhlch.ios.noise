@@ -401,13 +401,12 @@ extension EditMixtapeViewController: SoundDelegate {
     
 }
 
+// MARK: AudioManagerDelegate
 extension EditMixtapeViewController: AudioManagerDelegate {
     func audioManager(_ audioManager: AudioManager, didChange state: AudioManagerState) {
         
         DispatchQueue.main.async {
             self.updatePlayPauseButton()
         }
-        
     }
-
 }

@@ -12,12 +12,23 @@ import JustPeek
 class NoiseViewController: UIViewController {
     
     static let soundReuseIdentifier = "SoundTableViewCell"
+    
+    private let pauseButtonImage = UIImage(named: "ic_pause_round")?.withRenderingMode(.alwaysTemplate)
+    private let playButtonImage = UIImage(named: "ic_play_round")?.withRenderingMode(.alwaysTemplate)
 
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var playPauseButton: UIButton!
     
     var peekController: PeekController?
     
     var sounds: [Sound] = []
+    
+    var audioManager: AudioManager {
+        return AudioManager.shared
+    }
+    var isPlayingSounds: Bool {
+        return audioManager.isMixtapeActive(id: "xxx-noise-all-sounds") && audioManager.state == .playing
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,14 +38,46 @@ class NoiseViewController: UIViewController {
         
         peekController = PeekController()
         peekController?.register(viewController: self, forPeekingWithDelegate: self, sourceView: tableView)
+        
+        playPauseButton?.tintColor = Injection.theme.tintColor
+        updatePlayPauseButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        playAudio()
+        audioManager.register(delegate: self)
+        updatePlayPauseButton()
+        
         sounds = Injection.soundRepository.getAll()
         tableView.reloadData()
+        
+        if Injection.settingsRepository.getAutoPlay() {
+            playAudio()
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        audioManager.deregister(delegate: self)
+        super.viewDidDisappear(animated)
+    }
+    
+    @IBAction func playPauseButtonPressed(_ sender: Any) {
+        if isPlayingSounds {
+            audioManager.pause()
+        } else {
+            playAudio()
+        }
+        updatePlayPauseButton()
+        Injection.feedback.subtleFeedback()
+    }
+    
+    private func updatePlayPauseButton() {
+        if isPlayingSounds {
+            playPauseButton.setImage(pauseButtonImage, for: .normal)
+        } else {
+            playPauseButton.setImage(playButtonImage, for: .normal)
+        }
     }
     
     func playAudio() {
@@ -43,7 +86,12 @@ class NoiseViewController: UIViewController {
     }
     
     func updateSound(sound: Sound) {
-        AudioManager.shared.updateVolume(for: sound)
+        if let index = sounds.firstIndex(of: sound) {
+            sounds[index] = sound
+        }
+        if isPlayingSounds {
+            AudioManager.shared.updateVolume(for: sound)
+        }
     }
 }
 
@@ -107,5 +155,15 @@ extension NoiseViewController: PeekingDelegate {
     
     func peekContext(_ context: PeekContext, commit viewController: UIViewController) {
         Injection.feedback.feedbackForPeek()
+    }
+}
+
+// MARK: AudioManagerDelegate
+extension NoiseViewController: AudioManagerDelegate {
+    func audioManager(_ audioManager: AudioManager, didChange state: AudioManagerState) {
+        
+        DispatchQueue.main.async {
+            self.updatePlayPauseButton()
+        }
     }
 }

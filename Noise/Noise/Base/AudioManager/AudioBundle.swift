@@ -19,7 +19,7 @@ struct AudioBundle {
     init(mixtape: Mixtape) {
         self.id = mixtape.id
         self.sounds = mixtape.sounds
-        self.displayTitle = mixtape.title
+        self.displayTitle = "Mixtape: " + mixtape.title
         self.artist = "Noise"
         self.albumImage = mixtape.image ?? UIImage(named: "placeholder_artwork")!
     }
