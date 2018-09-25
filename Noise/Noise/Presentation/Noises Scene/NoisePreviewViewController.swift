@@ -20,6 +20,8 @@ class NoisePreviewViewController: UIViewController {
     @IBOutlet var playingView: PlayingView!
     @IBOutlet var closeButton: PrimaryButton!
     
+    private var didMoveToBackground: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,15 +43,32 @@ class NoisePreviewViewController: UIViewController {
         imageContainer.clipsToBounds = true
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(appWillMoveToBackground), name: Notification.Name.UIApplicationWillResignActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(appWillMoveToForeground), name: Notification.Name.UIApplicationWillEnterForeground, object: nil)
         applyTheme()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        previewSound()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self, name: Notification.Name.UIApplicationWillResignActive, object: nil)
+        AudioManager.shared.stopPreview()
+    }
+    
+    private func previewSound() {
         guard var sound = sound else {
             return
         }
@@ -80,13 +99,18 @@ class NoisePreviewViewController: UIViewController {
         descriptionLabel?.text = sound.detailDescription
         
         AudioManager.shared.preview(sounds: [sound])
-        
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        AudioManager.shared.stopPreview()
+    @objc func appWillMoveToBackground() {
+        didMoveToBackground = true
+    }
+    
+    @objc func appWillMoveToForeground() {
+        if didMoveToBackground {
+            didMoveToBackground = false
+            previewSound()
+            playingView.playAnimation()
+        }
     }
     
     private func applyTheme() {

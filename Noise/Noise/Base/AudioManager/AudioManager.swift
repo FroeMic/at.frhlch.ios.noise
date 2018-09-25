@@ -14,6 +14,7 @@ class AudioManager {
     
     static let shared = AudioManager()
     
+    private var enforceNoBackgroundPlay: Bool = false
     private var players: [String: AVAudioPlayer] = [:]
     private var currentAudio: AudioBundle?
     private var previewPlayer: AudioManager?
@@ -26,7 +27,7 @@ class AudioManager {
     }
 
     private var playsInBackground: Bool {
-        return Injection.settingsRepository.getBackgroundPlay()
+        return !enforceNoBackgroundPlay && Injection.settingsRepository.getBackgroundPlay()
     }
     
     private var delegates: [AudioManagerDelegate?] = []
@@ -54,8 +55,16 @@ class AudioManager {
         return currentAudio?.albumImage ?? fallbackImage
     }
     
-    private init() {
+    private init(enforceNoBackgroundPlay: Bool = false) {
+        self.enforceNoBackgroundPlay = enforceNoBackgroundPlay
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(appWillMoveToBackground), name: Notification.Name.UIApplicationWillResignActive, object: nil)
+
         setupAudioSession()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     private func setupAudioSession() {
@@ -68,6 +77,10 @@ class AudioManager {
         catch let error {
             fatalError("*** Unable to set up the audio session: \(error.localizedDescription) ***")
         }
+    }
+    
+    @objc func appWillMoveToBackground() {
+        stopPreview()
     }
     
     private func setupPlayerFor(sound: Sound) -> AVAudioPlayer? {
@@ -265,7 +278,7 @@ class AudioManager {
             previewPlayer.stop()
         }
         
-        previewPlayer = AudioManager()
+        previewPlayer = AudioManager(enforceNoBackgroundPlay: true)
         previewPlayer?.activate(audio: makePreviewAudioBundle(sounds: sounds))
         previewPlayer?.play()
     }

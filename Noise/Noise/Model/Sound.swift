@@ -17,15 +17,17 @@ struct Sound {
     var imageFilePath: String?
     var soundFilePath: String?
     var inAppPurchaseId: String?
-    
     var contentDownloaded: Bool
     var filesDownloaded: Bool
     var needsUpdate: Bool
-    
     var volume: Float = 0
     
     let image: UIImage?
 
+    var isPremium: Bool {
+        return inAppPurchaseId != nil
+    }
+    
     init?(managedSound: ManagedSound, withVolume: Float? = nil) {
         guard let id = managedSound.id else {
             return nil
