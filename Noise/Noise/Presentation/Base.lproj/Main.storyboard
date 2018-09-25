@@ -336,7 +336,38 @@
                     <view key="view" contentMode="scaleToFill" id="UvB-gM-76F">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_artwork" translatesAutoresizingMaskIntoConstraints="NO" id="V9Z-HK-LLc">
+                                <rect key="frame" x="30" y="184.5" width="131.5" height="131.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="V9Z-HK-LLc" secondAttribute="height" multiplier="1:1" id="XQr-Z3-4pD"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Noise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xdc-tn-cZf">
+                                <rect key="frame" x="46" y="311" width="111" height="50.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="42"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create personalized ambient sounds for relaxing, meditation and better sleeping " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqO-gR-Edj">
+                                <rect key="frame" x="46" y="366.5" width="283" height="61"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Xdc-tn-cZf" firstAttribute="leading" secondItem="4AC-dL-5V1" secondAttribute="leading" constant="46" id="09k-Gf-h59"/>
+                            <constraint firstItem="HqO-gR-Edj" firstAttribute="top" secondItem="Xdc-tn-cZf" secondAttribute="bottom" constant="5" id="2E5-yT-GO8"/>
+                            <constraint firstItem="V9Z-HK-LLc" firstAttribute="width" secondItem="UvB-gM-76F" secondAttribute="width" multiplier="0.35" id="AX0-Qh-fGg"/>
+                            <constraint firstItem="V9Z-HK-LLc" firstAttribute="centerY" secondItem="UvB-gM-76F" secondAttribute="centerY" multiplier="0.75" id="FaK-hf-6g4"/>
+                            <constraint firstAttribute="trailing" secondItem="HqO-gR-Edj" secondAttribute="trailing" constant="46" id="RdB-XN-o4c"/>
+                            <constraint firstItem="Xdc-tn-cZf" firstAttribute="top" secondItem="V9Z-HK-LLc" secondAttribute="bottom" constant="-5" id="SYx-AL-kbY"/>
+                            <constraint firstItem="4AC-dL-5V1" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Xdc-tn-cZf" secondAttribute="trailing" symbolic="YES" id="U0z-EB-oao"/>
+                            <constraint firstItem="HqO-gR-Edj" firstAttribute="leading" secondItem="4AC-dL-5V1" secondAttribute="leading" constant="46" id="dyf-mR-lnT"/>
+                            <constraint firstItem="V9Z-HK-LLc" firstAttribute="leading" secondItem="4AC-dL-5V1" secondAttribute="leading" constant="30" id="gB2-l4-OOW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4AC-dL-5V1"/>
                     </view>
                     <connections>
@@ -1707,6 +1738,7 @@ Below you can find the licenses to all third-party resources used in this app. C
         <image name="ic_sound_full" width="75" height="75"/>
         <image name="ic_sound_mute" width="75" height="75"/>
         <image name="placeholder_add" width="1464" height="1464"/>
+        <image name="placeholder_artwork" width="512" height="512"/>
         <image name="placeholder_mixtape" width="1464" height="1464"/>
     </resources>
 </document>
