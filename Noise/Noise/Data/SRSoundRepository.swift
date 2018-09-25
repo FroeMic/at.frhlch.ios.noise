@@ -208,6 +208,7 @@ extension ManagedSound {
 
         self.imageFilePath = sound.imageFilePath
         self.soundFilePath = sound.soundFilePath
+        self.inAppPurchaseId = sound.inAppPurchaseId
         self.contentDownloaded = sound.contentDownloaded
         self.filesDownloaded = sound.filesDownloaded
         self.needsUpdate = sound.needsUpdate

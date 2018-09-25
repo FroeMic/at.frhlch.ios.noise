@@ -130,6 +130,7 @@ class SoundSyncManager {
         guard let detailDescription = json["detailDescription"].string else {
             return nil
         }
+        let inAppPurchaseId = json["inAppPurchaseId"].string
         
         guard id == sound.id else {
             return nil
@@ -137,12 +138,14 @@ class SoundSyncManager {
         
         var updatedSound = sound
         
+        
         updatedSound.title = title
         updatedSound.subtitle = subtitle
         updatedSound.detailDescription = detailDescription
+        updatedSound.inAppPurchaseId = inAppPurchaseId
         updatedSound.volume = 0
         updatedSound.contentDownloaded = true
-        
+                
         return updatedSound
     }
 

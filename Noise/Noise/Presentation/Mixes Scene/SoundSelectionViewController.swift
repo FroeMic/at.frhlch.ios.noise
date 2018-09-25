@@ -116,11 +116,9 @@ extension SoundSelectionViewController: UITableViewDelegate {
             let index = selectedSounds.index(of: sound){
             
             selectedSounds.remove(at: index)
-            
         }
     }
-    
-    
+
 }
 
 // MARK: UITableViewDataSource
