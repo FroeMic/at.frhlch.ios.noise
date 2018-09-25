@@ -79,7 +79,7 @@ class NoisePreviewViewController: UIViewController {
         titleLabel?.text = sound.title
         descriptionLabel?.text = sound.detailDescription
         
-        AudioManager.shared.preview(sounds: [sound], title: "Preview: " + sound.title, image: sound.image)
+        AudioManager.shared.preview(sounds: [sound])
         
     }
     

@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Noise-->
+        <!--Sounds-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="NoiseViewController" customModule="Noise" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ePM-VX-fPx">
-                                <rect key="frame" x="0.0" y="73.5" width="375" height="484.5"/>
+                                <rect key="frame" x="0.0" y="74" width="375" height="484"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="QcX-af-7hf">
                                     <rect key="frame" x="0.0" y="148" width="375" height="98"/>
@@ -122,8 +122,8 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Noise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J6f-aA-Uac">
-                                <rect key="frame" x="16" y="30" width="292" height="33.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sounds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J6f-aA-Uac">
+                                <rect key="frame" x="16" y="30" width="292" height="34"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -150,7 +150,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Noise" image="ic_noise" id="xhh-L4-yMz"/>
+                    <tabBarItem key="tabBarItem" title="Sounds" image="ic_noise" id="xhh-L4-yMz"/>
                     <connections>
                         <outlet property="tableView" destination="ePM-VX-fPx" id="Cag-KZ-ueo"/>
                     </connections>
@@ -1655,19 +1655,19 @@ Below you can find the licenses to all third-party resources used in this app. C
         </scene>
     </scenes>
     <resources>
-        <image name="app_dice" width="341" height="341"/>
-        <image name="app_ping" width="341" height="341"/>
-        <image name="app_tip" width="341" height="341"/>
-        <image name="ic_add_sound" width="33" height="33"/>
-        <image name="ic_camera_picker" width="33" height="33"/>
-        <image name="ic_chevron_right" width="33" height="33"/>
-        <image name="ic_mixtape" width="33" height="33"/>
-        <image name="ic_noise" width="33" height="33"/>
-        <image name="ic_play" width="24" height="24"/>
-        <image name="ic_settings" width="33" height="33"/>
-        <image name="ic_sound_full" width="33" height="33"/>
-        <image name="ic_sound_mute" width="33" height="33"/>
-        <image name="placeholder_add" width="488" height="488"/>
-        <image name="placeholder_mixtape" width="488" height="488"/>
+        <image name="app_dice" width="512" height="512"/>
+        <image name="app_ping" width="1024" height="1024"/>
+        <image name="app_tip" width="512" height="512"/>
+        <image name="ic_add_sound" width="75" height="75"/>
+        <image name="ic_camera_picker" width="75" height="75"/>
+        <image name="ic_chevron_right" width="75" height="75"/>
+        <image name="ic_mixtape" width="75" height="75"/>
+        <image name="ic_noise" width="75" height="75"/>
+        <image name="ic_play" width="54" height="54"/>
+        <image name="ic_settings" width="75" height="75"/>
+        <image name="ic_sound_full" width="75" height="75"/>
+        <image name="ic_sound_mute" width="75" height="75"/>
+        <image name="placeholder_add" width="1464" height="1464"/>
+        <image name="placeholder_mixtape" width="1464" height="1464"/>
     </resources>
 </document>

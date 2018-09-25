@@ -34,6 +34,7 @@
 		27B106082135D8EA0070A109 /* DefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B106072135D8EA0070A109 /* DefaultTheme.swift */; };
 		27B1060A2135DC5B0070A109 /* SoundTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B106092135DC5B0070A109 /* SoundTableViewCell.swift */; };
 		27B1060C2135DCA40070A109 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B1060B2135DCA40070A109 /* Sound.swift */; };
+		27BA64C7215A32260080D87D /* AudioBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BA64C6215A32260080D87D /* AudioBundle.swift */; };
 		27BC36E5214FCC4E000AD98B /* EditMixtapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC36E4214FCC4E000AD98B /* EditMixtapeViewController.swift */; };
 		27BD8D5B213C0443003DF079 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BD8D5A213C0443003DF079 /* AVFoundation.framework */; };
 		27BD8D5D213C05F2003DF079 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD8D5C213C05F2003DF079 /* AudioManager.swift */; };
@@ -119,6 +120,7 @@
 		27B106072135D8EA0070A109 /* DefaultTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTheme.swift; sourceTree = "<group>"; };
 		27B106092135DC5B0070A109 /* SoundTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundTableViewCell.swift; sourceTree = "<group>"; };
 		27B1060B2135DCA40070A109 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
+		27BA64C6215A32260080D87D /* AudioBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioBundle.swift; sourceTree = "<group>"; };
 		27BC36E4214FCC4E000AD98B /* EditMixtapeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMixtapeViewController.swift; sourceTree = "<group>"; };
 		27BD8D5A213C0443003DF079 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		27BD8D5C213C05F2003DF079 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
@@ -303,8 +305,8 @@
 				271D158C213DD45A00F5B2DC /* SoundDelegate.swift */,
 				2774C51B21592633009972F3 /* SoundDownloadTask.swift */,
 				27B1060B2135DCA40070A109 /* Sound.swift */,
-				27C753862158E59E00905EFD /* License.swift */,
 				27BD8D64213C1ADA003DF079 /* Mixtape.swift */,
+				27C753862158E59E00905EFD /* License.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -404,6 +406,7 @@
 				27BD8D5C213C05F2003DF079 /* AudioManager.swift */,
 				27BD8D62213C17D4003DF079 /* AudioManagerState.swift */,
 				27F52F052142CEFD0030102C /* AudioManagerDelegate.swift */,
+				27BA64C6215A32260080D87D /* AudioBundle.swift */,
 			);
 			path = AudioManager;
 			sourceTree = "<group>";
@@ -677,6 +680,7 @@
 				271F9EBA2135D51800115C8C /* NoiseViewController.swift in Sources */,
 				2774C51A21592482009972F3 /* DownloadManager.swift in Sources */,
 				271F9EB82135D51800115C8C /* AppDelegate.swift in Sources */,
+				27BA64C7215A32260080D87D /* AudioBundle.swift in Sources */,
 				27F52F102144497B0030102C /* CassetteView.swift in Sources */,
 				2774C52921598097009972F3 /* RatingManager.swift in Sources */,
 				27C753852158E58500905EFD /* HardCodedLicenseProvider.swift in Sources */,

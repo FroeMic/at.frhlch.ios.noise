@@ -21,11 +21,11 @@ class EditMixtapeViewController: UIViewController {
     var audioManager: AudioManager {
         return AudioManager.shared
     }
-    var isCurrentMixtapeActive: Bool {
-        return audioManager.title == mixtape?.title
-    }
     var isPlayingCurrentMixtape: Bool {
-        return audioManager.state == .playing && isCurrentMixtapeActive
+        guard let mixtape = mixtape else {
+            return false
+        }
+        return audioManager.isMixtapeActive(mixtape: mixtape) && audioManager.state == .playing
     }
     
     private var sounds: [Sound]  {
@@ -67,11 +67,6 @@ class EditMixtapeViewController: UIViewController {
         tableView.dataSource = self
         
         audioManager.delegates.append(self)
-        
-        if Injection.settingsRepository.getAutoPlay() {
-            playAudio()
-        }
-        updateNowPlayingInformation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -93,6 +88,10 @@ class EditMixtapeViewController: UIViewController {
         navigationController?.navigationBar.shadowImage = UIImage()
         
         updateView()
+        
+        if Injection.settingsRepository.getAutoPlay() {
+            playAudio()
+        }
 
     }
     
@@ -111,14 +110,14 @@ class EditMixtapeViewController: UIViewController {
     @IBAction func playPauseButtonPressed(_ sender: UIButton) {
         
         if isPlayingCurrentMixtape {
-            AudioManager.shared.pause()
+            audioManager.pause()
         } else {
             playAudio()
         }
         updatePlayPauseButton()
     }
     
-    func updatePlayPauseButton() {
+    private func updatePlayPauseButton() {
         if isPlayingCurrentMixtape {
             playPauseButton.setImage(UIImage(named: "ic_pause"), for: .normal)
         } else {
@@ -159,9 +158,7 @@ class EditMixtapeViewController: UIViewController {
                 //                print(photo.exifMeta) // Print exif meta data of original image.
                 
                 self.mixtape?.image = photo.image
-                if let mixtape = self.mixtape {
-                    Injection.mixtapeRepository.save(mixtape)
-                }
+                self.saveMixtape()
             }
             picker.dismiss(animated: true, completion: nil)
         }
@@ -245,31 +242,41 @@ class EditMixtapeViewController: UIViewController {
         }
         
         Injection.mixtapeRepository.save(mixtape)
-        updateNowPlayingInformation()
+        
+        if isPlayingCurrentMixtape {
+            updateNowPlayingInformation()
+        }
     }
     
     func updateSound(sound: Sound) {
-        AudioManager.shared.updateVolume(for: sound)
+        audioManager.updateVolume(for: sound)
     }
     
     func playAudio() {
-        guard let mixtape = mixtape else {
+        guard let audioBundle = makeAudioBundle() else {
             return
         }
-        if isCurrentMixtapeActive {
-            for sound in sounds {
-                AudioManager.shared.updateVolume(for: sound)
-            }
+        if isPlayingCurrentMixtape {
+            audioManager.activate(audio: audioBundle, hard: false)
         } else {
-            AudioManager.shared.activate(sounds: sounds, title: mixtape.title, image: mixtape.image)
+            audioManager.activate(audio: audioBundle, hard: true)
         }
     }
     
     func updateNowPlayingInformation() {
-        guard let mixtape = mixtape else {
+        guard let audioBundle = makeAudioBundle() else {
             return
         }
-       AudioManager.shared.updateNowPlayingInformation(title: mixtape.title, image: mixtape.image)
+        audioManager.activate(audio: audioBundle, hard: false)
+    }
+    
+    private func makeAudioBundle() -> AudioBundle? {
+        guard let mixtape = mixtape else {
+            return nil
+        }
+        var audioBundle = AudioBundle(mixtape: mixtape)
+        audioBundle.sounds = self.sounds
+        return audioBundle
     }
     
 }

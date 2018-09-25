@@ -57,8 +57,22 @@ class BaseTabBarController: UITabBarController {
         tabBar.tintColor = theme.tintColor
     }
     
+    private func getMixtape(offset: Int) -> Mixtape? {
+        let mixtapes: [Mixtape] = Injection.mixtapeRepository.getAll()
+        if mixtapes.count < 1 {
+            soundToolbar?.hasNextTrack = true
+            soundToolbar?.hasPrevTrack = true
+        }
+        guard let index = mixtapes.firstIndex(where: { AudioManager.shared.isMixtapeActive(mixtape: $0) }) else {
+            return nil
+        }
+        let nextIndex = (index + offset) % mixtapes.count
+        
+        return mixtapes[nextIndex]
+    }
+    
     func updateSoundBar(with audioManager: AudioManager) {
-        soundToolbar.title = audioManager.title
+        soundToolbar.title = audioManager.displayTitle
         soundToolbar.state = audioManager.state
     }
     
@@ -87,11 +101,17 @@ extension BaseTabBarController: SoundBarDelegate {
     }
     
     func didPressNextTrack() {
-        // Todo
+        guard let mixtape = getMixtape(offset: 1) else {
+            return
+        }
+        AudioManager.shared.activate(audio: AudioBundle(mixtape: mixtape))
     }
     
     func didPressPreviousTrack() {
-        // Todo
+        guard let mixtape = getMixtape(offset: -1) else {
+            return
+        }
+        AudioManager.shared.activate(audio: AudioBundle(mixtape: mixtape))
     }
     
 }

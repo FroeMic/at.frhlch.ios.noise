@@ -14,10 +14,22 @@ class AudioManager {
     
     static let shared = AudioManager()
     
+    private var players: [String: AVAudioPlayer] = [:]
+    private var currentAudio: AudioBundle?
+    private var previewPlayer: AudioManager?
+    private var continueAfterPreview: Bool = false
+    private var fallbackImage: UIImage = UIImage(named: "placeholder_artwork")!
+    
+    private var session: AVAudioSession {
+        return AVAudioSession.sharedInstance()
+    }
+
+    private var playsInBackground: Bool {
+        return Injection.settingsRepository.getBackgroundPlay()
+    }
+    
     var delegates: [AudioManagerDelegate?] = []
     
-    private let playsInBackground: Bool
-    private var previewPlayer: AudioManager?
     private(set) var state: AudioManagerState = .stopped {
         didSet {
             for delegate in delegates {
@@ -26,16 +38,20 @@ class AudioManager {
         }
     }
     
-    private var session: AVAudioSession {
-        return AVAudioSession.sharedInstance()
+    var sounds: [Sound]  {
+        return currentAudio?.sounds ?? []
     }
-    private var players: [String: AVAudioPlayer] = [:]
-    private var sounds: [Sound] = []
-    private (set) var title: String = ""
-    private (set) var image: UIImage = UIImage(named: "placeholder_artwork")!
+    var displayTitle: String {
+        return currentAudio?.displayTitle ?? ""
+    }
+    var displayArtist: String {
+        return currentAudio?.artist ?? "Noise"
+    }
+    var displayImage: UIImage {
+        return currentAudio?.albumImage ?? fallbackImage
+    }
     
-    private init(playsInBackground: Bool = true) {
-        self.playsInBackground = playsInBackground
+    private init() {
         setupAudioSession()
     }
     
@@ -72,7 +88,7 @@ class AudioManager {
             return
         }
         
-        updateNowPlayingInfo(title: title, image: image)
+        updateNowPlayingInfo()
         
         let commandCenter = MPRemoteCommandCenter.shared()
         commandCenter.playCommand.isEnabled = true
@@ -87,33 +103,68 @@ class AudioManager {
         }
     }
     
-    private func updateNowPlayingInfo(title: String, image: UIImage) {
-        if playsInBackground {
-            let artwork = MPMediaItemArtwork.init(boundsSize: image.size, requestHandler: { (size) -> UIImage in
-                return image
-            })
-            MPNowPlayingInfoCenter.default().nowPlayingInfo = [
-                MPMediaItemPropertyTitle: title,
-                MPMediaItemPropertyArtist: "Noise",
-                MPMediaItemPropertyArtwork: artwork]
+    private func updateNowPlayingInfo() {
+        if !playsInBackground {
+            return
         }
+        
+        let artwork = MPMediaItemArtwork.init(boundsSize: displayImage.size, requestHandler: { (size) -> UIImage in
+            return self.displayImage
+        })
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = [
+            MPMediaItemPropertyTitle: displayTitle,
+            MPMediaItemPropertyArtist: displayArtist,
+            MPMediaItemPropertyArtwork: artwork]
     }
     
+    private func makePreviewAudioBundle(sounds: [Sound]) -> AudioBundle {
+        return AudioBundle(id: "xxx-preview-sound", title: "Preview Sounds", sounds: sounds)
+    }
+    
+    
     // MARK: Exposed functions
-    func activate(sounds: [Sound], title: String, image: UIImage? = nil) {
-
-        updateNowPlayingInformation(title: title, image: image)
+    func activate(audio: AudioBundle, hard: Bool = true) {
         
-        if state == .playing {
-            stop()
-        }
-        
-        self.sounds = sounds
-        
-        for sound in sounds {
-            if let player = setupPlayerFor(sound: sound) {
-                players[sound.id] = player
+        if hard {
+            // 1. stop all players
+            if state == .playing {
+                stop()
             }
+            
+            // 2. (re)start with new audioBundle
+            currentAudio = audio
+            updateNowPlayingInfo()
+            
+            for sound in sounds {
+                if let player = setupPlayerFor(sound: sound) {
+                    players[sound.id] = player
+                }
+            }
+        } else {
+            // 1. remove all stale players
+            for playerId in players.keys {
+                if let _ = audio.sounds.firstIndex(where: { $0.id == playerId }) {
+                    // do nothing
+                } else {
+                    players[playerId]?.stop()
+                    players.removeValue(forKey: "playerId")
+                }
+            }
+            
+            // 2. Add or update all existing players
+
+            for sound in audio.sounds {
+                if let player = players[sound.id] {
+                    player.volume = sound.volume
+                } else {
+                    if let player = setupPlayerFor(sound: sound) {
+                        players[sound.id] = player
+                    }
+                }
+            }
+            
+            currentAudio = audio
+            updateNowPlayingInfo()
         }
         
         do {
@@ -130,7 +181,7 @@ class AudioManager {
     }
     
     public func play() {
-        updateNowPlayingInfo(title: title, image: image)
+        updateNowPlayingInfo()
         players.values.forEach { $0.play() }
         state = .playing
     }
@@ -151,27 +202,30 @@ class AudioManager {
         guard let player = players[sound.id] else {
             return
         }
-        guard let index = sounds.index(of: sound) else {
+        guard let index = currentAudio?.sounds.index(of: sound) else {
             return
         }
         
-        sounds[index] = sound
+        currentAudio?.sounds[index] = sound
         player.volume = sound.volume
     }
     
-    public func updateNowPlayingInformation(title: String, image: UIImage? = nil) {
-        self.title = title
-        self.image = image ?? UIImage(named: "placeholder_artwork")!
-        updateNowPlayingInfo(title: title, image: self.image)
-    }
-    
-    public func preview(sounds: [Sound], title: String = "Preview", image: UIImage? = nil) {
-        pause()
+    public func preview(sounds: [Sound]) {
+        if sounds.count < 1 {
+            return
+        }
+        
+        if state == .playing {
+            pause()
+            continueAfterPreview = true
+        }
+        
         if let previewPlayer = previewPlayer {
             previewPlayer.stop()
         }
-        previewPlayer = AudioManager(playsInBackground: true)
-        previewPlayer?.activate(sounds: sounds, title: title, image: image)
+        
+        previewPlayer = AudioManager()
+        previewPlayer?.activate(audio: makePreviewAudioBundle(sounds: sounds))
         previewPlayer?.play()
     }
     
@@ -181,9 +235,18 @@ class AudioManager {
         }
         previewPlayer = nil
         
-        if state == .paused {
+        if state == .paused && continueAfterPreview {
+            continueAfterPreview = false
             play()
         }
+    }
+    
+}
+
+extension AudioManager {
+    
+    func isMixtapeActive(mixtape: Mixtape) -> Bool {
+        return currentAudio?.id == mixtape.id
     }
     
 }

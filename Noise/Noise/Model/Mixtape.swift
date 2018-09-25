@@ -94,3 +94,9 @@ struct Mixtape {
     }
 
 }
+
+extension Mixtape: Equatable {
+    static func ==(lhs: Mixtape, rhs: Mixtape) -> Bool {
+        return lhs.id == rhs.id
+    }
+}
