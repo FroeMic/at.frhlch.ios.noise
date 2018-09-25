@@ -8,6 +8,7 @@
 
 import UIKit
 import YPImagePicker
+import JustPeek
 
 class EditMixtapeViewController: UIViewController {
     
@@ -17,7 +18,8 @@ class EditMixtapeViewController: UIViewController {
     static let presentSelectSoundsVCSegueIdentifier = "presentSelectSoundVC"
     
     var mixtape: Mixtape?
-    
+    var peekController: PeekController?
+
     var audioManager: AudioManager {
         return AudioManager.shared
     }
@@ -61,6 +63,9 @@ class EditMixtapeViewController: UIViewController {
             self.mixtape = mixtapeRepository.create(title: "New Mixtape")
             titleTextfield.becomeFirstResponder()
         }
+        
+        peekController = PeekController()
+        peekController?.register(viewController: self, forPeekingWithDelegate: self, sourceView: tableView)
         
         let gr = UITapGestureRecognizer(target: self, action: #selector(EditMixtapeViewController.pickerViewPressed))
         triggerPickerView.addGestureRecognizer(gr)
@@ -408,5 +413,31 @@ extension EditMixtapeViewController: AudioManagerDelegate {
         DispatchQueue.main.async {
             self.updatePlayPauseButton()
         }
+    }
+}
+
+
+// MARK: PeekingDelegate
+extension EditMixtapeViewController: PeekingDelegate {
+    
+    func peekContext(_ context: PeekContext, viewControllerForPeekingAt location: CGPoint) -> UIViewController? {
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "NoisePreviewViewController")
+        if let viewController = viewController, let indexPath = tableView.indexPathForRow(at: location) {
+            
+            if let noisePreviewViewController = viewController as? NoisePreviewViewController {
+                noisePreviewViewController.sound = sounds[indexPath.row]
+            }
+            
+            if let cell = tableView.cellForRow(at: indexPath) {
+                context.sourceRect = cell.frame
+            }
+            Injection.feedback.feedbackForPeek()
+            return viewController
+        }
+        return nil
+    }
+    
+    func peekContext(_ context: PeekContext, commit viewController: UIViewController) {
+        Injection.feedback.feedbackForPeek()
     }
 }

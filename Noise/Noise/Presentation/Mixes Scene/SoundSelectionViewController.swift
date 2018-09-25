@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import JustPeek
 
 class SoundSelectionViewController: UIViewController {
     
     static let soundSelectionCellReuseIdentifier = "SoundSelectionTableViewCell"
     
+    var peekController: PeekController?
     var mixtape: Mixtape? {
         didSet {
             guard let mixtape = mixtape  else {
@@ -34,6 +36,9 @@ class SoundSelectionViewController: UIViewController {
         super.viewDidLoad()
         
         sounds = Injection.soundRepository.getAll()
+        
+        peekController = PeekController()
+        peekController?.register(viewController: self, forPeekingWithDelegate: self, sourceView: tableView)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -138,3 +143,27 @@ extension SoundSelectionViewController: UITableViewDataSource {
 }
 
 
+// MARK: PeekingDelegate
+extension SoundSelectionViewController: PeekingDelegate {
+    
+    func peekContext(_ context: PeekContext, viewControllerForPeekingAt location: CGPoint) -> UIViewController? {
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "NoisePreviewViewController")
+        if let viewController = viewController, let indexPath = tableView.indexPathForRow(at: location) {
+            
+            if let noisePreviewViewController = viewController as? NoisePreviewViewController {
+                noisePreviewViewController.sound = sounds[indexPath.row]
+            }
+            
+            if let cell = tableView.cellForRow(at: indexPath) {
+                context.sourceRect = cell.frame
+            }
+            Injection.feedback.feedbackForPeek()
+            return viewController
+        }
+        return nil
+    }
+    
+    func peekContext(_ context: PeekContext, commit viewController: UIViewController) {
+        Injection.feedback.feedbackForPeek()
+    }
+}
