@@ -37,7 +37,7 @@ class SoundSyncManager {
         }
         
         let task = URLSession.shared.dataTask(with: targetURL) { (data, response, error) in
-            if let error = error {
+            if let _ = error {
                 completion?(false)
             }
             guard let data = data, let jsonData = try? JSON(data: data) else {
@@ -91,7 +91,7 @@ class SoundSyncManager {
         }
         
         let task = URLSession.shared.dataTask(with: targetURL) { (data, response, error) in
-            if let error = error {
+            if let _ = error {
                 return
             }
             guard let data = data, let jsonData = try? JSON(data: data) else {

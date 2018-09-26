@@ -67,7 +67,7 @@ extension DownloadManager: URLSessionDownloadDelegate {
     }
     
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
-        debugPrint("Task completed: \(task), error: \(error)")
+        debugPrint("Task completed: \(task), error: \(String(describing: error))")
     }
     
     

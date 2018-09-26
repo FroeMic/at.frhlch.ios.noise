@@ -74,7 +74,7 @@ struct Mixtape {
     }
     
     mutating func add(sound: Sound) {
-        add(sound: sound)
+        _sounds[sound.id] = sound
     }
     
     mutating func remove(sound: Sound) {
