@@ -244,6 +244,7 @@ class AudioManager {
         players.values.forEach { $0.stop() }
         
         players = [:]
+        currentAudio = nil
         state = .stopped
     }
     

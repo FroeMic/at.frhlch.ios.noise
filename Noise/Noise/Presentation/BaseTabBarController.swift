@@ -59,7 +59,7 @@ class BaseTabBarController: UITabBarController {
     }
     
     private func getMixtape(offset: Int) -> Mixtape? {
-        let mixtapes: [Mixtape] = Injection.mixtapeRepository.getAll()
+        let mixtapes: [Mixtape] = Injection.mixtapeRepository.getAll().filter( {$0.sounds.count > 0 })
         guard let index = mixtapes.firstIndex(where: { AudioManager.shared.isMixtapeActive(mixtape: $0) }) else {
             return mixtapes.first
         }

@@ -93,7 +93,13 @@ extension MixesViewController: UITableViewDelegate {
                 self.tableView.deleteRows(at: [indexPath], with: .fade)
             }
             
+            if AudioManager.shared.isMixtapeActive(mixtape: mixtape) {
+                AudioManager.shared.stop()
+            }
+
+            
             mixtapeRepository.remove(id: mixtape.id)
+            
             
         }
     }

@@ -281,6 +281,7 @@ class EditMixtapeViewController: UIViewController {
     
     func updateNowPlayingInformation() {
         guard let audioBundle = makeAudioBundle() else {
+            audioManager.stop()
             return
         }
         audioManager.activate(audio: audioBundle, hard: false)
@@ -339,6 +340,7 @@ extension EditMixtapeViewController: UITableViewDelegate {
             
             let sound = sounds[indexPath.row]
             mixtape?.remove(sound: sound)
+            updateNowPlayingInformation()
 
             // use async to avoid showing white background.
             DispatchQueue.main.async {
