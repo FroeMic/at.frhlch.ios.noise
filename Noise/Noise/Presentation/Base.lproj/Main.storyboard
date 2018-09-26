@@ -341,34 +341,34 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Noise" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RbD-gu-hPD">
-                                        <rect key="frame" x="20" y="30" width="335" height="39"/>
+                                        <rect key="frame" x="20" y="30" width="335" height="38.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c85-le-Cgz">
-                                        <rect key="frame" x="50" y="89" width="275" height="558"/>
+                                        <rect key="frame" x="40" y="97" width="295" height="550"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_artwork" translatesAutoresizingMaskIntoConstraints="NO" id="Djg-aX-tGp">
-                                                <rect key="frame" x="73.5" y="20" width="128" height="128"/>
+                                                <rect key="frame" x="99" y="0.0" width="97" height="97"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="128" id="CiP-h5-ubn"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="128" id="CiP-h5-ubn"/>
                                                     <constraint firstAttribute="width" secondItem="Djg-aX-tGp" secondAttribute="height" multiplier="1:1" id="mBa-YV-nLm"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dw0-6z-kWa">
-                                                <rect key="frame" x="0.0" y="158" width="275" height="242.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N90-fN-Ycr">
+                                                <rect key="frame" x="0.0" y="107" width="295" height="248.5"/>
                                                 <string key="text">Noise combines delightful design with high quality audio to give you the most user-friendly ambient noise app on the App Store.
 
 We took a lot of time to make sure all the little things work right. And we promise to continue to do so. If you have feedback, we will be listing in the comment section of the App Store.
 
 We hope you like Noise as much as we do.</string>
-                                                <fontDescription key="fontDescription" name=".SFNSText" family=".SF NS Text" pointSize="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1w-wY-OY7" customClass="PrimaryButton" customModule="Noise" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="513" width="275" height="45"/>
+                                                <rect key="frame" x="10" y="505" width="275" height="45"/>
                                                 <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="aJv-jk-VFG"/>
@@ -379,27 +379,28 @@ We hope you like Noise as much as we do.</string>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="Dw0-6z-kWa" secondAttribute="trailing" id="0El-oO-MLK"/>
                                             <constraint firstItem="Djg-aX-tGp" firstAttribute="centerX" secondItem="c85-le-Cgz" secondAttribute="centerX" id="E6t-y5-tbP"/>
                                             <constraint firstAttribute="bottom" secondItem="S1w-wY-OY7" secondAttribute="bottom" id="K3f-mi-v38"/>
-                                            <constraint firstItem="S1w-wY-OY7" firstAttribute="leading" secondItem="c85-le-Cgz" secondAttribute="leading" id="bSI-FV-Ww2"/>
-                                            <constraint firstItem="Dw0-6z-kWa" firstAttribute="top" secondItem="Djg-aX-tGp" secondAttribute="bottom" constant="10" id="exE-de-cz0"/>
-                                            <constraint firstItem="Dw0-6z-kWa" firstAttribute="leading" secondItem="c85-le-Cgz" secondAttribute="leading" id="oSy-mZ-eSq"/>
-                                            <constraint firstAttribute="trailing" secondItem="S1w-wY-OY7" secondAttribute="trailing" id="tAb-85-6dB"/>
-                                            <constraint firstItem="Djg-aX-tGp" firstAttribute="top" secondItem="c85-le-Cgz" secondAttribute="top" constant="20" id="wPq-yI-v99"/>
+                                            <constraint firstItem="N90-fN-Ycr" firstAttribute="top" secondItem="Djg-aX-tGp" secondAttribute="bottom" constant="10" id="TC9-Us-abc"/>
+                                            <constraint firstItem="S1w-wY-OY7" firstAttribute="leading" secondItem="c85-le-Cgz" secondAttribute="leading" constant="10" id="bSI-FV-Ww2"/>
+                                            <constraint firstItem="N90-fN-Ycr" firstAttribute="leading" secondItem="c85-le-Cgz" secondAttribute="leading" id="l4S-lv-TN8"/>
+                                            <constraint firstAttribute="trailing" secondItem="S1w-wY-OY7" secondAttribute="trailing" constant="10" id="tAb-85-6dB"/>
+                                            <constraint firstAttribute="trailing" secondItem="N90-fN-Ycr" secondAttribute="trailing" id="vsm-qX-QgU"/>
+                                            <constraint firstItem="Djg-aX-tGp" firstAttribute="top" secondItem="c85-le-Cgz" secondAttribute="top" id="wPq-yI-v99"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="c85-le-Cgz" firstAttribute="top" secondItem="RbD-gu-hPD" secondAttribute="bottom" constant="20" id="4Lc-yU-2wB"/>
+                                    <constraint firstItem="Djg-aX-tGp" firstAttribute="height" secondItem="bqQ-nh-EPa" secondAttribute="height" multiplier="0.15" priority="999" id="66D-KZ-V1e"/>
                                     <constraint firstAttribute="trailing" secondItem="RbD-gu-hPD" secondAttribute="trailing" constant="20" id="79k-bQ-RsR"/>
-                                    <constraint firstAttribute="trailing" secondItem="c85-le-Cgz" secondAttribute="trailing" constant="50" id="Abe-ai-gLC"/>
+                                    <constraint firstAttribute="trailing" secondItem="c85-le-Cgz" secondAttribute="trailing" constant="40" id="Abe-ai-gLC"/>
                                     <constraint firstItem="RbD-gu-hPD" firstAttribute="top" secondItem="bqQ-nh-EPa" secondAttribute="top" constant="30" id="Gd0-0I-vln"/>
                                     <constraint firstItem="RbD-gu-hPD" firstAttribute="leading" secondItem="bqQ-nh-EPa" secondAttribute="leading" constant="20" id="InW-iI-Ghr"/>
                                     <constraint firstAttribute="bottom" secondItem="c85-le-Cgz" secondAttribute="bottom" id="VoE-6n-O1c"/>
-                                    <constraint firstItem="c85-le-Cgz" firstAttribute="top" secondItem="RbD-gu-hPD" secondAttribute="bottom" constant="20" id="cNo-5g-sws"/>
-                                    <constraint firstItem="c85-le-Cgz" firstAttribute="leading" secondItem="bqQ-nh-EPa" secondAttribute="leading" constant="50" id="yEL-Hr-SrU"/>
+                                    <constraint firstItem="c85-le-Cgz" firstAttribute="top" relation="greaterThanOrEqual" secondItem="RbD-gu-hPD" secondAttribute="bottom" constant="10" id="cNo-5g-sws"/>
+                                    <constraint firstItem="c85-le-Cgz" firstAttribute="height" secondItem="bqQ-nh-EPa" secondAttribute="height" multiplier="0.85" priority="999" id="t35-h4-4kf"/>
+                                    <constraint firstItem="c85-le-Cgz" firstAttribute="leading" secondItem="bqQ-nh-EPa" secondAttribute="leading" constant="40" id="yEL-Hr-SrU"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1691,11 +1692,8 @@ We hope you like Noise as much as we do.</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VcN-XP-wNI">
-                                <rect key="frame" x="7" y="184" width="361" height="400.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="UOU-9R-ZbL"/>
-                                </constraints>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VcN-XP-wNI">
+                                <rect key="frame" x="7" y="174" width="361" height="404"/>
                                 <mutableString key="text">Noise was created from my desire to have a simple ambient noise app I could use for meditation.
 I was rather disappointed by the design and functionality offered by existing apps so I set out to create it myself.
 Since then I have spent countless hours designing and developing the app and curating high quality sounds.
@@ -1708,27 +1706,28 @@ If you notice things that should be changed or improved I encourage you to let m
 Built with ❤️ and ☕️ in Munich.
 
 👉 https://apps.frhlch.at/noise
-👉 https://frhlch.at/</mutableString>
+👉 https://frhlch.at/
+</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_artwork" translatesAutoresizingMaskIntoConstraints="NO" id="qBQ-Ew-abc">
-                                <rect key="frame" x="147.5" y="84" width="80" height="80"/>
+                                <rect key="frame" x="147.5" y="79" width="80" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="Ec2-5x-cJo"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="80" id="Ec2-5x-cJo"/>
                                     <constraint firstAttribute="width" secondItem="qBQ-Ew-abc" secondAttribute="height" multiplier="1:1" id="vjA-SP-Dt2"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="qBQ-Ew-abc" firstAttribute="width" secondItem="qBQ-Ew-abc" secondAttribute="height" multiplier="1:1" id="H4F-q2-GLM"/>
                             <constraint firstItem="qBQ-Ew-abc" firstAttribute="centerX" secondItem="TNQ-8V-dlH" secondAttribute="centerX" id="OC2-Pk-LFQ"/>
                             <constraint firstItem="gEB-VQ-Bs7" firstAttribute="trailing" secondItem="VcN-XP-wNI" secondAttribute="trailing" constant="7" id="PIZ-xp-DxD"/>
-                            <constraint firstItem="gEB-VQ-Bs7" firstAttribute="bottom" secondItem="VcN-XP-wNI" secondAttribute="bottom" id="Qhj-9x-In6"/>
-                            <constraint firstItem="qBQ-Ew-abc" firstAttribute="top" secondItem="gEB-VQ-Bs7" secondAttribute="top" constant="20" id="drn-VJ-dBz"/>
-                            <constraint firstItem="VcN-XP-wNI" firstAttribute="top" secondItem="qBQ-Ew-abc" secondAttribute="bottom" constant="20" id="hsS-Yh-33J"/>
+                            <constraint firstItem="gEB-VQ-Bs7" firstAttribute="bottom" secondItem="VcN-XP-wNI" secondAttribute="bottom" constant="40" id="Qhj-9x-In6"/>
+                            <constraint firstItem="qBQ-Ew-abc" firstAttribute="top" secondItem="gEB-VQ-Bs7" secondAttribute="top" constant="15" id="drn-VJ-dBz"/>
+                            <constraint firstItem="qBQ-Ew-abc" firstAttribute="height" secondItem="TNQ-8V-dlH" secondAttribute="height" multiplier="0.14" priority="999" id="gTR-TI-nEc"/>
+                            <constraint firstItem="VcN-XP-wNI" firstAttribute="top" secondItem="qBQ-Ew-abc" secondAttribute="bottom" constant="15" id="hsS-Yh-33J"/>
                             <constraint firstItem="VcN-XP-wNI" firstAttribute="leading" secondItem="gEB-VQ-Bs7" secondAttribute="leading" constant="7" id="jqs-v2-NY5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gEB-VQ-Bs7"/>
@@ -1942,10 +1941,10 @@ Below you can find the licenses to all third-party resources used in this app. C
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ARp-S3-C0r">
-                                        <rect key="frame" x="40" y="108.5" width="295" height="538.5"/>
+                                        <rect key="frame" x="40" y="103.5" width="295" height="543.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Clz-1y-ol7" customClass="PrimaryButton" customModule="Noise" customModuleProvider="target">
-                                                <rect key="frame" x="10" y="493.5" width="275" height="45"/>
+                                                <rect key="frame" x="10" y="498.5" width="275" height="45"/>
                                                 <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="19V-8H-S7y"/>
@@ -2089,8 +2088,9 @@ Below you can find the licenses to all third-party resources used in this app. C
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="ARp-S3-C0r" secondAttribute="trailing" constant="40" id="1hd-Re-b4m"/>
                                     <constraint firstAttribute="trailing" secondItem="nFs-IS-fwC" secondAttribute="trailing" constant="20" id="PBo-QB-pEx"/>
-                                    <constraint firstItem="ARp-S3-C0r" firstAttribute="top" secondItem="nFs-IS-fwC" secondAttribute="bottom" constant="40" id="Q2m-Fz-KBm"/>
+                                    <constraint firstItem="ARp-S3-C0r" firstAttribute="top" relation="greaterThanOrEqual" secondItem="nFs-IS-fwC" secondAttribute="bottom" constant="20" id="Q2m-Fz-KBm"/>
                                     <constraint firstItem="ARp-S3-C0r" firstAttribute="leading" secondItem="uLC-yG-nu2" secondAttribute="leading" constant="40" id="VKz-Ca-JcF"/>
+                                    <constraint firstItem="ARp-S3-C0r" firstAttribute="height" secondItem="uLC-yG-nu2" secondAttribute="height" multiplier="0.84" priority="999" id="WkO-eI-S4e"/>
                                     <constraint firstAttribute="bottom" secondItem="ARp-S3-C0r" secondAttribute="bottom" id="baI-Co-Xnt"/>
                                     <constraint firstItem="nFs-IS-fwC" firstAttribute="leading" secondItem="uLC-yG-nu2" secondAttribute="leading" constant="20" id="qYI-bG-F3g"/>
                                     <constraint firstItem="nFs-IS-fwC" firstAttribute="top" secondItem="uLC-yG-nu2" secondAttribute="top" constant="30" id="sHP-lU-XYK"/>
@@ -2132,10 +2132,10 @@ Below you can find the licenses to all third-party resources used in this app. C
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QdD-DB-MIU">
-                                        <rect key="frame" x="40" y="108.5" width="295" height="538.5"/>
+                                        <rect key="frame" x="40" y="103.5" width="295" height="543.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ypN-KH-Gsy" customClass="PrimaryButton" customModule="Noise" customModuleProvider="target">
-                                                <rect key="frame" x="10" y="493.5" width="275" height="45"/>
+                                                <rect key="frame" x="10" y="498.5" width="275" height="45"/>
                                                 <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="Qyt-wf-iKl"/>
@@ -2277,8 +2277,9 @@ Below you can find the licenses to all third-party resources used in this app. C
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="QdD-DB-MIU" firstAttribute="top" secondItem="XBK-dE-hcz" secondAttribute="bottom" constant="40" id="0x8-kv-2FN"/>
+                                    <constraint firstItem="QdD-DB-MIU" firstAttribute="top" relation="greaterThanOrEqual" secondItem="XBK-dE-hcz" secondAttribute="bottom" constant="20" id="0x8-kv-2FN"/>
                                     <constraint firstAttribute="trailing" secondItem="XBK-dE-hcz" secondAttribute="trailing" constant="20" id="G6V-vn-xId"/>
+                                    <constraint firstItem="QdD-DB-MIU" firstAttribute="height" secondItem="AbZ-iM-tdt" secondAttribute="height" multiplier="0.84" priority="999" id="Olg-ge-pQv"/>
                                     <constraint firstItem="QdD-DB-MIU" firstAttribute="leading" secondItem="AbZ-iM-tdt" secondAttribute="leading" constant="40" id="YeZ-Vk-CLU"/>
                                     <constraint firstItem="XBK-dE-hcz" firstAttribute="leading" secondItem="AbZ-iM-tdt" secondAttribute="leading" constant="20" id="au3-di-JUa"/>
                                     <constraint firstItem="XBK-dE-hcz" firstAttribute="top" secondItem="AbZ-iM-tdt" secondAttribute="top" constant="30" id="eK4-Jm-AXP"/>
@@ -2315,17 +2316,17 @@ Below you can find the licenses to all third-party resources used in this app. C
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKv-Kd-vxZ">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get Additional Content" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jh5-1K-fFO">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Additional Content" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jh5-1K-fFO">
                                         <rect key="frame" x="20" y="30" width="335" height="38.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UHq-4C-LxE">
-                                        <rect key="frame" x="40" y="108.5" width="295" height="538.5"/>
+                                        <rect key="frame" x="40" y="103.5" width="295" height="543.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABM-BT-WKY" customClass="PrimaryButton" customModule="Noise" customModuleProvider="target">
-                                                <rect key="frame" x="10" y="493.5" width="275" height="45"/>
+                                                <rect key="frame" x="10" y="498.5" width="275" height="45"/>
                                                 <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="O6V-Tg-whC"/>
@@ -2508,11 +2509,12 @@ Below you can find the licenses to all third-party resources used in this app. C
                                 <constraints>
                                     <constraint firstItem="Jh5-1K-fFO" firstAttribute="top" secondItem="MKv-Kd-vxZ" secondAttribute="top" constant="30" id="6ST-8I-I4D"/>
                                     <constraint firstItem="UHq-4C-LxE" firstAttribute="leading" secondItem="MKv-Kd-vxZ" secondAttribute="leading" constant="40" id="7RL-yE-q2S"/>
+                                    <constraint firstItem="UHq-4C-LxE" firstAttribute="height" secondItem="MKv-Kd-vxZ" secondAttribute="height" multiplier="0.84" priority="999" id="Exc-Rm-bBw"/>
                                     <constraint firstItem="Jh5-1K-fFO" firstAttribute="leading" secondItem="MKv-Kd-vxZ" secondAttribute="leading" constant="20" id="H2f-Qf-awE"/>
                                     <constraint firstAttribute="bottom" secondItem="UHq-4C-LxE" secondAttribute="bottom" id="HCd-He-rZQ"/>
                                     <constraint firstAttribute="trailing" secondItem="Jh5-1K-fFO" secondAttribute="trailing" constant="20" id="QUf-n3-Ebx"/>
                                     <constraint firstAttribute="trailing" secondItem="UHq-4C-LxE" secondAttribute="trailing" constant="40" id="SLs-4j-LMY"/>
-                                    <constraint firstItem="UHq-4C-LxE" firstAttribute="top" secondItem="Jh5-1K-fFO" secondAttribute="bottom" constant="40" id="kZF-AM-BPB"/>
+                                    <constraint firstItem="UHq-4C-LxE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Jh5-1K-fFO" secondAttribute="bottom" constant="20" id="kZF-AM-BPB"/>
                                 </constraints>
                             </view>
                         </subviews>
