@@ -58,6 +58,7 @@ class SettingsViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        keepDisplayActiveSwitch.isOn = Injection.settingsRepository.getKeepDisplayActive()
         playAutomaticallySwitch.isOn = Injection.settingsRepository.getAutoPlay()
         playInBackgroundSwitch.isOn = Injection.settingsRepository.getBackgroundPlay()
         
@@ -230,6 +231,12 @@ extension SettingsViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if indexPath.section == 1 {
+            if indexPath.row == 3 {
+                // show In-App Purchases
+            }
+        }
         
         if indexPath.section == 2 {
             switch indexPath.row {
