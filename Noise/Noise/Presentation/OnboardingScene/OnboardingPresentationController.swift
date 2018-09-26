@@ -62,6 +62,7 @@ class OnboardingPresentationController: PresentationController {
     private func presentMainApp() {
         let mainSceneVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BaseTabBarController")
         
+        Injection.settingsRepository.setShowOnboarding(enabled: false)
         if dismissOnCompletion {
             self.dismiss(animated: true, completion: nil)
         } else {

@@ -13,6 +13,10 @@ class SettingsViewController: UITableViewController {
     static let showAcknowledgementSegueIdentifier = "showAcknowledgementScene"
     static let showAboutSegueIdentifier = "showAboutScene"
     
+    @IBOutlet var keepDisplayActiveTableViewCell: UITableViewCell!
+    @IBOutlet var keepDisplayActiveLabel: UILabel!
+    @IBOutlet var keepDisplayActiveSwitch: UISwitch!
+    
     @IBOutlet var playAutomticallyTableViewCell: UITableViewCell!
     @IBOutlet var playAutomaticallyLabel: UILabel!
     @IBOutlet var playAutomaticallySwitch: UISwitch!
@@ -141,6 +145,10 @@ class SettingsViewController: UITableViewController {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigationController?.navigationBar.shadowImage = UIImage()
         
+        keepDisplayActiveTableViewCell.selectionStyle = .none
+        keepDisplayActiveTableViewCell.backgroundColor = .white
+        keepDisplayActiveLabel.textColor = theme.textColor
+        
         playAutomticallyTableViewCell.selectionStyle = .none
         playAutomticallyTableViewCell.backgroundColor = .white
         playAutomaticallyLabel.textColor = theme.textColor
@@ -187,6 +195,12 @@ class SettingsViewController: UITableViewController {
             acknowledgmentsChevronImageView.tintColor = theme.textColor
         }
     }
+    
+    @IBAction func keepDisplayActiveSwitchValueChanged(_ sender: Any) {
+        Injection.settingsRepository.setKeepDisplayActive(enabled: keepDisplayActiveSwitch.isOn)
+        UIApplication.shared.isIdleTimerDisabled = keepDisplayActiveSwitch.isOn
+    }
+    
     
     @IBAction func playAutomaticallySwitchValueChanged(_ sender: Any) {
         Injection.settingsRepository.setAutoPlay(enabled: playAutomaticallySwitch.isOn)

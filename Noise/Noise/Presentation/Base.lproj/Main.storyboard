@@ -1131,7 +1131,7 @@ We hope you like Noise as much as we do.</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="60"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="diL-gj-8KE">
-                            <rect key="frame" x="0.0" y="716" width="375" height="44"/>
+                            <rect key="frame" x="0.0" y="760" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </view>
                         <sections>
@@ -1140,8 +1140,52 @@ We hope you like Noise as much as we do.</string>
                             </tableViewSection>
                             <tableViewSection headerTitle="General" footerTitle=" " id="g83-Hb-kL9">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="dUM-KU-QnC">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="sGn-IZ-TNW">
                                         <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sGn-IZ-TNW" id="SHR-cr-uk6">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="60t-zq-u49">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keep Display Active" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wic-Pj-o1G">
+                                                            <rect key="frame" x="16" y="11.5" width="160" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="160" id="OrA-oR-KIz"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j3A-fA-kFe">
+                                                            <rect key="frame" x="316" y="10" width="51" height="23.5"/>
+                                                            <connections>
+                                                                <action selector="keepDisplayActiveSwitchValueChanged:" destination="qlR-ty-DOb" eventType="valueChanged" id="1Ck-mo-6XP"/>
+                                                                <action selector="playAutomaticallySwitchValueChanged:" destination="qlR-ty-DOb" eventType="valueChanged" id="cZo-QU-B5o"/>
+                                                            </connections>
+                                                        </switch>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="wic-Pj-o1G" firstAttribute="centerY" secondItem="60t-zq-u49" secondAttribute="centerY" id="8ic-oj-h5Z"/>
+                                                        <constraint firstAttribute="trailing" secondItem="j3A-fA-kFe" secondAttribute="trailing" constant="10" id="CGf-Bg-TlG"/>
+                                                        <constraint firstItem="j3A-fA-kFe" firstAttribute="top" secondItem="60t-zq-u49" secondAttribute="top" constant="10" id="J0L-YG-bZp"/>
+                                                        <constraint firstItem="j3A-fA-kFe" firstAttribute="centerY" secondItem="wic-Pj-o1G" secondAttribute="centerY" id="qKp-uo-eN2"/>
+                                                        <constraint firstItem="wic-Pj-o1G" firstAttribute="leading" secondItem="60t-zq-u49" secondAttribute="leading" constant="16" id="vOA-4n-rPp"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="60t-zq-u49" secondAttribute="trailing" id="W7c-fb-OtB"/>
+                                                <constraint firstAttribute="bottom" secondItem="60t-zq-u49" secondAttribute="bottom" id="eyY-z0-s9h"/>
+                                                <constraint firstItem="60t-zq-u49" firstAttribute="leading" secondItem="SHR-cr-uk6" secondAttribute="leading" id="ppd-wZ-fUd"/>
+                                                <constraint firstItem="60t-zq-u49" firstAttribute="top" secondItem="SHR-cr-uk6" secondAttribute="top" id="z1s-YK-4Yd"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="dUM-KU-QnC">
+                                        <rect key="frame" x="0.0" y="100" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dUM-KU-QnC" id="sFp-s3-fcI">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -1184,7 +1228,7 @@ We hope you like Noise as much as we do.</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="L9e-T3-2AO">
-                                        <rect key="frame" x="0.0" y="100" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="144" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L9e-T3-2AO" id="WYw-TP-yzn">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -1227,7 +1271,7 @@ We hope you like Noise as much as we do.</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="IXG-7Z-DEL">
-                                        <rect key="frame" x="0.0" y="144" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="188" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IXG-7Z-DEL" id="zbA-oV-uUd">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -1274,7 +1318,7 @@ We hope you like Noise as much as we do.</string>
                             <tableViewSection headerTitle="About Noise" footerTitle=" " id="swW-9f-MYe">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="3cL-jk-xdB">
-                                        <rect key="frame" x="0.0" y="244" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="288" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3cL-jk-xdB" id="9cW-0w-AbI">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -1308,7 +1352,7 @@ We hope you like Noise as much as we do.</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Gdi-IO-4Wd">
-                                        <rect key="frame" x="0.0" y="288" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="332" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gdi-IO-4Wd" id="Cac-nY-AZi">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -1342,7 +1386,7 @@ We hope you like Noise as much as we do.</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="beb-Om-0Ex">
-                                        <rect key="frame" x="0.0" y="332" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="376" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="beb-Om-0Ex" id="269-cG-3ch">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -1385,7 +1429,7 @@ We hope you like Noise as much as we do.</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="aej-R4-aux">
-                                        <rect key="frame" x="0.0" y="376" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="420" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aej-R4-aux" id="gFr-nP-WXp">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -1432,7 +1476,7 @@ We hope you like Noise as much as we do.</string>
                             <tableViewSection headerTitle="Other Apps" id="69a-2o-IcU">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="80" id="fHD-h6-gXv">
-                                        <rect key="frame" x="0.0" y="476" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="520" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fHD-h6-gXv" id="BZM-n6-fWm">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
@@ -1489,7 +1533,7 @@ We hope you like Noise as much as we do.</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="80" id="t1C-el-s2H">
-                                        <rect key="frame" x="0.0" y="556" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="600" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t1C-el-s2H" id="2Kn-iy-YjE">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
@@ -1544,7 +1588,7 @@ We hope you like Noise as much as we do.</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="80" id="7IO-Uz-9Ff">
-                                        <rect key="frame" x="0.0" y="636" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="680" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7IO-Uz-9Ff" id="Y92-eO-7ng">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
@@ -1618,6 +1662,9 @@ We hope you like Noise as much as we do.</string>
                         <outlet property="inAppPurchasesChevronImageView" destination="9sY-aG-pl5" id="T4Q-1g-Zvz"/>
                         <outlet property="inAppPurchasesLabel" destination="hb7-RI-H4h" id="e2c-AI-fPJ"/>
                         <outlet property="inAppPurchasesTableViewCell" destination="IXG-7Z-DEL" id="xN6-9W-Tvz"/>
+                        <outlet property="keepDisplayActiveLabel" destination="wic-Pj-o1G" id="bNC-Bv-vjd"/>
+                        <outlet property="keepDisplayActiveSwitch" destination="j3A-fA-kFe" id="lBM-3y-fKo"/>
+                        <outlet property="keepDisplayActiveTableViewCell" destination="sGn-IZ-TNW" id="WpE-h8-dGG"/>
                         <outlet property="playAutomaticallyLabel" destination="bNx-e2-7WA" id="56s-kx-02a"/>
                         <outlet property="playAutomaticallySwitch" destination="v3n-4L-yiC" id="zzf-Us-2x9"/>
                         <outlet property="playAutomticallyTableViewCell" destination="dUM-KU-QnC" id="BwR-E7-7x1"/>

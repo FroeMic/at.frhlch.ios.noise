@@ -17,7 +17,7 @@ class SplashScreenViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if Injection.settingsRepository.getShowOnboarding() || true {
+        if Injection.settingsRepository.getShowOnboarding() {
             presentOnboarding()
         } else {
             presentMainApp()

@@ -14,6 +14,7 @@ class UDSettingsRepository {
     
     init () {
         if (!userDefaults.bool(forKey: "userDefaultsHaveBeenInitializedKey")) {
+            setKeepDisplayActive(enabled: true)
             setShowOnboarding(enabled: true)
             setAutoPlay(enabled: false)
             setBackgroundPlay(enabled: false)
@@ -23,6 +24,7 @@ class UDSettingsRepository {
     }
     private let selectedTabKey = "selectedTabKey"
     private let isOnboardingEnabledKey = "isOnboardingEnabledKey"
+    private let isKeepDisplayActiveEnabled = "isKeepDisplayActiveEnabled"
     private let isAutoPlayEnabledKey = "isAutoPlayEnabledKey"
     private let isBackgroundPlayEnabledKey = "isBackgroundPlayEnabledKey"
 
@@ -37,6 +39,14 @@ extension UDSettingsRepository: SettingsRepository {
     
     func getShowOnboarding() -> Bool {
         return userDefaults.bool(forKey: isOnboardingEnabledKey)
+    }
+
+    func setKeepDisplayActive(enabled: Bool){
+        userDefaults.set(enabled, forKey: isKeepDisplayActiveEnabled)
+    }
+    
+    func getKeepDisplayActive() -> Bool {
+        return userDefaults.bool(forKey: isKeepDisplayActiveEnabled)
     }
     
     func setSelectedTab(index: Int) {
