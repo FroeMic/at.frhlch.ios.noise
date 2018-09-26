@@ -14,8 +14,9 @@ class UDSettingsRepository {
     
     init () {
         if (!userDefaults.bool(forKey: "userDefaultsHaveBeenInitializedKey")) {
-            setKeepDisplayActive(enabled: true)
             setShowOnboarding(enabled: true)
+            setShowInstructionMarks(enabled: true)
+            setKeepDisplayActive(enabled: true)
             setAutoPlay(enabled: false)
             setBackgroundPlay(enabled: false)
             setSelectedTab(index: 1)
@@ -24,6 +25,7 @@ class UDSettingsRepository {
     }
     private let selectedTabKey = "selectedTabKey"
     private let isOnboardingEnabledKey = "isOnboardingEnabledKey"
+    private let isInstructionMarksEnabledKey = "isInstructionMarksEnabledKey"
     private let isKeepDisplayActiveEnabled = "isKeepDisplayActiveEnabled"
     private let isAutoPlayEnabledKey = "isAutoPlayEnabledKey"
     private let isBackgroundPlayEnabledKey = "isBackgroundPlayEnabledKey"
@@ -40,7 +42,16 @@ extension UDSettingsRepository: SettingsRepository {
     func getShowOnboarding() -> Bool {
         return userDefaults.bool(forKey: isOnboardingEnabledKey)
     }
+    
+    func setShowInstructionMarks(enabled: Bool) {
+        userDefaults.set(enabled, forKey: isInstructionMarksEnabledKey)
+    }
+    
+    func getShowInstructionMarks() -> Bool {
+        return userDefaults.bool(forKey: isInstructionMarksEnabledKey)
 
+    }
+    
     func setKeepDisplayActive(enabled: Bool){
         userDefaults.set(enabled, forKey: isKeepDisplayActiveEnabled)
     }

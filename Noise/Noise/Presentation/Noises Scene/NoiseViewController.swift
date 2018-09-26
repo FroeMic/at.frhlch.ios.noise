@@ -8,6 +8,7 @@
 
 import UIKit
 import JustPeek
+import Instructions
 
 class NoiseViewController: UIViewController {
     
@@ -19,6 +20,7 @@ class NoiseViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var playPauseButton: UIButton!
     
+    var coachMarksController: CoachMarksController?
     var peekController: PeekController?
     
     var sounds: [Sound] = []
@@ -39,6 +41,13 @@ class NoiseViewController: UIViewController {
         peekController = PeekController()
         peekController?.register(viewController: self, forPeekingWithDelegate: self, sourceView: tableView)
         
+        if Injection.settingsRepository.getShowInstructionMarks() {
+            coachMarksController = CoachMarksController()
+            coachMarksController?.overlay.color = UIColor.black.withAlphaComponent(0.4)
+            coachMarksController?.delegate = self
+            coachMarksController?.dataSource = self
+        }
+        
         playPauseButton?.tintColor = Injection.theme.tintColor
         updatePlayPauseButton()
     }
@@ -55,10 +64,17 @@ class NoiseViewController: UIViewController {
         if Injection.settingsRepository.getAutoPlay() {
             playAudio()
         }
+        
+        if Injection.settingsRepository.getShowInstructionMarks() {
+            coachMarksController?.start(on: self)
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         audioManager.deregister(delegate: self)
+        coachMarksController?.stop(immediately: true)
+        Injection.settingsRepository.setShowInstructionMarks(enabled: false)
+        
         super.viewDidDisappear(animated)
     }
     
@@ -166,4 +182,37 @@ extension NoiseViewController: AudioManagerDelegate {
             self.updatePlayPauseButton()
         }
     }
+}
+
+// MARK: CoachMarksControllerDataSource
+extension NoiseViewController: CoachMarksControllerDataSource {
+    func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkViewsAt index: Int, madeFrom coachMark: CoachMark) -> (bodyView: CoachMarkBodyView, arrowView: CoachMarkArrowView?) {
+        
+        let coachViews = coachMarksController.helper.makeDefaultCoachViews(withArrow: true, arrowOrientation: coachMark.arrowOrientation)
+        
+        
+        if index == 0 {
+            coachViews.bodyView.hintLabel.text = "Tip: To preview any sound on it's own use Force Touch or a Long Press."
+            coachViews.bodyView.nextLabel.text = "Ok"
+        }
+
+        return (bodyView: coachViews.bodyView, arrowView: coachViews.arrowView)
+    }
+    
+    func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkAt index: Int) -> CoachMark {
+        let poc = tableView.cellForRow(at: IndexPath(row: 0, section: 0))
+        return coachMarksController.helper.makeCoachMark(for: poc)
+    }
+    
+    func numberOfCoachMarks(for coachMarksController: CoachMarksController) -> Int {
+        return 1
+    }
+    
+    
+}
+
+
+// MARK: CoachMarksControllerDelegate
+extension NoiseViewController: CoachMarksControllerDelegate {
+    
 }

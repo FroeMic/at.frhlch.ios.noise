@@ -15,6 +15,7 @@ target 'Noise' do
     pod 'Kvitto'
     pod 'Siren'
     pod 'Presentation'
+    pod 'Instructions', '~> 1.2.0'
 
   # Pods for Noise
 

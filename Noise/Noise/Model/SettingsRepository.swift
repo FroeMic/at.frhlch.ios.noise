@@ -12,6 +12,8 @@ protocol SettingsRepository {
     
     func setShowOnboarding(enabled: Bool)
     func getShowOnboarding() -> Bool
+    func setShowInstructionMarks(enabled: Bool)
+    func getShowInstructionMarks() -> Bool
     func setKeepDisplayActive(enabled: Bool)
     func getKeepDisplayActive() -> Bool
     func setSelectedTab(index: Int)
