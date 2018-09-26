@@ -108,15 +108,18 @@ extension BaseTabBarController: SoundBarDelegate {
     }
     
     func didPressPlay() {
+        Injection.feedback.subtleFeedback()
         if audioManager.state == .stopped {
             guard let mixtape = getMixtape(offset: 0) else {
+                let sounds = Injection.soundRepository.getAll()
+                let audioBundle = AudioBundle(id: "xxx-noise-all-sounds", title: "Ambient Sound Mix" , sounds: sounds)
+                audioManager.activate(audio: audioBundle, hard: false)
                 return
             }
             audioManager.activate(audio: AudioBundle(mixtape: mixtape), hard: false)
         } else {
             audioManager.play()
         }
-        Injection.feedback.subtleFeedback()
     }
     
     func didPressNextTrack() {
