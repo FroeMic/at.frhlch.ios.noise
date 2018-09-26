@@ -113,6 +113,7 @@ class EditMixtapeViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        saveMixtape()
         if let navigationVC = segue.destination as? UINavigationController,
             let soundSelectionVC = navigationVC.topViewController as? SoundSelectionViewController {
             soundSelectionVC.mixtape = mixtape
