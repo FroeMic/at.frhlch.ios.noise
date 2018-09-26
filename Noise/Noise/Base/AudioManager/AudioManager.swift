@@ -19,6 +19,7 @@ class AudioManager {
     private var currentAudio: AudioBundle?
     private var previewPlayer: AudioManager?
     private var continueAfterPreview: Bool = false
+    private var continueAfterMovingToForeground: Bool = false
     private var fallbackImage: UIImage = UIImage(named: "placeholder_artwork")!
     private var commandCenterHasTargets: Bool = false
     
@@ -59,6 +60,7 @@ class AudioManager {
         self.enforceNoBackgroundPlay = enforceNoBackgroundPlay
         
         NotificationCenter.default.addObserver(self, selector: #selector(appWillMoveToBackground), name: Notification.Name.UIApplicationWillResignActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(appDidMoveToForground), name: Notification.Name.UIApplicationWillEnterForeground, object: nil)
 
         setupAudioSession()
     }
@@ -81,6 +83,17 @@ class AudioManager {
     
     @objc func appWillMoveToBackground() {
         stopPreview()
+        if !playsInBackground && state == .playing {
+            continueAfterMovingToForeground = true
+            pause()
+        }
+    }
+    
+    @objc func appDidMoveToForground() {
+        if continueAfterMovingToForeground {
+            continueAfterMovingToForeground = false
+            play()
+        }
     }
     
     private func setupPlayerFor(sound: Sound) -> AVAudioPlayer? {
