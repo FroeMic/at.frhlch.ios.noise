@@ -10,12 +10,21 @@ import UIKit
 
 class AboutViewController: UIViewController {
     
+    @IBOutlet var textView: UITextView!
     
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "About"
+        applyTheme()
+    }
+    
+    func applyTheme() {
+        let theme = Injection.theme
+        
+        textView.textColor = theme.textColor
+        textView.tintColor = theme.tintColor
 
     }
     

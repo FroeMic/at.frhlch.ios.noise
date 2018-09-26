@@ -73,8 +73,6 @@ class NoiseViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         audioManager.deregister(delegate: self)
         coachMarksController?.stop(immediately: true)
-        Injection.settingsRepository.setShowInstructionMarks(enabled: false)
-        
         super.viewDidDisappear(animated)
     }
     
@@ -192,7 +190,7 @@ extension NoiseViewController: CoachMarksControllerDataSource {
         
         
         if index == 0 {
-            coachViews.bodyView.hintLabel.text = "Tip: To preview any sound on it's own use Force Touch or a Long Press."
+            coachViews.bodyView.hintLabel.text = "Tip: To preview any sound use Force Touch or a Long Press."
             coachViews.bodyView.nextLabel.text = "Ok"
         }
 
@@ -214,5 +212,9 @@ extension NoiseViewController: CoachMarksControllerDataSource {
 
 // MARK: CoachMarksControllerDelegate
 extension NoiseViewController: CoachMarksControllerDelegate {
-    
+    func coachMarksController(_ coachMarksController: CoachMarksController, didHide coachMark: CoachMark, at index: Int) {
+        if index == 1 {
+            Injection.settingsRepository.setShowInstructionMarks(enabled: false)
+        }
+    }
 }

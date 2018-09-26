@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4SX-a8-q6i">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,26 +11,26 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="EHf-IW-A2E">
+        <scene sceneID="k8H-xl-Qxb">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="c6q-8G-m8Z">
+                <viewController id="4SX-a8-q6i" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KKl-aD-hp1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_artwork" translatesAutoresizingMaskIntoConstraints="NO" id="JRz-RT-AFv">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_artwork" translatesAutoresizingMaskIntoConstraints="NO" id="Np0-A7-jbk">
                                 <rect key="frame" x="30" y="184.5" width="131.5" height="131.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="JRz-RT-AFv" secondAttribute="height" multiplier="1:1" id="No0-26-GvB"/>
+                                    <constraint firstAttribute="width" secondItem="Np0-A7-jbk" secondAttribute="height" multiplier="1:1" id="Fjz-aj-7Ra"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Noise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fqy-Wa-dZz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Noise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qyc-mc-Lzv">
                                 <rect key="frame" x="46" y="311" width="111" height="50.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="42"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create personalized ambient sounds for relaxing, meditation and better sleeping." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ao-N1-0Ox">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create personalized ambient sounds for relaxing, meditation and better sleeping." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ke6-ms-tg4">
                                 <rect key="frame" x="46" y="366.5" width="283" height="61"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -39,22 +39,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="8ao-N1-0Ox" secondAttribute="trailing" constant="46" id="7zs-N4-WkS"/>
-                            <constraint firstItem="Fqy-Wa-dZz" firstAttribute="top" secondItem="JRz-RT-AFv" secondAttribute="bottom" constant="-5" id="Gl6-1V-KZ5"/>
-                            <constraint firstItem="Fqy-Wa-dZz" firstAttribute="leading" secondItem="CdZ-dc-eIR" secondAttribute="leading" constant="46" id="LqG-qa-8oC"/>
-                            <constraint firstItem="CdZ-dc-eIR" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Fqy-Wa-dZz" secondAttribute="trailing" symbolic="YES" id="YGW-ED-1qU"/>
-                            <constraint firstItem="JRz-RT-AFv" firstAttribute="leading" secondItem="CdZ-dc-eIR" secondAttribute="leading" constant="30" id="YaV-q7-t4Y"/>
-                            <constraint firstItem="8ao-N1-0Ox" firstAttribute="leading" secondItem="CdZ-dc-eIR" secondAttribute="leading" constant="46" id="gIf-oU-YyO"/>
-                            <constraint firstItem="JRz-RT-AFv" firstAttribute="centerY" secondItem="c6q-8G-m8Z" secondAttribute="centerY" multiplier="0.75" id="ic8-vP-uig"/>
-                            <constraint firstItem="8ao-N1-0Ox" firstAttribute="top" secondItem="Fqy-Wa-dZz" secondAttribute="bottom" constant="5" id="pvZ-4x-iWr"/>
-                            <constraint firstItem="JRz-RT-AFv" firstAttribute="width" secondItem="c6q-8G-m8Z" secondAttribute="width" multiplier="0.35" id="qZe-It-fWe"/>
+                            <constraint firstItem="Ke6-ms-tg4" firstAttribute="top" secondItem="Qyc-mc-Lzv" secondAttribute="bottom" constant="5" id="1MQ-jV-eqh"/>
+                            <constraint firstAttribute="trailing" secondItem="Ke6-ms-tg4" secondAttribute="trailing" constant="46" id="JCk-II-UmQ"/>
+                            <constraint firstItem="lMt-5l-hKS" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Qyc-mc-Lzv" secondAttribute="trailing" symbolic="YES" id="M9j-NQ-V1A"/>
+                            <constraint firstItem="Qyc-mc-Lzv" firstAttribute="top" secondItem="Np0-A7-jbk" secondAttribute="bottom" constant="-5" id="cO5-V3-mmP"/>
+                            <constraint firstItem="Qyc-mc-Lzv" firstAttribute="leading" secondItem="lMt-5l-hKS" secondAttribute="leading" constant="46" id="f0g-gM-QMP"/>
+                            <constraint firstItem="Np0-A7-jbk" firstAttribute="width" secondItem="KKl-aD-hp1" secondAttribute="width" multiplier="0.35" id="gTD-TF-H8F"/>
+                            <constraint firstItem="Ke6-ms-tg4" firstAttribute="leading" secondItem="lMt-5l-hKS" secondAttribute="leading" constant="46" id="nSg-VT-zop"/>
+                            <constraint firstItem="Np0-A7-jbk" firstAttribute="centerY" secondItem="KKl-aD-hp1" secondAttribute="centerY" multiplier="0.75" id="qk9-vW-0jI"/>
+                            <constraint firstItem="Np0-A7-jbk" firstAttribute="leading" secondItem="lMt-5l-hKS" secondAttribute="leading" constant="30" id="se7-ef-GUM"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="CdZ-dc-eIR"/>
+                        <viewLayoutGuide key="safeArea" id="lMt-5l-hKS"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cin-D6-tjS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="-828" y="132.68365817091455"/>
         </scene>
     </scenes>
     <resources>

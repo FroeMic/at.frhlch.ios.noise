@@ -1691,26 +1691,51 @@ We hope you like Noise as much as we do.</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VcN-XP-wNI">
-                                <rect key="frame" x="7" y="74" width="361" height="150"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VcN-XP-wNI">
+                                <rect key="frame" x="7" y="184" width="361" height="400.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="UOU-9R-ZbL"/>
                                 </constraints>
-                                <string key="text">This app could not have been created without the help of some truly amazing pieces of free and open-source software and content.
+                                <mutableString key="text">Noise was created from my desire to have a simple ambient noise app I could use for meditation.
+I was rather disappointed by the design and functionality offered by existing apps so I set out to create it myself.
+Since then I have spent countless hours designing and developing the app and curating high quality sounds.
 
-Below you can find the licenses to all third-party resources used in this app. Credit where credit is due. A big thank you to all the creators, contributors and maintainers of these amazing projects. Rock on!</string>
+Noise has become by far my most ambitous project as of now and I hope I could create something that you enjoy too.
+
+If you like it, it would be great if you could leave a rating on the App Store.
+If you notice things that should be changed or improved I encourage you to let me know in a comment of the App Store.
+
+Built with ❤️ and ☕️ in Munich.
+
+👉 https://apps.frhlch.at/noise
+👉 https://frhlch.at/</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_artwork" translatesAutoresizingMaskIntoConstraints="NO" id="qBQ-Ew-abc">
+                                <rect key="frame" x="147.5" y="84" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="Ec2-5x-cJo"/>
+                                    <constraint firstAttribute="width" secondItem="qBQ-Ew-abc" secondAttribute="height" multiplier="1:1" id="vjA-SP-Dt2"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="qBQ-Ew-abc" firstAttribute="width" secondItem="qBQ-Ew-abc" secondAttribute="height" multiplier="1:1" id="H4F-q2-GLM"/>
+                            <constraint firstItem="qBQ-Ew-abc" firstAttribute="centerX" secondItem="TNQ-8V-dlH" secondAttribute="centerX" id="OC2-Pk-LFQ"/>
                             <constraint firstItem="gEB-VQ-Bs7" firstAttribute="trailing" secondItem="VcN-XP-wNI" secondAttribute="trailing" constant="7" id="PIZ-xp-DxD"/>
-                            <constraint firstItem="VcN-XP-wNI" firstAttribute="top" secondItem="gEB-VQ-Bs7" secondAttribute="top" constant="10" id="R0U-Z7-2xg"/>
+                            <constraint firstItem="gEB-VQ-Bs7" firstAttribute="bottom" secondItem="VcN-XP-wNI" secondAttribute="bottom" id="Qhj-9x-In6"/>
+                            <constraint firstItem="qBQ-Ew-abc" firstAttribute="top" secondItem="gEB-VQ-Bs7" secondAttribute="top" constant="20" id="drn-VJ-dBz"/>
+                            <constraint firstItem="VcN-XP-wNI" firstAttribute="top" secondItem="qBQ-Ew-abc" secondAttribute="bottom" constant="20" id="hsS-Yh-33J"/>
                             <constraint firstItem="VcN-XP-wNI" firstAttribute="leading" secondItem="gEB-VQ-Bs7" secondAttribute="leading" constant="7" id="jqs-v2-NY5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gEB-VQ-Bs7"/>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="VcN-XP-wNI" id="d9X-VQ-4sS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ad4-yt-vEV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
