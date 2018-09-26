@@ -10,11 +10,11 @@ target 'Noise' do
     pod 'YPImagePicker'
     pod 'SwiftyJSON', '~> 4.0'
     pod 'SugarRecord/CoreData'
-    pod 'WhatsNewKit', '~> 1.0.0'
     pod 'Appirater'
     pod 'SwiftyStoreKit'
     pod 'Kvitto'
     pod 'Siren'
+    pod 'Presentation'
 
   # Pods for Noise
 

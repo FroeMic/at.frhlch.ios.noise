@@ -25,6 +25,12 @@ class SettingsViewController: UITableViewController {
     @IBOutlet var inAppPurchasesLabel: UILabel!
     @IBOutlet var inAppPurchasesChevronImageView: UIImageView!
     
+    @IBOutlet var rateNoiseCell: UITableViewCell!
+    @IBOutlet var rateNoiseLabel: UILabel!
+    
+    @IBOutlet var showOnboardingCell: UITableViewCell!
+    @IBOutlet var showOnboardingLabel: UILabel!
+    
     @IBOutlet var aboutTableViewCell: UITableViewCell!
     @IBOutlet var aboutLabel: UIView!
     @IBOutlet var aboutChevronImageView: UIImageView!
@@ -153,6 +159,14 @@ class SettingsViewController: UITableViewController {
             inAppPurchasesChevronImageView.tintColor = theme.textColor
         }
         
+        rateNoiseCell.selectionStyle = .none
+        rateNoiseCell.backgroundColor = .white
+        rateNoiseLabel.textColor = theme.textColor
+
+        showOnboardingCell.selectionStyle = .none
+        showOnboardingCell.backgroundColor = .white
+        showOnboardingLabel.textColor = theme.textColor
+        
         aboutTableViewCell.selectionStyle = .none
         aboutTableViewCell.backgroundColor = .white
         acknowledgmentsLabel.textColor = theme.textColor
@@ -208,8 +222,11 @@ extension SettingsViewController {
             case 0:
                 RatingManager.triggerRatingView()
             case 1:
-                performSegue(withIdentifier: SettingsViewController.showAboutSegueIdentifier, sender: nil)
+                let controller = OnboardingPresentationController(dismissOnCompletion: true)
+                self.present(controller, animated: true)
             case 2:
+                performSegue(withIdentifier: SettingsViewController.showAboutSegueIdentifier, sender: nil)
+            case 3:
                 performSegue(withIdentifier: SettingsViewController.showAcknowledgementSegueIdentifier, sender: nil)
             default:
                 return

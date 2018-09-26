@@ -46,82 +46,89 @@
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
-		<key>Pods-Noise.xcscheme</key>
+		<key>Pages.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>7</integer>
 		</dict>
-		<key>Pods-NoiseTests.xcscheme</key>
+		<key>Pods-Noise.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>8</integer>
 		</dict>
-		<key>PryntTrimmerView.xcscheme</key>
+		<key>Pods-NoiseTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>9</integer>
 		</dict>
-		<key>Result.xcscheme</key>
+		<key>Presentation.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>10</integer>
 		</dict>
-		<key>Siren.xcscheme</key>
+		<key>PryntTrimmerView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>11</integer>
 		</dict>
-		<key>SteviaLayout.xcscheme</key>
+		<key>Result.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>12</integer>
 		</dict>
-		<key>SugarRecord.xcscheme</key>
+		<key>Siren.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>13</integer>
 		</dict>
-		<key>SwiftyJSON.xcscheme</key>
+		<key>SteviaLayout.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>14</integer>
 		</dict>
-		<key>SwiftyStoreKit.xcscheme</key>
+		<key>SugarRecord.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>15</integer>
 		</dict>
-		<key>WhatsNewKit.xcscheme</key>
+		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>16</integer>
 		</dict>
-		<key>YPImagePicker.xcscheme</key>
+		<key>SwiftyStoreKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>17</integer>
+		</dict>
+		<key>YPImagePicker.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>18</integer>
 		</dict>
 		<key>lottie-ios.xcscheme</key>
 		<dict>

@@ -11,6 +11,9 @@ PODS:
   - Kvitto/Core (1.0.3):
     - DTFoundation/DTASN1 (~> 1.7.13)
   - lottie-ios (2.5.0)
+  - Pages (2.0.2)
+  - Presentation (4.1.2):
+    - Pages (~> 2.0)
   - PryntTrimmerView (2.0.1)
   - Result (3.2.4)
   - Siren (3.4.1)
@@ -19,7 +22,6 @@ PODS:
     - Result (~> 3.0)
   - SwiftyJSON (4.1.0)
   - SwiftyStoreKit (0.13.2)
-  - WhatsNewKit (1.0.2)
   - YPImagePicker (3.1.1):
     - PryntTrimmerView (~> 2.0)
     - SteviaLayout (~> 4.2.0)
@@ -30,11 +32,11 @@ DEPENDENCIES:
   - JustPeek (from `https://github.com/FroeMic/JustPeek.git`)
   - Kvitto
   - lottie-ios
+  - Presentation
   - Siren
   - SugarRecord/CoreData
   - SwiftyJSON (~> 4.0)
   - SwiftyStoreKit
-  - WhatsNewKit (~> 1.0.0)
   - YPImagePicker
 
 SPEC REPOS:
@@ -43,6 +45,8 @@ SPEC REPOS:
     - DTFoundation
     - Kvitto
     - lottie-ios
+    - Pages
+    - Presentation
     - PryntTrimmerView
     - Result
     - Siren
@@ -50,7 +54,6 @@ SPEC REPOS:
     - SugarRecord
     - SwiftyJSON
     - SwiftyStoreKit
-    - WhatsNewKit
     - YPImagePicker
 
 EXTERNAL SOURCES:
@@ -74,6 +77,8 @@ SPEC CHECKSUMS:
   JustPeek: e4156168852a86b7ab00403e8e785ef225c88a3c
   Kvitto: d451f893f84ad669850b7cb7d3f8781363e14232
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
+  Pages: 5564ac6035c48fef7a837049314f57507d263b11
+  Presentation: 84974970fa451c89147d2bed4d5d50f857e71761
   PryntTrimmerView: 4260ae497a2f3e1bbfc0b71247eb74ab92bf0490
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   Siren: 94e13d40b48d8c0ddac053140d607c36bb487767
@@ -81,9 +86,8 @@ SPEC CHECKSUMS:
   SugarRecord: be6aa5c18b4a4dec0de4c1f49fc61c85eabb5328
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
   SwiftyStoreKit: b7563505440a68c9d9fa70bc43d8a97015519409
-  WhatsNewKit: 6a5532c41489dc8d19266b75de8ece7666250df4
   YPImagePicker: dd0a901a293f99e982f75554738574c735734a76
 
-PODFILE CHECKSUM: 716554f6b841230a6a8211643a8a15025e05efeb
+PODFILE CHECKSUM: 39b83447d8c1c9314f798fa7374e6933ce36cfaf
 
 COCOAPODS: 1.5.3

@@ -16,6 +16,8 @@
 		271F9EC22135D51A00115C8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271F9EC02135D51A00115C8C /* LaunchScreen.storyboard */; };
 		271F9ECD2135D51B00115C8C /* NoiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F9ECC2135D51B00115C8C /* NoiseTests.swift */; };
 		272C0C92215010C300C22ED0 /* AddSoundTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272C0C91215010C300C22ED0 /* AddSoundTableViewCell.swift */; };
+		273361DB215B7F0D006D696B /* OnboardingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273361DA215B7F0D006D696B /* OnboardingDelegate.swift */; };
+		273361DD215B84BC006D696B /* TintedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273361DC215B84BC006D696B /* TintedImageView.swift */; };
 		2774C51A21592482009972F3 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774C51921592482009972F3 /* DownloadManager.swift */; };
 		2774C51C21592633009972F3 /* SoundDownloadTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774C51B21592633009972F3 /* SoundDownloadTask.swift */; };
 		2774C51E21592A22009972F3 /* SoundSyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774C51D21592A22009972F3 /* SoundSyncManager.swift */; };
@@ -36,6 +38,8 @@
 		27B1060C2135DCA40070A109 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B1060B2135DCA40070A109 /* Sound.swift */; };
 		27BA64C7215A32260080D87D /* AudioBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BA64C6215A32260080D87D /* AudioBundle.swift */; };
 		27BA64CD215A92290080D87D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BA64CC215A92290080D87D /* StoreKit.framework */; };
+		27BA64CF215B75050080D87D /* OnboardingPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BA64CE215B75050080D87D /* OnboardingPresentationController.swift */; };
+		27BA64D1215B7D280080D87D /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BA64D0215B7D280080D87D /* OnboardingViewController.swift */; };
 		27BC36E5214FCC4E000AD98B /* EditMixtapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC36E4214FCC4E000AD98B /* EditMixtapeViewController.swift */; };
 		27BD8D5B213C0443003DF079 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BD8D5A213C0443003DF079 /* AVFoundation.framework */; };
 		27BD8D5D213C05F2003DF079 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD8D5C213C05F2003DF079 /* AudioManager.swift */; };
@@ -103,6 +107,8 @@
 		271F9ECC2135D51B00115C8C /* NoiseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoiseTests.swift; sourceTree = "<group>"; };
 		271F9ECE2135D51B00115C8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		272C0C91215010C300C22ED0 /* AddSoundTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSoundTableViewCell.swift; sourceTree = "<group>"; };
+		273361DA215B7F0D006D696B /* OnboardingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDelegate.swift; sourceTree = "<group>"; };
+		273361DC215B84BC006D696B /* TintedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TintedImageView.swift; sourceTree = "<group>"; };
 		2774C51921592482009972F3 /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
 		2774C51B21592633009972F3 /* SoundDownloadTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundDownloadTask.swift; sourceTree = "<group>"; };
 		2774C51D21592A22009972F3 /* SoundSyncManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSyncManager.swift; sourceTree = "<group>"; };
@@ -123,6 +129,8 @@
 		27B1060B2135DCA40070A109 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
 		27BA64C6215A32260080D87D /* AudioBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioBundle.swift; sourceTree = "<group>"; };
 		27BA64CC215A92290080D87D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		27BA64CE215B75050080D87D /* OnboardingPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPresentationController.swift; sourceTree = "<group>"; };
+		27BA64D0215B7D280080D87D /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		27BC36E4214FCC4E000AD98B /* EditMixtapeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMixtapeViewController.swift; sourceTree = "<group>"; };
 		27BD8D5A213C0443003DF079 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		27BD8D5C213C05F2003DF079 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
@@ -236,6 +244,9 @@
 		2774C52321596F29009972F3 /* OnboardingScene */ = {
 			isa = PBXGroup;
 			children = (
+				27BA64CE215B75050080D87D /* OnboardingPresentationController.swift */,
+				27BA64D0215B7D280080D87D /* OnboardingViewController.swift */,
+				273361DA215B7F0D006D696B /* OnboardingDelegate.swift */,
 			);
 			path = OnboardingScene;
 			sourceTree = "<group>";
@@ -279,6 +290,7 @@
 		27B105FD2135D79B0070A109 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				273361DC215B84BC006D696B /* TintedImageView.swift */,
 				27F52F15214D4D790030102C /* RoundedView.swift */,
 				27B105FE2135D8150070A109 /* RoundedImageView.swift */,
 				27F52EFB21427E740030102C /* PrimaryButton.swift */,
@@ -580,6 +592,8 @@
 				"${BUILT_PRODUCTS_DIR}/DTFoundation/DTFoundation.framework",
 				"${BUILT_PRODUCTS_DIR}/JustPeek/JustPeek.framework",
 				"${BUILT_PRODUCTS_DIR}/Kvitto/Kvitto.framework",
+				"${BUILT_PRODUCTS_DIR}/Pages/Pages.framework",
+				"${BUILT_PRODUCTS_DIR}/Presentation/Presentation.framework",
 				"${BUILT_PRODUCTS_DIR}/PryntTrimmerView/PryntTrimmerView.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/Siren/Siren.framework",
@@ -587,7 +601,6 @@
 				"${BUILT_PRODUCTS_DIR}/SugarRecord/SugarRecord.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyStoreKit/SwiftyStoreKit.framework",
-				"${BUILT_PRODUCTS_DIR}/WhatsNewKit/WhatsNewKit.framework",
 				"${BUILT_PRODUCTS_DIR}/YPImagePicker/YPImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
@@ -598,6 +611,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DTFoundation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JustPeek.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kvitto.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pages.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Presentation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PryntTrimmerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Siren.framework",
@@ -605,7 +620,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SugarRecord.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyStoreKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WhatsNewKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YPImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
@@ -652,6 +666,7 @@
 				27D189102155329400F5968F /* UIImage+FromFile.swift in Sources */,
 				27C753892158EBEC00905EFD /* LicenseTableViewCell.swift in Sources */,
 				27C753872158E59E00905EFD /* License.swift in Sources */,
+				27BA64D1215B7D280080D87D /* OnboardingViewController.swift in Sources */,
 				27F52F062142CEFD0030102C /* AudioManagerDelegate.swift in Sources */,
 				27C7537F2158E4C900905EFD /* AcknowledgmentsViewController.swift in Sources */,
 				27B1060A2135DC5B0070A109 /* SoundTableViewCell.swift in Sources */,
@@ -662,6 +677,8 @@
 				27D188FF2153712E00F5968F /* CoreDataModel.xcdatamodeld in Sources */,
 				27B105FF2135D8150070A109 /* RoundedImageView.swift in Sources */,
 				2774C52021596A99009972F3 /* SettingsRepository.swift in Sources */,
+				273361DB215B7F0D006D696B /* OnboardingDelegate.swift in Sources */,
+				273361DD215B84BC006D696B /* TintedImageView.swift in Sources */,
 				27D1890521537C0A00F5968F /* SRMixtapeRepository.swift in Sources */,
 				27BC36E5214FCC4E000AD98B /* EditMixtapeViewController.swift in Sources */,
 				27D0BFA721501AE200B27FF0 /* SoundSelectionViewController.swift in Sources */,
@@ -670,6 +687,7 @@
 				27BD8D63213C17D4003DF079 /* AudioManagerState.swift in Sources */,
 				2774C53121598467009972F3 /* StoreKitManager.swift in Sources */,
 				2774C52521596F4A009972F3 /* SplashScreenViewController.swift in Sources */,
+				27BA64CF215B75050080D87D /* OnboardingPresentationController.swift in Sources */,
 				27BD8D65213C1ADA003DF079 /* Mixtape.swift in Sources */,
 				2774C51C21592633009972F3 /* SoundDownloadTask.swift in Sources */,
 				2774C52B21598304009972F3 /* UpdateManager.swift in Sources */,
