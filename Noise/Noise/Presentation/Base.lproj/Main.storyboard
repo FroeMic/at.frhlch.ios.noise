@@ -1682,7 +1682,7 @@ We hope you like Noise as much as we do.</string>
 I was rather disappointed by the design and functionality offered by existing apps so I set out to create it myself.
 Since then I have spent countless hours designing and developing the app and curating high quality sounds.
 
-Noise has become by far my most ambitous project as of now and I hope I could create something that you enjoy too.
+Noise has become by far my most ambitious project as of now and I hope I could create something that you enjoy too.
 
 If you like it, it would be great if you could leave a rating on the App Store.
 If you notice things that should be changed or improved I encourage you to let me know in a comment of the App Store.
@@ -2218,13 +2218,13 @@ Below you can find the licenses to all third-party resources used in this app. C
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Advertisment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Fw-dO-DcV">
-                                                                <rect key="frame" x="60" y="0.0" width="235" height="38.5"/>
+                                                                <rect key="frame" x="60" y="0.0" width="235" height="19.5"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We don’t want tons of annoying ads to stop you from enjoying Noise. Zero Ads. Pinky Promise." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfx-a8-JJw">
-                                                                <rect key="frame" x="60" y="38.5" width="235" height="57.5"/>
+                                                                <rect key="frame" x="60" y="19.5" width="235" height="76.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -2340,7 +2340,7 @@ Below you can find the licenses to all third-party resources used in this app. C
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="roA-S3-hAq">
                                                                 <rect key="frame" x="60" y="38.5" width="235" height="115"/>
-                                                                <string key="text">Creating an app like Noise takes quite some time – so there are few addtional things you can get that will help us keep our coffee machine running and developers happy. </string>
+                                                                <string key="text">Creating an app like Noise takes quite some time – so there are few additional things you can get that will help us keep our coffee machine running and developers happy. </string>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>

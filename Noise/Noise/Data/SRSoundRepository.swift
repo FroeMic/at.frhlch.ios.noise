@@ -235,7 +235,7 @@ extension SRSoundRepository {
                 "id": "002-berlin-coffee-shop",
                 "title": "Berlin Coffee Shop",
                 "subtitle": "Find yourself in a Berlin coffee shop buzzing with life",
-                "detailDescription": "Dive into the scenery of a Berlin coffee shop buzzing with energy. The pleasant smell of freshly brewed coffee hangs in the air while the busy chatter of people all around you blends in with the venue. Time to get to work",
+                "detailDescription": "Dive into the scenery of a Berlin coffee shop buzzing with energy. The pleasant smell of freshly brewed coffee hangs in the air while the busy chatter of people all around you blends in with the venue. Time to get to work.",
                 "imageFilePath": "sound_coffee_shop.jpg",
                 "soundFilePath": "audio_cafe_60s.mp3",
                 "contentDownloaded": "true",
