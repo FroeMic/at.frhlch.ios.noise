@@ -7,13 +7,12 @@
 //
 
 import UIKit
-import JustPeek
 
 class SoundSelectionViewController: UIViewController {
     
     static let soundSelectionCellReuseIdentifier = "SoundSelectionTableViewCell"
-    
-    var peekController: PeekController?
+    var hasRegisteredForceTouchGesturerecognizer: Bool = false
+
     var mixtape: Mixtape? {
         didSet {
             guard let mixtape = mixtape  else {
@@ -36,10 +35,7 @@ class SoundSelectionViewController: UIViewController {
         super.viewDidLoad()
         
         sounds = Injection.soundRepository.getAll()
-        
-        peekController = PeekController()
-        peekController?.register(viewController: self, forPeekingWithDelegate: self, sourceView: tableView)
-        
+    
         tableView.delegate = self
         tableView.dataSource = self
         tableView.allowsMultipleSelection = true
@@ -57,6 +53,27 @@ class SoundSelectionViewController: UIViewController {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigationController?.navigationBar.shadowImage = UIImage()
             
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if hasRegisteredForceTouchGesturerecognizer {
+            return
+        }
+
+        let canHandleForceTouch = tableView.traitCollection.forceTouchCapability == .available
+        if canHandleForceTouch {
+            let recognizer = ForceTouchGestureRecognizer(target: self, action: #selector(forceTouchOnTableView))
+            tableView.addGestureRecognizer(recognizer)
+            hasRegisteredForceTouchGesturerecognizer = true
+        } else {
+            let recognizer = UILongPressGestureRecognizer(target: self, action: #selector(longPressOnTableView))
+            recognizer.minimumPressDuration = 1.0
+            tableView.addGestureRecognizer(recognizer)
+            hasRegisteredForceTouchGesturerecognizer = true
+        }
+        
     }
     
     @IBAction func cancelButtonPressed(_ sender: Any) {
@@ -141,27 +158,56 @@ extension SoundSelectionViewController: UITableViewDataSource {
 }
 
 
-// MARK: PeekingDelegate
-extension SoundSelectionViewController: PeekingDelegate {
+extension SoundSelectionViewController {
     
-    func peekContext(_ context: PeekContext, viewControllerForPeekingAt location: CGPoint) -> UIViewController? {
-        let viewController = storyboard?.instantiateViewController(withIdentifier: "NoisePreviewViewController")
-        if let viewController = viewController, let indexPath = tableView.indexPathForRow(at: location) {
-            
-            if let noisePreviewViewController = viewController as? NoisePreviewViewController {
-                noisePreviewViewController.sound = sounds[indexPath.row]
-            }
-            
-            if let cell = tableView.cellForRow(at: indexPath) {
-                context.sourceRect = cell.frame
-            }
-            Injection.feedback.feedbackForPeek()
-            return viewController
+    func presentPreviewViewForSound(sound: Sound) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let npVC = storyboard.instantiateViewController(withIdentifier: "NoisePreviewViewController") as? NoisePreviewViewController else {
+            return
         }
-        return nil
+        
+        let oldDefinePresentationContext = definesPresentationContext
+        definesPresentationContext = true
+        
+        // presented view controller
+        npVC.modalPresentationStyle = .overFullScreen
+        npVC.modalTransitionStyle = .crossDissolve
+        
+        npVC.sound = sound
+        
+        present(npVC, animated: true)
+        Injection.feedback.feedbackForPeek()
+        definesPresentationContext = oldDefinePresentationContext
+        
     }
     
-    func peekContext(_ context: PeekContext, commit viewController: UIViewController) {
-        Injection.feedback.feedbackForPeek()
+    func selectedTableViewAtPoint(point: CGPoint) {
+        guard let indexPath = tableView.indexPathForRow(at: point),
+            let cell = tableView.cellForRow(at: indexPath) as? SoundSelectionTableViewCell,
+            let sound = cell.sound else {
+                return
+        }
+        
+        presentPreviewViewForSound(sound: sound)
     }
+    
+    @IBAction func forceTouchOnTableView(_ recognizer: ForceTouchGestureRecognizer) {
+        guard recognizer.state == .began else {
+            return
+        }
+        
+        let point = recognizer.location(in: tableView)
+        selectedTableViewAtPoint(point: point)
+    }
+    
+    @IBAction func longPressOnTableView(_ recognizer: UILongPressGestureRecognizer) {
+        guard recognizer.state == .began else {
+            return
+        }
+        
+        let point = recognizer.location(in: tableView)
+        selectedTableViewAtPoint(point: point)
+    }
+    
 }
+

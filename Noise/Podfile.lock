@@ -5,7 +5,6 @@ PODS:
   - DTFoundation/DTASN1 (1.7.13):
     - DTFoundation/Core
   - Instructions (1.2.0)
-  - JustPeek (1.0.0)
   - Kvitto (1.0.3):
     - DTFoundation/DTASN1 (~> 1.7.13)
     - Kvitto/Core (= 1.0.3)
@@ -31,7 +30,6 @@ DEPENDENCIES:
   - AFDateHelper (from `https://github.com/FroeMic/DateHelper.git`)
   - Appirater
   - Instructions (~> 1.2.0)
-  - JustPeek (from `https://github.com/FroeMic/JustPeek.git`)
   - Kvitto
   - lottie-ios
   - Presentation
@@ -62,23 +60,17 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   AFDateHelper:
     :git: https://github.com/FroeMic/DateHelper.git
-  JustPeek:
-    :git: https://github.com/FroeMic/JustPeek.git
 
 CHECKOUT OPTIONS:
   AFDateHelper:
     :commit: 8d70e584757e78e687917044e06d353dddc907a1
     :git: https://github.com/FroeMic/DateHelper.git
-  JustPeek:
-    :commit: de96e8572661de199fdd1ec248e0a31bf106d4fb
-    :git: https://github.com/FroeMic/JustPeek.git
 
 SPEC CHECKSUMS:
   AFDateHelper: 9dcce64b7200d8cc559ac4e89db99722c00c89de
   Appirater: 44a4651f7912a17dc906b655f0c215d5bb768b84
   DTFoundation: f03be9fd786f11e505bb8fc44e2a3732bf0917df
   Instructions: 763c2452bd78e05d8f969a21c1cbc3c07deef33a
-  JustPeek: e4156168852a86b7ab00403e8e785ef225c88a3c
   Kvitto: d451f893f84ad669850b7cb7d3f8781363e14232
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   Pages: 5564ac6035c48fef7a837049314f57507d263b11
@@ -92,6 +84,6 @@ SPEC CHECKSUMS:
   SwiftyStoreKit: b7563505440a68c9d9fa70bc43d8a97015519409
   YPImagePicker: dd0a901a293f99e982f75554738574c735734a76
 
-PODFILE CHECKSUM: 929d424a2e1c3506c07cdb669dd062687cfbfb08
+PODFILE CHECKSUM: 7e9d5db6d08b29dd188d9b041e2ee90442458c2b
 
 COCOAPODS: 1.5.3

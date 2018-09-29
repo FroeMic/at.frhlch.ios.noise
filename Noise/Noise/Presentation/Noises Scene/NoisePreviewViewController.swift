@@ -16,9 +16,17 @@ class NoisePreviewViewController: UIViewController {
     @IBOutlet var imageContainer: UIView!
     @IBOutlet var imageView: RoundedImageView!
     @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var premiumLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var playingView: PlayingView!
     @IBOutlet var closeButton: PrimaryButton!
+    
+    @IBOutlet var buyThisSoundViewContainer: UIView!
+    @IBOutlet var buyThisSoundLabel: UILabel!
+    @IBOutlet var buyThisSoundButton: PrimaryButton!
+    @IBOutlet var buyPremiumLabel: UILabel!
+    @IBOutlet var buyPremiumButton: PrimaryButton!
+    
     
     private var didMoveToBackground: Bool = false
     
@@ -26,6 +34,8 @@ class NoisePreviewViewController: UIViewController {
         super.viewDidLoad()
         
         let theme = Injection.theme
+        
+        buyThisSoundViewContainer.alpha = 0
         
         titleLabel.textColor = theme.textColor
         descriptionLabel.textColor = theme.descriptionTextColor
@@ -53,6 +63,7 @@ class NoisePreviewViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(appWillMoveToBackground), name: Notification.Name.UIApplicationWillResignActive, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(appWillMoveToForeground), name: Notification.Name.UIApplicationWillEnterForeground, object: nil)
         applyTheme()
+        updateView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -94,11 +105,29 @@ class NoisePreviewViewController: UIViewController {
             sound.volume = volume
         }
         
+        AudioManager.shared.preview(sounds: [sound])
+    }
+    
+    private func updateView() {
+        guard let sound = sound else {
+            return
+        }
+        
         imageView?.image = sound.image
         titleLabel?.text = sound.title + (sound.isPremium ? " (Premium)" : "")
+        if StoreKitManager.shared.doesHaveAccessToSound(sound: sound) {
+            premiumLabel?.text = ""
+        } else if sound.isPremium {
+            premiumLabel?.text = "Preview limited to 8 seconds."
+            buyThisSoundViewContainer.alpha = 1
+            buyThisSoundLabel?.text = sound.title
+            buyPremiumLabel?.text = "Noise Premium"
+            
+        } else {
+            premiumLabel?.text = ""
+            
+        }
         descriptionLabel?.text = sound.detailDescription
-        
-        AudioManager.shared.preview(sounds: [sound])
     }
     
     @objc func appWillMoveToBackground() {
@@ -120,6 +149,15 @@ class NoisePreviewViewController: UIViewController {
     }
 
     @IBAction func closeButtonPressed(_ sender: Any) {
+        Injection.feedback.subtleFeedback()
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func didPressBuyThisSound(_ sender: Any) {
+        debugPrint("didPressPremium")
+    }
+    
+    @IBAction func didPressBuyPremium(_ sender: Any) {
+        debugPrint("didPressPremium")
     }
 }

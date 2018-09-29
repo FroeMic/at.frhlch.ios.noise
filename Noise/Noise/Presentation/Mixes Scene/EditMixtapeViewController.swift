@@ -8,7 +8,6 @@
 
 import UIKit
 import YPImagePicker
-import JustPeek
 
 class EditMixtapeViewController: UIViewController {
     
@@ -16,9 +15,9 @@ class EditMixtapeViewController: UIViewController {
     static let addSoundReuseIdentifier = "AddSoundTableViewCell"
     
     static let presentSelectSoundsVCSegueIdentifier = "presentSelectSoundVC"
-    
+    var hasRegisteredForceTouchGesturerecognizer: Bool = false
+
     var mixtape: Mixtape?
-    var peekController: PeekController?
 
     var audioManager: AudioManager {
         return AudioManager.shared
@@ -64,9 +63,6 @@ class EditMixtapeViewController: UIViewController {
             titleTextfield.becomeFirstResponder()
         }
         
-        peekController = PeekController()
-        peekController?.register(viewController: self, forPeekingWithDelegate: self, sourceView: tableView)
-        
         let gr = UITapGestureRecognizer(target: self, action: #selector(EditMixtapeViewController.pickerViewPressed))
         triggerPickerView.addGestureRecognizer(gr)
         
@@ -100,6 +96,27 @@ class EditMixtapeViewController: UIViewController {
         if Injection.settingsRepository.getAutoPlay() {
             playAudio()
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if hasRegisteredForceTouchGesturerecognizer {
+            return
+        }
+        
+        let canHandleForceTouch = tableView.traitCollection.forceTouchCapability == .available
+        if canHandleForceTouch {
+            let recognizer = ForceTouchGestureRecognizer(target: self, action: #selector(forceTouchOnTableView))
+            tableView.addGestureRecognizer(recognizer)
+            hasRegisteredForceTouchGesturerecognizer = true
+        } else {
+            let recognizer = UILongPressGestureRecognizer(target: self, action: #selector(longPressOnTableView))
+            recognizer.minimumPressDuration = 1.0
+            tableView.addGestureRecognizer(recognizer)
+            hasRegisteredForceTouchGesturerecognizer = true
+        }
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -420,27 +437,57 @@ extension EditMixtapeViewController: AudioManagerDelegate {
 }
 
 
-// MARK: PeekingDelegate
-extension EditMixtapeViewController: PeekingDelegate {
+extension EditMixtapeViewController {
     
-    func peekContext(_ context: PeekContext, viewControllerForPeekingAt location: CGPoint) -> UIViewController? {
-        let viewController = storyboard?.instantiateViewController(withIdentifier: "NoisePreviewViewController")
-        if let viewController = viewController, let indexPath = tableView.indexPathForRow(at: location) {
-            
-            if let noisePreviewViewController = viewController as? NoisePreviewViewController {
-                noisePreviewViewController.sound = sounds[indexPath.row]
-            }
-            
-            if let cell = tableView.cellForRow(at: indexPath) {
-                context.sourceRect = cell.frame
-            }
-            Injection.feedback.feedbackForPeek()
-            return viewController
+    func presentPreviewViewForSound(sound: Sound) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let npVC = storyboard.instantiateViewController(withIdentifier: "NoisePreviewViewController") as? NoisePreviewViewController else {
+            return
         }
-        return nil
+        
+        let oldDefinePresentationContext = definesPresentationContext
+        definesPresentationContext = true
+        
+        // presented view controller
+        npVC.modalPresentationStyle = .overFullScreen
+        npVC.modalTransitionStyle = .crossDissolve
+        
+        npVC.sound = sound
+        
+        present(npVC, animated: true)
+        Injection.feedback.feedbackForPeek()
+        definesPresentationContext = oldDefinePresentationContext
+        
     }
     
-    func peekContext(_ context: PeekContext, commit viewController: UIViewController) {
-        Injection.feedback.feedbackForPeek()
+    func selectedTableViewAtPoint(point: CGPoint) {
+        guard let indexPath = tableView.indexPathForRow(at: point),
+            let cell = tableView.cellForRow(at: indexPath) as? SoundTableViewCell,
+            let sound = cell.sound else {
+                return
+        }
+        
+        presentPreviewViewForSound(sound: sound)
     }
+    
+    @IBAction func forceTouchOnTableView(_ recognizer: ForceTouchGestureRecognizer) {
+        
+        guard recognizer.state == .began else {
+            return
+        }
+        
+        let point = recognizer.location(in: tableView)
+        selectedTableViewAtPoint(point: point)
+    }
+    
+    @IBAction func longPressOnTableView(_ recognizer: UILongPressGestureRecognizer) {
+        
+        guard recognizer.state == .began else {
+            return
+        }
+        
+        let point = recognizer.location(in: tableView)
+        selectedTableViewAtPoint(point: point)
+    }
+    
 }

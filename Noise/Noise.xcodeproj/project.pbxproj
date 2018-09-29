@@ -57,6 +57,7 @@
 		27C753852158E58500905EFD /* HardCodedLicenseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C753842158E58500905EFD /* HardCodedLicenseProvider.swift */; };
 		27C753872158E59E00905EFD /* License.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C753862158E59E00905EFD /* License.swift */; };
 		27C753892158EBEC00905EFD /* LicenseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C753882158EBEC00905EFD /* LicenseTableViewCell.swift */; };
+		27D025F9215F97F10052B23F /* ForceTouchGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D025F8215F97F10052B23F /* ForceTouchGestureRecognizer.swift */; };
 		27D0BFA721501AE200B27FF0 /* SoundSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D0BFA621501AE200B27FF0 /* SoundSelectionViewController.swift */; };
 		27D0BFA9215021BC00B27FF0 /* SoundSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D0BFA8215021BB00B27FF0 /* SoundSelectionTableViewCell.swift */; };
 		27D188FF2153712E00F5968F /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 27D188FD2153712D00F5968F /* CoreDataModel.xcdatamodeld */; };
@@ -148,6 +149,7 @@
 		27C753842158E58500905EFD /* HardCodedLicenseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardCodedLicenseProvider.swift; sourceTree = "<group>"; };
 		27C753862158E59E00905EFD /* License.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = License.swift; sourceTree = "<group>"; };
 		27C753882158EBEC00905EFD /* LicenseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseTableViewCell.swift; sourceTree = "<group>"; };
+		27D025F8215F97F10052B23F /* ForceTouchGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceTouchGestureRecognizer.swift; sourceTree = "<group>"; };
 		27D0BFA621501AE200B27FF0 /* SoundSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSelectionViewController.swift; sourceTree = "<group>"; };
 		27D0BFA8215021BB00B27FF0 /* SoundSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSelectionTableViewCell.swift; sourceTree = "<group>"; };
 		27D188FE2153712E00F5968F /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 		27B106032135D8B10070A109 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				27D025F5215F91330052B23F /* ForceTouchRecognizer */,
 				27A5B4AB21590F2E005B0F2F /* Extensions */,
 				2774C52C21598461009972F3 /* StoreKitHandler */,
 				27F52F042142CEE90030102C /* AudioManager */,
@@ -395,6 +398,14 @@
 				2774C52621597690009972F3 /* AboutViewController.swift */,
 			);
 			path = "Settings Scene";
+			sourceTree = "<group>";
+		};
+		27D025F5215F91330052B23F /* ForceTouchRecognizer */ = {
+			isa = PBXGroup;
+			children = (
+				27D025F8215F97F10052B23F /* ForceTouchGestureRecognizer.swift */,
+			);
+			path = ForceTouchRecognizer;
 			sourceTree = "<group>";
 		};
 		27D1890621538BF700F5968F /* Images */ = {
@@ -591,7 +602,6 @@
 				"${BUILT_PRODUCTS_DIR}/Appirater/Appirater.framework",
 				"${BUILT_PRODUCTS_DIR}/DTFoundation/DTFoundation.framework",
 				"${BUILT_PRODUCTS_DIR}/Instructions/Instructions.framework",
-				"${BUILT_PRODUCTS_DIR}/JustPeek/JustPeek.framework",
 				"${BUILT_PRODUCTS_DIR}/Kvitto/Kvitto.framework",
 				"${BUILT_PRODUCTS_DIR}/Pages/Pages.framework",
 				"${BUILT_PRODUCTS_DIR}/Presentation/Presentation.framework",
@@ -611,7 +621,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Appirater.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DTFoundation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Instructions.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JustPeek.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kvitto.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pages.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Presentation.framework",
@@ -658,6 +667,7 @@
 				271D158F21406FBB00F5B2DC /* MixesViewController.swift in Sources */,
 				272C0C92215010C300C22ED0 /* AddSoundTableViewCell.swift in Sources */,
 				27D0BFA9215021BC00B27FF0 /* SoundSelectionTableViewCell.swift in Sources */,
+				27D025F9215F97F10052B23F /* ForceTouchGestureRecognizer.swift in Sources */,
 				27C753812158E55A00905EFD /* SettingsViewController.swift in Sources */,
 				27F52F0121428F9D0030102C /* PlayingView.swift in Sources */,
 				27F52EFA214266090030102C /* HapticFeedbackManager.swift in Sources */,
