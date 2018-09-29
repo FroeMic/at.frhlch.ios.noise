@@ -27,6 +27,8 @@ class SoundSelectionTableViewCell: UITableViewCell {
     @IBOutlet var selectedView: UIImageView!
     @IBOutlet var soundTitleLabel: UILabel!
     @IBOutlet var soundSubtitleLabel: UILabel!
+    @IBOutlet var purchaseIconView: CircleImageView!
+    @IBOutlet var overlayView: UIView!
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -65,6 +67,29 @@ class SoundSelectionTableViewCell: UITableViewCell {
         soundTitleLabel?.textColor = theme.textColor
         soundSubtitleLabel?.textColor = theme.descriptionTextColor
         selectedView?.tintColor = theme.tintColor
+        
+        if let purchaseIconView = purchaseIconView {
+            purchaseIconView.tintColor = theme.tintColor
+            purchaseIconView.image = purchaseIconView.image?.withRenderingMode(.alwaysTemplate)
+            purchaseIconView.backgroundColor = .white
+        }
+        
+        applyPremiumFilter()
+    }
+    
+    func applyPremiumFilter() {
+        guard let sound = sound else {
+            return
+        }
+        if sound.isOwned {
+            albumImageView?.image = sound.image
+            overlayView?.isHidden = true
+            purchaseIconView?.isHidden = true
+        } else {
+            albumImageView?.image = sound.image?.mono
+            overlayView?.isHidden = false
+            purchaseIconView?.isHidden = false
+        }
     }
     
     private func setSelectedImage() {

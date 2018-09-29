@@ -39,7 +39,7 @@ class InAppPurchaseTableViewCell: UITableViewCell {
         } else {
             inAppPurchaseTitleLabel?.textColor = .black
             inAppPurchaseButton?.setTitle(inAppPurchase.priceString, for: .normal)
-            inAppPurchaseButton?.backgroundColor = .lightGray
+            inAppPurchaseButton?.backgroundColor = Injection.theme.tintColor
             inAppPurchaseButton?.setTitleColor(.white, for: .normal)
             self.isUserInteractionEnabled = true
         }

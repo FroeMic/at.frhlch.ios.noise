@@ -153,7 +153,9 @@ class NoisePreviewViewController: UIViewController {
     private func applyTheme() {
         let theme = Injection.theme
         
-        closeButton.backgroundColor = theme.tintColor
+        closeButton?.backgroundColor = theme.tintColor
+        buyPremiumButton?.backgroundColor = theme.tintColor
+        buyThisSoundButton?.backgroundColor = theme.tintColor
     }
 
     @IBAction func closeButtonPressed(_ sender: Any) {

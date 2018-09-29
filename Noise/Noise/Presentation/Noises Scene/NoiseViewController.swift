@@ -129,7 +129,12 @@ class NoiseViewController: UIViewController {
 
 // MARK: UITableViewDelegate
 extension NoiseViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sound = sounds[indexPath.row]
+        if !sound.isOwned {
+            presentPreviewViewForSound(sound: sound)
+        }
+    }
 }
 
 // MARK: UITableViewDataSource
@@ -145,7 +150,7 @@ extension NoiseViewController: UITableViewDataSource {
         
         if let soundCell = cell as? SoundTableViewCell {
             soundCell.delegate = self
-            soundCell.sound =  sounds[indexPath.row]
+            soundCell.sound = sounds[indexPath.row]
         }
         
         return cell

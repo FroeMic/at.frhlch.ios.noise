@@ -84,7 +84,8 @@
 		27F6916A215FB3A800468EEC /* InAppPurchasesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F69169215FB3A800468EEC /* InAppPurchasesViewController.swift */; };
 		27F6916C215FB4C300468EEC /* InAppPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F6916B215FB4C300468EEC /* InAppPurchase.swift */; };
 		27F6916E215FC58F00468EEC /* RestorePurchasesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F6916D215FC58F00468EEC /* RestorePurchasesTableViewCell.swift */; };
-		27F69170215FE8DC00468EEC /* UIIMage+Noir.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F6916F215FE8DC00468EEC /* UIIMage+Noir.swift */; };
+		27F69170215FE8DC00468EEC /* UIImage+Noir.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F6916F215FE8DC00468EEC /* UIImage+Noir.swift */; };
+		27F69172215FF6E200468EEC /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F69171215FF6E200468EEC /* CircleImageView.swift */; };
 		583AE971DA043231F16388F5 /* Pods_Noise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C1E638CE87361824E6D3060 /* Pods_Noise.framework */; };
 		B7002B48FD111E15949DEB80 /* Pods_NoiseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE8DD348B3534DA3F8A12B4 /* Pods_NoiseTests.framework */; };
 /* End PBXBuildFile section */
@@ -181,7 +182,8 @@
 		27F69169215FB3A800468EEC /* InAppPurchasesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchasesViewController.swift; sourceTree = "<group>"; };
 		27F6916B215FB4C300468EEC /* InAppPurchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchase.swift; sourceTree = "<group>"; };
 		27F6916D215FC58F00468EEC /* RestorePurchasesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorePurchasesTableViewCell.swift; sourceTree = "<group>"; };
-		27F6916F215FE8DC00468EEC /* UIIMage+Noir.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIIMage+Noir.swift"; sourceTree = "<group>"; };
+		27F6916F215FE8DC00468EEC /* UIImage+Noir.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Noir.swift"; sourceTree = "<group>"; };
+		27F69171215FF6E200468EEC /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		3C1E638CE87361824E6D3060 /* Pods_Noise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Noise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CE8DD348B3534DA3F8A12B4 /* Pods_NoiseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoiseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D1D76CE48FCFA85FC4EAC04 /* Pods-Noise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Noise.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Noise/Pods-Noise.debug.xcconfig"; sourceTree = "<group>"; };
@@ -276,9 +278,9 @@
 			isa = PBXGroup;
 			children = (
 				27D1890F2155329400F5968F /* UIImage+FromFile.swift */,
+				27F6916F215FE8DC00468EEC /* UIImage+Noir.swift */,
 				27D189112155338F00F5968F /* Filemanager+Filepath.swift */,
 				27A5B4A921590F22005B0F2F /* UIApplication+StatusBar.swift */,
-				27F6916F215FE8DC00468EEC /* UIIMage+Noir.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -305,6 +307,7 @@
 			children = (
 				273361DC215B84BC006D696B /* TintedImageView.swift */,
 				27F52F15214D4D790030102C /* RoundedView.swift */,
+				27F69171215FF6E200468EEC /* CircleImageView.swift */,
 				27B105FE2135D8150070A109 /* RoundedImageView.swift */,
 				27F52EFB21427E740030102C /* PrimaryButton.swift */,
 				27F52F0021428F9D0030102C /* PlayingView.swift */,
@@ -688,7 +691,7 @@
 				27F52F0121428F9D0030102C /* PlayingView.swift in Sources */,
 				27F52EFA214266090030102C /* HapticFeedbackManager.swift in Sources */,
 				27F6916E215FC58F00468EEC /* RestorePurchasesTableViewCell.swift in Sources */,
-				27F69170215FE8DC00468EEC /* UIIMage+Noir.swift in Sources */,
+				27F69170215FE8DC00468EEC /* UIImage+Noir.swift in Sources */,
 				27B106052135D8BC0070A109 /* Injection.swift in Sources */,
 				2774C52221596B9C009972F3 /* UDSettingsRepository.swift in Sources */,
 				27D189122155338F00F5968F /* Filemanager+Filepath.swift in Sources */,
@@ -705,6 +708,7 @@
 				27BD8D6A213C2674003DF079 /* BaseTabBarController.swift in Sources */,
 				2774C51E21592A22009972F3 /* SoundSyncManager.swift in Sources */,
 				27D188FF2153712E00F5968F /* CoreDataModel.xcdatamodeld in Sources */,
+				27F69172215FF6E200468EEC /* CircleImageView.swift in Sources */,
 				27B105FF2135D8150070A109 /* RoundedImageView.swift in Sources */,
 				2774C52021596A99009972F3 /* SettingsRepository.swift in Sources */,
 				273361DB215B7F0D006D696B /* OnboardingDelegate.swift in Sources */,

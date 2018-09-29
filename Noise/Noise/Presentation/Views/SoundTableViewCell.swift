@@ -25,11 +25,13 @@ class SoundTableViewCell: UITableViewCell {
     
     
     @IBOutlet var albumImageView: RoundedImageView!
+    @IBOutlet var purchaseIconView: RoundedImageView!
     @IBOutlet var soundTitleLabel: UILabel!
     @IBOutlet var soundSubtitleLabel: UILabel!
     @IBOutlet var slider: UISlider!
     @IBOutlet var maxSliderImageView: UIImageView!
     @IBOutlet var minSliderImageView: UIImageView!
+    @IBOutlet var overlayView: UIView!
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -78,15 +80,28 @@ class SoundTableViewCell: UITableViewCell {
         slider?.maximumTrackTintColor = UIColor.gray.withAlphaComponent(0.3)
         minSliderImageView?.tintColor = .gray
         maxSliderImageView?.tintColor = .gray
+        if let purchaseIconView = purchaseIconView {
+            purchaseIconView.tintColor = theme.tintColor
+            purchaseIconView.image = purchaseIconView.image?.withRenderingMode(.alwaysTemplate)
+            purchaseIconView.backgroundColor = .white
+            purchaseIconView.cornerRadius = purchaseIconView.bounds.width / 2.0
+        }
 
         applyPremiumFilter() 
     }
     
     func applyPremiumFilter() {
-        if let sound = sound, sound.isOwned {
+        guard let sound = sound else {
+            return
+        }
+        if sound.isOwned {
             albumImageView?.image = sound.image
+            overlayView?.isHidden = true
+            purchaseIconView?.isHidden = true
         } else {
-            imageView?.image = imageView?.image?.noir()
+            albumImageView?.image = sound.image?.mono
+            overlayView?.isHidden = false
+            purchaseIconView?.isHidden = false
         }
     }
     

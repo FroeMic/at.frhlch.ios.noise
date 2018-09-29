@@ -33,8 +33,6 @@ class SoundSelectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        sounds = Injection.soundRepository.getAll()
     
         tableView.delegate = self
         tableView.dataSource = self
@@ -43,6 +41,9 @@ class SoundSelectionViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        sounds = Injection.soundRepository.getAll()
+        tableView.reloadData()
         
         let theme = Injection.theme
         
@@ -94,6 +95,19 @@ class SoundSelectionViewController: UIViewController {
         mixtape.set(sounds: selectedSounds)
         Injection.mixtapeRepository.save(mixtape)
     }
+    
+    private func soundForCellAtIndexPath(_ tableView: UITableView, indexPath: IndexPath) -> Sound? {
+        guard let cell = tableView.cellForRow(at: indexPath) else {
+            return nil
+        }
+        guard let soundCell = cell as? SoundSelectionTableViewCell else {
+            return nil
+        }
+        guard let sound = soundCell.sound else {
+            return nil
+        }
+        return sound
+    }
 
 }
 
@@ -116,22 +130,30 @@ extension SoundSelectionViewController: UITableViewDelegate {
         }
     }
     
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        guard let sound = soundForCellAtIndexPath(tableView, indexPath: indexPath) else {
+            return nil
+        }
+        
+        if sound.isOwned {
+            return indexPath
+        }
+        
+        DispatchQueue.main.async {
+            self.presentPreviewViewForSound(sound: sound)
+        }
+        return nil
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let cell = tableView.cellForRow(at: indexPath),
-            let soundCell = cell as? SoundSelectionTableViewCell,
-            let sound = soundCell.sound {
-            
+        if let sound = soundForCellAtIndexPath(tableView, indexPath: indexPath) {
             selectedSounds.append(sound)
-            
         }
     }
 
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        if let cell = tableView.cellForRow(at: indexPath),
-            let soundCell = cell as? SoundSelectionTableViewCell,
-            let sound = soundCell.sound,
-            let index = selectedSounds.index(of: sound){
-            
+        if let sound = soundForCellAtIndexPath(tableView, indexPath: indexPath),
+            let index = selectedSounds.index(of: sound) {
             selectedSounds.remove(at: index)
         }
     }
@@ -150,7 +172,8 @@ extension SoundSelectionViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: SoundSelectionViewController.soundSelectionCellReuseIdentifier, for: indexPath)
         
         if let soundCell = cell as? SoundSelectionTableViewCell {
-            soundCell.sound = sounds[indexPath.row]
+            let sound = sounds[indexPath.row]
+            soundCell.sound = sound
         }
 
         return cell
