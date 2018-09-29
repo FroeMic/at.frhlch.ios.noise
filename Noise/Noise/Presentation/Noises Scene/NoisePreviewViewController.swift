@@ -28,8 +28,10 @@ class NoisePreviewViewController: UIViewController {
     @IBOutlet var buyPremiumButton: PrimaryButton!
     @IBOutlet var connectingView: UIView!
     
+    @IBOutlet var headerViewRelativeHeightConstraint: NSLayoutConstraint!
     
     private var didMoveToBackground: Bool = false
+    private var hasResized = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +56,8 @@ class NoisePreviewViewController: UIViewController {
         imageContainer.clipsToBounds = true
         
         connectingView.isHidden = true
+        
+        resizeForIphoneSE()
     }
     
     deinit {
@@ -178,5 +182,37 @@ class NoisePreviewViewController: UIViewController {
             self.connectingView.isHidden = true
             self.previewSound()
         })
+    }
+}
+
+extension NoisePreviewViewController {
+    private func resizeForIphoneSE() {
+        if hasResized {
+            return
+        }
+        
+        hasResized =  true
+        headerViewRelativeHeightConstraint.constant = -25
+        let width = UIScreen.main.bounds.width
+        if width > 320 {
+            return
+        }
+        
+        resizeView(view)
+    }
+    
+    private func resizeView(_ view: UIView) {
+        if let label = view as? UILabel {
+            let fontsize = label.font.pointSize - 2.5
+            label.font = label.font.withSize(fontsize)
+        }
+        if let stackView = view as? UIStackView {
+            let spacing = stackView.spacing - 2.0
+            stackView.spacing = spacing
+        }
+        
+        for subview in view.subviews {
+            resizeView(subview)
+        }
     }
 }

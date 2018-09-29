@@ -78,6 +78,16 @@ class SoundTableViewCell: UITableViewCell {
         slider?.maximumTrackTintColor = UIColor.gray.withAlphaComponent(0.3)
         minSliderImageView?.tintColor = .gray
         maxSliderImageView?.tintColor = .gray
+
+        applyPremiumFilter() 
+    }
+    
+    func applyPremiumFilter() {
+        if let sound = sound, sound.isOwned {
+            albumImageView?.image = sound.image
+        } else {
+            imageView?.image = imageView?.image?.noir()
+        }
     }
     
     
@@ -90,6 +100,8 @@ class SoundTableViewCell: UITableViewCell {
         soundTitleLabel?.text = sound.title
         soundSubtitleLabel?.text = sound.subtitle
         slider?.value = sound.volume
+        
+        applyPremiumFilter()
     }
     
     @objc func sliderValueDidChange() {

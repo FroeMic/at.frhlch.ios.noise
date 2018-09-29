@@ -225,10 +225,10 @@
                                         <rect key="frame" x="18.5" y="33" width="332" height="589.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m3W-sv-fuX">
-                                                <rect key="frame" x="0.0" y="0.0" width="332" height="220"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="332" height="235.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FBQ-iu-4xm" customClass="RoundedImageView" customModule="Noise" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="332" height="200"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="332" height="215.5"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="2"/>
@@ -240,13 +240,12 @@
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="FBQ-iu-4xm" secondAttribute="trailing" id="07s-iY-kCe"/>
                                                     <constraint firstItem="FBQ-iu-4xm" firstAttribute="top" secondItem="m3W-sv-fuX" secondAttribute="top" id="9oD-x2-LZk"/>
-                                                    <constraint firstAttribute="height" constant="220" id="C0m-Yb-m3Z"/>
                                                     <constraint firstAttribute="bottom" secondItem="FBQ-iu-4xm" secondAttribute="bottom" constant="20" id="RMa-1x-D8t"/>
                                                     <constraint firstItem="FBQ-iu-4xm" firstAttribute="leading" secondItem="m3W-sv-fuX" secondAttribute="leading" id="hDb-WP-EVF"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6KJ-tw-Iz2">
-                                                <rect key="frame" x="12" y="220" width="308" height="357.5"/>
+                                                <rect key="frame" x="12" y="235.5" width="308" height="342"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyW-p9-ZVB">
                                                         <rect key="frame" x="0.0" y="0.0" width="4.5" height="23"/>
@@ -267,7 +266,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1DT-xe-j1a" customClass="PrimaryButton" customModule="Noise" customModuleProvider="target">
-                                                        <rect key="frame" x="20" y="300.5" width="268" height="45"/>
+                                                        <rect key="frame" x="20" y="285" width="268" height="45"/>
                                                         <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="45" id="gPg-HP-sZ4"/>
@@ -304,7 +303,7 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="308" height="30"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBO-RU-NXr">
-                                                                                <rect key="frame" x="0.0" y="5" width="218" height="19.5"/>
+                                                                                <rect key="frame" x="0.0" y="5.5" width="218" height="19.5"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -344,7 +343,7 @@
                                                                         <rect key="frame" x="0.0" y="34" width="308" height="30"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DrF-Xr-TYz">
-                                                                                <rect key="frame" x="0.0" y="5" width="218" height="19.5"/>
+                                                                                <rect key="frame" x="0.0" y="5.5" width="218" height="19.5"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -395,7 +394,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jpt-8N-V6y">
-                                                        <rect key="frame" x="0.0" y="186.5" width="308" height="114"/>
+                                                        <rect key="frame" x="0.0" y="186.5" width="308" height="98.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                 </subviews>
@@ -434,6 +433,7 @@
                                             <constraint firstAttribute="trailing" secondItem="6KJ-tw-Iz2" secondAttribute="trailing" constant="12" id="YRL-It-gkl"/>
                                             <constraint firstItem="m3W-sv-fuX" firstAttribute="leading" secondItem="mx6-WP-fXH" secondAttribute="leading" id="bXR-zZ-6Vd"/>
                                             <constraint firstAttribute="bottom" secondItem="6KJ-tw-Iz2" secondAttribute="bottom" constant="12" id="em1-Rh-MTe"/>
+                                            <constraint firstItem="m3W-sv-fuX" firstAttribute="height" secondItem="mx6-WP-fXH" secondAttribute="height" multiplier="0.4" id="vwb-Je-ydH"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -522,6 +522,7 @@
                         <outlet property="connectingView" destination="2z5-d0-bKh" id="IFl-hx-cAD"/>
                         <outlet property="containerView" destination="fNr-no-kP1" id="OOT-SL-2YT"/>
                         <outlet property="descriptionLabel" destination="ZC5-2A-JHV" id="aNC-Uv-vnJ"/>
+                        <outlet property="headerViewRelativeHeightConstraint" destination="vwb-Je-ydH" id="GUT-vk-Qwn"/>
                         <outlet property="imageContainer" destination="mx6-WP-fXH" id="OCK-gc-676"/>
                         <outlet property="imageView" destination="FBQ-iu-4xm" id="jgB-cn-Bt9"/>
                         <outlet property="playingView" destination="cxU-Yn-szV" id="FC2-UW-9gK"/>
