@@ -59,7 +59,8 @@ class LicenseDetailViewController: UIViewController {
         licenseUrlTextView.textColor = theme.textColor
         licenseUrlTextView.tintColor = theme.tintColor
         licenseTextView.textColor = theme.textColor
-        
+        licenseTextView.tintColor = theme.tintColor
+
     }
     
     func updateContent() {

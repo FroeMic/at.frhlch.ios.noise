@@ -57,6 +57,7 @@
 		27C753852158E58500905EFD /* HardCodedLicenseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C753842158E58500905EFD /* HardCodedLicenseProvider.swift */; };
 		27C753872158E59E00905EFD /* License.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C753862158E59E00905EFD /* License.swift */; };
 		27C753892158EBEC00905EFD /* LicenseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C753882158EBEC00905EFD /* LicenseTableViewCell.swift */; };
+		27C911E32160314100DA6204 /* Sequence+stableSorted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C911E22160314100DA6204 /* Sequence+stableSorted.swift */; };
 		27D025F9215F97F10052B23F /* ForceTouchGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D025F8215F97F10052B23F /* ForceTouchGestureRecognizer.swift */; };
 		27D0BFA721501AE200B27FF0 /* SoundSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D0BFA621501AE200B27FF0 /* SoundSelectionViewController.swift */; };
 		27D0BFA9215021BC00B27FF0 /* SoundSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D0BFA8215021BB00B27FF0 /* SoundSelectionTableViewCell.swift */; };
@@ -154,6 +155,7 @@
 		27C753842158E58500905EFD /* HardCodedLicenseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardCodedLicenseProvider.swift; sourceTree = "<group>"; };
 		27C753862158E59E00905EFD /* License.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = License.swift; sourceTree = "<group>"; };
 		27C753882158EBEC00905EFD /* LicenseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseTableViewCell.swift; sourceTree = "<group>"; };
+		27C911E22160314100DA6204 /* Sequence+stableSorted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+stableSorted.swift"; sourceTree = "<group>"; };
 		27D025F8215F97F10052B23F /* ForceTouchGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceTouchGestureRecognizer.swift; sourceTree = "<group>"; };
 		27D0BFA621501AE200B27FF0 /* SoundSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSelectionViewController.swift; sourceTree = "<group>"; };
 		27D0BFA8215021BB00B27FF0 /* SoundSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSelectionTableViewCell.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 				27D1890F2155329400F5968F /* UIImage+FromFile.swift */,
 				27D189112155338F00F5968F /* Filemanager+Filepath.swift */,
 				27A5B4A921590F22005B0F2F /* UIApplication+StatusBar.swift */,
+				27C911E22160314100DA6204 /* Sequence+stableSorted.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -687,6 +690,7 @@
 				27C753812158E55A00905EFD /* SettingsViewController.swift in Sources */,
 				27F52F0121428F9D0030102C /* PlayingView.swift in Sources */,
 				27F52EFA214266090030102C /* HapticFeedbackManager.swift in Sources */,
+				27C911E32160314100DA6204 /* Sequence+stableSorted.swift in Sources */,
 				27F6916E215FC58F00468EEC /* RestorePurchasesTableViewCell.swift in Sources */,
 				27B106052135D8BC0070A109 /* Injection.swift in Sources */,
 				2774C52221596B9C009972F3 /* UDSettingsRepository.swift in Sources */,

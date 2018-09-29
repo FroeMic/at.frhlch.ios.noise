@@ -235,7 +235,7 @@ extension SRSoundRepository {
                 "contentDownloaded": "true",
                 "filesDownloaded": "true",
                 "needsUpdate": "false",
-                "category": "c001-nature"
+                "category": "c002-nature"
             ],
             [
                 "id": "002-berlin-coffee-shop",
@@ -247,7 +247,7 @@ extension SRSoundRepository {
                 "contentDownloaded": "true",
                 "filesDownloaded": "true",
                 "needsUpdate": "false",
-                "category": "c002-people"
+                "category": "c001-people"
             ]
         ]
     }

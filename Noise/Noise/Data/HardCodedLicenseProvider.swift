@@ -11,7 +11,7 @@ import Foundation
 class HardCodedLicenseProvider: LicenseProvider {
     
     init() {
-        licenses.sort(by: { $0.title < $1.title })
+        licenses.sort(by: { $0.title.lowercased() < $1.title.lowercased() })
     }
     
     private (set) var licenses: [License] = [
@@ -444,6 +444,32 @@ class HardCodedLicenseProvider: LicenseProvider {
                 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
                 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
                 SOFTWARE.
+                """),
+        License(title: "freesound.org",
+                url: "https://freesound.org/",
+                license:
+                """
+                Many of the sounds found in this application where created with the help of resources from freesound.org.
+
+                - https://freesound.org/people/magedu/
+                - https://freesound.org/people/Glaneur/
+                - https://freesound.org/people/InspectorJ/
+                - https://freesound.org/people/vrlmrtnz/
+                - https://freesound.org/people/Aiwha/
+                - https://freesound.org/people/amholma/
+                - https://freesound.org/people/miregrobar/
+                - https://freesound.org/people/Yoyodaman234/
+                - https://freesound.org/people/geodylabs/
+                - https://freesound.org/people/Gr0paru/
+                - https://freesound.org/people/Soundkrampf/
+                - https://freesound.org/people/klankbeeld/
+                - https://freesound.org/people/hargissssound/
+                - https://freesound.org/people/ken788/
+                - https://freesound.org/people/Falcet/
+                - https://freesound.org/people/jackmurrayofficial/
+                - https://freesound.org/people/DCPoke/
+                - https://freesound.org/people/sundet7/
+                - https://freesound.org/people/SamuelGremaud/
                 """),
     ]
     
