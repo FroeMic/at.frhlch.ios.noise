@@ -54,7 +54,7 @@ class NoiseViewController: UIViewController {
         audioManager.register(delegate: self)
         updatePlayPauseButton()
         
-        sounds = Injection.soundRepository.getAll()
+        sounds = Injection.soundRepository.getAll().sorted(by: { $0.isOwned && !$1.isOwned })
         tableView.reloadData()
         
         if Injection.settingsRepository.getAutoPlay() {

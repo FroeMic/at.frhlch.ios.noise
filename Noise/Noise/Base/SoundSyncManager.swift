@@ -150,6 +150,10 @@ class SoundSyncManager {
         if inAppPurchaseId?.count == 0 {
             inAppPurchaseId = nil
         }
+        var category: String? = json["category"].string
+        if category?.count == 0 {
+            category = nil
+        }
         
         guard id == sound.id else {
             return nil
@@ -161,6 +165,7 @@ class SoundSyncManager {
         updatedSound.subtitle = subtitle
         updatedSound.detailDescription = detailDescription
         updatedSound.inAppPurchaseId = inAppPurchaseId
+        updatedSound.category = category
         updatedSound.volume = 0
         updatedSound.contentDownloaded = true
                 

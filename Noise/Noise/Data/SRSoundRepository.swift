@@ -121,7 +121,9 @@ extension SRSoundRepository: SoundRepository {
     func getAll(skipIncomplete: Bool) -> [Sound] {
         let fetchRequest: FetchRequest<ManagedSound>
         if skipIncomplete {
-            fetchRequest = FetchRequest<ManagedSound>().filtered(with: NSPredicate(format: "filesDownloaded == %@", NSNumber(value: true)))
+            fetchRequest = FetchRequest<ManagedSound>()
+                .filtered(with: NSPredicate(format: "filesDownloaded == %@", NSNumber(value: true)))
+                .sorted(with: NSSortDescriptor(key: "category", ascending: true))
         } else {
             fetchRequest = FetchRequest<ManagedSound>()
         }
@@ -214,6 +216,7 @@ extension ManagedSound {
         self.filesDownloaded = sound.filesDownloaded
         self.needsUpdate = sound.needsUpdate
         self.priceString = sound.priceString
+        self.category = sound.category
     }
     
 }
@@ -231,7 +234,8 @@ extension SRSoundRepository {
                 "soundFilePath": "audio_rain_60s.mp3",
                 "contentDownloaded": "true",
                 "filesDownloaded": "true",
-                "needsUpdate": "false"
+                "needsUpdate": "false",
+                "category": "c001-nature"
             ],
             [
                 "id": "002-berlin-coffee-shop",
@@ -242,7 +246,8 @@ extension SRSoundRepository {
                 "soundFilePath": "audio_cafe_60s.mp3",
                 "contentDownloaded": "true",
                 "filesDownloaded": "true",
-                "needsUpdate": "false"
+                "needsUpdate": "false",
+                "category": "c002-people"
             ]
         ]
     }

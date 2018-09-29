@@ -42,7 +42,7 @@ class SoundSelectionViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        sounds = Injection.soundRepository.getAll()
+        sounds = Injection.soundRepository.getAll().sorted(by: { $0.isOwned && !$1.isOwned })
         tableView.reloadData()
         
         let theme = Injection.theme

@@ -82,11 +82,9 @@ class SoundSelectionTableViewCell: UITableViewCell {
             return
         }
         if sound.isOwned {
-            albumImageView?.image = sound.image
             overlayView?.isHidden = true
             purchaseIconView?.isHidden = true
         } else {
-            albumImageView?.image = sound.image?.mono
             overlayView?.isHidden = false
             purchaseIconView?.isHidden = false
         }
