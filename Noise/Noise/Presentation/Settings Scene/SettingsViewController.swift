@@ -12,6 +12,7 @@ class SettingsViewController: UITableViewController {
 
     static let showAcknowledgementSegueIdentifier = "showAcknowledgementScene"
     static let showAboutSegueIdentifier = "showAboutScene"
+    static let showInAppPurchaseIdentifier = "showInAppPurchasesScene"
     
     @IBOutlet var keepDisplayActiveTableViewCell: UITableViewCell!
     @IBOutlet var keepDisplayActiveLabel: UILabel!
@@ -234,7 +235,7 @@ extension SettingsViewController {
         
         if indexPath.section == 1 {
             if indexPath.row == 3 {
-                // show In-App Purchases
+                performSegue(withIdentifier: SettingsViewController.showInAppPurchaseIdentifier, sender: nil)
             }
         }
         

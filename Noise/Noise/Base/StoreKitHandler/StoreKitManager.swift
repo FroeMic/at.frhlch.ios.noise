@@ -86,16 +86,19 @@ class StoreKitManager {
         }
     }
     
-    func restorePurchases() {
+    func restorePurchases(completion: ((Bool)->())? = nil ) {
         SwiftyStoreKit.restorePurchases(atomically: true) { results in
             if results.restoreFailedPurchases.count > 0 {
                 self.purchaseFinishedBlock?(.failed)
+                completion?(false)
             }
             else if results.restoredPurchases.count > 0 {
                 self.purchaseFinishedBlock?(.restored)
+                completion?(true)
             }
             else {
                 self.purchaseFinishedBlock?(.notRestored)
+                completion?(true)
             }
         }
     }
@@ -208,6 +211,14 @@ extension StoreKitManager {
     
     func purchasePremium(completion: ((Bool)->())? = nil ) {
         purchaseProduct(id: "at.frhlch.ios.noise.premium", completion: completion)
+    }
+    
+    func doesHaveAccessToId(id: String) -> Bool {
+        if hasPremium() {
+            return true
+        }
+    
+        return doesOwnProduct(id: id)
     }
     
     func doesHaveAccessToSound(sound: Sound) -> Bool {
