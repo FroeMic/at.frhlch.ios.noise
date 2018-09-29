@@ -29,6 +29,13 @@ struct Sound {
         return inAppPurchaseId != nil
     }
     
+    var isOwned: Bool {
+        guard let inAppPurchaseId = inAppPurchaseId else {
+            return true
+        }
+        return StoreKitManager.shared.doesHaveAccessToId(id: inAppPurchaseId)
+    }
+    
     init?(managedSound: ManagedSound, withVolume: Float? = nil) {
         guard let id = managedSound.id else {
             return nil

@@ -23,8 +23,6 @@ struct InAppPurchase {
         self.id = id
         self.title = title
         self.priceString = priceString
-        
-        
     }
 
     
