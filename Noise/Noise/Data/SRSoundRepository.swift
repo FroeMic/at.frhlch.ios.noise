@@ -177,6 +177,7 @@ extension SRSoundRepository: SoundRepository {
             managedSound.filesDownloaded = dict["filesDownloaded"] == "true"
             managedSound.needsUpdate = dict["needsUpdate"] == "true"
             managedSound.inAppPurchaseId = dict["inAppPurchaseId"]
+            managedSound.priceString = dict["priceString"]
             
             if let sound = Sound(managedSound: managedSound) {
                 save(sound)
@@ -212,6 +213,7 @@ extension ManagedSound {
         self.contentDownloaded = sound.contentDownloaded
         self.filesDownloaded = sound.filesDownloaded
         self.needsUpdate = sound.needsUpdate
+        self.priceString = sound.priceString
     }
     
 }

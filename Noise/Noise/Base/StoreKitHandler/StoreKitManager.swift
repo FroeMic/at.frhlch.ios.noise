@@ -23,7 +23,9 @@ class StoreKitManager {
     
     var purchaseFinishedBlock: ((TransactionState)->())?
     
-    private init() { }
+    private init() {
+        updateNoisePremiumPrice()
+    }
     
     func registerTransactionObserver() {
         
@@ -96,6 +98,16 @@ class StoreKitManager {
         }
     }
     
+    func getPriceString(id: String, completion: @escaping (String?)->()) {
+        SwiftyStoreKit.retrieveProductsInfo([id]) { result in
+            if let product = result.retrievedProducts.first {
+                completion(product.localizedPrice)
+            }
+            else {
+                completion(nil)
+            }
+        }
+    }
     
     func verifyReceipt(receipt: Receipt) -> Bool {
         
@@ -169,9 +181,31 @@ class StoreKitManager {
 
 extension StoreKitManager {
     
+    var premiumPrice: String {
+        
+        updateNoisePremiumPrice()
+        
+        if let priceString = UserDefaults.standard.string(forKey: "at.frhlch.ios.noise.premium") {
+            return priceString
+        } else {
+            return String(format: "%2f €", 8.99)
+        }
+    }
+    
+    private func updateNoisePremiumPrice() {
+        getPriceString(id: "at.frhlch.ios.noise.premium", completion: { priceString in
+            if let priceString = priceString {
+                UserDefaults.standard.set(priceString, forKey: "at.frhlch.ios.noise.premium")
+            }
+        })
+    }
+    
     func hasPremium() -> Bool {
-        // Todo: Add Premium Check
-        return false
+        return doesOwnProduct(id: "at.frhlch.ios.noise.premium")
+    }
+    
+    func purchasePremium() {
+        purchaseProduct(id: "at.frhlch.ios.noise.premium")
     }
     
     func doesHaveAccessToSound(sound: Sound) -> Bool {

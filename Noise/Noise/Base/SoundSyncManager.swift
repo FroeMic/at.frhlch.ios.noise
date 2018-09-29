@@ -101,20 +101,36 @@ class SoundSyncManager {
                 return
             }
             
-            Injection.soundRepository.save(updatedSound)
-            
-            if let imageUrlString = jsonData["imageURL"].string, let imageUrl = URL(string: imageUrlString) {
-                let downloadImageTask = SoundDownloadTask(fromSound: updatedSound, type: .image, url: imageUrl)
-                DownloadManager.shared.download(task: downloadImageTask)
+            if let inAppPurchaseID = updatedSound.inAppPurchaseId {
+                var updatedSoundWithInAppPurchaseID = updatedSound
+                StoreKitManager.shared.getPriceString(id: inAppPurchaseID, completion: { (priceString) in
+                    if let priceString = priceString {
+                        updatedSoundWithInAppPurchaseID.priceString = priceString
+                        Injection.soundRepository.save(updatedSoundWithInAppPurchaseID)
+                        self.fetchImagesAndMp3(sound: updatedSoundWithInAppPurchaseID, jsonData: jsonData)
+                    }
+                })
+            } else {
+                Injection.soundRepository.save(updatedSound)
+                self.fetchImagesAndMp3(sound: updatedSound, jsonData: jsonData)
             }
-            if let soundUrlString = jsonData["soundURL"].string, let imageUrl = URL(string: soundUrlString) {
-                let downloadMp3Task = SoundDownloadTask(fromSound: updatedSound, type: .mp3, url: imageUrl)
-                DownloadManager.shared.download(task: downloadMp3Task)
-            }
+
         }
         
         task.resume()
         
+    }
+    
+    private func fetchImagesAndMp3(sound: Sound, jsonData: JSON) {
+        
+        if let imageUrlString = jsonData["imageURL"].string, let imageUrl = URL(string: imageUrlString) {
+            let downloadImageTask = SoundDownloadTask(fromSound: sound, type: .image, url: imageUrl)
+            DownloadManager.shared.download(task: downloadImageTask)
+        }
+        if let soundUrlString = jsonData["soundURL"].string, let imageUrl = URL(string: soundUrlString) {
+            let downloadMp3Task = SoundDownloadTask(fromSound: sound, type: .mp3, url: imageUrl)
+            DownloadManager.shared.download(task: downloadMp3Task)
+        }
     }
 
     private func updateSound(_ sound: Sound, fromJSON json: JSON) -> Sound? {
@@ -140,7 +156,6 @@ class SoundSyncManager {
         }
         
         var updatedSound = sound
-        
         
         updatedSound.title = title
         updatedSound.subtitle = subtitle

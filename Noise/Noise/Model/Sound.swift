@@ -21,6 +21,7 @@ struct Sound {
     var filesDownloaded: Bool
     var needsUpdate: Bool
     var volume: Float = 0
+    var priceString: String?
     
     let image: UIImage?
 
@@ -53,6 +54,7 @@ struct Sound {
         self.filesDownloaded = managedSound.filesDownloaded
         self.needsUpdate = managedSound.needsUpdate
         self.volume = withVolume ?? managedSound.volume
+        self.priceString =  managedSound.priceString
         if let imageFilePath = self.imageFilePath {
             self.image = UIImage(fromFile: imageFilePath)
         } else {

@@ -122,7 +122,8 @@ class NoisePreviewViewController: UIViewController {
             buyThisSoundViewContainer.alpha = 1
             buyThisSoundLabel?.text = sound.title
             buyPremiumLabel?.text = "Noise Premium"
-            
+            buyThisSoundButton.setTitle(sound.priceString, for: .normal)
+            buyPremiumButton.setTitle(StoreKitManager.shared.premiumPrice, for: .normal)
         } else {
             premiumLabel?.text = ""
             
@@ -154,10 +155,13 @@ class NoisePreviewViewController: UIViewController {
     }
     
     @IBAction func didPressBuyThisSound(_ sender: Any) {
-        debugPrint("didPressPremium")
+        StoreKitManager.shared.purchasePremium()
     }
     
     @IBAction func didPressBuyPremium(_ sender: Any) {
-        debugPrint("didPressPremium")
+        guard let sound = sound, let inAppPurchaseId = sound.inAppPurchaseId else{
+            return
+        }
+        StoreKitManager.shared.purchaseProduct(id: inAppPurchaseId)
     }
 }
