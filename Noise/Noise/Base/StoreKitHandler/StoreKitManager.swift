@@ -69,7 +69,7 @@ class StoreKitManager {
         }
     }
     
-    func purchaseProduct(id: String) {
+    func purchaseProduct(id: String, completion: ((Bool)->())? = nil ) {
         SwiftyStoreKit.purchaseProduct(id, quantity: 1, atomically: true) { result in
             switch result {
             case .success(let product):
@@ -78,8 +78,10 @@ class StoreKitManager {
                     SwiftyStoreKit.start(downloads)
                 }
                 self.purchaseFinishedBlock?(.purchased)
+                completion?(true)
             case .error(let error):
                 debugPrint("\(error)")
+                completion?(false)
             }
         }
     }
@@ -204,8 +206,8 @@ extension StoreKitManager {
         return doesOwnProduct(id: "at.frhlch.ios.noise.premium")
     }
     
-    func purchasePremium() {
-        purchaseProduct(id: "at.frhlch.ios.noise.premium")
+    func purchasePremium(completion: ((Bool)->())? = nil ) {
+        purchaseProduct(id: "at.frhlch.ios.noise.premium", completion: completion)
     }
     
     func doesHaveAccessToSound(sound: Sound) -> Bool {

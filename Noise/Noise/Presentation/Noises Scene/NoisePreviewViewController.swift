@@ -26,6 +26,7 @@ class NoisePreviewViewController: UIViewController {
     @IBOutlet var buyThisSoundButton: PrimaryButton!
     @IBOutlet var buyPremiumLabel: UILabel!
     @IBOutlet var buyPremiumButton: PrimaryButton!
+    @IBOutlet var connectingView: UIView!
     
     
     private var didMoveToBackground: Bool = false
@@ -51,6 +52,8 @@ class NoisePreviewViewController: UIViewController {
         containerView.layer.cornerRadius = cornerRadius
         imageContainer.layer.cornerRadius = cornerRadius
         imageContainer.clipsToBounds = true
+        
+        connectingView.isHidden = true
     }
     
     deinit {
@@ -155,13 +158,25 @@ class NoisePreviewViewController: UIViewController {
     }
     
     @IBAction func didPressBuyThisSound(_ sender: Any) {
-        StoreKitManager.shared.purchasePremium()
-    }
-    
-    @IBAction func didPressBuyPremium(_ sender: Any) {
         guard let sound = sound, let inAppPurchaseId = sound.inAppPurchaseId else{
             return
         }
-        StoreKitManager.shared.purchaseProduct(id: inAppPurchaseId)
+
+        connectingView.isHidden = false
+        StoreKitManager.shared.purchaseProduct(id: inAppPurchaseId, completion: { success in
+            self.updateView()
+            self.connectingView.isHidden = true
+            self.previewSound()
+        })
+    }
+    
+    @IBAction func didPressBuyPremium(_ sender: Any) {
+        connectingView.isHidden = false
+
+        StoreKitManager.shared.purchasePremium(completion: { success in
+            self.updateView()
+            self.connectingView.isHidden = true
+            self.previewSound()
+        })
     }
 }
