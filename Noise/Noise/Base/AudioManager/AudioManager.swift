@@ -22,6 +22,8 @@ class AudioManager {
     private var continueAfterMovingToForeground: Bool = false
     private var fallbackImage: UIImage = UIImage(named: "placeholder_artwork")!
     private var commandCenterHasTargets: Bool = false
+    private var limitPreview: Bool = false
+    private var shouldRestartPreview: Bool = false
     
     private var session: AVAudioSession {
         return AVAudioSession.sharedInstance()
@@ -292,13 +294,39 @@ class AudioManager {
             previewPlayer.stop()
         }
         
+        var shouldLimit = false
+        if let firstSound = sounds.first {
+            shouldLimit = !StoreKitManager.shared.doesHaveAccessToSound(sound: firstSound)
+        }
+        
+        self.limitPreview = shouldLimit
+        self.shouldRestartPreview = shouldLimit
+        
         previewPlayer = AudioManager(enforceNoBackgroundPlay: true)
         previewPlayer?.activate(audio: makePreviewAudioBundle(sounds: sounds))
         previewPlayer?.play()
+        
+        if limitPreview {
+            previewWithLimit()
+        }
+    }
+    
+    private func previewWithLimit() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
+            self.previewPlayer?.pause()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5, execute: {
+                if self.shouldRestartPreview {
+                    self.previewPlayer?.play()
+                    self.previewWithLimit()
+                }
+            })
+        })
     }
     
     public func stopPreview() {
         if let previewPlayer = previewPlayer {
+            limitPreview = false
+            shouldRestartPreview = false
             previewPlayer.stop()
         }
         previewPlayer = nil
@@ -308,6 +336,8 @@ class AudioManager {
             play()
         }
     }
+    
+    
     
 }
 

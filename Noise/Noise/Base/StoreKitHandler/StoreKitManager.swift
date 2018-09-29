@@ -167,3 +167,27 @@ class StoreKitManager {
     
 }
 
+extension StoreKitManager {
+    
+    func hasPremium() -> Bool {
+        // Todo: Add Premium Check
+        return false
+    }
+    
+    func doesHaveAccessToSound(sound: Sound) -> Bool {
+        if !sound.isPremium {
+            return true
+        }
+        
+        if hasPremium() {
+            return true
+        }
+        
+        if let inAppPurchaseId = sound.inAppPurchaseId {
+            return doesOwnProduct(id: inAppPurchaseId)
+        }
+        
+        return false
+    }
+    
+}
