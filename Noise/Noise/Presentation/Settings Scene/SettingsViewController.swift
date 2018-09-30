@@ -70,6 +70,8 @@ class SettingsViewController: UITableViewController {
         })
         
         applyTheme()
+        
+        playInBackgroundSwitch.isEnabled = StoreKitManager.shared.hasPlayInBackground()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -233,7 +235,30 @@ extension SettingsViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        
         if indexPath.section == 1 {
+            
+            if indexPath.row == 2 {
+                if StoreKitManager.shared.hasPlayInBackground() {
+                    return
+                }
+
+                let alertController = UIAlertController(title: nil, message: "Play in Backround is an additional feature. Do you want to buy it?", preferredStyle: .alert)
+                alertController.view.tintColor = Injection.theme.tintColor
+                
+                
+                let showStoreVC = UIAlertAction(title: "Buy", style: .default, handler: { (action) -> Void in
+                    self.performSegue(withIdentifier: SettingsViewController.showInAppPurchaseIdentifier, sender: nil)
+                })
+
+                let cancelButton = UIAlertAction(title: "Cancel", style: .default, handler: { (_) -> Void in })
+
+                alertController.addAction(cancelButton)
+                alertController.addAction(showStoreVC)
+                
+                self.present(alertController, animated: true)
+            }
+            
             if indexPath.row == 3 {
                 performSegue(withIdentifier: SettingsViewController.showInAppPurchaseIdentifier, sender: nil)
             }

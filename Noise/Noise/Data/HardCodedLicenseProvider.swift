@@ -470,6 +470,7 @@ class HardCodedLicenseProvider: LicenseProvider {
                 - https://freesound.org/people/DCPoke/
                 - https://freesound.org/people/sundet7/
                 - https://freesound.org/people/SamuelGremaud/
+                - https://freesound.org/people/leosalom/
                 """),
     ]
     

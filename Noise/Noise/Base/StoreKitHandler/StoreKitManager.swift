@@ -25,6 +25,7 @@ class StoreKitManager {
     
     private init() {
         updateNoisePremiumPrice()
+        updatebackgroundPlayPrice()
     }
     
     func registerTransactionObserver() {
@@ -205,8 +206,31 @@ extension StoreKitManager {
         })
     }
     
+    var backgroundPlayPrice: String {
+        
+        updatebackgroundPlayPrice()
+        
+        if let priceString = UserDefaults.standard.string(forKey: "at.frhlch.ios.noise.play_in_background") {
+            return priceString
+        } else {
+            return String(format: "%2f €", 8.99)
+        }
+    }
+    
+    private func updatebackgroundPlayPrice() {
+        getPriceString(id: "at.frhlch.ios.noise.play_in_background", completion: { priceString in
+            if let priceString = priceString {
+                UserDefaults.standard.set(priceString, forKey: "at.frhlch.ios.noise.play_in_background")
+            }
+        })
+    }
+    
     func hasPremium() -> Bool {
         return doesOwnProduct(id: "at.frhlch.ios.noise.premium")
+    }
+    
+    func hasPlayInBackground() -> Bool {
+        return hasPremium() || doesOwnProduct(id: "at.frhlch.ios.noise.play_in_background")
     }
     
     func purchasePremium(completion: ((Bool)->())? = nil ) {
