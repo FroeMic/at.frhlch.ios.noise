@@ -194,7 +194,7 @@ extension StoreKitManager {
         if let priceString = UserDefaults.standard.string(forKey: "at.frhlch.ios.noise.premium") {
             return priceString
         } else {
-            return String(format: "%2f €", 8.99)
+            return String(format: "%.2f €", 8.99)
         }
     }
     
@@ -213,7 +213,7 @@ extension StoreKitManager {
         if let priceString = UserDefaults.standard.string(forKey: "at.frhlch.ios.noise.play_in_background") {
             return priceString
         } else {
-            return String(format: "%2f €", 8.99)
+            return String(format: "%.2f €", 1.09)
         }
     }
     

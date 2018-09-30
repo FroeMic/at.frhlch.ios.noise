@@ -180,6 +180,8 @@ extension SRSoundRepository: SoundRepository {
             managedSound.needsUpdate = dict["needsUpdate"] == "true"
             managedSound.inAppPurchaseId = dict["inAppPurchaseId"]
             managedSound.priceString = dict["priceString"]
+            managedSound.category = dict["category"]
+            managedSound.volume = Float(dict["volume"] ?? "0") ?? 0
             
             if let sound = Sound(managedSound: managedSound) {
                 save(sound)
@@ -230,8 +232,8 @@ extension SRSoundRepository {
                 "title": "Autumn Rain",
                 "subtitle": "Thick drops of rain dumming to the ground",
                 "detailDescription": "Calm your mood with the sound of autumn rainfall. Hundreds of thick and heavy drops drum to the ground creating a soothing sound atmosphere.",
-                "imageFilePath": "sound_heavy_rain.jpg",
-                "soundFilePath": "audio_rain_60s.mp3",
+                "imageFilePath": "001-autumn-rain.jpg",
+                "soundFilePath": "001-autumn-rain.mp3",
                 "contentDownloaded": "true",
                 "filesDownloaded": "true",
                 "needsUpdate": "false",
@@ -242,12 +244,133 @@ extension SRSoundRepository {
                 "title": "Berlin Coffee Shop",
                 "subtitle": "Find yourself in a Berlin coffee shop buzzing with life",
                 "detailDescription": "Dive into the scenery of a Berlin coffee shop buzzing with energy. The pleasant smell of freshly brewed coffee hangs in the air while the busy chatter of people all around you blends in with the venue. Time to get to work.",
-                "imageFilePath": "sound_coffee_shop.jpg",
-                "soundFilePath": "audio_cafe_60s.mp3",
+                "imageFilePath": "002-berlin-coffee-shop.jpg",
+                "soundFilePath": "002-berlin-coffee-shop.mp3",
+                "contentDownloaded": "true",
+                "filesDownloaded": "true",
+                "needsUpdate": "false",
+                "category": "c001-people",
+                "volume": "0.3"
+            ],
+            [
+                "id": "031-public-pool",
+                "title": "Swimming Pool",
+                "subtitle": " ",
+                "detailDescription": " ",
+                "imageFilePath": "031-public-pool.jpg",
+                "soundFilePath": "031-public-pool.mp3",
                 "contentDownloaded": "true",
                 "filesDownloaded": "true",
                 "needsUpdate": "false",
                 "category": "c001-people"
+            ],
+            [
+                "id": "033-seaside-waves",
+                "title": "Seaside Waves",
+                "subtitle": " ",
+                "detailDescription": " ",
+                "imageFilePath": "033-seaside-waves.jpg",
+                "soundFilePath": "033-seaside-waves.mp3",
+                "contentDownloaded": "true",
+                "filesDownloaded": "true",
+                "needsUpdate": "false",
+                "category": "c002-nature"
+            ],
+            [
+                "id": "006-moderate-wind",
+                "title": "Moderate Wind",
+                "subtitle": " ",
+                "detailDescription": " ",
+                "imageFilePath": "006-moderate-wind.jpg",
+                "soundFilePath": "006-moderate-wind.mp3",
+                "contentDownloaded": "true",
+                "filesDownloaded": "true",
+                "needsUpdate": "false",
+                "category": "c002-nature"
+            ],
+            [
+                "id": "012-small-river",
+                "title": "Small River",
+                "subtitle": " ",
+                "detailDescription": " ",
+                "imageFilePath": "012-small-river.jpg",
+                "soundFilePath": "012-small-river.mp3",
+                "contentDownloaded": "true",
+                "filesDownloaded": "true",
+                "needsUpdate": "false",
+                "category": "c002-nature"
+            ],
+            [
+                "id": "014-relaxing-shower",
+                "title": "Relaxig Shower",
+                "subtitle": " ",
+                "detailDescription": " ",
+                "imageFilePath": "014-relaxing-shower.jpg",
+                "soundFilePath": "014-relaxing-shower.mp3",
+                "contentDownloaded": "true",
+                "filesDownloaded": "true",
+                "needsUpdate": "false",
+                "category": "c005-urban"
+            ],
+            [
+                "id": "016-city-ambience",
+                "title": "City Atmosphere",
+                "subtitle": " ",
+                "detailDescription": " ",
+                "imageFilePath": "016-city-ambience.jpg",
+                "soundFilePath": "016-city-ambience.mp3",
+                "contentDownloaded": "true",
+                "filesDownloaded": "true",
+                "needsUpdate": "false",
+                "category": "c005-urban"
+            ],
+            [
+                "id": "004-small-wood-fire",
+                "title": "Small Camp Fire",
+                "subtitle": "A gentle wood fire burning on hay and branches",
+                "detailDescription": "Sit down next to this petite wood fire and listen to the ever changing cracking of the branches as they are devoured by the heat of the flames. Perfect for cold autumn days.",
+                "imageFilePath": "004-small-wood-fire.jpg",
+                "soundFilePath": "004-small-wood-fire.mp3",
+                "contentDownloaded": "true",
+                "filesDownloaded": "true",
+                "needsUpdate": "false",
+                "category": "c002-nature"
+            ],
+            [
+                "id": "019-rocky-mountains",
+                "title": "Rocky Mountains",
+                "subtitle": " ",
+                "detailDescription": " ",
+                "imageFilePath": "019-rocky-mountains.jpg",
+                "soundFilePath": "019-rocky-mountains.mp3",
+                "contentDownloaded": "true",
+                "filesDownloaded": "true",
+                "needsUpdate": "false",
+                "category": "c002-nature"
+            ],
+            [
+                "id": "005-wind-chimes",
+                "title": "Wind Chimes",
+                "subtitle": " ",
+                "detailDescription": " ",
+                "imageFilePath": "005-wind-chimes.jpg",
+                "soundFilePath": "005-wind-chimes.mp3",
+                "contentDownloaded": "true",
+                "filesDownloaded": "true",
+                "needsUpdate": "false",
+                "category": "c002-nature"
+            ],
+            [
+                "id": "003-light-forest-rain",
+                "title": "Storm and Thunder",
+                "subtitle": "Wind, rain and distant thunder from an Austrian forest",
+                "detailDescription": "Distant thunder can be heard while thousand of small drops find their way through the trees of the forest to the ground.",
+                "imageFilePath": "003-light-forest-rain.jpg",
+                "soundFilePath": "003-light-forest-rain.mp3",
+                "contentDownloaded": "true",
+                "filesDownloaded": "true",
+                "needsUpdate": "false",
+                "category": "c002-nature"
             ]
         ]
     }

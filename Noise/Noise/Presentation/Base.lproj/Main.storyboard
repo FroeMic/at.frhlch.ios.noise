@@ -239,7 +239,7 @@
                                 <rect key="frame" x="3" y="0.0" width="369" height="655"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mx6-WP-fXH" userLabel="Container">
-                                        <rect key="frame" x="18.5" y="33" width="332" height="589.5"/>
+                                        <rect key="frame" x="18.5" y="43" width="332" height="589.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m3W-sv-fuX">
                                                 <rect key="frame" x="0.0" y="0.0" width="332" height="235.5"/>
@@ -457,7 +457,7 @@
                                 <constraints>
                                     <constraint firstItem="mx6-WP-fXH" firstAttribute="width" secondItem="fNr-no-kP1" secondAttribute="width" multiplier="0.9" id="C6z-Bw-CfZ"/>
                                     <constraint firstItem="mx6-WP-fXH" firstAttribute="centerX" secondItem="fNr-no-kP1" secondAttribute="centerX" id="HEw-od-PLw"/>
-                                    <constraint firstItem="mx6-WP-fXH" firstAttribute="centerY" secondItem="fNr-no-kP1" secondAttribute="centerY" id="eOj-jF-6XR"/>
+                                    <constraint firstItem="mx6-WP-fXH" firstAttribute="centerY" secondItem="fNr-no-kP1" secondAttribute="centerY" constant="10" id="eOj-jF-6XR"/>
                                     <constraint firstItem="mx6-WP-fXH" firstAttribute="height" secondItem="fNr-no-kP1" secondAttribute="height" multiplier="0.9" id="vMZ-yh-TKr"/>
                                 </constraints>
                             </view>
