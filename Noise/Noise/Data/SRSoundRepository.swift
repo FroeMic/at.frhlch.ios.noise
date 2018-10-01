@@ -72,10 +72,25 @@ extension SRSoundRepository: SoundRepository {
     }
     
     func save(_ sound: Sound) {
+        self.save(sound, inBackground: false)
+    }
+    
+    func save(_ sound: Sound, inBackground: Bool) {
+        // otherwise we will run into a deadlock
+        
+        if inBackground {
+            DispatchQueue(label: "bg").async {
+                self.saveSound(sound: sound, in: self.db.saveContext)
+            }
+        } else {
+            saveSound(sound: sound)
+        }
+    }
+    
+    private func saveSound(sound: Sound, in context: Context? = nil ) {
         do {
-            try db.operation { (context, save) throws in
-                
-                guard let managedSound = self.get(sound: sound, context: context) else {
+            try db.operation { ( defaultContext, save) throws in
+                guard let managedSound = self.get(sound: sound, context: context ?? defaultContext) else {
                     return
                 }
                 

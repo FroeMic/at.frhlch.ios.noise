@@ -60,7 +60,7 @@ class SoundSyncManager {
             for soundID in soundIDs {
                 if var sound = soundRepository.get(id: soundID) {
                     sound.needsUpdate = true
-                    soundRepository.save(sound)
+                    soundRepository.save(sound, inBackground: true)
                 } else {
                     let _ = soundRepository.create(id: soundID)
                 }
@@ -106,12 +106,12 @@ class SoundSyncManager {
                 StoreKitManager.shared.getPriceString(id: inAppPurchaseID, completion: { (priceString) in
                     if let priceString = priceString {
                         updatedSoundWithInAppPurchaseID.priceString = priceString
-                        Injection.soundRepository.save(updatedSoundWithInAppPurchaseID)
+                        Injection.soundRepository.save(updatedSoundWithInAppPurchaseID, inBackground: true)
                         self.fetchImagesAndMp3(sound: updatedSoundWithInAppPurchaseID, jsonData: jsonData)
                     }
                 })
             } else {
-                Injection.soundRepository.save(updatedSound)
+                Injection.soundRepository.save(updatedSound, inBackground: true)
                 self.fetchImagesAndMp3(sound: updatedSound, jsonData: jsonData)
             }
 
@@ -187,7 +187,7 @@ class SoundSyncManager {
         sound.filesDownloaded = sound.soundFilePath != nil && sound.imageFilePath != nil
         sound.needsUpdate = !sound.filesDownloaded
                 
-        soundRepository.save(sound)
+        soundRepository.save(sound, inBackground: true)
     }
     
 }

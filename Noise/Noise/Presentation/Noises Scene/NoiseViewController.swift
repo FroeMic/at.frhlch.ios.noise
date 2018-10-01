@@ -40,6 +40,7 @@ class NoiseViewController: UIViewController {
         if Injection.settingsRepository.getShowInstructionMarks() {
             coachMarksController = CoachMarksController()
             coachMarksController?.overlay.color = UIColor.black.withAlphaComponent(0.4)
+            coachMarksController?.overlay.allowTap = true
             coachMarksController?.delegate = self
             coachMarksController?.dataSource = self
         }
@@ -59,10 +60,6 @@ class NoiseViewController: UIViewController {
         
         if Injection.settingsRepository.getAutoPlay() {
             playAudio()
-        }
-        
-        if Injection.settingsRepository.getShowInstructionMarks() {
-            coachMarksController?.start(on: self)
         }
     }
     
@@ -84,7 +81,12 @@ class NoiseViewController: UIViewController {
             tableView.addGestureRecognizer(recognizer)
             hasRegisteredForceTouchGesturerecognizer = true
         }
-
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            if Injection.settingsRepository.getShowInstructionMarks() {
+                self.coachMarksController?.start(on: self)
+            }
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {

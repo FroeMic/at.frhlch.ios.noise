@@ -320,13 +320,13 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="308" height="30"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBO-RU-NXr">
-                                                                                <rect key="frame" x="0.0" y="5.5" width="218" height="19.5"/>
+                                                                                <rect key="frame" x="0.0" y="5.5" width="228" height="19.5"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EuP-ap-Ioh" customClass="PrimaryButton" customModule="Noise" customModuleProvider="target">
-                                                                                <rect key="frame" x="228" y="2" width="70" height="26"/>
+                                                                                <rect key="frame" x="238" y="2" width="70" height="26"/>
                                                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="70" id="BPf-wM-v5y"/>
@@ -349,7 +349,7 @@
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="30" id="byq-b4-fFM"/>
-                                                                            <constraint firstAttribute="trailing" secondItem="EuP-ap-Ioh" secondAttribute="trailing" constant="10" id="cy5-Tp-BmD"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="EuP-ap-Ioh" secondAttribute="trailing" id="cy5-Tp-BmD"/>
                                                                             <constraint firstItem="zBO-RU-NXr" firstAttribute="centerY" secondItem="zgI-Ka-ifN" secondAttribute="centerY" id="dlr-qZ-TDU"/>
                                                                             <constraint firstItem="EuP-ap-Ioh" firstAttribute="centerY" secondItem="zgI-Ka-ifN" secondAttribute="centerY" id="f4G-XG-9Va"/>
                                                                             <constraint firstItem="zBO-RU-NXr" firstAttribute="leading" secondItem="zgI-Ka-ifN" secondAttribute="leading" id="pRb-mv-kQL"/>
@@ -360,13 +360,13 @@
                                                                         <rect key="frame" x="0.0" y="34" width="308" height="30"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DrF-Xr-TYz">
-                                                                                <rect key="frame" x="0.0" y="5.5" width="218" height="19.5"/>
+                                                                                <rect key="frame" x="0.0" y="5.5" width="228" height="19.5"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bzh-wc-Fci" customClass="PrimaryButton" customModule="Noise" customModuleProvider="target">
-                                                                                <rect key="frame" x="228" y="2" width="70" height="26"/>
+                                                                                <rect key="frame" x="238" y="2" width="70" height="26"/>
                                                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="26" id="LvL-7J-2fA"/>
@@ -388,7 +388,7 @@
                                                                         </subviews>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="trailing" secondItem="Bzh-wc-Fci" secondAttribute="trailing" constant="10" id="6Fp-fJ-emp"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="Bzh-wc-Fci" secondAttribute="trailing" id="6Fp-fJ-emp"/>
                                                                             <constraint firstItem="DrF-Xr-TYz" firstAttribute="leading" secondItem="FjH-hy-B1F" secondAttribute="leading" id="Cek-mP-sy7"/>
                                                                             <constraint firstItem="Bzh-wc-Fci" firstAttribute="centerY" secondItem="FjH-hy-B1F" secondAttribute="centerY" id="SwN-EN-FZ4"/>
                                                                             <constraint firstItem="Bzh-wc-Fci" firstAttribute="leading" secondItem="DrF-Xr-TYz" secondAttribute="trailing" constant="10" id="aXW-NW-IOL"/>
@@ -1932,7 +1932,7 @@ We hope you like Noise as much as we do.</string>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VcN-XP-wNI">
                                 <rect key="frame" x="7" y="174" width="361" height="404"/>
-                                <mutableString key="text">Noise was created from my desire to have a simple ambient noise app I could use for meditation.
+                                <string key="text">Noise was created from my desire to have a simple ambient noise app I could use for meditation.
 I was rather disappointed by the design and functionality offered by existing apps so I set out to create it myself.
 Since then I have designed and developed the app and curated many high-quality sounds.
 
@@ -1945,7 +1945,7 @@ Built with ❤️ and ☕️ in Munich.
 
 👉 https://apps.frhlch.at/noise
 👉 https://frhlch.at/
-</mutableString>
+</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
