@@ -580,9 +580,9 @@
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N90-fN-Ycr">
                                                 <rect key="frame" x="0.0" y="107" width="295" height="248.5"/>
-                                                <string key="text">Noise combines delightful design with high quality audio to give you the most user-friendly ambient noise app on the App Store.
+                                                <string key="text">Noise combines delightful design with high-quality audio to give you the most user-friendly ambient noise app on the App Store.
 
-We took a lot of time to make sure all the little things work right. And we promise to continue to do so. If you have feedback, we will be listing in the comment section of the App Store.
+We took a lot of time to make sure all the little things work right. And we promise to continue to do so. If you have feedback, we will be listening in the comment section of the App Store.
 
 We hope you like Noise as much as we do.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -663,7 +663,7 @@ We hope you like Noise as much as we do.</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create personalized ambient sounds for relaxing, meditation and better sleeping." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqO-gR-Edj">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create personalized ambient sounds for relaxing, meditation and better sleep." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqO-gR-Edj">
                                 <rect key="frame" x="46" y="366.5" width="283" height="61"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1932,20 +1932,20 @@ We hope you like Noise as much as we do.</string>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VcN-XP-wNI">
                                 <rect key="frame" x="7" y="174" width="361" height="404"/>
-                                <string key="text">Noise was created from my desire to have a simple ambient noise app I could use for meditation.
+                                <mutableString key="text">Noise was created from my desire to have a simple ambient noise app I could use for meditation.
 I was rather disappointed by the design and functionality offered by existing apps so I set out to create it myself.
-Since then I have spent countless hours designing and developing the app and curating high quality sounds.
+Since then I have designed and developed the app and curated many high-quality sounds.
 
 Noise has become by far my most ambitious project as of now and I hope I could create something that you enjoy too.
 
 If you like it, it would be great if you could leave a rating on the App Store.
-If you notice things that should be changed or improved I encourage you to let me know in a comment of the App Store.
+If you notice things that should be changed or improved, I encourage you to let me know in a comment of the App Store.
 
 Built with ❤️ and ☕️ in Munich.
 
 👉 https://apps.frhlch.at/noise
 👉 https://frhlch.at/
-</string>
+</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
@@ -2249,7 +2249,7 @@ Below you can find the licenses to all third-party resources used in this app. C
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Combine numerous high quality sounds to create the perfect noise environment for you." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLK-Lx-0eH">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Combine numerous high quality sounds to create the perfect acoustic environment for you." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLK-Lx-0eH">
                                                                 <rect key="frame" x="60" y="19.5" width="235" height="76.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                 <nil key="textColor"/>
@@ -2595,7 +2595,7 @@ Below you can find the licenses to all third-party resources used in this app. C
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="roA-S3-hAq">
                                                                 <rect key="frame" x="60" y="38.5" width="235" height="115"/>
-                                                                <string key="text">Creating an app like Noise takes quite some time – so there are few additional things you can get that will help us keep our coffee machine running and developers happy. </string>
+                                                                <string key="text">Creating an app like Noise takes quite some time – so there are a few additional things you can get that will help us keep our coffee machine running and developers happy. </string>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
