@@ -18,6 +18,7 @@
 		272C0C92215010C300C22ED0 /* AddSoundTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272C0C91215010C300C22ED0 /* AddSoundTableViewCell.swift */; };
 		273361DB215B7F0D006D696B /* OnboardingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273361DA215B7F0D006D696B /* OnboardingDelegate.swift */; };
 		273361DD215B84BC006D696B /* TintedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273361DC215B84BC006D696B /* TintedImageView.swift */; };
+		275B0E4E2163C63800DD6520 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B0E4D2163C63800DD6520 /* PrivacyViewController.swift */; };
 		2774C51A21592482009972F3 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774C51921592482009972F3 /* DownloadManager.swift */; };
 		2774C51C21592633009972F3 /* SoundDownloadTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774C51B21592633009972F3 /* SoundDownloadTask.swift */; };
 		2774C51E21592A22009972F3 /* SoundSyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774C51D21592A22009972F3 /* SoundSyncManager.swift */; };
@@ -136,6 +137,7 @@
 		272C0C91215010C300C22ED0 /* AddSoundTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSoundTableViewCell.swift; sourceTree = "<group>"; };
 		273361DA215B7F0D006D696B /* OnboardingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDelegate.swift; sourceTree = "<group>"; };
 		273361DC215B84BC006D696B /* TintedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TintedImageView.swift; sourceTree = "<group>"; };
+		275B0E4D2163C63800DD6520 /* PrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
 		2774C51921592482009972F3 /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
 		2774C51B21592633009972F3 /* SoundDownloadTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundDownloadTask.swift; sourceTree = "<group>"; };
 		2774C51D21592A22009972F3 /* SoundSyncManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSyncManager.swift; sourceTree = "<group>"; };
@@ -464,6 +466,7 @@
 				27C7537E2158E4C800905EFD /* AcknowledgmentsViewController.swift */,
 				2774C52621597690009972F3 /* AboutViewController.swift */,
 				27F69169215FB3A800468EEC /* InAppPurchasesViewController.swift */,
+				275B0E4D2163C63800DD6520 /* PrivacyViewController.swift */,
 			);
 			path = "Settings Scene";
 			sourceTree = "<group>";
@@ -807,6 +810,7 @@
 				2774C51C21592633009972F3 /* SoundDownloadTask.swift in Sources */,
 				2774C52B21598304009972F3 /* UpdateManager.swift in Sources */,
 				27F52F082143C7BC0030102C /* SoundToolbar.swift in Sources */,
+				275B0E4E2163C63800DD6520 /* PrivacyViewController.swift in Sources */,
 				27B106022135D8570070A109 /* InterfaceTheme.swift in Sources */,
 				27F52EF8214264350030102C /* NoisePreviewViewController.swift in Sources */,
 				27A5B4AA21590F22005B0F2F /* UIApplication+StatusBar.swift in Sources */,

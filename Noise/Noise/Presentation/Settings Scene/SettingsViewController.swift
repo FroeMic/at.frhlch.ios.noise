@@ -12,6 +12,7 @@ class SettingsViewController: UITableViewController {
 
     static let showAcknowledgementSegueIdentifier = "showAcknowledgementScene"
     static let showAboutSegueIdentifier = "showAboutScene"
+    static let showInDataPrivacySegueIdentifier = "showDataPrivacyScene"
     static let showInAppPurchaseIdentifier = "showInAppPurchasesScene"
     
     @IBOutlet var keepDisplayActiveTableViewCell: UITableViewCell!
@@ -43,6 +44,10 @@ class SettingsViewController: UITableViewController {
     @IBOutlet var acknowledgmentsTableViewCell: UITableViewCell!
     @IBOutlet var acknowledgmentsLabel: UILabel!
     @IBOutlet var acknowledgmentsChevronImageView: UIImageView!
+    
+    @IBOutlet var dataPrivacyCell: UITableViewCell!
+    @IBOutlet var dataPrivacyLabel: UILabel!
+    @IBOutlet var dataPrivacyChevronImageview: UIImageView!
     
     private var headerView: UIView?
     
@@ -198,6 +203,16 @@ class SettingsViewController: UITableViewController {
             acknowledgmentsChevronImageView.image = coloredImage
             acknowledgmentsChevronImageView.tintColor = theme.textColor
         }
+        
+        dataPrivacyCell.selectionStyle = .none
+        dataPrivacyCell.backgroundColor = .white
+        dataPrivacyLabel.textColor = theme.textColor
+        
+        if let image = dataPrivacyChevronImageview.image {
+            let coloredImage = image.withRenderingMode(.alwaysTemplate)
+            dataPrivacyChevronImageview.image = coloredImage
+            dataPrivacyChevronImageview.tintColor = theme.textColor
+        }
     }
     
     @IBAction func keepDisplayActiveSwitchValueChanged(_ sender: Any) {
@@ -275,6 +290,8 @@ extension SettingsViewController {
                 performSegue(withIdentifier: SettingsViewController.showAboutSegueIdentifier, sender: nil)
             case 3:
                 performSegue(withIdentifier: SettingsViewController.showAcknowledgementSegueIdentifier, sender: nil)
+            case 4:
+                performSegue(withIdentifier: SettingsViewController.showInDataPrivacySegueIdentifier, sender: nil)
             default:
                 return
                 // do nothing
