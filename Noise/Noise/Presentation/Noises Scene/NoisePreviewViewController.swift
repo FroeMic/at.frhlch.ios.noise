@@ -126,6 +126,7 @@ class NoisePreviewViewController: UIViewController, InterfaceThemeSubscriber {
         titleLabel?.text = sound.title + (sound.isPremium ? " (Premium)" : "")
         if StoreKitManager.shared.doesHaveAccessToSound(sound: sound) {
             premiumLabel?.text = ""
+            buyThisSoundViewContainer.alpha = 0
         } else if sound.isPremium {
             premiumLabel?.text = "Preview limited to 8 seconds."
             buyThisSoundViewContainer.alpha = 1

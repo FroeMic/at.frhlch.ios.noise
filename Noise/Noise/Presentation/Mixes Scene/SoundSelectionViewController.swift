@@ -214,7 +214,7 @@ extension SoundSelectionViewController {
         definesPresentationContext = true
         
         // presented view controller
-        npVC.modalPresentationStyle = .overFullScreen
+        npVC.modalPresentationStyle = .fullScreen
         npVC.modalTransitionStyle = .crossDissolve
         
         npVC.sound = sound

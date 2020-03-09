@@ -91,10 +91,10 @@ class StoreKitManager: NSObject, SKProductsRequestDelegate  {
     /**
      * Fetches the receipt from Apple' Servers and verifies it locally.
      */
-    func fetchReceipt(completed: @escaping (Bool)->() = { _ in } ) {
+    func fetchReceipt(completed: ((Bool)->())? = { _ in } ) {
         
         guard let _ = self.receiptData else {
-            completed(false)
+            completed?(false)
             return
         }
         
@@ -102,9 +102,9 @@ class StoreKitManager: NSObject, SKProductsRequestDelegate  {
         SwiftyStoreKit.fetchReceipt(forceRefresh: false) { result in
             switch result {
             case .success(let _):
-                completed(true)
+                completed?(true)
             case .error(let _):
-                completed(false)
+                completed?(false)
             }
         }
     }
@@ -118,7 +118,14 @@ class StoreKitManager: NSObject, SKProductsRequestDelegate  {
                     SwiftyStoreKit.start(downloads)
                 }
                 self.purchaseFinishedBlock?(.purchased)
-                completion?(true)
+                self.fetchReceipt(completed: { success in
+//                    if self.doesOwnProduct(id: id) {
+//                        debugPrint("Does own product with id \(id)")
+//                    } else {
+//                        debugPrint("Does NOT own product with id \(id)")
+//                    }
+                    completion?(success)
+                })
             case .error(let error):
                     debugPrint("\(error)")
                 completion?(false)
