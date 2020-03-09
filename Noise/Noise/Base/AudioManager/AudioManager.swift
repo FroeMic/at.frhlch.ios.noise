@@ -292,6 +292,9 @@ class AudioManager {
         
         if let previewPlayer = previewPlayer {
             previewPlayer.stop()
+        } else {
+            // only create once
+            previewPlayer = AudioManager(enforceNoBackgroundPlay: true)
         }
         
         var shouldLimit = false
@@ -302,7 +305,6 @@ class AudioManager {
         self.limitPreview = shouldLimit
         self.shouldRestartPreview = shouldLimit
         
-        previewPlayer = AudioManager(enforceNoBackgroundPlay: true)
         previewPlayer?.activate(audio: makePreviewAudioBundle(sounds: sounds))
         previewPlayer?.play()
         
@@ -314,7 +316,7 @@ class AudioManager {
     private func previewWithLimit() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
             self.previewPlayer?.pause()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5, execute: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 4.0, execute: {
                 if self.shouldRestartPreview {
                     self.previewPlayer?.play()
                     self.previewWithLimit()

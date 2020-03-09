@@ -61,14 +61,13 @@ class OnboardingViewController: UIViewController  {
         let theme = Injection.theme
         view.backgroundColor = theme.backgroundColor
         for subview in view.subviews {
-            if subview.subviews.count == 0 {
+            if let button = subview as? UIButton {
+                button.backgroundColor = theme.tintColor
+            } else if subview.subviews.count == 0 {
                 subview.backgroundColor = theme.backgroundColor
                 
                 if let label = subview as? UILabel {
                     label.textColor = theme.textColor
-                }
-                if let button = subview as? UIButton {
-                    button.backgroundColor = theme.tintColor
                 }
             } else {
                 styleSubview(view: subview)
