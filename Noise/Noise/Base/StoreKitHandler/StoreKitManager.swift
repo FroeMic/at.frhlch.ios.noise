@@ -273,6 +273,10 @@ extension StoreKitManager {
         return hasPremium() || doesOwnProduct(id: "at.frhlch.ios.noise.play_in_background")
     }
     
+    func hasDarkMode() -> Bool {
+        return hasPremium() || doesOwnProduct(id: "at.frhlch.ios.noise.dark_mode")
+    }
+    
     func purchasePremium(completion: ((Bool)->())? = nil ) {
         purchaseProduct(id: "at.frhlch.ios.noise.premium", completion: completion)
     }

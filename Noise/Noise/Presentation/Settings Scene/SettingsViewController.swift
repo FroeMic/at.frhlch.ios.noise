@@ -84,6 +84,7 @@ class SettingsViewController: UITableViewController, InterfaceThemeSubscriber {
         applyTheme()
         
         playInBackgroundSwitch.isEnabled = StoreKitManager.shared.hasPlayInBackground()
+        NightModeSwitch.isEnabled = StoreKitManager.shared.hasDarkMode()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -300,6 +301,26 @@ extension SettingsViewController {
                 }
 
                 let alertController = UIAlertController(title: nil, message: "Play in Backround is an additional feature. Do you want to buy it?", preferredStyle: .alert)
+                alertController.view.tintColor = Injection.theme.tintColor
+                
+                
+                let showStoreVC = UIAlertAction(title: "Buy", style: .default, handler: { (action) -> Void in
+                    self.performSegue(withIdentifier: SettingsViewController.showInAppPurchaseIdentifier, sender: nil)
+                })
+
+                let cancelButton = UIAlertAction(title: "Cancel", style: .default, handler: { (_) -> Void in })
+
+                alertController.addAction(cancelButton)
+                alertController.addAction(showStoreVC)
+                
+                self.present(alertController, animated: true)
+            }
+            if indexPath.row == 3 {
+                if StoreKitManager.shared.hasDarkMode() {
+                    return
+                }
+
+                let alertController = UIAlertController(title: nil, message: "Dark Mode is an additional feature. Do you want to buy it?", preferredStyle: .alert)
                 alertController.view.tintColor = Injection.theme.tintColor
                 
                 
