@@ -61,6 +61,7 @@ class OnboardingPresentationController: PresentationController {
     
     private func presentMainApp() {
         let mainSceneVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BaseTabBarController")
+        mainSceneVC.modalPresentationStyle = .fullScreen
         
         Injection.settingsRepository.setShowOnboarding(enabled: false)
         if dismissOnCompletion {

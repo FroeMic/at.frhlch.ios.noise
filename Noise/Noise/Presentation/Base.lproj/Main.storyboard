@@ -1193,7 +1193,7 @@ We hope you like Noise as much as we do.</string>
                         <outlet property="tableView" destination="m9f-eB-c0X" id="54J-qI-rtz"/>
                         <outlet property="titleTextfield" destination="oyE-8o-q6X" id="Yeh-9p-YcL"/>
                         <outlet property="triggerPickerView" destination="JD5-01-S63" id="8UB-Gq-p4O"/>
-                        <segue destination="xoH-zD-3ae" kind="presentation" identifier="presentSelectSoundVC" id="a5p-E9-NrU"/>
+                        <segue destination="xoH-zD-3ae" kind="presentation" identifier="presentSelectSoundVC" modalPresentationStyle="fullScreen" id="a5p-E9-NrU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YSX-Of-Dxr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1205,11 +1205,11 @@ We hope you like Noise as much as we do.</string>
             <objects>
                 <viewController id="6iY-mb-k8w" customClass="SoundSelectionViewController" customModule="Noise" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="raF-f7-nDL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hRb-a8-Ne1">
-                                <rect key="frame" x="0.0" y="56" width="375" height="591"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="73L-bL-klQ">
                                     <rect key="frame" x="0.0" y="116" width="375" height="44"/>
@@ -1360,7 +1360,7 @@ We hope you like Noise as much as we do.</string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xoH-zD-3ae" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KN9-0b-wrt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -2047,7 +2047,7 @@ Built with ❤️ and ☕️ in Munich.
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">(last updated October 01, 2018)
+                                        <string key="content">(last updated March  01, 2020)
 </string>
                                         <attributes>
                                             <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
