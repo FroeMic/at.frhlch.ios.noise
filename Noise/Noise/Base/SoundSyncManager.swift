@@ -187,6 +187,7 @@ class SoundSyncManager {
         sound.filesDownloaded = sound.soundFilePath != nil && sound.imageFilePath != nil
         sound.needsUpdate = !sound.filesDownloaded
                 
+        debugPrint("Update Sound \(sound.title)")
         soundRepository.save(sound, inBackground: true)
     }
     
