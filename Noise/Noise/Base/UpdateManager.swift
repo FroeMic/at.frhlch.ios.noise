@@ -12,56 +12,27 @@ import Siren
 class UpdateManager {
     
     static func setup() {
-        // TODO: fix this
+        // Siren is a singleton
+        let siren = Siren.shared
         
-//        /* Siren code should go below window?.makeKeyAndVisible() */
-//
-//        // Siren is a singleton
-//        let siren = Siren.shared
-//
-//        // Optional: Defaults to .option
-//        siren.alert
-//
-//        // Optional: Change the various UIAlertController and UIAlertAction messaging. One or more values can be changes. If only a subset of values are changed, the defaults with which Siren comes with will be used.
-//        siren.alertMessaging = SirenAlertMessaging(updateTitle: "Update Available",
-//                                                   updateMessage: "A new version of Noise has shipped and can be downloaded from the AppStore. 📦 👈 😊",
-//                                                   updateButtonMessage: "Update now",
-//                                                   nextTimeButtonMessage: "Remind me later ",
-//                                                   skipVersionButtonMessage: "Skip this version")
-//
-//        // Optional: Set this variable if you would only like to show an alert if your app has been available on the store for a few days.
-//        // This default value is set to 1 to avoid this issue: https://github.com/ArtSabintsev/Siren#words-of-caution
-//        // To show the update immediately after Apple has updated their JSON, set this value to 0. Not recommended due to aforementioned reason in https://github.com/ArtSabintsev/Siren#words-of-caution.
-//        siren.showAlertAfterCurrentVersionHasBeenReleasedForDays = 3
-//
-//        // Replace .immediately with .daily or .weekly to specify a maximum daily or weekly frequency for version checks.
-//        // DO NOT CALL THIS METHOD IN didFinishLaunchingWithOptions IF YOU ALSO PLAN TO CALL IT IN applicationDidBecomeActive.
-//        siren.checkVersion(checkType: .immediately)
-        
+        siren.rulesManager = RulesManager(globalRules: .relaxed)
+        siren.presentationManager = PresentationManager.init(alertTintColor: Injection.theme.tintColor,
+                                                             alertTitle: "Update Available",
+                                                             alertMessage: "A new version of Noise has shipped and can be downloaded from the AppStore. 📦 👈 😊",
+                                                             updateButtonTitle: "Update now",
+                                                             nextTimeButtonTitle: "Remind me later",
+                                                             skipButtonTitle: "Skip this version")
+        siren.wail(performCheck: .onDemand, completion: nil)
     }
     
     static func checkVersionRegularly() {
-        
-        /*
-         Perform daily (.daily) or weekly (.weekly) checks for new version of your app.
-         Useful if user returns to your app from the background after extended period of time.
-         Place in applicationDidBecomeActive(_:).    */
-// TODO: fix this
-//        Siren.shared.checkVersion(checkType: .daily)
-        
+        let siren = Siren.shared
+        siren.wail(performCheck: .onForeground, completion: nil)
     }
     
     static func checkVersionImmediately() {
-        
-        /*
-         Useful if user returns to your app from the background after being sent to the
-         App Store, but doesn't update their app before coming back to your app.
-         
-         ONLY USE WITH Siren.AlertType.immediately
-         */
-        // TODO: fix this
-//        Siren.shared.checkVersion(checkType: .immediately)
-        
+        let siren = Siren.shared
+        siren.wail(performCheck: .onDemand, completion: nil)
     }
     
 }
