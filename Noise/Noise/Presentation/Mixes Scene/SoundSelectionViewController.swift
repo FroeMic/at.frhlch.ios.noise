@@ -80,6 +80,19 @@ class SoundSelectionViewController: UIViewController {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigationController?.navigationBar.shadowImage = UIImage()
         
+        if #available(iOS 13.0, *) {
+            let navBarAppearance = UINavigationBarAppearance()
+            navBarAppearance.configureWithOpaqueBackground()
+            navBarAppearance.titleTextAttributes = [.foregroundColor: theme.textColor]
+            navBarAppearance.largeTitleTextAttributes = [.foregroundColor: theme.textColor]
+            navBarAppearance.backgroundColor = theme.backgroundColor
+            navigationController?.navigationBar.standardAppearance = navBarAppearance
+            navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+        } else {
+            // Fallback on earlier versions
+            UIApplication.shared.statusBarStyle = theme.statusBarStyle
+        }
+        
         view.backgroundColor = theme.backgroundColor
     }
     

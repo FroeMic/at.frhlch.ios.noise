@@ -16,6 +16,9 @@ class NoiseViewController: UIViewController {
     private let pauseButtonImage = UIImage(named: "ic_pause_round")?.withRenderingMode(.alwaysTemplate)
     private let playButtonImage = UIImage(named: "ic_play_round")?.withRenderingMode(.alwaysTemplate)
 
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var subtitleLabel: UILabel!
+    @IBOutlet var logoImageView: UIImageView!
     @IBOutlet var tableView: UITableView!
     @IBOutlet var playPauseButton: UIButton!
     
@@ -61,6 +64,8 @@ class NoiseViewController: UIViewController {
         if Injection.settingsRepository.getAutoPlay() {
             playAudio()
         }
+        
+        applyTheme()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -94,6 +99,38 @@ class NoiseViewController: UIViewController {
         coachMarksController?.stop(immediately: true)
         super.viewDidDisappear(animated)
     }
+    
+    func applyTheme() {
+        let theme = Injection.theme
+        view.backgroundColor = theme.backgroundColor
+        tableView.backgroundColor = theme.backgroundColor
+        tableView.backgroundView?.backgroundColor = theme.backgroundColor
+        
+        titleLabel.textColor = theme.textColor
+        subtitleLabel.textColor = theme.textColor
+        logoImageView.tintColor = theme.textColor
+        logoImageView.image =  logoImageView.image?.withRenderingMode(.alwaysTemplate)
+        playPauseButton.tintColor = theme.tintColor
+        
+        if #available(iOS 13.0, *) {
+            let navBarAppearance = UINavigationBarAppearance()
+            navBarAppearance.configureWithOpaqueBackground()
+            navBarAppearance.titleTextAttributes = [.foregroundColor: theme.textColor]
+            navBarAppearance.largeTitleTextAttributes = [.foregroundColor: theme.textColor]
+            navBarAppearance.backgroundColor = theme.backgroundColor
+            navigationController?.navigationBar.standardAppearance = navBarAppearance
+            navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+        } else {
+            // Fallback on earlier versions
+            UIApplication.shared.statusBarStyle = theme.statusBarStyle
+        }
+        
+        navigationController?.navigationBar.backgroundColor = theme.backgroundColor
+        navigationController?.navigationBar.barStyle = theme.barStyle
+        navigationController?.navigationBar.tintColor = theme.textColor
+        navigationController?.navigationBar.barTintColor = theme.backgroundColor
+    }
+
     
     @IBAction func playPauseButtonPressed(_ sender: Any) {
         if isPlayingSounds {

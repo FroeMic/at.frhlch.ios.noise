@@ -34,6 +34,13 @@ class OnboardingPresentationController: PresentationController {
         styleView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        view.backgroundColor = Injection.theme.backgroundColor
+        
+        super.viewWillAppear(animated)
+    }
+    
     private func styleView() {
         let pageControl = UIPageControl.appearance()
         pageControl.currentPageIndicatorTintColor = Injection.theme.tintColor

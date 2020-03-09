@@ -25,8 +25,55 @@ class OnboardingViewController: UIViewController  {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        applyTheme()
 
         resizeForIphoneSE()
+    }
+    
+    func applyTheme() {
+        let theme = Injection.theme
+        view.backgroundColor = theme.backgroundColor
+        
+        // recursively style all subviews
+        styleSubview(view: view)
+        
+        navigationController?.navigationBar.barTintColor = theme.textColor
+        navigationController?.navigationBar.tintColor = theme.tintColor
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        
+        if #available(iOS 13.0, *) {
+            let navBarAppearance = UINavigationBarAppearance()
+            navBarAppearance.configureWithOpaqueBackground()
+            navBarAppearance.titleTextAttributes = [.foregroundColor: theme.textColor]
+            navBarAppearance.largeTitleTextAttributes = [.foregroundColor: theme.textColor]
+            navBarAppearance.backgroundColor = theme.backgroundColor
+            navigationController?.navigationBar.standardAppearance = navBarAppearance
+            navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+        } else {
+            // Fallback on earlier versions
+            UIApplication.shared.statusBarStyle = theme.statusBarStyle
+        }
+    }
+    
+    func styleSubview(view: UIView) {
+        let theme = Injection.theme
+        view.backgroundColor = theme.backgroundColor
+        for subview in view.subviews {
+            if subview.subviews.count == 0 {
+                subview.backgroundColor = theme.backgroundColor
+                
+                if let label = subview as? UILabel {
+                    label.textColor = theme.textColor
+                }
+                if let button = subview as? UIButton {
+                    button.backgroundColor = theme.tintColor
+                }
+            } else {
+                styleSubview(view: subview)
+            }
+        }
     }
     
     private func resizeForIphoneSE() {

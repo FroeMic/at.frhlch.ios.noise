@@ -153,6 +153,12 @@ class NoisePreviewViewController: UIViewController {
     private func applyTheme() {
         let theme = Injection.theme
         
+        view.backgroundColor = theme.backgroundColor
+//        containerView.backgroundColor = theme.backgroundColor
+//        connectingView.backgroundColor = theme.backgroundColor
+        imageContainer.backgroundColor = theme.backgroundColor
+        playingView.backgroundColor = theme.backgroundColor
+        descriptionLabel.textColor = theme.textColor
         closeButton?.backgroundColor = theme.tintColor
         buyPremiumButton?.backgroundColor = theme.tintColor
         buyThisSoundButton?.backgroundColor = theme.tintColor
