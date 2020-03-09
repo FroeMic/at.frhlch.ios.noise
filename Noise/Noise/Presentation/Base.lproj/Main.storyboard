@@ -130,10 +130,6 @@
                                                         <constraint firstItem="yQX-dv-dXB" firstAttribute="leading" secondItem="dkc-Pn-UvN" secondAttribute="leading" id="VuS-v1-XBj"/>
                                                     </constraints>
                                                 </view>
-                                                <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Lv-4F-jrE">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
-                                                    <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </view>
                                                 <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_purchase" translatesAutoresizingMaskIntoConstraints="NO" id="tzR-Ou-5LV" customClass="RoundedImageView" customModule="Noise" customModuleProvider="target">
                                                     <rect key="frame" x="34" y="36" width="48" height="48"/>
                                                 </imageView>
@@ -144,15 +140,11 @@
                                                 <constraint firstItem="tzR-Ou-5LV" firstAttribute="width" secondItem="B1t-aw-fDN" secondAttribute="width" multiplier="0.5" id="Cvv-m3-0G2"/>
                                                 <constraint firstItem="dkc-Pn-UvN" firstAttribute="centerY" secondItem="B1t-aw-fDN" secondAttribute="centerY" id="ED1-X2-mBc"/>
                                                 <constraint firstItem="tzR-Ou-5LV" firstAttribute="height" secondItem="B1t-aw-fDN" secondAttribute="height" multiplier="0.5" id="IFN-Rn-5NR"/>
-                                                <constraint firstItem="6Lv-4F-jrE" firstAttribute="centerX" secondItem="m8v-FI-ic6" secondAttribute="centerX" id="MNt-cZ-rBr"/>
-                                                <constraint firstItem="6Lv-4F-jrE" firstAttribute="width" secondItem="m8v-FI-ic6" secondAttribute="width" id="MZt-KE-abH"/>
-                                                <constraint firstItem="6Lv-4F-jrE" firstAttribute="height" secondItem="m8v-FI-ic6" secondAttribute="height" id="Ner-Yt-eBG"/>
                                                 <constraint firstItem="B1t-aw-fDN" firstAttribute="leading" secondItem="m8v-FI-ic6" secondAttribute="leading" constant="10" id="RUu-KR-imz"/>
                                                 <constraint firstItem="tzR-Ou-5LV" firstAttribute="centerY" secondItem="B1t-aw-fDN" secondAttribute="centerY" id="fUe-qB-kPJ"/>
                                                 <constraint firstItem="dkc-Pn-UvN" firstAttribute="height" secondItem="B1t-aw-fDN" secondAttribute="height" id="hUy-Zv-Lyp"/>
                                                 <constraint firstItem="B1t-aw-fDN" firstAttribute="height" secondItem="m8v-FI-ic6" secondAttribute="height" multiplier="0.8" id="hZS-n2-dg9"/>
                                                 <constraint firstItem="tzR-Ou-5LV" firstAttribute="centerX" secondItem="B1t-aw-fDN" secondAttribute="centerX" id="pjM-98-Rfv"/>
-                                                <constraint firstItem="6Lv-4F-jrE" firstAttribute="centerY" secondItem="m8v-FI-ic6" secondAttribute="centerY" id="rLI-Jy-Eth"/>
                                                 <constraint firstItem="dkc-Pn-UvN" firstAttribute="leading" secondItem="B1t-aw-fDN" secondAttribute="trailing" constant="10" id="vey-mT-zyc"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -160,7 +152,6 @@
                                             <outlet property="albumImageView" destination="B1t-aw-fDN" id="q0j-lq-r8V"/>
                                             <outlet property="maxSliderImageView" destination="A1j-We-bby" id="62W-x0-40Q"/>
                                             <outlet property="minSliderImageView" destination="dQq-69-iWH" id="95c-9Z-gFW"/>
-                                            <outlet property="overlayView" destination="6Lv-4F-jrE" id="f6Y-Y8-PGG"/>
                                             <outlet property="purchaseIconView" destination="tzR-Ou-5LV" id="7Lq-Eh-MYj"/>
                                             <outlet property="slider" destination="IAs-Bt-wWU" id="pPS-So-n3X"/>
                                             <outlet property="soundSubtitleLabel" destination="axE-jZ-cFX" id="ahr-FG-RC3"/>
@@ -1176,7 +1167,6 @@ We hope you like Noise as much as we do.</string>
                                             <outlet property="albumImageView" destination="grI-Ae-yHX" id="nBN-eL-b4O"/>
                                             <outlet property="maxSliderImageView" destination="ub8-E6-B1s" id="VtL-AS-wgq"/>
                                             <outlet property="minSliderImageView" destination="kl1-Ai-6mf" id="kYt-YA-c2q"/>
-                                            <outlet property="overlayView" destination="5hl-Ri-olw" id="g25-XJ-rEW"/>
                                             <outlet property="purchaseIconView" destination="opB-OC-11R" id="Obq-4s-XYL"/>
                                             <outlet property="slider" destination="Pjv-7U-pZ8" id="1qF-5D-r3c"/>
                                             <outlet property="soundSubtitleLabel" destination="v2W-SI-jwK" id="hI5-Cd-LAb"/>
@@ -1306,7 +1296,6 @@ We hope you like Noise as much as we do.</string>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="albumImageView" destination="N3Y-Ti-Hgo" id="q2E-gz-pNb"/>
-                                            <outlet property="overlayView" destination="b3U-kz-Bug" id="bY6-4g-iDc"/>
                                             <outlet property="purchaseIconView" destination="vcy-mj-kmt" id="N67-mK-zJd"/>
                                             <outlet property="selectedView" destination="7od-89-Bfs" id="lM9-O0-i60"/>
                                             <outlet property="soundSubtitleLabel" destination="5DV-MZ-dA4" id="D66-GF-TMq"/>

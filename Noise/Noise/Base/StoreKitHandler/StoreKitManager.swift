@@ -13,6 +13,7 @@ import StoreKit
 
 class StoreKitManager: NSObject, SKProductsRequestDelegate  {
     
+    var lastBuyingDecision: Date = Date()
     var productRequest: SKProductsRequest!
 
     // Fetch information about your products from the App Store.
@@ -124,6 +125,7 @@ class StoreKitManager: NSObject, SKProductsRequestDelegate  {
 //                    } else {
 //                        debugPrint("Does NOT own product with id \(id)")
 //                    }
+                    self.lastBuyingDecision = Date()
                     completion?(success)
                 })
             case .error(let error):

@@ -31,7 +31,6 @@ class SoundTableViewCell: UITableViewCell {
     @IBOutlet var slider: UISlider!
     @IBOutlet var maxSliderImageView: UIImageView!
     @IBOutlet var minSliderImageView: UIImageView!
-    @IBOutlet var overlayView: UIView!
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -73,7 +72,6 @@ class SoundTableViewCell: UITableViewCell {
         layer.cornerRadius = theme.cornerRadius
         layer.masksToBounds = true
         
-        overlayView.backgroundColor =  theme.backgroundColor.withAlphaComponent(0.8)
         contentView.backgroundColor = theme.tableViewCellDefaultBackgroundColor
         soundTitleLabel?.textColor = theme.textColor
         soundSubtitleLabel?.textColor = theme.descriptionTextColor
@@ -96,7 +94,6 @@ class SoundTableViewCell: UITableViewCell {
             return
         }
         
-        overlayView?.isHidden = sound.isOwned
         purchaseIconView?.isHidden = sound.isOwned
     }
     

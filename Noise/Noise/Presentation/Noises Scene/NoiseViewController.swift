@@ -13,6 +13,7 @@ class NoiseViewController: UIViewController, InterfaceThemeSubscriber {
     
     static let soundReuseIdentifier = "SoundTableViewCell"
     
+    private var lastAppearance: Date?
     private let pauseButtonImage = UIImage(named: "ic_pause_round")?.withRenderingMode(.alwaysTemplate)
     private let playButtonImage = UIImage(named: "ic_play_round")?.withRenderingMode(.alwaysTemplate)
 
@@ -59,8 +60,14 @@ class NoiseViewController: UIViewController, InterfaceThemeSubscriber {
         audioManager.register(delegate: self)
         updatePlayPauseButton()
         
-        sounds = Injection.soundRepository.getAll().stableSorted(by: {$0.isOwned && !$1.isOwned})
-        tableView.reloadData()
+        //lastAppearance
+        if let lastAppearance = self.lastAppearance, lastAppearance > StoreKitManager.shared.lastBuyingDecision  {
+            // not update necessary, safe some cpu
+        } else {
+            sounds = Injection.soundRepository.getAll().stableSorted(by: {$0.isOwned && !$1.isOwned})
+            tableView.reloadData()
+        }
+        lastAppearance = Date()
         
         if Injection.settingsRepository.getAutoPlay() {
             playAudio()
@@ -169,6 +176,10 @@ class NoiseViewController: UIViewController, InterfaceThemeSubscriber {
 
 // MARK: UITableViewDelegate
 extension NoiseViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120.0
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let sound = sounds[indexPath.row]
         if !sound.isOwned {
@@ -186,15 +197,16 @@ extension NoiseViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: NoiseViewController.soundReuseIdentifier, for: indexPath)
+        return tableView.dequeueReusableCell(withIdentifier: NoiseViewController.soundReuseIdentifier, for: indexPath)
+        
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
         if let soundCell = cell as? SoundTableViewCell {
             soundCell.delegate = self
             soundCell.sound = sounds[indexPath.row]
         }
-        
-        return cell
-        
     }
     
 }

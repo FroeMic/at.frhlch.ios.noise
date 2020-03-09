@@ -268,6 +268,8 @@ class SettingsViewController: UITableViewController, InterfaceThemeSubscriber {
             Injection.settingsRepository.setSelectedTheme(key: DefaultTheme.key)
         }
         Injection.themePublisher.notifySubscribers()
+        // this is a hack to ensure that the table view is updated after theme change
+        StoreKitManager.shared.lastBuyingDecision = Date()
     }
     
 }

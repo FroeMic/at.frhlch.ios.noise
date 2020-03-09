@@ -28,7 +28,6 @@ class SoundSelectionTableViewCell: UITableViewCell {
     @IBOutlet var soundTitleLabel: UILabel!
     @IBOutlet var soundSubtitleLabel: UILabel!
     @IBOutlet var purchaseIconView: CircleImageView!
-    @IBOutlet var overlayView: UIView!
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -82,10 +81,8 @@ class SoundSelectionTableViewCell: UITableViewCell {
             return
         }
         if sound.isOwned {
-            overlayView?.isHidden = true
             purchaseIconView?.isHidden = true
         } else {
-            overlayView?.isHidden = false
             purchaseIconView?.isHidden = false
         }
     }
