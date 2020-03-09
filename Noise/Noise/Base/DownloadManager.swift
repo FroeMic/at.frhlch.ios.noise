@@ -15,13 +15,19 @@ class DownloadManager: NSObject {
     
     private var soundDownloadTasks: [Int: SoundDownloadTask] = [:]
     
+    private var _session: URLSession?
     private var session : URLSession {
         get {
-            let config = URLSessionConfiguration.background(withIdentifier: "\(Bundle.main.bundleIdentifier!).background")
-            
-            // Warning: If an URLSession still exists from a previous download, it doesn't create
-            // a new URLSession object but returns the existing one with the old delegate object attached!
-            return URLSession(configuration: config, delegate: self, delegateQueue: OperationQueue())
+            if let s = _session {
+                return s
+            } else {
+                let config = URLSessionConfiguration.background(withIdentifier: "\(Bundle.main.bundleIdentifier!).background")
+                
+                // Warning: If an URLSession still exists from a previous download, it doesn't create
+                // a new URLSession object but returns the existing one with the old delegate object attached!
+                _session = URLSession(configuration: config, delegate: self, delegateQueue: OperationQueue())
+                return _session!
+            }
         }
     }
     
@@ -67,7 +73,7 @@ extension DownloadManager: URLSessionDownloadDelegate {
     }
     
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
-        debugPrint("Task completed: \(task), error: \(String(describing: error))")
+//        debugPrint("Task completed: \(task), error: \(String(describing: error))")
     }
     
     
