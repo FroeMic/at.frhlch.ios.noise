@@ -56,6 +56,12 @@ class BaseTabBarController: UITabBarController {
         let theme = Injection.theme
         
         tabBar.tintColor = theme.tintColor
+        tabBar.barStyle = theme.barStyle
+        
+        view.backgroundColor = theme.backgroundColor
+        
+        soundToolbar.applyTheme()
+        
     }
     
     private func getMixtape(offset: Int) -> Mixtape? {

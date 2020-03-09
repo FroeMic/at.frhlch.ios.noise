@@ -15,7 +15,10 @@ class MixesViewController: UIViewController {
     
     static let editMixtapeSegueIdentifier = "showMixtapeDetail"
     
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var logoImageView: UIImageView!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var tableViewPlaceholderView: UIView!
     
     var mixtapes: [Mixtape] {
         return Injection.mixtapeRepository.getAll()
@@ -23,6 +26,10 @@ class MixesViewController: UIViewController {
     
     private var mixtapeRepository: MixtapeRepository {
         return Injection.mixtapeRepository
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return Injection.theme.statusBarStyle
     }
     
     override func viewDidLoad() {
@@ -39,12 +46,44 @@ class MixesViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: animated)
         
         tableView.reloadData()
+        
+        applyTheme()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let editMixtapeVC = segue.destination as? EditMixtapeViewController {
             editMixtapeVC.mixtape = sender as? Mixtape
         }
+    }
+    
+    func applyTheme() {
+        let theme = Injection.theme
+        view.backgroundColor = theme.backgroundColor
+        tableView.backgroundColor = theme.backgroundColor
+        tableViewPlaceholderView.backgroundColor = theme.backgroundColor
+        tableView.backgroundView?.backgroundColor = theme.backgroundColor
+        
+        titleLabel.textColor = theme.textColor
+        logoImageView.tintColor = theme.textColor
+        logoImageView.image =  logoImageView.image?.withRenderingMode(.alwaysTemplate)
+        
+        if #available(iOS 13.0, *) {
+            let navBarAppearance = UINavigationBarAppearance()
+            navBarAppearance.configureWithOpaqueBackground()
+            navBarAppearance.titleTextAttributes = [.foregroundColor: theme.textColor]
+            navBarAppearance.largeTitleTextAttributes = [.foregroundColor: theme.textColor]
+            navBarAppearance.backgroundColor = theme.backgroundColor
+            navigationController?.navigationBar.standardAppearance = navBarAppearance
+            navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+        } else {
+            // Fallback on earlier versions
+            UIApplication.shared.statusBarStyle = theme.statusBarStyle
+        }
+        
+        navigationController?.navigationBar.backgroundColor = theme.backgroundColor
+        navigationController?.navigationBar.barStyle = theme.barStyle
+        navigationController?.navigationBar.tintColor = theme.textColor
+        navigationController?.navigationBar.barTintColor = theme.backgroundColor
     }
 
 }

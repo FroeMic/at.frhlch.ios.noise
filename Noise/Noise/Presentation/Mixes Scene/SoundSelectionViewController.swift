@@ -45,15 +45,10 @@ class SoundSelectionViewController: UIViewController {
         sounds = Injection.soundRepository.getAll().sorted(by: { $0.isOwned && !$1.isOwned })
         tableView.reloadData()
         
-        let theme = Injection.theme
-        
         // Show the Navigation Bar
         navigationController?.setNavigationBarHidden(false, animated: animated)
-        navigationController?.navigationBar.barTintColor = UIColor.white
-        navigationController?.navigationBar.tintColor = theme.tintColor
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-            
+        
+        applyTheme()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -75,6 +70,17 @@ class SoundSelectionViewController: UIViewController {
             hasRegisteredForceTouchGesturerecognizer = true
         }
         
+    }
+    
+    func applyTheme() {
+        let theme = Injection.theme
+        
+        navigationController?.navigationBar.barTintColor = theme.textColor
+        navigationController?.navigationBar.tintColor = theme.tintColor
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        
+        view.backgroundColor = theme.backgroundColor
     }
     
     @IBAction func cancelButtonPressed(_ sender: Any) {

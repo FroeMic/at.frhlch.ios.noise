@@ -100,6 +100,13 @@ class SoundBar: UIToolbar {
         
     }
     
+    func applyTheme(theme: InterfaceTheme = Injection.theme) {
+        tintColor = theme.tintColor
+        barTintColor = theme.backgroundColor
+        backgroundColor = theme.backgroundColor
+        titleLabel?.textColor = theme.textColor
+    }
+    
     
     // MARK: User Interaction
     @objc func playButtonPressed() {

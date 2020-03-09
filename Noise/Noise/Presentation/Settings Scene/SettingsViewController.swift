@@ -27,6 +27,10 @@ class SettingsViewController: UITableViewController {
     @IBOutlet var playInBackgroundTableViewCell: UITableViewCell!
     @IBOutlet var playInBackgroundSwitch: UISwitch!
     
+    @IBOutlet var nightModeLabel: UILabel!
+    @IBOutlet var nightModeTableViewCell: UITableViewCell!
+    @IBOutlet var NightModeSwitch: UISwitch!
+    
     @IBOutlet var inAppPurchasesTableViewCell: UITableViewCell!
     @IBOutlet var inAppPurchasesLabel: UILabel!
     @IBOutlet var inAppPurchasesChevronImageView: UIImageView!
@@ -228,6 +232,15 @@ class SettingsViewController: UITableViewController {
     @IBAction func playInBackgroundSwitchValueChanged(_ sender: Any) {
         Injection.settingsRepository.setBackgroundPlay(enabled: playInBackgroundSwitch.isOn)
     }
+    
+    @IBAction func nightModeSwitchValueChanged(_ sender: Any) {
+        if NightModeSwitch.isOn {
+            Injection.settingsRepository.setSelectedTheme(key: DarkTheme.key)
+        } else {
+            Injection.settingsRepository.setSelectedTheme(key: DefaultTheme.key)
+        }
+    }
+    
 }
 
 extension SettingsViewController {

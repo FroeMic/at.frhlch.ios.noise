@@ -79,16 +79,11 @@ class EditMixtapeViewController: UIViewController {
         
         tableView.reloadData()
         
-        let theme = Injection.theme
-        
         // Show the Navigation Bar
         navigationController?.setNavigationBarHidden(false, animated: animated)
-        navigationController?.navigationBar.barTintColor = UIColor.white
-        navigationController?.navigationBar.tintColor = theme.tintColor
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        playPauseButton.tintColor = theme.tintColor
+
         
+        applyTheme()
         updateView()
         
         audioManager.register(delegate: self)
@@ -162,6 +157,24 @@ class EditMixtapeViewController: UIViewController {
         } else {
             presentAlertController()
         }
+    }
+    
+    func applyTheme() {
+        let theme = Injection.theme
+        
+        navigationController?.navigationBar.barTintColor = UIColor.white
+        navigationController?.navigationBar.tintColor = theme.tintColor
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        
+        view.backgroundColor = theme.backgroundColor
+        tableView.backgroundColor = theme.backgroundColor
+        titleTextfield.textColor = theme.textColor
+        titleTextfield.backgroundColor = theme.backgroundColor
+        descriptionTextView.textColor = theme.textColor
+        descriptionTextView.backgroundColor = theme.backgroundColor
+        imageView.tintColor = theme.tintColor
+        playPauseButton.tintColor = theme.tintColor
     }
     
     private func updateView() {

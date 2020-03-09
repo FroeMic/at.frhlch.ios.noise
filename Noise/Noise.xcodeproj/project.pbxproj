@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2704A7A52416872200BFC24D /* ThemeProxyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2704A7A42416872200BFC24D /* ThemeProxyProvider.swift */; };
+		2704A7A82416872F00BFC24D /* DarkTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2704A7A72416872F00BFC24D /* DarkTheme.swift */; };
 		271D158D213DD45A00F5B2DC /* SoundDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271D158C213DD45A00F5B2DC /* SoundDelegate.swift */; };
 		271D158F21406FBB00F5B2DC /* MixesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271D158E21406FBB00F5B2DC /* MixesViewController.swift */; };
 		271F9EB82135D51800115C8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F9EB72135D51800115C8C /* AppDelegate.swift */; };
@@ -122,6 +124,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2704A7A42416872200BFC24D /* ThemeProxyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeProxyProvider.swift; sourceTree = "<group>"; };
+		2704A7A72416872F00BFC24D /* DarkTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkTheme.swift; sourceTree = "<group>"; };
 		271D158C213DD45A00F5B2DC /* SoundDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundDelegate.swift; sourceTree = "<group>"; };
 		271D158E21406FBB00F5B2DC /* MixesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixesViewController.swift; sourceTree = "<group>"; };
 		271F9EB42135D51800115C8C /* Noise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Noise.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -256,6 +260,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2704A7A62416872700BFC24D /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				2704A7A72416872F00BFC24D /* DarkTheme.swift */,
+				27B106072135D8EA0070A109 /* DefaultTheme.swift */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
 		271F9EAB2135D51800115C8C = {
 			isa = PBXGroup;
 			children = (
@@ -408,14 +421,15 @@
 		27B106062135D8C40070A109 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				2704A7A62416872700BFC24D /* Themes */,
 				27D1890621538BF700F5968F /* Images */,
 				27F52EFF21428E470030102C /* Animations */,
 				27BD8D57213BF4E6003DF079 /* Sounds */,
-				27B106072135D8EA0070A109 /* DefaultTheme.swift */,
 				27D18900215374D700F5968F /* SRSoundRepository.swift */,
 				27D1890421537C0A00F5968F /* SRMixtapeRepository.swift */,
 				27C753842158E58500905EFD /* HardCodedLicenseProvider.swift */,
 				2774C52121596B9C009972F3 /* UDSettingsRepository.swift */,
+				2704A7A42416872200BFC24D /* ThemeProxyProvider.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -741,6 +755,7 @@
 				27D025F9215F97F10052B23F /* ForceTouchGestureRecognizer.swift in Sources */,
 				27C753812158E55A00905EFD /* SettingsViewController.swift in Sources */,
 				27F52F0121428F9D0030102C /* PlayingView.swift in Sources */,
+				2704A7A52416872200BFC24D /* ThemeProxyProvider.swift in Sources */,
 				27F52EFA214266090030102C /* HapticFeedbackManager.swift in Sources */,
 				27C911E32160314100DA6204 /* Sequence+stableSorted.swift in Sources */,
 				27F6916E215FC58F00468EEC /* RestorePurchasesTableViewCell.swift in Sources */,
@@ -774,6 +789,7 @@
 				27BD8D63213C17D4003DF079 /* AudioManagerState.swift in Sources */,
 				2774C53121598467009972F3 /* StoreKitManager.swift in Sources */,
 				2774C52521596F4A009972F3 /* SplashScreenViewController.swift in Sources */,
+				2704A7A82416872F00BFC24D /* DarkTheme.swift in Sources */,
 				27BA64CF215B75050080D87D /* OnboardingPresentationController.swift in Sources */,
 				27BD8D65213C1ADA003DF079 /* Mixtape.swift in Sources */,
 				2774C51C21592633009972F3 /* SoundDownloadTask.swift in Sources */,

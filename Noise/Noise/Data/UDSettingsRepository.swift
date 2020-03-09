@@ -20,6 +20,8 @@ class UDSettingsRepository {
             setAutoPlay(enabled: false)
             setBackgroundPlay(enabled: false)
             setSelectedTab(index: 1)
+            setSelectedTheme(key: DefaultTheme.key)
+            
             userDefaults.set(true, forKey: "userDefaultsHaveBeenInitializedKey")
         }
     }
@@ -29,6 +31,7 @@ class UDSettingsRepository {
     private let isKeepDisplayActiveEnabled = "isKeepDisplayActiveEnabled"
     private let isAutoPlayEnabledKey = "isAutoPlayEnabledKey"
     private let isBackgroundPlayEnabledKey = "isBackgroundPlayEnabledKey"
+    private let selectedThemeKey = "selectedThemeKey"
 
     
 }
@@ -82,6 +85,14 @@ extension UDSettingsRepository: SettingsRepository {
     
     func getBackgroundPlay() -> Bool {
         return userDefaults.bool(forKey: isBackgroundPlayEnabledKey)
+    }
+    
+    func setSelectedTheme(key: String) {
+        userDefaults.set(key, forKey: selectedThemeKey)
+    }
+    
+    func getSelectedTheme() -> String? {
+        return userDefaults.string(forKey: selectedThemeKey)
     }
         
     

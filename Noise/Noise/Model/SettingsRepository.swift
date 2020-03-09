@@ -22,5 +22,6 @@ protocol SettingsRepository {
     func getAutoPlay() -> Bool
     func setBackgroundPlay(enabled: Bool)
     func getBackgroundPlay() -> Bool
-    
+    func setSelectedTheme(key: String)
+    func getSelectedTheme() -> String?
 }
