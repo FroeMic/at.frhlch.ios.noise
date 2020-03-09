@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NoisePreviewViewController: UIViewController {
+class NoisePreviewViewController: UIViewController, InterfaceThemeSubscriber {
     
     var sound: Sound?
     
@@ -58,6 +58,8 @@ class NoisePreviewViewController: UIViewController {
         connectingView.isHidden = true
         
         resizeForIphoneSE()
+        
+        Injection.themePublisher.subscribeToThemeUpdates(self)
     }
     
     deinit {
@@ -150,18 +152,18 @@ class NoisePreviewViewController: UIViewController {
         }
     }
     
-    private func applyTheme() {
+    func applyTheme() {
         let theme = Injection.theme
         
         view.backgroundColor = theme.backgroundColor
-//        containerView.backgroundColor = theme.backgroundColor
-//        connectingView.backgroundColor = theme.backgroundColor
         imageContainer.backgroundColor = theme.backgroundColor
         playingView.backgroundColor = theme.backgroundColor
         descriptionLabel.textColor = theme.textColor
         closeButton?.backgroundColor = theme.tintColor
         buyPremiumButton?.backgroundColor = theme.tintColor
         buyThisSoundButton?.backgroundColor = theme.tintColor
+        buyThisSoundLabel?.textColor = theme.textColor
+        buyPremiumLabel?.textColor = theme.textColor
     }
 
     @IBAction func closeButtonPressed(_ sender: Any) {

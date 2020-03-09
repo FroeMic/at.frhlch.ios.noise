@@ -10,6 +10,8 @@ import UIKit
 
 class ThemeProxyProvider: InterfaceTheme {
     
+    private var subscribers: [InterfaceThemeSubscriber?] = []
+    
     private var selectedTheme: InterfaceTheme {
         get {
             guard let key = Injection.settingsRepository.getSelectedTheme() else {
@@ -19,7 +21,7 @@ class ThemeProxyProvider: InterfaceTheme {
                 return DarkTheme()
             }
             if key == DefaultTheme.key {
-                return DarkTheme()
+                return DefaultTheme()
             }
             return DefaultTheme()
         }
@@ -70,4 +72,25 @@ class ThemeProxyProvider: InterfaceTheme {
     var statusBarStyle: UIStatusBarStyle {
         return selectedTheme.statusBarStyle
     }
+}
+
+extension ThemeProxyProvider: InterfaceThemeDelegate {
+    
+    func subscribeToThemeUpdates(_ subscriber: InterfaceThemeSubscriber) {
+        self.subscribers.append(subscriber)
+    }
+    
+    func notifySubscribers() {
+        var updatedSubscribers: [InterfaceThemeSubscriber?] = []
+        
+        for subscriber in subscribers {
+            if let healthySubscriber = subscriber {
+                healthySubscriber.applyTheme()
+                updatedSubscribers.append(healthySubscriber)
+            }
+        }
+        
+        subscribers = updatedSubscribers
+    }
+    
 }

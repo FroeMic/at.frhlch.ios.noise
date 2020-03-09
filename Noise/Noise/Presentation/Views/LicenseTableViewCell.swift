@@ -53,8 +53,8 @@ class LicenseTableViewCell: UITableViewCell {
     private func applyTheme() {
         let theme = Injection.theme
         
-        backgroundColor = .white
-        contentView.backgroundColor = .white
+        backgroundColor = theme.backgroundColor
+        contentView.backgroundColor = theme.backgroundColor
         
         licenseTitleLabel.textColor = theme.textColor
         
@@ -63,7 +63,9 @@ class LicenseTableViewCell: UITableViewCell {
             chevronImageView.image = coloredImage
             chevronImageView.tintColor = theme.textColor
         }
+        
     }
+    
     
     private func updateCellContent(_ license: License) {
         licenseTitleLabel?.text = license.title

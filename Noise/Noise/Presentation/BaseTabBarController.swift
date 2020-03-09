@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseTabBarController: UITabBarController {
+class BaseTabBarController: UITabBarController, InterfaceThemeSubscriber {
     
     var soundToolbar: SoundBar!
     var audioManager: AudioManager {
@@ -37,6 +37,8 @@ class BaseTabBarController: UITabBarController {
         
         audioManager.register(delegate: self)
         updateSoundBar(with: audioManager)
+        
+        Injection.themePublisher.subscribeToThemeUpdates(self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,7 +54,7 @@ class BaseTabBarController: UITabBarController {
         }
     }
     
-    private func applyTheme() {
+    func applyTheme() {
         let theme = Injection.theme
         
         tabBar.tintColor = theme.tintColor
@@ -61,6 +63,8 @@ class BaseTabBarController: UITabBarController {
         view.backgroundColor = theme.backgroundColor
         
         soundToolbar.applyTheme()
+        tabBar.setNeedsDisplay()
+        tabBar.setNeedsLayout()
         
     }
     

@@ -22,22 +22,28 @@ class InAppPurchaseTableViewCell: UITableViewCell {
     @IBOutlet var inAppPurchaseButton: PrimaryButton!
     
     override func layoutSubviews() {
+        let theme = Injection.theme
+        
+        inAppPurchaseTitleLabel.textColor = theme.textColor
+        backgroundColor = theme.backgroundColor
+        
         super.layoutSubviews()
         inAppPurchaseButton.isUserInteractionEnabled = false
     }
     
     
     private func updateCellContent(_ inAppPurchase: InAppPurchase) {
+        let theme = Injection.theme
         inAppPurchaseTitleLabel?.text = inAppPurchase.title
         if inAppPurchase.isOwned {
             inAppPurchaseTitleLabel?.textColor = .lightGray
             inAppPurchaseButton?.setTitle("(Owned)", for: .normal)
-            inAppPurchaseButton?.backgroundColor = .white
-            inAppPurchaseButton.setTitleColor(.lightGray, for: .normal)
+            inAppPurchaseButton?.backgroundColor = theme.backgroundColor
+            inAppPurchaseButton.setTitleColor(.white, for: .normal)
             self.isUserInteractionEnabled = false
 
         } else {
-            inAppPurchaseTitleLabel?.textColor = .black
+            inAppPurchaseTitleLabel?.textColor = Injection.theme.textColor
             inAppPurchaseButton?.setTitle(inAppPurchase.priceString, for: .normal)
             inAppPurchaseButton?.backgroundColor = Injection.theme.tintColor
             inAppPurchaseButton?.setTitleColor(.white, for: .normal)

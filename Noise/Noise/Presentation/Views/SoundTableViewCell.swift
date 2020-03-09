@@ -73,6 +73,7 @@ class SoundTableViewCell: UITableViewCell {
         layer.cornerRadius = theme.cornerRadius
         layer.masksToBounds = true
         
+        overlayView.backgroundColor =  theme.backgroundColor.withAlphaComponent(0.8)
         contentView.backgroundColor = theme.tableViewCellDefaultBackgroundColor
         soundTitleLabel?.textColor = theme.textColor
         soundSubtitleLabel?.textColor = theme.descriptionTextColor

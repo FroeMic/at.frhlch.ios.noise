@@ -17,12 +17,18 @@ class AboutViewController: UIViewController {
         super.viewDidLoad()
         
         title = "About"
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         applyTheme()
+        super.viewWillAppear(animated)
     }
     
     func applyTheme() {
         let theme = Injection.theme
         
+        view.backgroundColor = theme.backgroundColor
+        textView.backgroundColor = theme.backgroundColor
         textView.textColor = theme.textColor
         textView.tintColor = theme.tintColor
 

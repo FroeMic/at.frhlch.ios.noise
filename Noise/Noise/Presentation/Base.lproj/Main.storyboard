@@ -311,6 +311,7 @@
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buy this sound" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7DX-Gl-EjV">
                                                                 <rect key="frame" x="0.0" y="0.0" width="308" height="19.5"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -348,7 +349,7 @@
                                                                                 </connections>
                                                                             </button>
                                                                         </subviews>
-                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="30" id="byq-b4-fFM"/>
                                                                             <constraint firstAttribute="trailing" secondItem="EuP-ap-Ioh" secondAttribute="trailing" id="cy5-Tp-BmD"/>
@@ -388,7 +389,7 @@
                                                                                 </connections>
                                                                             </button>
                                                                         </subviews>
-                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="trailing" secondItem="Bzh-wc-Fci" secondAttribute="trailing" id="6Fp-fJ-emp"/>
                                                                             <constraint firstItem="DrF-Xr-TYz" firstAttribute="leading" secondItem="FjH-hy-B1F" secondAttribute="leading" id="Cek-mP-sy7"/>
@@ -399,9 +400,10 @@
                                                                         </constraints>
                                                                     </view>
                                                                 </subviews>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </stackView>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="7DX-Gl-EjV" firstAttribute="top" secondItem="Uf5-5Y-v4G" secondAttribute="top" id="Juc-9N-DfK"/>
                                                             <constraint firstItem="ea7-nj-kyt" firstAttribute="top" secondItem="7DX-Gl-EjV" secondAttribute="bottom" constant="10" id="LVa-Nd-V9x"/>
@@ -1394,6 +1396,7 @@ We hope you like Noise as much as we do.</string>
                         <view key="tableFooterView" contentMode="scaleToFill" id="diL-gj-8KE">
                             <rect key="frame" x="0.0" y="904" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <sections>
                             <tableViewSection footerTitle=" " id="V8h-xI-zfP">
@@ -1401,7 +1404,7 @@ We hope you like Noise as much as we do.</string>
                             </tableViewSection>
                             <tableViewSection headerTitle="General" footerTitle=" " id="g83-Hb-kL9">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="sGn-IZ-TNW">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="sGn-IZ-TNW" customClass="SettingsTableViewCell" customModule="Noise" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="84" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sGn-IZ-TNW" id="SHR-cr-uk6">
@@ -1425,6 +1428,7 @@ We hope you like Noise as much as we do.</string>
                                                             </connections>
                                                         </switch>
                                                     </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="wic-Pj-o1G" firstAttribute="centerY" secondItem="60t-zq-u49" secondAttribute="centerY" id="8ic-oj-h5Z"/>
                                                         <constraint firstAttribute="trailing" secondItem="j3A-fA-kFe" secondAttribute="trailing" constant="10" id="CGf-Bg-TlG"/>
@@ -1435,6 +1439,7 @@ We hope you like Noise as much as we do.</string>
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="60t-zq-u49" secondAttribute="trailing" id="W7c-fb-OtB"/>
                                                 <constraint firstAttribute="bottom" secondItem="60t-zq-u49" secondAttribute="bottom" id="eyY-z0-s9h"/>
@@ -1442,8 +1447,9 @@ We hope you like Noise as much as we do.</string>
                                                 <constraint firstItem="60t-zq-u49" firstAttribute="top" secondItem="SHR-cr-uk6" secondAttribute="top" id="z1s-YK-4Yd"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="dUM-KU-QnC">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="dUM-KU-QnC" customClass="SettingsTableViewCell" customModule="Noise" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="128" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dUM-KU-QnC" id="sFp-s3-fcI">
@@ -1466,6 +1472,7 @@ We hope you like Noise as much as we do.</string>
                                                             </connections>
                                                         </switch>
                                                     </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="v3n-4L-yiC" firstAttribute="leading" secondItem="bNx-e2-7WA" secondAttribute="trailing" constant="10" id="8ve-aa-WMc"/>
                                                         <constraint firstItem="bNx-e2-7WA" firstAttribute="leading" secondItem="iFp-ew-ef5" secondAttribute="leading" constant="16" id="bob-z3-nH1"/>
@@ -1476,6 +1483,7 @@ We hope you like Noise as much as we do.</string>
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="iFp-ew-ef5" firstAttribute="leading" secondItem="sFp-s3-fcI" secondAttribute="leading" id="8Ik-5F-Wmf"/>
                                                 <constraint firstAttribute="trailing" secondItem="iFp-ew-ef5" secondAttribute="trailing" id="hxM-Dp-uFG"/>
@@ -1483,8 +1491,9 @@ We hope you like Noise as much as we do.</string>
                                                 <constraint firstAttribute="bottom" secondItem="iFp-ew-ef5" secondAttribute="bottom" id="wK9-iA-CFr"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="L9e-T3-2AO">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="L9e-T3-2AO" customClass="SettingsTableViewCell" customModule="Noise" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="172" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L9e-T3-2AO" id="WYw-TP-yzn">
@@ -1507,6 +1516,7 @@ We hope you like Noise as much as we do.</string>
                                                             </connections>
                                                         </switch>
                                                     </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="vSe-rg-XBR" firstAttribute="leading" secondItem="JiS-jW-Sif" secondAttribute="trailing" constant="10" id="3LL-22-uF9"/>
                                                         <constraint firstItem="vSe-rg-XBR" firstAttribute="top" secondItem="eRL-cL-NEc" secondAttribute="top" constant="10" id="JaN-j3-NFW"/>
@@ -1517,6 +1527,7 @@ We hope you like Noise as much as we do.</string>
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="eRL-cL-NEc" firstAttribute="top" secondItem="WYw-TP-yzn" secondAttribute="top" id="O56-oi-9Ns"/>
                                                 <constraint firstAttribute="trailing" secondItem="eRL-cL-NEc" secondAttribute="trailing" id="aQf-5s-KMb"/>
@@ -1524,8 +1535,9 @@ We hope you like Noise as much as we do.</string>
                                                 <constraint firstItem="eRL-cL-NEc" firstAttribute="leading" secondItem="WYw-TP-yzn" secondAttribute="leading" id="nJX-M1-ICi"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Foa-Mm-8YB" userLabel="Night Mode Table View Cell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Foa-Mm-8YB" userLabel="Night Mode Table View Cell" customClass="SettingsTableViewCell" customModule="Noise" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="216" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Foa-Mm-8YB" id="HAT-ed-Z45">
@@ -1548,6 +1560,7 @@ We hope you like Noise as much as we do.</string>
                                                             </connections>
                                                         </switch>
                                                     </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="hmF-P0-ypm" firstAttribute="leading" secondItem="HH8-ah-xef" secondAttribute="leading" constant="16" id="30p-jf-bqn"/>
                                                         <constraint firstItem="gZr-OW-dbG" firstAttribute="centerY" secondItem="hmF-P0-ypm" secondAttribute="centerY" id="5LT-vu-Ed1"/>
@@ -1558,6 +1571,7 @@ We hope you like Noise as much as we do.</string>
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="HH8-ah-xef" firstAttribute="leading" secondItem="HAT-ed-Z45" secondAttribute="leading" id="Xki-CC-PBU"/>
                                                 <constraint firstAttribute="trailing" secondItem="HH8-ah-xef" secondAttribute="trailing" id="i7c-S2-nsz"/>
@@ -1565,8 +1579,9 @@ We hope you like Noise as much as we do.</string>
                                                 <constraint firstAttribute="bottom" secondItem="HH8-ah-xef" secondAttribute="bottom" id="krG-Iy-hUh"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="IXG-7Z-DEL">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="IXG-7Z-DEL" customClass="SettingsTableViewCell" customModule="Noise" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="260" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IXG-7Z-DEL" id="zbA-oV-uUd">
@@ -1590,6 +1605,7 @@ We hope you like Noise as much as we do.</string>
                                                             </constraints>
                                                         </imageView>
                                                     </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="hb7-RI-H4h" firstAttribute="leading" secondItem="vVO-uQ-OMX" secondAttribute="leading" constant="16" id="0es-0h-Yqa"/>
                                                         <constraint firstItem="hb7-RI-H4h" firstAttribute="centerY" secondItem="vVO-uQ-OMX" secondAttribute="centerY" id="B0a-mN-8nO"/>
@@ -1599,6 +1615,7 @@ We hope you like Noise as much as we do.</string>
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="vVO-uQ-OMX" secondAttribute="trailing" id="2Oj-Ff-tT9"/>
                                                 <constraint firstItem="vVO-uQ-OMX" firstAttribute="top" secondItem="zbA-oV-uUd" secondAttribute="top" id="UCH-dM-KcZ"/>
@@ -1606,12 +1623,13 @@ We hope you like Noise as much as we do.</string>
                                                 <constraint firstItem="vVO-uQ-OMX" firstAttribute="leading" secondItem="zbA-oV-uUd" secondAttribute="leading" id="mcV-hM-kH1"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="About Noise" footerTitle=" " id="swW-9f-MYe">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="3cL-jk-xdB">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="3cL-jk-xdB" customClass="SettingsTableViewCell" customModule="Noise" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="360" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3cL-jk-xdB" id="9cW-0w-AbI">
@@ -1642,8 +1660,9 @@ We hope you like Noise as much as we do.</string>
                                                 <constraint firstAttribute="trailing" secondItem="npQ-Hn-ndW" secondAttribute="trailing" id="mo7-o3-sL9"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Gdi-IO-4Wd">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Gdi-IO-4Wd" customClass="SettingsTableViewCell" customModule="Noise" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="404" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gdi-IO-4Wd" id="Cac-nY-AZi">
@@ -1674,8 +1693,9 @@ We hope you like Noise as much as we do.</string>
                                                 <constraint firstAttribute="trailing" secondItem="Yju-ba-ZtB" secondAttribute="trailing" id="gj4-1D-Nhs"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="beb-Om-0Ex">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="beb-Om-0Ex" customClass="SettingsTableViewCell" customModule="Noise" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="448" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="beb-Om-0Ex" id="269-cG-3ch">
@@ -1715,8 +1735,9 @@ We hope you like Noise as much as we do.</string>
                                                 <constraint firstItem="2Q9-RI-r8s" firstAttribute="leading" secondItem="269-cG-3ch" secondAttribute="leading" id="whG-ht-rdp"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="aej-R4-aux">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="aej-R4-aux" customClass="SettingsTableViewCell" customModule="Noise" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="492" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aej-R4-aux" id="gFr-nP-WXp">
@@ -1756,8 +1777,9 @@ We hope you like Noise as much as we do.</string>
                                                 <constraint firstAttribute="trailing" secondItem="jPn-af-tWj" secondAttribute="trailing" id="ueb-Vv-4mJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="CMT-nt-SAj">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="CMT-nt-SAj" customClass="SettingsTableViewCell" customModule="Noise" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="536" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CMT-nt-SAj" id="NIc-r8-ETQ">
@@ -1797,12 +1819,13 @@ We hope you like Noise as much as we do.</string>
                                                 <constraint firstItem="9h5-7x-OM3" firstAttribute="leading" secondItem="NIc-r8-ETQ" secondAttribute="leading" id="otg-fl-6xi"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Other Apps" id="69a-2o-IcU">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="80" id="fHD-h6-gXv">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="80" id="fHD-h6-gXv" customClass="SettingsTableViewCell" customModule="Noise" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="636" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fHD-h6-gXv" id="BZM-n6-fWm">
@@ -1858,8 +1881,9 @@ We hope you like Noise as much as we do.</string>
                                                 <constraint firstItem="uKk-cy-EaK" firstAttribute="leading" secondItem="BZM-n6-fWm" secondAttribute="leading" id="vHs-jT-mPO"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="80" id="t1C-el-s2H">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="80" id="t1C-el-s2H" customClass="SettingsTableViewCell" customModule="Noise" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="716" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t1C-el-s2H" id="2Kn-iy-YjE">
@@ -1913,8 +1937,9 @@ We hope you like Noise as much as we do.</string>
                                                 <constraint firstItem="cqM-dg-OPk" firstAttribute="leading" secondItem="2Kn-iy-YjE" secondAttribute="leading" id="RWH-JV-PS1"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="80" id="7IO-Uz-9Ff">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="80" id="7IO-Uz-9Ff" customClass="SettingsTableViewCell" customModule="Noise" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="796" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7IO-Uz-9Ff" id="Y92-eO-7ng">
@@ -1968,6 +1993,7 @@ We hope you like Noise as much as we do.</string>
                                                 <constraint firstAttribute="bottom" secondItem="sbJ-0h-Be7" secondAttribute="bottom" id="rhN-pE-zLs"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -3247,7 +3273,7 @@ Below you can find the licenses to all third-party resources used in this app. C
                                 <view key="tableFooterView" contentMode="scaleToFill" id="9t8-iV-eBB">
                                     <rect key="frame" x="0.0" y="136" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InAppPurchaseTableViewCell" rowHeight="40" id="Dx6-FJ-fXM" customClass="InAppPurchaseTableViewCell" customModule="Noise" customModuleProvider="target">
@@ -3284,7 +3310,7 @@ Below you can find the licenses to all third-party resources used in this app. C
                                                             </userDefinedRuntimeAttributes>
                                                         </button>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="CMl-bQ-Tea" firstAttribute="centerY" secondItem="sPn-xp-OGK" secondAttribute="centerY" id="NcD-fc-ZP2"/>
                                                         <constraint firstItem="CMl-bQ-Tea" firstAttribute="leading" secondItem="Sct-aa-2bg" secondAttribute="trailing" constant="10" id="bj4-qc-95X"/>
@@ -3294,6 +3320,7 @@ Below you can find the licenses to all third-party resources used in this app. C
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="sPn-xp-OGK" secondAttribute="bottom" id="0xQ-7R-D06"/>
                                                 <constraint firstItem="sPn-xp-OGK" firstAttribute="top" secondItem="hmf-W8-I7g" secondAttribute="top" id="22x-Rd-yhS"/>
@@ -3301,6 +3328,7 @@ Below you can find the licenses to all third-party resources used in this app. C
                                                 <constraint firstAttribute="trailing" secondItem="sPn-xp-OGK" secondAttribute="trailing" constant="16" id="Xvg-p9-c9Q"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="inAppPurchaseButton" destination="CMl-bQ-Tea" id="DML-2c-SZc"/>
                                             <outlet property="inAppPurchaseTitleLabel" destination="Sct-aa-2bg" id="fRt-Wu-doe"/>
@@ -3323,7 +3351,7 @@ Below you can find the licenses to all third-party resources used in this app. C
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="kwP-2K-hYP" firstAttribute="centerY" secondItem="R4N-CN-mMK" secondAttribute="centerY" id="6MK-W7-RsL"/>
                                                         <constraint firstItem="kwP-2K-hYP" firstAttribute="leading" secondItem="R4N-CN-mMK" secondAttribute="leading" id="FNf-eE-8Xy"/>
@@ -3332,6 +3360,7 @@ Below you can find the licenses to all third-party resources used in this app. C
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="R4N-CN-mMK" secondAttribute="bottom" id="7Dl-vs-eFS"/>
                                                 <constraint firstItem="R4N-CN-mMK" firstAttribute="top" secondItem="AFh-ur-PzT" secondAttribute="top" id="AeM-Bn-bY6"/>
@@ -3339,6 +3368,7 @@ Below you can find the licenses to all third-party resources used in this app. C
                                                 <constraint firstAttribute="trailing" secondItem="R4N-CN-mMK" secondAttribute="trailing" constant="16" id="fZc-O3-lEN"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="restorePurchasesLabel" destination="kwP-2K-hYP" id="9xW-1e-K1L"/>
                                         </connections>

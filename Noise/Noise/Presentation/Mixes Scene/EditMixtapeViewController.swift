@@ -9,7 +9,7 @@
 import UIKit
 import YPImagePicker
 
-class EditMixtapeViewController: UIViewController {
+class EditMixtapeViewController: UIViewController, InterfaceThemeSubscriber {
     
     static let soundReuseIdentifier = "SoundTableViewCell"
     static let addSoundReuseIdentifier = "AddSoundTableViewCell"
@@ -68,6 +68,8 @@ class EditMixtapeViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        Injection.themePublisher.subscribeToThemeUpdates(self)
     }
     
     override func viewWillAppear(_ animated: Bool) {

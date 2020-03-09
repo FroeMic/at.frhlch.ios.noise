@@ -38,6 +38,10 @@ class InAppPurchasesViewController: UIViewController {
     func applyTheme() {
         let theme = Injection.theme
         
+        connectionView.backgroundColor = theme.backgroundColor
+        view.backgroundColor = theme.backgroundColor
+        tableView.backgroundColor = theme.backgroundColor
+        
         // Show the Navigation Bar
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.navigationBar.barTintColor = UIColor.white
@@ -122,13 +126,13 @@ extension InAppPurchasesViewController: UITableViewDelegate {
     
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        let selectedTheme = Injection.theme
+        let theme = Injection.theme
         if let headerView = view as? UITableViewHeaderFooterView {
-            headerView.textLabel?.textColor =  selectedTheme.textColor.withAlphaComponent(0.8)
-            headerView.tintColor = .white
+            headerView.textLabel?.textColor =  theme.textColor.withAlphaComponent(0.8)
+            headerView.tintColor = theme.backgroundColor
         }
     }
-    
+
 }
 
 // MARK: UITableViewDataSource

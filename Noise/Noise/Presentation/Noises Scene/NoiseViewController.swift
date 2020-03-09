@@ -9,7 +9,7 @@
 import UIKit
 import Instructions
 
-class NoiseViewController: UIViewController {
+class NoiseViewController: UIViewController, InterfaceThemeSubscriber {
     
     static let soundReuseIdentifier = "SoundTableViewCell"
     
@@ -50,6 +50,7 @@ class NoiseViewController: UIViewController {
         
         playPauseButton?.tintColor = Injection.theme.tintColor
         updatePlayPauseButton()
+        Injection.themePublisher.subscribeToThemeUpdates(self)
     }
     
     override func viewWillAppear(_ animated: Bool) {

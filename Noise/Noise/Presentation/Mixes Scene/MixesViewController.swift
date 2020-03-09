@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MixesViewController: UIViewController {
+class MixesViewController: UIViewController, InterfaceThemeSubscriber {
     
     static let mixesReuseIdentifier = "MixtapeTableViewCell"
     static let createMixtapeReuseIdentifier = "CreateMixtapeTableViewCell"
@@ -37,6 +37,8 @@ class MixesViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        Injection.themePublisher.subscribeToThemeUpdates(self)
     }
     
     override func viewWillAppear(_ animated: Bool) {

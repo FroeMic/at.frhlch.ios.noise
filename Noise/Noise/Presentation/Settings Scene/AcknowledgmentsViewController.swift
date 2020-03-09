@@ -66,14 +66,14 @@ class AcknowledgmentsViewController: UIViewController {
         
         // Show the Navigation Bar
         navigationController?.setNavigationBarHidden(false, animated: true)
-        navigationController?.navigationBar.barTintColor = UIColor.white
+        navigationController?.navigationBar.barTintColor = theme.backgroundColor
         navigationController?.navigationBar.tintColor = theme.tintColor
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigationController?.navigationBar.shadowImage = UIImage()
 
-        view.backgroundColor = .white
+        view.backgroundColor = theme.backgroundColor
 
-        tableView.backgroundColor = .white
+        tableView.backgroundColor = theme.backgroundColor
         titleLabel.textColor = theme.textColor
         textView.textColor = theme.textColor
     }

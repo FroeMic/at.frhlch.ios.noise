@@ -8,12 +8,13 @@
 
 import UIKit
 
-class SettingsViewController: UITableViewController {
+class SettingsViewController: UITableViewController, InterfaceThemeSubscriber {
 
     static let showAcknowledgementSegueIdentifier = "showAcknowledgementScene"
     static let showAboutSegueIdentifier = "showAboutScene"
     static let showInDataPrivacySegueIdentifier = "showDataPrivacyScene"
     static let showInAppPurchaseIdentifier = "showInAppPurchasesScene"
+    
     
     @IBOutlet var keepDisplayActiveTableViewCell: UITableViewCell!
     @IBOutlet var keepDisplayActiveLabel: UILabel!
@@ -54,6 +55,7 @@ class SettingsViewController: UITableViewController {
     @IBOutlet var dataPrivacyChevronImageview: UIImageView!
     
     private var headerView: UIView?
+    private var titleLabel: UILabel?
     
     // MARK: Lifecycle
     override func viewDidLoad() {
@@ -62,6 +64,8 @@ class SettingsViewController: UITableViewController {
         title = "Settings"
         
         setupHeaderView()
+        
+        Injection.themePublisher.subscribeToThemeUpdates(self)
     }
     
     
@@ -71,8 +75,7 @@ class SettingsViewController: UITableViewController {
         keepDisplayActiveSwitch.isOn = Injection.settingsRepository.getKeepDisplayActive()
         playAutomaticallySwitch.isOn = Injection.settingsRepository.getAutoPlay()
         playInBackgroundSwitch.isOn = Injection.settingsRepository.getBackgroundPlay()
-        
-        UIApplication.shared.statusBarView?.backgroundColor = .white
+        NightModeSwitch.isOn = (Injection.settingsRepository.getSelectedTheme() ?? "") == DarkTheme.key
         
         UIView.animate(withDuration: 0.2, animations: {
             self.headerView?.alpha = 1.0
@@ -144,7 +147,8 @@ class SettingsViewController: UITableViewController {
 
         titleView.addConstraints(constraints)
         
-        headerView = titleView
+        self.titleLabel = titleLabel
+        self.headerView = titleView
 
     }
 
@@ -153,10 +157,31 @@ class SettingsViewController: UITableViewController {
         
         // Show the Navigation Bar
         navigationController?.setNavigationBarHidden(false, animated: true)
-        navigationController?.navigationBar.barTintColor = UIColor.white
-        navigationController?.navigationBar.tintColor = theme.tintColor
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        navigationController?.navigationBar.shadowImage = UIImage()
+        
+        titleLabel?.textColor = theme.textColor
+        headerView?.backgroundColor = theme.backgroundColor
+        view.backgroundColor = theme.backgroundColor
+        tableView.backgroundColor = theme.backgroundColor
+        
+        UIApplication.shared.statusBarView?.backgroundColor = theme.backgroundColor
+        
+        if #available(iOS 13.0, *) {
+            let navBarAppearance = UINavigationBarAppearance()
+            navBarAppearance.configureWithOpaqueBackground()
+            navBarAppearance.titleTextAttributes = [.foregroundColor: theme.textColor]
+            navBarAppearance.largeTitleTextAttributes = [.foregroundColor: theme.textColor]
+            navBarAppearance.backgroundColor = theme.backgroundColor
+            navigationController?.navigationBar.standardAppearance = navBarAppearance
+            navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+        } else {
+            // Fallback on earlier versions
+            UIApplication.shared.statusBarStyle = theme.statusBarStyle
+        }
+        
+        navigationController?.navigationBar.backgroundColor = theme.backgroundColor
+        navigationController?.navigationBar.barStyle = theme.barStyle
+        navigationController?.navigationBar.tintColor = theme.textColor
+        navigationController?.navigationBar.barTintColor = theme.backgroundColor
         
         keepDisplayActiveTableViewCell.selectionStyle = .none
         keepDisplayActiveTableViewCell.backgroundColor = .white
@@ -217,6 +242,8 @@ class SettingsViewController: UITableViewController {
             dataPrivacyChevronImageview.image = coloredImage
             dataPrivacyChevronImageview.tintColor = theme.textColor
         }
+        
+        tableView.reloadData()
     }
     
     @IBAction func keepDisplayActiveSwitchValueChanged(_ sender: Any) {
@@ -239,6 +266,7 @@ class SettingsViewController: UITableViewController {
         } else {
             Injection.settingsRepository.setSelectedTheme(key: DefaultTheme.key)
         }
+        Injection.themePublisher.notifySubscribers()
     }
     
 }
@@ -246,18 +274,18 @@ class SettingsViewController: UITableViewController {
 extension SettingsViewController {
     
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        let selectedTheme = Injection.theme
+        let theme = Injection.theme
         if let headerView = view as? UITableViewHeaderFooterView {
-            headerView.textLabel?.textColor =  selectedTheme.textColor.withAlphaComponent(0.8)
-            headerView.tintColor = .white
+            headerView.textLabel?.textColor =  theme.textColor.withAlphaComponent(0.8)
+            headerView.tintColor = theme.backgroundColor
         }
     }
     
     override func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
-        let selectedTheme = Injection.theme
+        let theme = Injection.theme
         if let footerView = view as? UITableViewHeaderFooterView {
-            footerView.textLabel?.textColor = selectedTheme.textColor.withAlphaComponent(0.8)
-            footerView.tintColor = .white
+            footerView.textLabel?.textColor = theme.textColor.withAlphaComponent(0.8)
+            footerView.tintColor = theme.backgroundColor
         }
     }
     
@@ -287,7 +315,7 @@ extension SettingsViewController {
                 self.present(alertController, animated: true)
             }
             
-            if indexPath.row == 3 {
+            if indexPath.row == 4 {
                 performSegue(withIdentifier: SettingsViewController.showInAppPurchaseIdentifier, sender: nil)
             }
         }

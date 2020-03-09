@@ -21,6 +21,9 @@
 		273361DB215B7F0D006D696B /* OnboardingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273361DA215B7F0D006D696B /* OnboardingDelegate.swift */; };
 		273361DD215B84BC006D696B /* TintedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273361DC215B84BC006D696B /* TintedImageView.swift */; };
 		275B0E4E2163C63800DD6520 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B0E4D2163C63800DD6520 /* PrivacyViewController.swift */; };
+		276DAEEF2416A95C002BC917 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276DAEEE2416A95C002BC917 /* SettingsTableViewCell.swift */; };
+		276DAEF12416B290002BC917 /* InterfaceThemeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276DAEF02416B290002BC917 /* InterfaceThemeDelegate.swift */; };
+		276DAEF32416B2C3002BC917 /* InterfaceThemeSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276DAEF22416B2C3002BC917 /* InterfaceThemeSubscriber.swift */; };
 		2774C51A21592482009972F3 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774C51921592482009972F3 /* DownloadManager.swift */; };
 		2774C51C21592633009972F3 /* SoundDownloadTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774C51B21592633009972F3 /* SoundDownloadTask.swift */; };
 		2774C51E21592A22009972F3 /* SoundSyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774C51D21592A22009972F3 /* SoundSyncManager.swift */; };
@@ -142,6 +145,9 @@
 		273361DA215B7F0D006D696B /* OnboardingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDelegate.swift; sourceTree = "<group>"; };
 		273361DC215B84BC006D696B /* TintedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TintedImageView.swift; sourceTree = "<group>"; };
 		275B0E4D2163C63800DD6520 /* PrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
+		276DAEEE2416A95C002BC917 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		276DAEF02416B290002BC917 /* InterfaceThemeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceThemeDelegate.swift; sourceTree = "<group>"; };
+		276DAEF22416B2C3002BC917 /* InterfaceThemeSubscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceThemeSubscriber.swift; sourceTree = "<group>"; };
 		2774C51921592482009972F3 /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
 		2774C51B21592633009972F3 /* SoundDownloadTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundDownloadTask.swift; sourceTree = "<group>"; };
 		2774C51D21592A22009972F3 /* SoundSyncManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSyncManager.swift; sourceTree = "<group>"; };
@@ -377,6 +383,7 @@
 				27C753882158EBEC00905EFD /* LicenseTableViewCell.swift */,
 				27F69167215FB35300468EEC /* InAppPurchaseTableViewCell.swift */,
 				27F6916D215FC58F00468EEC /* RestorePurchasesTableViewCell.swift */,
+				276DAEEE2416A95C002BC917 /* SettingsTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -386,6 +393,8 @@
 			children = (
 				27D188FD2153712D00F5968F /* CoreDataModel.xcdatamodeld */,
 				27B106012135D8570070A109 /* InterfaceTheme.swift */,
+				276DAEF22416B2C3002BC917 /* InterfaceThemeSubscriber.swift */,
+				276DAEF02416B290002BC917 /* InterfaceThemeDelegate.swift */,
 				2774C51F21596A99009972F3 /* SettingsRepository.swift */,
 				27C753822158E56F00905EFD /* LicenseProvider.swift */,
 				27BD8D7B213C476A003DF079 /* MixtapeRepository.swift */,
@@ -751,6 +760,7 @@
 				271D158F21406FBB00F5B2DC /* MixesViewController.swift in Sources */,
 				27F6916C215FB4C300468EEC /* InAppPurchase.swift in Sources */,
 				272C0C92215010C300C22ED0 /* AddSoundTableViewCell.swift in Sources */,
+				276DAEF32416B2C3002BC917 /* InterfaceThemeSubscriber.swift in Sources */,
 				27D0BFA9215021BC00B27FF0 /* SoundSelectionTableViewCell.swift in Sources */,
 				27D025F9215F97F10052B23F /* ForceTouchGestureRecognizer.swift in Sources */,
 				27C753812158E55A00905EFD /* SettingsViewController.swift in Sources */,
@@ -760,6 +770,7 @@
 				27C911E32160314100DA6204 /* Sequence+stableSorted.swift in Sources */,
 				27F6916E215FC58F00468EEC /* RestorePurchasesTableViewCell.swift in Sources */,
 				27B106052135D8BC0070A109 /* Injection.swift in Sources */,
+				276DAEF12416B290002BC917 /* InterfaceThemeDelegate.swift in Sources */,
 				2774C52221596B9C009972F3 /* UDSettingsRepository.swift in Sources */,
 				27D189122155338F00F5968F /* Filemanager+Filepath.swift in Sources */,
 				2774C52721597690009972F3 /* AboutViewController.swift in Sources */,
@@ -792,6 +803,7 @@
 				2704A7A82416872F00BFC24D /* DarkTheme.swift in Sources */,
 				27BA64CF215B75050080D87D /* OnboardingPresentationController.swift in Sources */,
 				27BD8D65213C1ADA003DF079 /* Mixtape.swift in Sources */,
+				276DAEEF2416A95C002BC917 /* SettingsTableViewCell.swift in Sources */,
 				2774C51C21592633009972F3 /* SoundDownloadTask.swift in Sources */,
 				2774C52B21598304009972F3 /* UpdateManager.swift in Sources */,
 				27F52F082143C7BC0030102C /* SoundToolbar.swift in Sources */,

@@ -23,4 +23,5 @@ protocol InterfaceTheme {
     
     var barStyle: UIBarStyle { get }
     var statusBarStyle: UIStatusBarStyle { get }
+    
 }

@@ -10,7 +10,9 @@ import Foundation
 
 class Injection {
     
-    static let theme: InterfaceTheme = ThemeProxyProvider()
+    static private let themeProvider = ThemeProxyProvider()
+    static let theme: InterfaceTheme = themeProvider
+    static let themePublisher: InterfaceThemeDelegate = themeProvider
     static let feedback: HapticFeedbackManager = HapticFeedbackManager()
     
     static let settingsRepository: SettingsRepository = UDSettingsRepository()

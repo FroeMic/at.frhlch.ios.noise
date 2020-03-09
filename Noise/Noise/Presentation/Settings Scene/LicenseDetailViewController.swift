@@ -28,12 +28,13 @@ class LicenseDetailViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
         applyTheme()
         
         // Show the Navigation Bar
         navigationController?.setNavigationBarHidden(false, animated: animated)
+        
+        super.viewWillAppear(animated)
+
     }
     
     override func viewWillLayoutSubviews() {
@@ -48,13 +49,16 @@ class LicenseDetailViewController: UIViewController {
         
         // Show the Navigation Bar
         navigationController?.setNavigationBarHidden(false, animated: true)
-        navigationController?.navigationBar.barTintColor = UIColor.white
+        navigationController?.navigationBar.barTintColor = theme.backgroundColor
         navigationController?.navigationBar.tintColor = theme.tintColor
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigationController?.navigationBar.shadowImage = UIImage()
 
 
-        view.backgroundColor = .white
+        view.backgroundColor = theme.backgroundColor
+        licenseTitleLabel.backgroundColor = theme.backgroundColor
+        licenseUrlTextView.backgroundColor = theme.backgroundColor
+        licenseUrlTextView.backgroundColor = theme.backgroundColor
         licenseTitleLabel.textColor = theme.textColor
         licenseUrlTextView.textColor = theme.textColor
         licenseUrlTextView.tintColor = theme.tintColor

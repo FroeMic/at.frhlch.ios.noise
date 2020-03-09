@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SoundSelectionViewController: UIViewController {
+class SoundSelectionViewController: UIViewController, InterfaceThemeSubscriber {
     
     static let soundSelectionCellReuseIdentifier = "SoundSelectionTableViewCell"
     var hasRegisteredForceTouchGesturerecognizer: Bool = false
@@ -37,6 +37,8 @@ class SoundSelectionViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.allowsMultipleSelection = true
+        
+        Injection.themePublisher.subscribeToThemeUpdates(self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
