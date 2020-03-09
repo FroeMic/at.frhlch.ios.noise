@@ -49,6 +49,7 @@ class InAppPurchasesViewController: UIViewController {
     
     private func refreshTableView() {
         otherInAppPurchases = [
+            InAppPurchase(id: "at.frhlch.ios.noise.test", title: "test", priceString: StoreKitManager.shared.backgroundPlayPrice),
             InAppPurchase(id: "at.frhlch.ios.noise.play_in_background", title: "Play In Background", priceString: StoreKitManager.shared.backgroundPlayPrice),
             InAppPurchase(id: "at.frhlch.ios.noise.premium", title: "Noise Premium", priceString: StoreKitManager.shared.premiumPrice)
             

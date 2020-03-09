@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Li-DE-tTZ">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Li-DE-tTZ">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PSi-bI-rvY">
-                                <rect key="frame" x="0.0" y="80" width="375" height="35"/>
+                                <rect key="frame" x="0.0" y="59.5" width="375" height="35"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5x-Bl-MVC">
                                         <rect key="frame" x="324" y="0.0" width="35" height="35"/>
@@ -45,16 +43,16 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preview All Sounds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcP-gf-Os2">
-                                <rect key="frame" x="16" y="86" width="359" height="23"/>
+                                <rect key="frame" x="16" y="65.5" width="359" height="23"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ePM-VX-fPx">
-                                <rect key="frame" x="0.0" y="125" width="375" height="433"/>
+                                <rect key="frame" x="0.0" y="104.5" width="375" height="453.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="QcX-af-7hf">
-                                    <rect key="frame" x="0.0" y="148" width="375" height="98"/>
+                                    <rect key="frame" x="0.0" y="176" width="375" height="98"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
@@ -63,49 +61,49 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1yD-AR-Au3" id="m8v-FI-ic6">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B1t-aw-fDN" customClass="RoundedImageView" customModule="Noise" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="12" width="95.5" height="95.5"/>
+                                                    <rect key="frame" x="10" y="12" width="96" height="96"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="B1t-aw-fDN" secondAttribute="height" multiplier="1:1" id="gLo-pj-9qL"/>
                                                     </constraints>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dkc-Pn-UvN">
-                                                    <rect key="frame" x="115.5" y="12" width="249.5" height="95.5"/>
+                                                    <rect key="frame" x="116" y="12" width="249" height="96"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yQX-dv-dXB">
-                                                            <rect key="frame" x="0.0" y="0.0" width="249.5" height="95.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="249" height="96"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="333-zw-OeG">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="249.5" height="23"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="249" height="23"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="axE-jZ-cFX">
-                                                                    <rect key="frame" x="0.0" y="23" width="249.5" height="17"/>
+                                                                    <rect key="frame" x="0.0" y="23" width="249" height="17"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wU9-1o-Zu1">
-                                                                    <rect key="frame" x="0.0" y="40" width="249.5" height="55.5"/>
+                                                                    <rect key="frame" x="0.0" y="40" width="249" height="56"/>
                                                                     <subviews>
                                                                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="IAs-Bt-wWU">
-                                                                            <rect key="frame" x="24" y="25.5" width="201.5" height="31"/>
+                                                                            <rect key="frame" x="24" y="26" width="201" height="31"/>
                                                                             <color key="minimumTrackTintColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                         </slider>
                                                                         <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_sound_full" translatesAutoresizingMaskIntoConstraints="NO" id="A1j-We-bby">
-                                                                            <rect key="frame" x="233.5" y="32.5" width="16" height="16"/>
+                                                                            <rect key="frame" x="233" y="33" width="16" height="16"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="16" id="cQu-YT-zQM"/>
                                                                                 <constraint firstAttribute="height" constant="16" id="nYS-15-kJ0"/>
                                                                             </constraints>
                                                                         </imageView>
                                                                         <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_sound_mute" translatesAutoresizingMaskIntoConstraints="NO" id="dQq-69-iWH">
-                                                                            <rect key="frame" x="0.0" y="32.5" width="16" height="16"/>
+                                                                            <rect key="frame" x="0.0" y="33" width="16" height="16"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="16" id="7gd-22-5MW"/>
                                                                                 <constraint firstAttribute="width" constant="16" id="Kax-D2-3um"/>
@@ -133,11 +131,11 @@
                                                     </constraints>
                                                 </view>
                                                 <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Lv-4F-jrE">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                                                     <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </view>
                                                 <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_purchase" translatesAutoresizingMaskIntoConstraints="NO" id="tzR-Ou-5LV" customClass="RoundedImageView" customModule="Noise" customModuleProvider="target">
-                                                    <rect key="frame" x="34" y="36" width="47.5" height="47.5"/>
+                                                    <rect key="frame" x="34" y="36" width="48" height="48"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -172,13 +170,13 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Noise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J6f-aA-Uac">
-                                <rect key="frame" x="16" y="30" width="292" height="34"/>
+                                <rect key="frame" x="16" y="10" width="292" height="33.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_noise" translatesAutoresizingMaskIntoConstraints="NO" id="OxZ-HI-F5K">
-                                <rect key="frame" x="324" y="29.5" width="35" height="35"/>
+                                <rect key="frame" x="324" y="9.5" width="35" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="35" id="Ykf-sY-YOs"/>
                                     <constraint firstAttribute="height" constant="35" id="eiZ-yq-0Tu"/>
@@ -224,11 +222,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view alpha="0.14999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JZn-TL-FRn">
-                                <rect key="frame" x="0.0" y="10" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="28H-Z9-cbx">
-                                <rect key="frame" x="0.0" y="10" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="BhE-YM-ie9">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -462,7 +460,7 @@
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2z5-d0-bKh">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="687"/>
+                                <rect key="frame" x="0.0" y="-10" width="375" height="687"/>
                                 <subviews>
                                     <view alpha="0.15000000596046448" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HDx-IE-9kQ">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="687"/>
@@ -560,7 +558,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bqQ-nh-EPa">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Noise" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RbD-gu-hPD">
                                         <rect key="frame" x="20" y="30" width="335" height="38.5"/>
@@ -569,17 +567,17 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c85-le-Cgz">
-                                        <rect key="frame" x="40" y="97" width="295" height="550"/>
+                                        <rect key="frame" x="40" y="100" width="295" height="567"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_artwork" translatesAutoresizingMaskIntoConstraints="NO" id="Djg-aX-tGp">
-                                                <rect key="frame" x="99" y="0.0" width="97" height="97"/>
+                                                <rect key="frame" x="97.5" y="0.0" width="100" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="128" id="CiP-h5-ubn"/>
                                                     <constraint firstAttribute="width" secondItem="Djg-aX-tGp" secondAttribute="height" multiplier="1:1" id="mBa-YV-nLm"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N90-fN-Ycr">
-                                                <rect key="frame" x="0.0" y="107" width="295" height="248.5"/>
+                                                <rect key="frame" x="0.0" y="110" width="295" height="248.5"/>
                                                 <string key="text">Noise combines delightful design with high-quality audio to give you the most user-friendly ambient noise app on the App Store.
 
 We took a lot of time to make sure all the little things work right. And we promise to continue to do so. If you have feedback, we will be listening in the comment section of the App Store.
@@ -590,7 +588,7 @@ We hope you like Noise as much as we do.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1w-wY-OY7" customClass="PrimaryButton" customModule="Noise" customModuleProvider="target">
-                                                <rect key="frame" x="10" y="505" width="275" height="45"/>
+                                                <rect key="frame" x="10" y="522" width="275" height="45"/>
                                                 <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="aJv-jk-VFG"/>
@@ -685,7 +683,7 @@ We hope you like Noise as much as we do.</string>
                         <viewLayoutGuide key="safeArea" id="4AC-dL-5V1"/>
                     </view>
                     <connections>
-                        <segue destination="5uO-Z0-kYL" kind="presentation" identifier="presentMainApp" modalTransitionStyle="crossDissolve" id="BZK-qj-wY3"/>
+                        <segue destination="5uO-Z0-kYL" kind="presentation" identifier="presentMainApp" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="BZK-qj-wY3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d4E-9c-Wkq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -723,10 +721,10 @@ We hope you like Noise as much as we do.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rU7-Qy-SfH">
-                                <rect key="frame" x="0.0" y="117.5" width="375" height="440.5"/>
+                                <rect key="frame" x="0.0" y="97.5" width="375" height="460.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="KL6-nB-E3K">
-                                    <rect key="frame" x="0.0" y="268" width="375" height="98"/>
+                                    <rect key="frame" x="0.0" y="296" width="375" height="98"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
@@ -735,14 +733,14 @@ We hope you like Noise as much as we do.</string>
                                         <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8MA-VJ-XkN" id="bYS-3R-Thi">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IeC-O0-UwX">
-                                                    <rect key="frame" x="10" y="12" width="95.5" height="95.5"/>
+                                                    <rect key="frame" x="10" y="12" width="96" height="96"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_add" translatesAutoresizingMaskIntoConstraints="NO" id="85s-PU-V97" userLabel="Placeholder View" customClass="RoundedImageView" customModule="Noise" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="95.5" height="95.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
                                                         </imageView>
                                                     </subviews>
                                                     <constraints>
@@ -754,7 +752,7 @@ We hope you like Noise as much as we do.</string>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Mixtape" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vob-is-1Wl">
-                                                    <rect key="frame" x="115.5" y="46.5" width="249.5" height="27"/>
+                                                    <rect key="frame" x="116" y="46.5" width="249" height="27"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -778,17 +776,17 @@ We hope you like Noise as much as we do.</string>
                                         <rect key="frame" x="0.0" y="148" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WLg-ah-URZ" id="r3W-cd-xjb">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jta-YY-coa">
-                                                    <rect key="frame" x="10" y="12" width="95.5" height="95.5"/>
+                                                    <rect key="frame" x="10" y="12" width="96" height="96"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_mixtape" translatesAutoresizingMaskIntoConstraints="NO" id="bCe-r5-lDd" userLabel="Placeholder View" customClass="RoundedImageView" customModule="Noise" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="95.5" height="95.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VqN-gI-qYz" customClass="RoundedImageView" customModule="Noise" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="95.5" height="95.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
                                                         </imageView>
                                                     </subviews>
                                                     <constraints>
@@ -804,22 +802,22 @@ We hope you like Noise as much as we do.</string>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oJZ-h6-Pq7">
-                                                    <rect key="frame" x="115.5" y="12" width="249.5" height="95.5"/>
+                                                    <rect key="frame" x="116" y="12" width="249" height="96"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mixtape Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3X3-zh-w4V">
-                                                            <rect key="frame" x="0.0" y="0.0" width="249.5" height="27"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="249" height="27"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4S-nq-wpK">
-                                                            <rect key="frame" x="0.0" y="27" width="249.5" height="17"/>
+                                                            <rect key="frame" x="0.0" y="27" width="249" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9s-Yf-u5w">
-                                                            <rect key="frame" x="0.0" y="44" width="249.5" height="17"/>
+                                                            <rect key="frame" x="0.0" y="44" width="249" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -864,13 +862,13 @@ We hope you like Noise as much as we do.</string>
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mixtapes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1l-Wm-HkM">
-                                <rect key="frame" x="16" y="74" width="292" height="33.5"/>
+                                <rect key="frame" x="16" y="54" width="292" height="33.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_noise" translatesAutoresizingMaskIntoConstraints="NO" id="zAV-2L-TVY">
-                                <rect key="frame" x="324" y="73.5" width="35" height="35"/>
+                                <rect key="frame" x="324" y="53.5" width="35" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="35" id="OAH-Lr-Fsd"/>
                                     <constraint firstAttribute="height" constant="35" id="rRI-Ov-9Vr"/>
@@ -910,7 +908,7 @@ We hope you like Noise as much as we do.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rrw-aA-7o7">
-                                <rect key="frame" x="10" y="74" width="355" height="120"/>
+                                <rect key="frame" x="10" y="54" width="355" height="120"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bd0-Lv-jEE">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
@@ -961,19 +959,18 @@ We hope you like Noise as much as we do.</string>
                                         <rect key="frame" x="130" y="0.0" width="225" height="120"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Titel" placeholder="New Mixtape" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oyE-8o-q6X">
-                                                <rect key="frame" x="0.0" y="0.0" width="190" height="34"/>
-                                                <nil key="textColor"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="190" height="35"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit amet ..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="b08-7g-Ypu">
-                                                <rect key="frame" x="0.0" y="34" width="225" height="86"/>
+                                                <rect key="frame" x="0.0" y="35" width="225" height="85"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zb4-xx-hab">
-                                                <rect key="frame" x="190" y="-0.5" width="35" height="35"/>
+                                                <rect key="frame" x="190" y="0.0" width="35" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="35" id="daf-OG-oDU"/>
                                                     <constraint firstAttribute="height" constant="35" id="q2W-c2-YCi"/>
@@ -1019,10 +1016,10 @@ We hope you like Noise as much as we do.</string>
                                 </variation>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="m9f-eB-c0X">
-                                <rect key="frame" x="0.0" y="214" width="375" height="344"/>
+                                <rect key="frame" x="0.0" y="194" width="375" height="364"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="fvA-1p-GQl">
-                                    <rect key="frame" x="0.0" y="178" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="206" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
@@ -1031,11 +1028,11 @@ We hope you like Noise as much as we do.</string>
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Q2y-Bz-fOL" id="nx9-gR-f0i">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Sounds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UW3-uY-9Hw">
-                                                    <rect key="frame" x="45" y="19.5" width="305" height="21"/>
+                                                    <rect key="frame" x="45" y="20" width="305" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1065,29 +1062,29 @@ We hope you like Noise as much as we do.</string>
                                         <rect key="frame" x="0.0" y="88" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lME-JT-hdt" id="bzh-SV-XVa">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="grI-Ae-yHX" customClass="RoundedImageView" customModule="Noise" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="9" width="71.5" height="71.5"/>
+                                                    <rect key="frame" x="10" y="9" width="72" height="72"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="grI-Ae-yHX" secondAttribute="height" multiplier="1:1" id="guf-3d-bxC"/>
                                                     </constraints>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WMu-sl-GJq">
-                                                    <rect key="frame" x="91.5" y="9" width="273.5" height="71.5"/>
+                                                    <rect key="frame" x="92" y="9" width="273" height="72"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="c5z-Ki-XyT">
-                                                            <rect key="frame" x="0.0" y="0.0" width="273.5" height="71.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="273" height="72"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kaY-Vg-aD2">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="273.5" height="23"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="273" height="22"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2W-SI-jwK">
-                                                                    <rect key="frame" x="0.0" y="23" width="273.5" height="0.0"/>
+                                                                    <rect key="frame" x="0.0" y="22" width="273" height="0.0"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" id="gV5-lc-nCu"/>
                                                                     </constraints>
@@ -1096,21 +1093,21 @@ We hope you like Noise as much as we do.</string>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EWl-6t-eIK">
-                                                                    <rect key="frame" x="0.0" y="23" width="273.5" height="48.5"/>
+                                                                    <rect key="frame" x="0.0" y="22" width="273" height="50"/>
                                                                     <subviews>
                                                                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Pjv-7U-pZ8">
-                                                                            <rect key="frame" x="24" y="18.5" width="225.5" height="31"/>
+                                                                            <rect key="frame" x="24" y="20" width="225" height="31"/>
                                                                             <color key="minimumTrackTintColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                         </slider>
                                                                         <imageView userInteractionEnabled="NO" alpha="0.30000001192092896" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_sound_full" translatesAutoresizingMaskIntoConstraints="NO" id="ub8-E6-B1s">
-                                                                            <rect key="frame" x="257.5" y="25.5" width="16" height="16"/>
+                                                                            <rect key="frame" x="257" y="27" width="16" height="16"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="16" id="PhC-0r-u5M"/>
                                                                                 <constraint firstAttribute="width" constant="16" id="zfI-p5-JhQ"/>
                                                                             </constraints>
                                                                         </imageView>
                                                                         <imageView userInteractionEnabled="NO" alpha="0.30000001192092896" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_sound_mute" translatesAutoresizingMaskIntoConstraints="NO" id="kl1-Ai-6mf">
-                                                                            <rect key="frame" x="0.0" y="25.5" width="16" height="16"/>
+                                                                            <rect key="frame" x="0.0" y="27" width="16" height="16"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="16" id="DGO-kb-80D"/>
                                                                                 <constraint firstAttribute="height" constant="16" id="UGT-gM-Pv8"/>
@@ -1138,11 +1135,11 @@ We hope you like Noise as much as we do.</string>
                                                     </constraints>
                                                 </view>
                                                 <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5hl-Ri-olw">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                                     <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </view>
                                                 <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_purchase" translatesAutoresizingMaskIntoConstraints="NO" id="opB-OC-11R" customClass="RoundedImageView" customModule="Noise" customModuleProvider="target">
-                                                    <rect key="frame" x="28" y="27" width="35.5" height="35.5"/>
+                                                    <rect key="frame" x="28" y="27" width="36" height="36"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -1208,14 +1205,14 @@ We hope you like Noise as much as we do.</string>
             <objects>
                 <viewController id="6iY-mb-k8w" customClass="SoundSelectionViewController" customModule="Noise" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="raF-f7-nDL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hRb-a8-Ne1">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="56" width="375" height="591"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="73L-bL-klQ">
-                                    <rect key="frame" x="0.0" y="88" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="116" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
@@ -1224,29 +1221,29 @@ We hope you like Noise as much as we do.</string>
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fZN-hK-Uta" id="jJG-Pn-EUy">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N3Y-Ti-Hgo" customClass="RoundedImageView" customModule="Noise" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="6" width="47.5" height="47.5"/>
+                                                    <rect key="frame" x="10" y="6" width="48" height="48"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="N3Y-Ti-Hgo" secondAttribute="height" multiplier="1:1" id="sRt-Sg-idf"/>
                                                     </constraints>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fVc-Lx-nAn">
-                                                    <rect key="frame" x="67.5" y="10" width="247.5" height="40"/>
+                                                    <rect key="frame" x="68" y="10" width="247" height="40"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lXc-Rz-GoC">
-                                                            <rect key="frame" x="0.0" y="0.0" width="247.5" height="40"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="247" height="40"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNA-lh-iAk">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="247.5" height="23"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="247" height="23"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5DV-MZ-dA4">
-                                                                    <rect key="frame" x="0.0" y="23" width="247.5" height="17"/>
+                                                                    <rect key="frame" x="0.0" y="23" width="247" height="17"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -1269,11 +1266,11 @@ We hope you like Noise as much as we do.</string>
                                                     </constraints>
                                                 </imageView>
                                                 <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b3U-kz-Bug">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                                     <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </view>
                                                 <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_purchase" translatesAutoresizingMaskIntoConstraints="NO" id="vcy-mj-kmt" customClass="CircleImageView" customModule="Noise" customModuleProvider="target">
-                                                    <rect key="frame" x="15" y="10.5" width="38" height="38.5"/>
+                                                    <rect key="frame" x="15" y="11" width="38" height="38"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -1345,7 +1342,7 @@ We hope you like Noise as much as we do.</string>
                     <tabBarItem key="tabBarItem" title="Mixtapes" image="ic_mixtape" id="Wfu-LM-7Ey"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="S8x-KA-mI8">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1363,7 +1360,7 @@ We hope you like Noise as much as we do.</string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xoH-zD-3ae" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KN9-0b-wrt">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1385,7 +1382,7 @@ We hope you like Noise as much as we do.</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="60"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="diL-gj-8KE">
-                            <rect key="frame" x="0.0" y="804" width="375" height="44"/>
+                            <rect key="frame" x="0.0" y="860" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </view>
                         <sections>
@@ -1395,14 +1392,14 @@ We hope you like Noise as much as we do.</string>
                             <tableViewSection headerTitle="General" footerTitle=" " id="g83-Hb-kL9">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="sGn-IZ-TNW">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="84" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sGn-IZ-TNW" id="SHR-cr-uk6">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="60t-zq-u49">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keep Display Active" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wic-Pj-o1G">
                                                             <rect key="frame" x="16" y="11.5" width="290" height="21"/>
@@ -1411,7 +1408,7 @@ We hope you like Noise as much as we do.</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j3A-fA-kFe">
-                                                            <rect key="frame" x="316" y="10" width="51" height="23.5"/>
+                                                            <rect key="frame" x="316" y="10" width="51" height="24"/>
                                                             <connections>
                                                                 <action selector="keepDisplayActiveSwitchValueChanged:" destination="qlR-ty-DOb" eventType="valueChanged" id="1Ck-mo-6XP"/>
                                                                 <action selector="playAutomaticallySwitchValueChanged:" destination="qlR-ty-DOb" eventType="valueChanged" id="cZo-QU-B5o"/>
@@ -1437,14 +1434,14 @@ We hope you like Noise as much as we do.</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="dUM-KU-QnC">
-                                        <rect key="frame" x="0.0" y="100" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="128" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dUM-KU-QnC" id="sFp-s3-fcI">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iFp-ew-ef5">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play Automatically" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNx-e2-7WA">
                                                             <rect key="frame" x="16" y="11.5" width="290" height="21"/>
@@ -1453,7 +1450,7 @@ We hope you like Noise as much as we do.</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v3n-4L-yiC">
-                                                            <rect key="frame" x="316" y="10" width="51" height="23.5"/>
+                                                            <rect key="frame" x="316" y="10" width="51" height="24"/>
                                                             <connections>
                                                                 <action selector="playAutomaticallySwitchValueChanged:" destination="qlR-ty-DOb" eventType="valueChanged" id="EtZ-Vm-0fe"/>
                                                             </connections>
@@ -1478,14 +1475,14 @@ We hope you like Noise as much as we do.</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="L9e-T3-2AO">
-                                        <rect key="frame" x="0.0" y="144" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="172" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L9e-T3-2AO" id="WYw-TP-yzn">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eRL-cL-NEc">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play in Background" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiS-jW-Sif">
                                                             <rect key="frame" x="16" y="11.5" width="290" height="21"/>
@@ -1494,7 +1491,7 @@ We hope you like Noise as much as we do.</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vSe-rg-XBR">
-                                                            <rect key="frame" x="316" y="10" width="51" height="23.5"/>
+                                                            <rect key="frame" x="316" y="10" width="51" height="24"/>
                                                             <connections>
                                                                 <action selector="playInBackgroundSwitchValueChanged:" destination="qlR-ty-DOb" eventType="valueChanged" id="a5o-6t-vd9"/>
                                                             </connections>
@@ -1519,14 +1516,14 @@ We hope you like Noise as much as we do.</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="IXG-7Z-DEL">
-                                        <rect key="frame" x="0.0" y="188" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="216" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IXG-7Z-DEL" id="zbA-oV-uUd">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vVO-uQ-OMX">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In-App Purchases" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hb7-RI-H4h">
                                                             <rect key="frame" x="16" y="11.5" width="323" height="21"/>
@@ -1564,14 +1561,14 @@ We hope you like Noise as much as we do.</string>
                             <tableViewSection headerTitle="About Noise" footerTitle=" " id="swW-9f-MYe">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="3cL-jk-xdB">
-                                        <rect key="frame" x="0.0" y="288" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="316" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3cL-jk-xdB" id="9cW-0w-AbI">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="npQ-Hn-ndW">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate Noise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVA-O0-LjP">
                                                             <rect key="frame" x="16" y="11.5" width="349" height="21"/>
@@ -1596,14 +1593,14 @@ We hope you like Noise as much as we do.</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Gdi-IO-4Wd">
-                                        <rect key="frame" x="0.0" y="332" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="360" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gdi-IO-4Wd" id="Cac-nY-AZi">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yju-ba-ZtB">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Onboarding" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAR-x0-lmk">
                                                             <rect key="frame" x="16" y="11.5" width="349" height="21"/>
@@ -1628,14 +1625,14 @@ We hope you like Noise as much as we do.</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="beb-Om-0Ex">
-                                        <rect key="frame" x="0.0" y="376" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="404" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="beb-Om-0Ex" id="269-cG-3ch">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Q9-RI-r8s">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZrR-Dj-lQq">
                                                             <rect key="frame" x="16" y="11.5" width="323" height="21"/>
@@ -1669,14 +1666,14 @@ We hope you like Noise as much as we do.</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="aej-R4-aux">
-                                        <rect key="frame" x="0.0" y="420" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="448" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aej-R4-aux" id="gFr-nP-WXp">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jPn-af-tWj">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Acknowledgements" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qQ2-2h-IQB">
                                                             <rect key="frame" x="16" y="11.5" width="323" height="21"/>
@@ -1710,14 +1707,14 @@ We hope you like Noise as much as we do.</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="CMT-nt-SAj">
-                                        <rect key="frame" x="0.0" y="464" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="492" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CMT-nt-SAj" id="NIc-r8-ETQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9h5-7x-OM3">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Privacy Statement" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EeM-hz-BYj">
                                                             <rect key="frame" x="16" y="11.5" width="323" height="21"/>
@@ -1755,17 +1752,17 @@ We hope you like Noise as much as we do.</string>
                             <tableViewSection headerTitle="Other Apps" id="69a-2o-IcU">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="80" id="fHD-h6-gXv">
-                                        <rect key="frame" x="0.0" y="564" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="592" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fHD-h6-gXv" id="BZM-n6-fWm">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uKk-cy-EaK">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_ping" translatesAutoresizingMaskIntoConstraints="NO" id="Dao-LS-r0h" customClass="RoundedImageView" customModule="Noise" customModuleProvider="target">
-                                                            <rect key="frame" x="16" y="8" width="63.5" height="63.5"/>
+                                                            <rect key="frame" x="16" y="8" width="64" height="64"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="Dao-LS-r0h" secondAttribute="height" multiplier="1:1" id="4T6-fa-3co"/>
                                                             </constraints>
@@ -1776,13 +1773,13 @@ We hope you like Noise as much as we do.</string>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ping - Network Monitor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bn4-Up-ax0">
-                                                            <rect key="frame" x="89.5" y="8" width="275.5" height="19.5"/>
+                                                            <rect key="frame" x="90" y="8" width="275" height="19.5"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZl-uh-6Sa">
-                                                            <rect key="frame" x="89.5" y="27.5" width="275.5" height="43"/>
+                                                            <rect key="frame" x="90" y="27.5" width="275" height="43"/>
                                                             <string key="text">Ping devices on any IP network and troubleshoot connection issues.
 </string>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -1812,17 +1809,17 @@ We hope you like Noise as much as we do.</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="80" id="t1C-el-s2H">
-                                        <rect key="frame" x="0.0" y="644" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="672" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t1C-el-s2H" id="2Kn-iy-YjE">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cqM-dg-OPk">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_tip" translatesAutoresizingMaskIntoConstraints="NO" id="5o6-mT-mrE" customClass="RoundedImageView" customModule="Noise" customModuleProvider="target">
-                                                            <rect key="frame" x="16" y="8" width="63.5" height="63.5"/>
+                                                            <rect key="frame" x="16" y="8" width="64" height="64"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="5o6-mT-mrE" secondAttribute="height" multiplier="1:1" id="Oyj-AG-ehp"/>
                                                             </constraints>
@@ -1833,13 +1830,13 @@ We hope you like Noise as much as we do.</string>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip – Tip Calculator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fG0-CE-qb5">
-                                                            <rect key="frame" x="89.5" y="8" width="275.5" height="19.5"/>
+                                                            <rect key="frame" x="90" y="8" width="275" height="19.5"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An emoji fueled tip calculator – Paying restaurant bills has probably never been more fun." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCf-Gs-MSI">
-                                                            <rect key="frame" x="89.5" y="27.5" width="275.5" height="43"/>
+                                                            <rect key="frame" x="90" y="27.5" width="275" height="43"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -1867,17 +1864,17 @@ We hope you like Noise as much as we do.</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="80" id="7IO-Uz-9Ff">
-                                        <rect key="frame" x="0.0" y="724" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="752" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7IO-Uz-9Ff" id="Y92-eO-7ng">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sbJ-0h-Be7">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_dice" translatesAutoresizingMaskIntoConstraints="NO" id="8XU-0P-xdE" customClass="RoundedImageView" customModule="Noise" customModuleProvider="target">
-                                                            <rect key="frame" x="16" y="8" width="63.5" height="63.5"/>
+                                                            <rect key="frame" x="16" y="8" width="64" height="64"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="8XU-0P-xdE" secondAttribute="height" multiplier="1:1" id="XZV-D8-qu3"/>
                                                             </constraints>
@@ -1888,13 +1885,13 @@ We hope you like Noise as much as we do.</string>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dice – A Minimal Digital Dice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R62-Y5-K0E">
-                                                            <rect key="frame" x="89.5" y="8" width="275.5" height="19.5"/>
+                                                            <rect key="frame" x="90" y="8" width="275" height="19.5"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A beautifully designed minimalistic digital dice app. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCA-ha-1Px">
-                                                            <rect key="frame" x="89.5" y="27.5" width="275.5" height="29"/>
+                                                            <rect key="frame" x="90" y="27.5" width="275" height="29"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -1976,7 +1973,7 @@ We hope you like Noise as much as we do.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VcN-XP-wNI">
-                                <rect key="frame" x="7" y="174" width="361" height="404"/>
+                                <rect key="frame" x="7" y="154" width="361" height="424"/>
                                 <string key="text">Noise was created from my desire to have a simple ambient noise app I could use for meditation.
 I was rather disappointed by the design and functionality offered by existing apps so I set out to create it myself.
 Since then I have designed and developed the app and curated many high-quality sounds.
@@ -1996,7 +1993,7 @@ Built with ❤️ and ☕️ in Munich.
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_artwork" translatesAutoresizingMaskIntoConstraints="NO" id="qBQ-Ew-abc">
-                                <rect key="frame" x="147.5" y="79" width="80" height="80"/>
+                                <rect key="frame" x="147.5" y="59" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="80" id="Ec2-5x-cJo"/>
                                     <constraint firstAttribute="width" secondItem="qBQ-Ew-abc" secondAttribute="height" multiplier="1:1" id="vjA-SP-Dt2"/>
@@ -2032,7 +2029,7 @@ Built with ❤️ and ☕️ in Munich.
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nMK-Nw-Efs">
-                                <rect key="frame" x="7" y="74" width="361" height="504"/>
+                                <rect key="frame" x="7" y="54" width="361" height="524"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">PRIVACY NOTICE
@@ -2378,13 +2375,13 @@ Cg
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Third-Party Licenses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djo-1c-7zd">
-                                <rect key="frame" x="10" y="234" width="355" height="21"/>
+                                <rect key="frame" x="10" y="214" width="355" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBG-bo-3OF">
-                                <rect key="frame" x="7" y="74" width="361" height="150"/>
+                                <rect key="frame" x="7" y="54" width="361" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="r4q-jc-Rto"/>
                                 </constraints>
@@ -2395,11 +2392,11 @@ Below you can find the licenses to all third-party resources used in this app. C
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Oz-gm-Ep0">
-                                <rect key="frame" x="0.0" y="265" width="375" height="353"/>
+                                <rect key="frame" x="0.0" y="245" width="375" height="373"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="60"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="YcD-VF-VGE">
-                                    <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="100" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </view>
                                 <prototypes>
@@ -2487,13 +2484,13 @@ Below you can find the licenses to all third-party resources used in this app. C
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f80-Q4-gdM">
-                                <rect key="frame" x="10" y="74" width="355" height="20.5"/>
+                                <rect key="frame" x="10" y="54" width="355" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Url" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kfu-xZ-6Km">
-                                <rect key="frame" x="7" y="104.5" width="361" height="30"/>
+                                <rect key="frame" x="7" y="84.5" width="361" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="1Vu-jJ-wpA"/>
                                 </constraints>
@@ -2502,7 +2499,7 @@ Below you can find the licenses to all third-party resources used in this app. C
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="License" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="paR-bj-bY4">
-                                <rect key="frame" x="7" y="134.5" width="361" height="423.5"/>
+                                <rect key="frame" x="7" y="114.5" width="361" height="443.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
@@ -2541,7 +2538,7 @@ Below you can find the licenses to all third-party resources used in this app. C
                     <tabBarItem key="tabBarItem" title="Settings" image="ic_settings" id="Hmi-Kc-NeF"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QWf-nw-4dd">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -2562,7 +2559,7 @@ Below you can find the licenses to all third-party resources used in this app. C
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uLC-yG-nu2">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enjoy Ambient Noise" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFs-IS-fwC">
                                         <rect key="frame" x="20" y="30" width="335" height="38.5"/>
@@ -2571,10 +2568,10 @@ Below you can find the licenses to all third-party resources used in this app. C
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ARp-S3-C0r">
-                                        <rect key="frame" x="40" y="103.5" width="295" height="543.5"/>
+                                        <rect key="frame" x="40" y="106.5" width="295" height="560.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Clz-1y-ol7" customClass="PrimaryButton" customModule="Noise" customModuleProvider="target">
-                                                <rect key="frame" x="10" y="498.5" width="275" height="45"/>
+                                                <rect key="frame" x="10" y="515.5" width="275" height="45"/>
                                                 <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="19V-8H-S7y"/>
@@ -2753,7 +2750,7 @@ Below you can find the licenses to all third-party resources used in this app. C
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AbZ-iM-tdt">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best Of All, It's Free" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBK-dE-hcz">
                                         <rect key="frame" x="20" y="30" width="335" height="38.5"/>
@@ -2762,10 +2759,10 @@ Below you can find the licenses to all third-party resources used in this app. C
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QdD-DB-MIU">
-                                        <rect key="frame" x="40" y="103.5" width="295" height="543.5"/>
+                                        <rect key="frame" x="40" y="106.5" width="295" height="560.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ypN-KH-Gsy" customClass="PrimaryButton" customModule="Noise" customModuleProvider="target">
-                                                <rect key="frame" x="10" y="498.5" width="275" height="45"/>
+                                                <rect key="frame" x="10" y="515.5" width="275" height="45"/>
                                                 <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="Qyt-wf-iKl"/>
@@ -2944,7 +2941,7 @@ Below you can find the licenses to all third-party resources used in this app. C
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKv-Kd-vxZ">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Additional Content" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jh5-1K-fFO">
                                         <rect key="frame" x="20" y="30" width="335" height="38.5"/>
@@ -2953,10 +2950,10 @@ Below you can find the licenses to all third-party resources used in this app. C
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UHq-4C-LxE">
-                                        <rect key="frame" x="40" y="103.5" width="295" height="543.5"/>
+                                        <rect key="frame" x="40" y="106.5" width="295" height="560.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABM-BT-WKY" customClass="PrimaryButton" customModule="Noise" customModuleProvider="target">
-                                                <rect key="frame" x="10" y="498.5" width="275" height="45"/>
+                                                <rect key="frame" x="10" y="515.5" width="275" height="45"/>
                                                 <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="O6V-Tg-whC"/>
@@ -3174,10 +3171,10 @@ Below you can find the licenses to all third-party resources used in this app. C
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ma3-8x-ZJF">
-                                <rect key="frame" x="0.0" y="64" width="375" height="494"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="514"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="9t8-iV-eBB">
-                                    <rect key="frame" x="0.0" y="108" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="136" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
@@ -3186,14 +3183,14 @@ Below you can find the licenses to all third-party resources used in this app. C
                                         <rect key="frame" x="0.0" y="28" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dx6-FJ-fXM" id="hmf-W8-I7g">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="39.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sPn-xp-OGK">
-                                                    <rect key="frame" x="16" y="0.0" width="343" height="39.5"/>
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="40"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sct-aa-2bg">
-                                                            <rect key="frame" x="0.0" y="10" width="253" height="19.5"/>
+                                                            <rect key="frame" x="0.0" y="10.5" width="253" height="19.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -3242,11 +3239,11 @@ Below you can find the licenses to all third-party resources used in this app. C
                                         <rect key="frame" x="0.0" y="68" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FHZ-Na-0fz" id="AFh-ur-PzT">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="39.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R4N-CN-mMK">
-                                                    <rect key="frame" x="16" y="0.0" width="343" height="39.5"/>
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="40"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restore Purchases" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwP-2K-hYP">
                                                             <rect key="frame" x="0.0" y="10" width="343" height="20"/>
@@ -3278,20 +3275,20 @@ Below you can find the licenses to all third-party resources used in this app. C
                                 </prototypes>
                             </tableView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pbz-I4-ItD">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
                                 <subviews>
                                     <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7LO-Ih-Sxo">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.34999999403953552" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connecting to the App Store..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ip4-tr-TIX">
-                                        <rect key="frame" x="20" y="176.5" width="335" height="23"/>
+                                        <rect key="frame" x="20" y="185.5" width="335" height="23"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ixa-F8-foM">
-                                        <rect key="frame" x="157.5" y="219.5" width="60" height="60"/>
+                                        <rect key="frame" x="157.5" y="228.5" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="7EP-n6-vvl"/>
                                             <constraint firstAttribute="width" constant="60" id="Vz3-MZ-XeJ"/>
@@ -3335,29 +3332,29 @@ Below you can find the licenses to all third-party resources used in this app. C
         </scene>
     </scenes>
     <resources>
-        <image name="app_dice" width="512" height="512"/>
-        <image name="app_ping" width="1024" height="1024"/>
-        <image name="app_tip" width="512" height="512"/>
-        <image name="ic_add_sound" width="75" height="75"/>
-        <image name="ic_ambient_noise" width="75" height="75"/>
-        <image name="ic_app_store" width="75" height="75"/>
-        <image name="ic_camera_picker" width="75" height="75"/>
-        <image name="ic_chevron_right" width="75" height="75"/>
-        <image name="ic_headphones" width="75" height="75"/>
-        <image name="ic_infinity" width="75" height="75"/>
-        <image name="ic_mixtape" width="75" height="75"/>
-        <image name="ic_no_ads" width="75" height="75"/>
-        <image name="ic_noise" width="75" height="75"/>
-        <image name="ic_noise_plus" width="75" height="75"/>
-        <image name="ic_play_round" width="75" height="75"/>
-        <image name="ic_purchase" width="75" height="75"/>
-        <image name="ic_settings" width="75" height="75"/>
-        <image name="ic_sound_full" width="75" height="75"/>
-        <image name="ic_sound_mute" width="75" height="75"/>
-        <image name="ic_tune" width="75" height="75"/>
-        <image name="ic_vip" width="75" height="75"/>
-        <image name="placeholder_add" width="1464" height="1464"/>
+        <image name="app_dice" width="341.33334350585938" height="341.33334350585938"/>
+        <image name="app_ping" width="341.33334350585938" height="341.33334350585938"/>
+        <image name="app_tip" width="341.33334350585938" height="341.33334350585938"/>
+        <image name="ic_add_sound" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="ic_ambient_noise" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="ic_app_store" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="ic_camera_picker" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="ic_chevron_right" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="ic_headphones" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="ic_infinity" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="ic_mixtape" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="ic_no_ads" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="ic_noise" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="ic_noise_plus" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="ic_play_round" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="ic_purchase" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="ic_settings" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="ic_sound_full" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="ic_sound_mute" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="ic_tune" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="ic_vip" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="placeholder_add" width="488" height="488"/>
         <image name="placeholder_artwork" width="512" height="512"/>
-        <image name="placeholder_mixtape" width="1464" height="1464"/>
+        <image name="placeholder_mixtape" width="488" height="488"/>
     </resources>
 </document>

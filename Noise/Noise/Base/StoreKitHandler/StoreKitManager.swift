@@ -9,8 +9,44 @@
 import Foundation
 import SwiftyStoreKit
 import Kvitto
+import StoreKit
 
-class StoreKitManager {
+class StoreKitManager: NSObject, SKProductsRequestDelegate  {
+    
+    var productRequest: SKProductsRequest!
+
+    // Fetch information about your products from the App Store.
+    func fetchProducts(matchingIdentifiers identifiers: [String]) {
+        // Create a set for your product identifiers.
+        let productIdentifiers = Set(identifiers)
+        // Initialize the product request with the above set.
+        productRequest = SKProductsRequest(productIdentifiers: productIdentifiers)
+        productRequest.delegate = self
+        
+        // Send the request to the App Store.
+        productRequest.start()
+    }
+    
+    // Get the App Store's response
+    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+        // No purchase will take place if there are no products available for sale.
+        // As a result, StoreKit won't prompt your customer to authenticate their purchase.
+        debugPrint(response.invalidProductIdentifiers)
+        if response.products.count > 0 {
+            // Use availableProducts to populate your UI.
+            let availableProducts = response.products
+            debugPrint(availableProducts.map { $0.localizedTitle })
+            
+            buyTestProduct(product: response.products[0])
+        }
+    }
+
+    func buyTestProduct(product: SKProduct) {
+        
+        let payment = SKPayment(product: product)
+        SKPaymentQueue.default().add(payment)
+    }
+
     
     static let shared = StoreKitManager()
     
@@ -23,13 +59,16 @@ class StoreKitManager {
     
     var purchaseFinishedBlock: ((TransactionState)->())?
     
-    private init() {
+    private override init() {
+        super.init()
         updateNoisePremiumPrice()
         updatebackgroundPlayPrice()
+        
+        fetchProducts(matchingIdentifiers: ["at.frhlch.ios.noise.test"])
+        
     }
     
     func registerTransactionObserver() {
-        
         SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
             for purchase in purchases {
                 switch purchase.transaction.transactionState {
@@ -42,6 +81,7 @@ class StoreKitManager {
                     self.purchaseFinishedBlock?(.purchased)
                     // Unlock content
                 case .failed, .purchasing, .deferred:
+                    print("failed")
                     break // do nothing
                 }
             }
@@ -81,7 +121,7 @@ class StoreKitManager {
                 self.purchaseFinishedBlock?(.purchased)
                 completion?(true)
             case .error(let error):
-                debugPrint("\(error)")
+                    debugPrint("\(error)")
                 completion?(false)
             }
         }

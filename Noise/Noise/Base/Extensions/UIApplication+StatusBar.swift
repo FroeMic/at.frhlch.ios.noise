@@ -10,10 +10,15 @@ import UIKit
 
 extension UIApplication {
     var statusBarView: UIView? {
-        if responds(to: Selector(("statusBar"))) {
+        if #available(iOS 13.0, *) {
+            let statusBar = UIView(frame: UIApplication.shared.keyWindow?.windowScene?.statusBarManager?.statusBarFrame ?? CGRect.zero)
+             UIApplication.shared.keyWindow?.addSubview(statusBar)
+            return statusBar
+        } else if responds(to: Selector(("statusBar"))) {
             return value(forKey: "statusBar") as? UIView
-        }
-        return nil
+         } else {
+            return nil
+         }
     }
 }
 

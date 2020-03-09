@@ -15,7 +15,7 @@ class PlayingView: UIView {
     private static var jsonAnimation: JSON?
     private static var currentColor: UIColor?
     
-    private var animationView: LOTAnimationView?
+    private var animationView: AnimationView?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -38,15 +38,18 @@ class PlayingView: UIView {
             updateColor(color)
         }
         
-        let animationView: LOTAnimationView
+        let animationView: AnimationView
         if let json = PlayingView.jsonAnimation?.dictionaryObject {
-            animationView = LOTAnimationView(json: json)
+            // TODO: fix this
+//            animationView = AnimationView(json: json)
+            let animation = try! JSONDecoder().decode(Animation.self, from: PlayingView.jsonAnimation!.rawData())
+            animationView = AnimationView(animation: animation)
         } else {
-            animationView = LOTAnimationView(name: "playing")
+            animationView = AnimationView(name: "playing")
         }
 
         animationView.contentMode = .scaleAspectFit
-        animationView.loopAnimation = true
+        animationView.loopMode = .loop
         animationView.animationSpeed = 1.3
         animationView.frame = bounds
         addSubview(animationView)

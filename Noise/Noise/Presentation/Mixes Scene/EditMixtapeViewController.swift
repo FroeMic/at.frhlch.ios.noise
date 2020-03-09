@@ -192,6 +192,7 @@ class EditMixtapeViewController: UIViewController {
                 
                 self.mixtape?.image = photo.image
                 self.saveMixtape()
+                self.updateView()
             }
             picker.dismiss(animated: true, completion: nil)
         }
@@ -209,12 +210,25 @@ class EditMixtapeViewController: UIViewController {
     private func initPicker() {
         if self.pickerConfig == nil {
             var config = YPImagePickerConfiguration()
+            config.library.options = nil
+            config.library.onlySquare = false
+            config.library.isSquareByDefault = true
+            config.library.onlySquare  = true
+            config.library.minWidthForItem = nil
+            config.library.mediaType = YPlibraryMediaType.photo
+            config.library.defaultMultipleSelection = false
+            config.library.maxNumberOfItems = 1
+            config.library.minNumberOfItems = 1
+            config.library.numberOfItemsInRow = 4
+            config.library.spacingBetweenItems = 1.0
+            config.library.skipSelectionsGallery = false
+            config.library.preselectedItems = nil
+            
             config.library.mediaType = .photo
             config.library.onlySquare  = true
             config.onlySquareImagesFromCamera = true
             config.targetImageSize = .cappedTo(size: 500)
             config.usesFrontCamera = true
-            config.showsFilters = true
             config.shouldSaveNewPicturesToAlbum = false
             config.screens = [.library]
             config.startOnScreen = .library

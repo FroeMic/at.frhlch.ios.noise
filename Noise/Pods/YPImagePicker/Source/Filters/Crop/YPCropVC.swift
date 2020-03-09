@@ -48,7 +48,7 @@ class YPCropVC: UIViewController {
                                            style: .plain,
                                            target: self,
                                            action: #selector(cancel))
-        cancelButton.tintColor = .white
+        cancelButton.tintColor = .ypLabel
         
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         
@@ -56,7 +56,6 @@ class YPCropVC: UIViewController {
                                            style: .plain,
                                            target: self,
                                            action: #selector(done))
-        saveButton.tintColor = .white
         v.toolbar.items = [cancelButton, flexibleSpace, saveButton]
     }
     
@@ -92,11 +91,11 @@ class YPCropVC: UIViewController {
                                     y: yCrop * scaleRatio,
                                     width: widthCrop * scaleRatio,
                                     height: heightCrop * scaleRatio)
-        if let imageRef = image.cgImage?.cropping(to: scaledCropRect) {
+        if let cgImage = image.toCIImage()?.toCGImage(),
+            let imageRef = cgImage.cropping(to: scaledCropRect) {
             let croppedImage = UIImage(cgImage: imageRef)
             didFinishCropping?(croppedImage)
         }
-
     }
 }
 
@@ -118,6 +117,8 @@ extension YPCropVC: UIGestureRecognizerDelegate {
             pinchGestureEnded()
         case .cancelled, .failed, .possible:
             ()
+        @unknown default:
+            fatalError()
         }
         // Reset the pinch scale.
         sender.scale = 1.0

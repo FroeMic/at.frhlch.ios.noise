@@ -5,8 +5,8 @@ target 'Noise' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
     pod 'AFDateHelper', :git => 'https://github.com/FroeMic/DateHelper.git'
-    pod 'lottie-ios'
     pod 'YPImagePicker'
+    pod 'lottie-ios'
     pod 'SwiftyJSON', '~> 4.0'
     pod 'SugarRecord/CoreData'
     pod 'Appirater'

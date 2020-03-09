@@ -16,8 +16,8 @@ class LibraryMediaManager {
     internal var fetchResult: PHFetchResult<PHAsset>!
     internal var previousPreheatRect: CGRect = .zero
     internal var imageManager: PHCachingImageManager?
-    internal var selectedAsset: PHAsset!
     internal var exportTimer: Timer?
+    internal var currentExportSessions: [AVAssetExportSession] = []
     
     func initialize() {
         imageManager = PHCachingImageManager()
@@ -68,12 +68,13 @@ class LibraryMediaManager {
     func fetchVideoUrlAndCrop(for videoAsset: PHAsset, cropRect: CGRect, callback: @escaping (URL) -> Void) {
         let videosOptions = PHVideoRequestOptions()
         videosOptions.isNetworkAccessAllowed = true
+        videosOptions.deliveryMode = .highQualityFormat
         imageManager?.requestAVAsset(forVideo: videoAsset, options: videosOptions) { asset, _, _ in
             do {
                 guard let asset = asset else { print("⚠️ PHCachingImageManager >>> Don't have the asset"); return }
                 
                 let assetComposition = AVMutableComposition()
-                let trackTimeRange = CMTimeRangeMake(kCMTimeZero, asset.duration)
+                let trackTimeRange = CMTimeRangeMake(start: CMTime.zero, duration: asset.duration)
                 
                 // 1. Inserting audio and video tracks in composition
                 
@@ -85,35 +86,31 @@ class LibraryMediaManager {
                                             return
                                             
                 }
-                guard let audioTrack = asset.tracks(withMediaType: AVMediaType.audio).first,
+                if let audioTrack = asset.tracks(withMediaType: AVMediaType.audio).first,
                     let audioCompositionTrack = assetComposition
                         .addMutableTrack(withMediaType: AVMediaType.audio,
-                                         preferredTrackID: kCMPersistentTrackID_Invalid) else {
-                                            print("⚠️ PHCachingImageManager >>> Problems with audio track")
-                                            return
+                                         preferredTrackID: kCMPersistentTrackID_Invalid) {
+                    try audioCompositionTrack.insertTimeRange(trackTimeRange, of: audioTrack, at: CMTime.zero)
                 }
                 
-                try videoCompositionTrack.insertTimeRange(trackTimeRange, of: videoTrack, at: kCMTimeZero)
-                try audioCompositionTrack.insertTimeRange(trackTimeRange, of: audioTrack, at: kCMTimeZero)
+                try videoCompositionTrack.insertTimeRange(trackTimeRange, of: videoTrack, at: CMTime.zero)
                 
-                // 2. Create the instructions
+                // Layer Instructions
+                let layerInstructions = AVMutableVideoCompositionLayerInstruction(assetTrack: videoCompositionTrack)
+                var transform = videoTrack.preferredTransform
+                transform.tx -= cropRect.minX
+                transform.ty -= cropRect.minY
+                layerInstructions.setTransform(transform, at: CMTime.zero)
                 
+                // CompositionInstruction
                 let mainInstructions = AVMutableVideoCompositionInstruction()
                 mainInstructions.timeRange = trackTimeRange
-                
-                // 3. Adding the layer instructions. Transforming
-                
-                let layerInstructions = AVMutableVideoCompositionLayerInstruction(assetTrack: videoCompositionTrack)
-                layerInstructions.setTransform(videoTrack.getTransform(cropRect: cropRect), at: kCMTimeZero)
-                layerInstructions.setOpacity(1.0, at: kCMTimeZero)
                 mainInstructions.layerInstructions = [layerInstructions]
                 
-                // 4. Create the main composition and add the instructions
-                
-                let videoComposition = AVMutableVideoComposition()
-                videoComposition.renderSize = cropRect.size
+                // Video Composition
+                let videoComposition = AVMutableVideoComposition(propertiesOf: asset)
                 videoComposition.instructions = [mainInstructions]
-                videoComposition.frameDuration = CMTimeMake(1, 30)
+                videoComposition.renderSize = cropRect.size // needed? 
                 
                 // 5. Configuring export session
                 
@@ -126,19 +123,22 @@ class LibraryMediaManager {
                     .appendingUniquePathComponent(pathExtension: YPConfig.video.fileType.fileExtension)
                 
                 // 6. Exporting
-                
                 DispatchQueue.main.async {
-                self.exportTimer = Timer.scheduledTimer(timeInterval: 0.1,
-                                                        target: self,
-                                                        selector: #selector(self.onTickExportTimer),
-                                                        userInfo: exportSession,
-                                                        repeats: true)
+                    self.exportTimer = Timer.scheduledTimer(timeInterval: 0.1,
+                                                            target: self,
+                                                            selector: #selector(self.onTickExportTimer),
+                                                            userInfo: exportSession,
+                                                            repeats: true)
                 }
                 
+                self.currentExportSessions.append(exportSession!)
                 exportSession?.exportAsynchronously(completionHandler: {
                     DispatchQueue.main.async {
                         if let url = exportSession?.outputURL, exportSession?.status == .completed {
                             callback(url)
+                            if let index = self.currentExportSessions.firstIndex(of:exportSession!) {
+                                self.currentExportSessions.remove(at: index)
+                            }
                         } else {
                             let error = exportSession?.error
                             print("error exporting video \(String(describing: error))")
@@ -154,7 +154,9 @@ class LibraryMediaManager {
     @objc func onTickExportTimer(sender: Timer) {
         if let exportSession = sender.userInfo as? AVAssetExportSession {
             if let v = v {
-                v.updateProgress(exportSession.progress)
+                if exportSession.progress > 0 {
+                    v.updateProgress(exportSession.progress)
+                }
             }
             
             if exportSession.progress > 0.99 {
@@ -162,6 +164,12 @@ class LibraryMediaManager {
                 v?.updateProgress(0)
                 self.exportTimer = nil
             }
+        }
+    }
+    
+    func forseCancelExporting() {
+        for s in self.currentExportSessions {
+            s.cancelExport()
         }
     }
 }

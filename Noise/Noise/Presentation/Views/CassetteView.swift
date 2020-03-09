@@ -11,7 +11,7 @@ import Lottie
 
 class CassetteView: UIView {
     
-    private var animationView: LOTAnimationView?
+    private var animationView: AnimationView?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,9 +27,9 @@ class CassetteView: UIView {
     
     private func setupAnimationView() {
         
-        let animationView = LOTAnimationView(name: "cassette")
+        let animationView = AnimationView(name: "cassette")
         animationView.contentMode = .scaleAspectFit
-        animationView.loopAnimation = true
+        animationView.loopMode = .loop
         animationView.animationSpeed = 1.0
         animationView.frame = bounds
         addSubview(animationView)

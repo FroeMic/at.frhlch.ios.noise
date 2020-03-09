@@ -1,0 +1,17 @@
+${PODS_ROOT}/Target Support Files/Pods-Noise/Pods-Noise-frameworks.sh
+${BUILT_PRODUCTS_DIR}/AFDateHelper/AFDateHelper.framework
+${BUILT_PRODUCTS_DIR}/Appirater/Appirater.framework
+${BUILT_PRODUCTS_DIR}/DTFoundation/DTFoundation.framework
+${BUILT_PRODUCTS_DIR}/Instructions/Instructions.framework
+${BUILT_PRODUCTS_DIR}/Kvitto/Kvitto.framework
+${BUILT_PRODUCTS_DIR}/Pages/Pages.framework
+${BUILT_PRODUCTS_DIR}/Presentation/Presentation.framework
+${BUILT_PRODUCTS_DIR}/PryntTrimmerView/PryntTrimmerView.framework
+${BUILT_PRODUCTS_DIR}/Result/Result.framework
+${BUILT_PRODUCTS_DIR}/Siren/Siren.framework
+${BUILT_PRODUCTS_DIR}/SteviaLayout/Stevia.framework
+${BUILT_PRODUCTS_DIR}/SugarRecord/SugarRecord.framework
+${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework
+${BUILT_PRODUCTS_DIR}/SwiftyStoreKit/SwiftyStoreKit.framework
+${BUILT_PRODUCTS_DIR}/YPImagePicker/YPImagePicker.framework
+${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework

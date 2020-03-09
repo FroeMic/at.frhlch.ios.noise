@@ -1,30 +1,30 @@
 PODS:
   - AFDateHelper (4.2.7)
   - Appirater (2.3.1)
-  - DTFoundation/Core (1.7.13)
-  - DTFoundation/DTASN1 (1.7.13):
+  - DTFoundation/Core (1.7.14)
+  - DTFoundation/DTASN1 (1.7.14):
     - DTFoundation/Core
-  - Instructions (1.2.0)
+  - Instructions (1.2.2)
   - Kvitto (1.0.3):
     - DTFoundation/DTASN1 (~> 1.7.13)
     - Kvitto/Core (= 1.0.3)
   - Kvitto/Core (1.0.3):
     - DTFoundation/DTASN1 (~> 1.7.13)
-  - lottie-ios (2.5.0)
+  - lottie-ios (3.1.6)
   - Pages (2.0.2)
   - Presentation (4.1.2):
     - Pages (~> 2.0)
-  - PryntTrimmerView (2.0.1)
+  - PryntTrimmerView (4.0.0)
   - Result (3.2.4)
-  - Siren (3.4.1)
-  - SteviaLayout (4.2.0)
+  - Siren (5.4.0)
+  - SteviaLayout (4.7.3)
   - SugarRecord/CoreData (3.1.2):
     - Result (~> 3.0)
-  - SwiftyJSON (4.1.0)
-  - SwiftyStoreKit (0.13.2)
-  - YPImagePicker (3.1.1):
-    - PryntTrimmerView (~> 2.0)
-    - SteviaLayout (~> 4.2.0)
+  - SwiftyJSON (4.3.0)
+  - SwiftyStoreKit (0.15.0)
+  - YPImagePicker (4.2.0):
+    - PryntTrimmerView (~> 4.0.0)
+    - SteviaLayout (~> 4.7.3)
 
 DEPENDENCIES:
   - AFDateHelper (from `https://github.com/FroeMic/DateHelper.git`)
@@ -40,7 +40,7 @@ DEPENDENCIES:
   - YPImagePicker
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Appirater
     - DTFoundation
     - Instructions
@@ -69,21 +69,21 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AFDateHelper: 9dcce64b7200d8cc559ac4e89db99722c00c89de
   Appirater: 44a4651f7912a17dc906b655f0c215d5bb768b84
-  DTFoundation: f03be9fd786f11e505bb8fc44e2a3732bf0917df
-  Instructions: 763c2452bd78e05d8f969a21c1cbc3c07deef33a
+  DTFoundation: 25aa19bb7c6e225b1dfae195604fb8cf1da0ab4c
+  Instructions: baff1b8ac41e195556c2b3453be1fcdd92e18612
   Kvitto: d451f893f84ad669850b7cb7d3f8781363e14232
-  lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
+  lottie-ios: 85ce835dd8c53e02509f20729fc7d6a4e6645a0a
   Pages: 5564ac6035c48fef7a837049314f57507d263b11
   Presentation: 84974970fa451c89147d2bed4d5d50f857e71761
-  PryntTrimmerView: 4260ae497a2f3e1bbfc0b71247eb74ab92bf0490
+  PryntTrimmerView: 67e67573ffd4c073f1308effa66aefd0cfa667a0
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
-  Siren: 94e13d40b48d8c0ddac053140d607c36bb487767
-  SteviaLayout: 0d2112caea45707695e8c718262c8ea3dd37ef17
+  Siren: 9df16ed5278cfaad7ea034f3d2206e4f6983e9b8
+  SteviaLayout: c2ecdcff57d44e38fd2f65e54ad52aeae28ca0c4
   SugarRecord: be6aa5c18b4a4dec0de4c1f49fc61c85eabb5328
-  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
-  SwiftyStoreKit: b7563505440a68c9d9fa70bc43d8a97015519409
-  YPImagePicker: dd0a901a293f99e982f75554738574c735734a76
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+  SwiftyStoreKit: 033d06b6f87955405d3f844a18a7687c2438592a
+  YPImagePicker: accf310f9526641a84372c0ecf943547d9b1e52c
 
-PODFILE CHECKSUM: 7e9d5db6d08b29dd188d9b041e2ee90442458c2b
+PODFILE CHECKSUM: 974d03df867fe0a1f27ea16714c562db762668cd
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.9.0

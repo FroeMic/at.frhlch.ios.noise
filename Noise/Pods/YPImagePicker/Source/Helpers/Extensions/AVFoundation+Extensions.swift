@@ -12,50 +12,6 @@ import AVFoundation
 
 // MARK: - Global functions
 
-public func createVideoItem(videoURL: URL,
-                            activityIdicatorClosure: ((_ show: Bool) -> Void)? = nil,
-                            completion: @escaping (_ video: YPMediaVideo) -> Void) {
-    
-    let videoItem = YPMediaVideo(thumbnail: thumbnailFromVideoPath(videoURL),
-                            videoURL: videoURL)
-    
-    activityIdicatorClosure?(true)
-    
-    DispatchQueue.global(qos: .background).async {
-        
-        // Compress Video to 640x480 format.
-        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-        if let firstPath = paths.first {
-            
-            let path = firstPath + "/\(Int(Date().timeIntervalSince1970))temporary.mov"
-            let uploadURL = URL(fileURLWithPath: path)
-            let asset = AVURLAsset(url: videoURL)
-            
-            let exportSession = AVAssetExportSession(asset: asset,
-                                                     presetName: YPConfig.video.compression)
-            exportSession?.outputURL = uploadURL
-            exportSession?.outputFileType = AVFileType.mov
-            exportSession?.shouldOptimizeForNetworkUse = true
-            exportSession?.exportAsynchronously {
-                switch exportSession!.status {
-                case .completed:
-                    DispatchQueue.main.async {
-                        activityIdicatorClosure?(false)
-                        completion(videoItem)
-                    }
-                default:
-                    DispatchQueue.main.async {
-                        print("⚠️ createVideoItem >>> Error in creating the video item."
-                            + "Export status: \(exportSession!.status)")
-                        activityIdicatorClosure?(false)
-                        completion(videoItem)
-                    }
-                }
-            }
-        }
-    }
-}
-
 func deviceForPosition(_ p: AVCaptureDevice.Position) -> AVCaptureDevice? {
     for device in AVCaptureDevice.devices(for: AVMediaType.video) where device.position == p {
         return device
@@ -67,8 +23,8 @@ func thumbnailFromVideoPath(_ path: URL) -> UIImage {
     let asset = AVURLAsset(url: path, options: nil)
     let gen = AVAssetImageGenerator(asset: asset)
     gen.appliesPreferredTrackTransform = true
-    let time = CMTimeMakeWithSeconds(0.0, 600)
-    var actualTime = CMTimeMake(0, 0)
+    let time = CMTimeMakeWithSeconds(0.0, preferredTimescale: 600)
+    var actualTime = CMTimeMake(value: 0, timescale: 0)
     let image: CGImage
     do {
         image = try gen.copyCGImage(at: time, actualTime: &actualTime)

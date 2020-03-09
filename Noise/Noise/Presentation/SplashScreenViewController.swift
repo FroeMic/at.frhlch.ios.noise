@@ -30,6 +30,7 @@ class SplashScreenViewController: UIViewController {
     
     private func presentOnboarding() {
         let presentationController = OnboardingPresentationController()
+        presentationController.modalPresentationStyle = .fullScreen
         self.present(presentationController, animated: true)
     }
     

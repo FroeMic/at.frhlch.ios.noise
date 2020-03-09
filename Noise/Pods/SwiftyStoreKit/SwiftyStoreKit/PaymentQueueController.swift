@@ -78,6 +78,7 @@ extension SKPaymentTransactionState: CustomDebugStringConvertible {
         case .failed: return "failed"
         case .restored: return "restored"
         case .deferred: return "deferred"
+        @unknown default: return "default"
         }
     }
 }
@@ -239,8 +240,10 @@ class PaymentQueueController: NSObject, SKPaymentTransactionObserver {
         updatedDownloadsHandler?(downloads)
     }
 
+    #if os(iOS)
     func paymentQueue(_ queue: SKPaymentQueue, shouldAddStorePayment payment: SKPayment, for product: SKProduct) -> Bool {
         
         return shouldAddStorePaymentHandler?(payment, product) ?? false
     }
+    #endif
 }

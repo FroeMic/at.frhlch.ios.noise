@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "851675041F5E7CD5B193C0213B007333"
+               BlueprintIdentifier = "FCD4F1901DD86FEB184BFDD6673F4A7B"
+               BuildableName = "SwiftyStoreKit.framework"
                BlueprintName = "SwiftyStoreKit"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "SwiftyStoreKit.framework">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

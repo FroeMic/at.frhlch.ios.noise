@@ -18,6 +18,7 @@ class PostiOS10PhotoCapture: NSObject, YPPhotoCapture, AVCapturePhotoCaptureDele
     var device: AVCaptureDevice? { return deviceInput?.device }
     private let photoOutput = AVCapturePhotoOutput()
     var output: AVCaptureOutput { return photoOutput }
+    var isCaptureSessionSetup: Bool = false
     var isPreviewSetup: Bool = false
     var previewView: UIView!
     var videoLayer: AVCaptureVideoPreviewLayer!
@@ -27,6 +28,7 @@ class PostiOS10PhotoCapture: NSObject, YPPhotoCapture, AVCapturePhotoCaptureDele
         return device.hasFlash
     }
     var block: ((Data) -> Void)?
+    var initVideoZoomFactor: CGFloat = 1.0
     
     // MARK: - Configuration
     

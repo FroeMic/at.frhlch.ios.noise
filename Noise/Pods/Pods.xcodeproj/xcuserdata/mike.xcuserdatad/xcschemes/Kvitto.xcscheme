@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "40142001FB07E6099C0E4C7437007290"
+               BlueprintIdentifier = "CD21D66FD47887CABEE320A3598FA1CA"
+               BuildableName = "Kvitto.framework"
                BlueprintName = "Kvitto"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "Kvitto.framework">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

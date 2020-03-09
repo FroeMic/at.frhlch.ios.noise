@@ -13,13 +13,6 @@ extension YPPhotoCapture {
     
     // MARK: - Setup
     
-    func setup(with previewView: UIView) {
-        self.previewView = previewView
-        sessionQueue.async { [unowned self] in
-            self.setupCaptureSession()
-        }
-    }
-    
     private func setupCaptureSession() {
         session.beginConfiguration()
         session.sessionPreset = .photo
@@ -38,17 +31,27 @@ extension YPPhotoCapture {
             }
         }
         session.commitConfiguration()
+        isCaptureSessionSetup = true
     }
     
     // MARK: - Start/Stop Camera
     
-    func tryToStartCamera() {
-        if isPreviewSetup {
-            startCamera()
+    func start(with previewView: UIView, completion: @escaping () -> Void) {
+        self.previewView = previewView
+        sessionQueue.async { [weak self] in
+            guard let strongSelf = self else {
+                return
+            }
+            if !strongSelf.isCaptureSessionSetup {
+                strongSelf.setupCaptureSession()
+            }
+            strongSelf.startCamera(completion: {
+                completion()
+            })
         }
     }
     
-    func startCamera() {
+    func startCamera(completion: @escaping (() -> Void)) {
         if !session.isRunning {
             sessionQueue.async { [weak self] in
                 // Re-apply session preset
@@ -59,7 +62,10 @@ extension YPPhotoCapture {
                     self?.session.stopRunning()
                 case .authorized:
                     self?.session.startRunning()
+                    completion()
                     self?.tryToSetupPreview()
+                @unknown default:
+                    fatalError()
                 }
             }
         }
@@ -97,11 +103,48 @@ extension YPPhotoCapture {
         setFocusPointOnDevice(device: device!, point: point)
     }
     
+    // MARK: - Zoom
+    
+    func zoom(began: Bool, scale: CGFloat) {
+        guard let device = device else {
+            return
+        }
+        
+        if began {
+            initVideoZoomFactor = device.videoZoomFactor
+            return
+        }
+        
+        do {
+            try device.lockForConfiguration()
+            defer { device.unlockForConfiguration() }
+            
+            var minAvailableVideoZoomFactor: CGFloat = 1.0
+            if #available(iOS 11.0, *) {
+                minAvailableVideoZoomFactor = device.minAvailableVideoZoomFactor
+            }
+            var maxAvailableVideoZoomFactor: CGFloat = device.activeFormat.videoMaxZoomFactor
+            if #available(iOS 11.0, *) {
+                maxAvailableVideoZoomFactor = device.maxAvailableVideoZoomFactor
+            }
+            maxAvailableVideoZoomFactor = min(maxAvailableVideoZoomFactor, YPConfig.maxCameraZoomFactor)
+            
+            let desiredZoomFactor = initVideoZoomFactor * scale
+            device.videoZoomFactor = max(minAvailableVideoZoomFactor, min(desiredZoomFactor, maxAvailableVideoZoomFactor))
+        }
+        catch let error {
+           print("💩 \(error)")
+        }
+    }
+    
     // MARK: - Flip
     
-    func flipCamera() {
+    func flipCamera(completion: @escaping () -> Void) {
         sessionQueue.async { [weak self] in
             self?.flip()
+            DispatchQueue.main.async {
+                completion()
+            }
         }
     }
     
@@ -119,7 +162,7 @@ extension YPPhotoCapture {
     
     func setCurrentOrienation() {
         let connection = output.connection(with: .video)
-        let orientation = UIDevice.current.orientation
+        let orientation = YPDeviceOrientationHelper.shared.currentDeviceOrientation
         switch orientation {
         case .portrait:
             connection?.videoOrientation = .portrait
