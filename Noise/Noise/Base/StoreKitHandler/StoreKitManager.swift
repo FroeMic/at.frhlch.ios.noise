@@ -290,11 +290,11 @@ extension StoreKitManager {
     }
     
     func hasPremium() -> Bool {
-        return doesOwnProduct(id: "at.frhlch.ios.noise.premium")
+        return doesOwnProduct(id: "at.frhlch.ios.noise.2.premium")
     }
     
     func hasPlayInBackground() -> Bool {
-        return hasPremium() || doesOwnProduct(id: "at.frhlch.ios.noise.play_in_background")
+        return hasPremium() || doesOwnProduct(id: "at.frhlch.ios.noise.2.play_in_background")
     }
     
     func hasDarkMode() -> Bool {

@@ -131,7 +131,7 @@
 		2704A7A72416872F00BFC24D /* DarkTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkTheme.swift; sourceTree = "<group>"; };
 		271D158C213DD45A00F5B2DC /* SoundDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundDelegate.swift; sourceTree = "<group>"; };
 		271D158E21406FBB00F5B2DC /* MixesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixesViewController.swift; sourceTree = "<group>"; };
-		271F9EB42135D51800115C8C /* Noise – Ambient Sound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Noise – Ambient Sound.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		271F9EB42135D51800115C8C /* Noise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Noise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		271F9EB72135D51800115C8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		271F9EB92135D51800115C8C /* NoiseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoiseViewController.swift; sourceTree = "<group>"; };
 		271F9EBC2135D51800115C8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -289,7 +289,7 @@
 		271F9EB52135D51800115C8C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				271F9EB42135D51800115C8C /* Noise – Ambient Sound.app */,
+				271F9EB42135D51800115C8C /* Noise.app */,
 				271F9EC82135D51B00115C8C /* NoiseTests.xctest */,
 			);
 			name = Products;
@@ -582,7 +582,7 @@
 			);
 			name = Noise;
 			productName = Noise;
-			productReference = 271F9EB42135D51800115C8C /* Noise – Ambient Sound.app */;
+			productReference = 271F9EB42135D51800115C8C /* Noise.app */;
 			productType = "com.apple.product-type.application";
 		};
 		271F9EC72135D51B00115C8C /* NoiseTests */ = {
@@ -991,7 +991,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 8739VU9P7E;
 				INFOPLIST_FILE = Noise/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -999,7 +999,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = at.frhlch.ios.noise.2;
-				PRODUCT_NAME = "Noise – Ambient Sound";
+				PRODUCT_NAME = Noise;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1011,7 +1011,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 8739VU9P7E;
 				INFOPLIST_FILE = Noise/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1019,7 +1019,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = at.frhlch.ios.noise.2;
-				PRODUCT_NAME = "Noise – Ambient Sound";
+				PRODUCT_NAME = Noise;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
