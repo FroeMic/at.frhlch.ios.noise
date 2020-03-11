@@ -52,7 +52,6 @@ class SoundTableViewCell: UITableViewCell {
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         super.setHighlighted(highlighted, animated: animated)
         let theme = Injection.theme
-        
         if highlighted {
             contentView.backgroundColor = theme.tableViewCellHighlightBackgroundColor
             soundTitleLabel?.textColor = theme.tableViewCellHighlightTextColor
@@ -103,10 +102,16 @@ class SoundTableViewCell: UITableViewCell {
             return
         }
         
+        var sliderInteractionEnabled = true
+        if let inAppPurchaseId = sound.inAppPurchaseId {
+            sliderInteractionEnabled = StoreKitManager.shared.doesOwnProduct(id: inAppPurchaseId)
+        }
+        
         albumImageView?.image = sound.image
         soundTitleLabel?.text = sound.title
         soundSubtitleLabel?.text = sound.subtitle
         slider?.value = sound.volume
+        slider?.isEnabled = sliderInteractionEnabled
         
         applyPremiumFilter()
     }
