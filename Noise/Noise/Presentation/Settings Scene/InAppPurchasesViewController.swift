@@ -53,9 +53,9 @@ class InAppPurchasesViewController: UIViewController {
     
     private func refreshTableView() {
         otherInAppPurchases = [
-            InAppPurchase(id: "at.frhlch.ios.noise.premium", title: "Noise Premium", priceString: StoreKitManager.shared.premiumPrice),
-            InAppPurchase(id: "at.frhlch.ios.noise.dark_mode", title: "Dark Mode", priceString: StoreKitManager.shared.darkModePrice),
-            InAppPurchase(id: "at.frhlch.ios.noise.play_in_background", title: "Play In Background", priceString: StoreKitManager.shared.backgroundPlayPrice),
+            InAppPurchase(id: "at.frhlch.ios.noise.2.premium", title: "Noise Premium", priceString: StoreKitManager.shared.premiumPrice),
+            InAppPurchase(id: "at.frhlch.ios.noise.2.dark_mode", title: "Dark Mode", priceString: StoreKitManager.shared.darkModePrice),
+            InAppPurchase(id: "at.frhlch.ios.noise.2.play_in_background", title: "Play In Background", priceString: StoreKitManager.shared.backgroundPlayPrice),
             
         ]
         soundInAppPurchases = Injection.soundRepository.getAll().compactMap { InAppPurchase(sound: $0) }

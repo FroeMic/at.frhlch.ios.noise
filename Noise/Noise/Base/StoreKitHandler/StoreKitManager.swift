@@ -63,9 +63,6 @@ class StoreKitManager: NSObject, SKProductsRequestDelegate  {
         super.init()
         updateNoisePremiumPrice()
         updatebackgroundPlayPrice()
-        
-//        fetchProducts(matchingIdentifiers: ["at.frhlch.ios.noise.test"])
-        
     }
     
     func registerTransactionObserver() {
@@ -239,7 +236,7 @@ extension StoreKitManager {
         
         updateNoisePremiumPrice()
         
-        if let priceString = UserDefaults.standard.string(forKey: "at.frhlch.ios.noise.premium") {
+        if let priceString = UserDefaults.standard.string(forKey: "at.frhlch.ios.noise.2.premium") {
             return priceString
         } else {
             return String(format: "%.2f €", 8.99)
@@ -247,9 +244,9 @@ extension StoreKitManager {
     }
     
     private func updateNoisePremiumPrice() {
-        getPriceString(id: "at.frhlch.ios.noise.premium", completion: { priceString in
+        getPriceString(id: "at.frhlch.ios.noise.2.premium", completion: { priceString in
             if let priceString = priceString {
-                UserDefaults.standard.set(priceString, forKey: "at.frhlch.ios.noise.premium")
+                UserDefaults.standard.set(priceString, forKey: "at.frhlch.ios.noise.2.premium")
             }
         })
     }
@@ -258,7 +255,7 @@ extension StoreKitManager {
         
         updatebackgroundPlayPrice()
         
-        if let priceString = UserDefaults.standard.string(forKey: "at.frhlch.ios.noise.play_in_background") {
+        if let priceString = UserDefaults.standard.string(forKey: "at.frhlch.ios.noise.2.play_in_background") {
             return priceString
         } else {
             return String(format: "%.2f €", 100.09)
@@ -266,9 +263,9 @@ extension StoreKitManager {
     }
     
     private func updatebackgroundPlayPrice() {
-        getPriceString(id: "at.frhlch.ios.noise.play_in_background", completion: { priceString in
+        getPriceString(id: "at.frhlch.ios.noise.2.play_in_background", completion: { priceString in
             if let priceString = priceString {
-                UserDefaults.standard.set(priceString, forKey: "at.frhlch.ios.noise.play_in_background")
+                UserDefaults.standard.set(priceString, forKey: "at.frhlch.ios.noise.2.play_in_background")
             }
         })
     }
@@ -277,7 +274,7 @@ extension StoreKitManager {
         
         updatDarkModePrice()
         
-        if let priceString = UserDefaults.standard.string(forKey: "at.frhlch.ios.noise.play_in_background") {
+        if let priceString = UserDefaults.standard.string(forKey: "at.frhlch.ios.noise.2.play_in_background") {
             return priceString
         } else {
             return String(format: "%.2f €", 1.09)
@@ -285,9 +282,9 @@ extension StoreKitManager {
     }
     
     private func updatDarkModePrice() {
-        getPriceString(id: "at.frhlch.ios.noise.dark_mode", completion: { priceString in
+        getPriceString(id: "at.frhlch.ios.noise.2.dark_mode", completion: { priceString in
             if let priceString = priceString {
-                UserDefaults.standard.set(priceString, forKey: "at.frhlch.ios.noise.dark_mode")
+                UserDefaults.standard.set(priceString, forKey: "at.frhlch.ios.noise.2.dark_mode")
             }
         })
     }
@@ -301,11 +298,11 @@ extension StoreKitManager {
     }
     
     func hasDarkMode() -> Bool {
-        return hasPremium() || doesOwnProduct(id: "at.frhlch.ios.noise.dark_mode")
+        return hasPremium() || doesOwnProduct(id: "at.frhlch.ios.noise.2.dark_mode")
     }
     
     func purchasePremium(completion: ((Bool)->())? = nil ) {
-        purchaseProduct(id: "at.frhlch.ios.noise.premium", completion: completion)
+        purchaseProduct(id: "at.frhlch.ios.noise.2.premium", completion: completion)
     }
     
     func doesHaveAccessToId(id: String) -> Bool {

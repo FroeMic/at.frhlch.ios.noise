@@ -17,15 +17,13 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>6</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>Select custom cover images for mixtapes.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Select custom cover images for mixtapes.</string>
-	<key>UIApplicationExitsOnSuspend</key>
-	<false/>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>
@@ -45,12 +43,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
-	<key>UISupportedInterfaceOrientations~ipad</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
 </dict>
 </plist>
