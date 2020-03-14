@@ -60,14 +60,23 @@ class NoiseViewController: UIViewController, InterfaceThemeSubscriber {
         updatePlayPauseButton()
         
         //lastAppearance
-        if let lastAppearance = self.lastAppearance, lastAppearance > StoreKitManager.shared.lastBuyingDecision  {
-            // not update necessary, safe some cpu
-        } else {
-            sounds = Injection.soundRepository.getAll().stableSorted(by: {$0.isOwned && !$1.isOwned})
+        let freshSounds = Injection.soundRepository.getAll()
+        var needsUpdate = false
+    
+        if let lastAppearance = self.lastAppearance  {
+            needsUpdate =  lastAppearance < StoreKitManager.shared.lastBuyingDecision
+        }
+        
+        if freshSounds.count != sounds.count {
+            needsUpdate = true
+        }
+        
+        if needsUpdate {
+            sounds = freshSounds.stableSorted(by: {$0.isOwned && !$1.isOwned})
             tableView.reloadData()
         }
-        lastAppearance = Date()
         
+        lastAppearance = Date()
         applyTheme()
     }
     
