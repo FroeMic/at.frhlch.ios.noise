@@ -84,15 +84,15 @@ class EditMixtapeViewController: UIViewController, InterfaceThemeSubscriber {
         // Show the Navigation Bar
         navigationController?.setNavigationBarHidden(false, animated: animated)
 
-        
         applyTheme()
         updateView()
         
         audioManager.register(delegate: self)
         
-        if Injection.settingsRepository.getAutoPlay() {
+        if Injection.settingsRepository.getAutoPlay() || isPlayingCurrentMixtape {
             playAudio()
         }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
