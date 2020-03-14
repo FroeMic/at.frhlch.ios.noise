@@ -96,6 +96,7 @@ class SoundSelectionViewController: UIViewController, InterfaceThemeSubscriber {
         }
         
         view.backgroundColor = theme.backgroundColor
+        tableView.backgroundColor = theme.backgroundColor
     }
     
     @IBAction func cancelButtonPressed(_ sender: Any) {
