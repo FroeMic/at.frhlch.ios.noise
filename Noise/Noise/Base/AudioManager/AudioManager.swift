@@ -194,6 +194,26 @@ class AudioManager {
         delegates.removeAll(where: { $0 === delegate })
     }
     
+    func prepareForActivation(audio: AudioBundle) {
+        if state == .playing {
+            debugPrint("Cannot prepare. Already active")
+        }
+        
+        DispatchQueue.global(qos: .utility).async {
+                
+            for sound in audio.sounds {
+                if let player = self.players[sound.id] {
+                    player.volume = sound.volume
+                } else {
+                    if let player = self.setupPlayerFor(sound: sound) {
+                        self.players[sound.id] = player
+                    }
+                }
+            }
+            self.currentAudio = audio
+        }
+    }
+        
     func activate(audio: AudioBundle, hard: Bool = true) {
         
         if hard {
@@ -250,21 +270,32 @@ class AudioManager {
     }
     
     public func play() {
+        debugPrint("Audiomanager.play()")
         updateNowPlayingInfo()
-        players.values.forEach { $0.play() }
+        DispatchQueue.global(qos: .userInteractive).async {
+            self.players.values.forEach { $0.play() }
+        }
+        
         state = .playing
     }
     
     public func stop() {
-        players.values.forEach { $0.stop() }
+        debugPrint("Audiomanager.stop()")
+        DispatchQueue.global(qos: .userInteractive).async {
+            let oldplayers = self.players
+            self.players = [:]
+            self.currentAudio = nil
+            oldplayers.values.forEach { $0.stop() }
+        }
         
-        players = [:]
-        currentAudio = nil
         state = .stopped
     }
     
     public func pause() {
-        players.values.forEach { $0.pause() }
+        debugPrint("Audiomanager.pause()")
+        DispatchQueue.global(qos: .userInteractive).async {
+            self.players.values.forEach { $0.pause() }
+        }
         state = .paused
     }
     
@@ -338,8 +369,6 @@ class AudioManager {
             play()
         }
     }
-    
-    
     
 }
 
