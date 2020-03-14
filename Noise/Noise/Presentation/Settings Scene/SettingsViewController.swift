@@ -36,6 +36,9 @@ class SettingsViewController: UITableViewController, InterfaceThemeSubscriber {
     @IBOutlet var inAppPurchasesLabel: UILabel!
     @IBOutlet var inAppPurchasesChevronImageView: UIImageView!
     
+    @IBOutlet var viewInAppStoreCell: UITableViewCell!
+    @IBOutlet var viewInAppStoreLabel: UILabel!
+    
     @IBOutlet var rateNoiseCell: UITableViewCell!
     @IBOutlet var rateNoiseLabel: UILabel!
     
@@ -209,6 +212,10 @@ class SettingsViewController: UITableViewController, InterfaceThemeSubscriber {
         rateNoiseCell.selectionStyle = .none
         rateNoiseCell.backgroundColor = .white
         rateNoiseLabel.textColor = theme.textColor
+        
+        viewInAppStoreCell.selectionStyle = .none
+        viewInAppStoreCell.backgroundColor = .white
+        viewInAppStoreLabel.textColor = theme.textColor
 
         showOnboardingCell.selectionStyle = .none
         showOnboardingCell.backgroundColor = .white
@@ -348,13 +355,17 @@ extension SettingsViewController {
             case 0:
                 RatingManager.triggerRatingView()
             case 1:
+                 if let url = URL(string: "itms-apps://itunes.apple.com/app/id1502179596") {
+                     UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                 }
+            case 2:
                 let controller = OnboardingPresentationController(dismissOnCompletion: true)
                 self.present(controller, animated: true)
-            case 2:
-                performSegue(withIdentifier: SettingsViewController.showAboutSegueIdentifier, sender: nil)
             case 3:
-                performSegue(withIdentifier: SettingsViewController.showAcknowledgementSegueIdentifier, sender: nil)
+                performSegue(withIdentifier: SettingsViewController.showAboutSegueIdentifier, sender: nil)
             case 4:
+                performSegue(withIdentifier: SettingsViewController.showAcknowledgementSegueIdentifier, sender: nil)
+            case 5:
                 performSegue(withIdentifier: SettingsViewController.showInDataPrivacySegueIdentifier, sender: nil)
             default:
                 return

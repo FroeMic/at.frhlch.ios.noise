@@ -1383,7 +1383,7 @@ We hope you like Noise as much as we do.</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="60"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="diL-gj-8KE">
-                            <rect key="frame" x="0.0" y="796" width="375" height="44"/>
+                            <rect key="frame" x="0.0" y="948" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
@@ -1651,8 +1651,41 @@ We hope you like Noise as much as we do.</string>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Gdi-IO-4Wd" customClass="SettingsTableViewCell" customModule="Noise_App" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="cSG-yg-lJU" customClass="SettingsTableViewCell" customModule="Noise_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="404" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cSG-yg-lJU" id="WTf-oI-ZPe">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1cl-t2-zWN">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View In App Store" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x0l-Ug-Ixb">
+                                                            <rect key="frame" x="16" y="11.5" width="349" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="x0l-Ug-Ixb" secondAttribute="trailing" constant="10" id="8V0-jp-ioW"/>
+                                                        <constraint firstItem="x0l-Ug-Ixb" firstAttribute="centerY" secondItem="1cl-t2-zWN" secondAttribute="centerY" id="8ZE-fl-EEo"/>
+                                                        <constraint firstItem="x0l-Ug-Ixb" firstAttribute="leading" secondItem="1cl-t2-zWN" secondAttribute="leading" constant="16" id="9vI-li-UaJ"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="1cl-t2-zWN" secondAttribute="bottom" id="0St-2S-o3n"/>
+                                                <constraint firstItem="1cl-t2-zWN" firstAttribute="top" secondItem="WTf-oI-ZPe" secondAttribute="top" id="8dj-nT-ng5"/>
+                                                <constraint firstItem="1cl-t2-zWN" firstAttribute="leading" secondItem="WTf-oI-ZPe" secondAttribute="leading" id="mnp-YL-eym"/>
+                                                <constraint firstAttribute="trailing" secondItem="1cl-t2-zWN" secondAttribute="trailing" id="wvv-jJ-4fd"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Gdi-IO-4Wd" customClass="SettingsTableViewCell" customModule="Noise_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="448" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gdi-IO-4Wd" id="Cac-nY-AZi">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1685,7 +1718,7 @@ We hope you like Noise as much as we do.</string>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="beb-Om-0Ex" customClass="SettingsTableViewCell" customModule="Noise_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="448" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="492" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="beb-Om-0Ex" id="269-cG-3ch">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1727,7 +1760,7 @@ We hope you like Noise as much as we do.</string>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="aej-R4-aux" customClass="SettingsTableViewCell" customModule="Noise_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="492" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="536" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aej-R4-aux" id="gFr-nP-WXp">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1769,7 +1802,7 @@ We hope you like Noise as much as we do.</string>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="CMT-nt-SAj" customClass="SettingsTableViewCell" customModule="Noise_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="536" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="580" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CMT-nt-SAj" id="NIc-r8-ETQ">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1815,7 +1848,7 @@ We hope you like Noise as much as we do.</string>
                             <tableViewSection headerTitle="Other Apps" id="69a-2o-IcU">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="80" id="fHD-h6-gXv" customClass="SettingsTableViewCell" customModule="Noise_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="636" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="680" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fHD-h6-gXv" id="BZM-n6-fWm">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
@@ -1873,7 +1906,7 @@ We hope you like Noise as much as we do.</string>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="80" id="t1C-el-s2H" customClass="SettingsTableViewCell" customModule="Noise_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="716" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="760" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t1C-el-s2H" id="2Kn-iy-YjE">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
@@ -1929,7 +1962,7 @@ We hope you like Noise as much as we do.</string>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="80" id="7IO-Uz-9Ff" customClass="SettingsTableViewCell" customModule="Noise_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="796" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="840" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7IO-Uz-9Ff" id="Y92-eO-7ng">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
@@ -2023,6 +2056,8 @@ We hope you like Noise as much as we do.</string>
                         <outlet property="rateNoiseLabel" destination="gVA-O0-LjP" id="gzc-J5-ka4"/>
                         <outlet property="showOnboardingCell" destination="Gdi-IO-4Wd" id="KiK-At-ege"/>
                         <outlet property="showOnboardingLabel" destination="YAR-x0-lmk" id="nne-W3-5kA"/>
+                        <outlet property="viewInAppStoreCell" destination="cSG-yg-lJU" id="Kkv-0o-uYT"/>
+                        <outlet property="viewInAppStoreLabel" destination="x0l-Ug-Ixb" id="MUY-Fm-9x7"/>
                         <segue destination="3qF-FV-RMC" kind="show" identifier="showAcknowledgementScene" id="8uH-Oc-GCL"/>
                         <segue destination="YHl-Ms-TRJ" kind="show" identifier="showAboutScene" id="dg1-fI-h81"/>
                         <segue destination="e1B-na-5IS" kind="show" identifier="showInAppPurchasesScene" id="QHI-g7-W9q"/>
