@@ -185,6 +185,20 @@ extension NoiseViewController: UITableViewDelegate {
         if !sound.isOwned {
             presentPreviewViewForSound(sound: sound)
         }
+        // automatically set the sound volume and play
+        if sound.isOwned {
+            if let soundTableViewCell = tableView.cellForRow(at: indexPath) as? SoundTableViewCell {
+                let currentVolume = soundTableViewCell.slider?.value ?? 0
+                let newVolume: Float = currentVolume == 0 ? 0.33 : 0.0
+                soundTableViewCell.slider?.value = newVolume
+                soundTableViewCell.sliderValueDidChange() // trigger manual update ... somewhat of a hack
+                
+                if !isPlayingSounds {
+                    playAudio()
+                    updatePlayPauseButton()
+                }
+            }
+        }
     }
 }
 
