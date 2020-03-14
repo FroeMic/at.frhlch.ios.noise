@@ -26,12 +26,11 @@ class PrivacyViewController: UIViewController {
     
     func applyTheme() {
         let theme = Injection.theme
-        
+ 
         view.backgroundColor = theme.backgroundColor
         textView.backgroundColor = theme.backgroundColor
         textView.textColor = theme.textColor
         textView.tintColor = theme.tintColor
-        
     }
     
 }
