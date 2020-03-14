@@ -50,7 +50,6 @@ class NoiseViewController: UIViewController, InterfaceThemeSubscriber {
         }
         
         playPauseButton?.tintColor = Injection.theme.tintColor
-        updatePlayPauseButton()
         Injection.themePublisher.subscribeToThemeUpdates(self)
     }
     
@@ -68,10 +67,6 @@ class NoiseViewController: UIViewController, InterfaceThemeSubscriber {
             tableView.reloadData()
         }
         lastAppearance = Date()
-        
-        if Injection.settingsRepository.getAutoPlay() {
-            playAudio()
-        }
         
         applyTheme()
     }
@@ -99,6 +94,12 @@ class NoiseViewController: UIViewController, InterfaceThemeSubscriber {
             if Injection.settingsRepository.getShowInstructionMarks() {
                 self.coachMarksController?.start(on: self)
             }
+        }
+        
+        prepareAudio()
+        
+        if Injection.settingsRepository.getAutoPlay() {
+            playAudio()
         }
     }
     
@@ -158,8 +159,21 @@ class NoiseViewController: UIViewController, InterfaceThemeSubscriber {
         }
     }
     
+    private func makeAudioBundle() -> AudioBundle? {
+        return AudioBundle(id: "xxx-noise-all-sounds", title: "Ambient Sound Mix" , sounds: sounds)
+    }
+    
+    func prepareAudio() {
+        guard let audioBundle = makeAudioBundle() else {
+            return
+        }
+        AudioManager.shared.prepareForActivation(audio: audioBundle)
+    }
+    
     func playAudio() {
-        let audioBundle = AudioBundle(id: "xxx-noise-all-sounds", title: "Ambient Sound Mix" , sounds: sounds)
+        guard let audioBundle = makeAudioBundle() else {
+            return
+        }
         AudioManager.shared.activate(audio: audioBundle, hard: false )
     }
     

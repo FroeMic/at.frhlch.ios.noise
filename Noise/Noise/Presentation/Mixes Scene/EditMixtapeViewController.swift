@@ -114,6 +114,8 @@ class EditMixtapeViewController: UIViewController, InterfaceThemeSubscriber {
             hasRegisteredForceTouchGesturerecognizer = true
         }
         
+        prepareAudio()
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -325,6 +327,14 @@ class EditMixtapeViewController: UIViewController, InterfaceThemeSubscriber {
     
     func updateSound(sound: Sound) {
         audioManager.updateVolume(for: sound)
+    }
+    
+    
+    func prepareAudio() {
+        guard let audioBundle = makeAudioBundle() else {
+            return
+        }
+        AudioManager.shared.prepareForActivation(audio: audioBundle)
     }
     
     func playAudio() {

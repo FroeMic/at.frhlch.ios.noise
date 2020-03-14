@@ -272,7 +272,7 @@ class AudioManager {
     public func play() {
         debugPrint("Audiomanager.play()")
         updateNowPlayingInfo()
-        DispatchQueue.global(qos: .userInteractive).async {
+        DispatchQueue.global(qos: .userInitiated).async {
             self.players.values.forEach { $0.play() }
         }
         
@@ -281,7 +281,7 @@ class AudioManager {
     
     public func stop() {
         debugPrint("Audiomanager.stop()")
-        DispatchQueue.global(qos: .userInteractive).async {
+        DispatchQueue.global(qos: .userInitiated).async {
             let oldplayers = self.players
             self.players = [:]
             self.currentAudio = nil
@@ -293,7 +293,7 @@ class AudioManager {
     
     public func pause() {
         debugPrint("Audiomanager.pause()")
-        DispatchQueue.global(qos: .userInteractive).async {
+        DispatchQueue.global(qos: .userInitiated).async {
             self.players.values.forEach { $0.pause() }
         }
         state = .paused
