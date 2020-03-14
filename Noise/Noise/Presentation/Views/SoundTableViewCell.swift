@@ -104,7 +104,7 @@ class SoundTableViewCell: UITableViewCell {
         
         var sliderInteractionEnabled = true
         if let inAppPurchaseId = sound.inAppPurchaseId {
-            sliderInteractionEnabled = StoreKitManager.shared.doesOwnProduct(id: inAppPurchaseId)
+            sliderInteractionEnabled = StoreKitManager.shared.doesHaveAccessToId(id: inAppPurchaseId)
         }
         
         albumImageView?.image = sound.image
